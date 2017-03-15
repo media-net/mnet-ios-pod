@@ -1,11 +1,18 @@
 use_frameworks!
 
 target 'MNAdSdk_Example' do
-  pod 'MNAdSdk', :path => '../'
+  # This is equivalent to 'MNAdSdk/Base'
+  pod 'MNAdSdk', :path => '../MNAdSdk.podspec.json'
+  pod 'mopub-ios-sdk', '~> 4.12.0'
+  pod 'MBProgressHUD'
+  pod 'Firebase/Core'
+  pod 'Firebase/AdMob'
+  pod 'Google-Mobile-Ads-SDK', '~> 7.8'
+  pod 'AFNetworkActivityLogger', git: 'https://github.com/AFNetworking/AFNetworkActivityLogger.git', branch: '3_0_0'
+  pod 'Toast', '~> 3.1.0'
 
-  target 'MNAdSdk_Tests' do
+target 'MNAdSdk_Tests' do
     inherit! :search_paths
+end
 
-    
-  end
 end

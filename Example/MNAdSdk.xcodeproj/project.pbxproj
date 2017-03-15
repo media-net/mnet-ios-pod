@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5262ABB47833FEAF28CCF5D3 /* Pods_MNAdSdk_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8B32359C4D112F7FCF965B /* Pods_MNAdSdk_Tests.framework */; };
+		32409B70C909ED8C71F2CD91 /* Pods_MNAdSdk_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4169C07039C339829F5BC5 /* Pods_MNAdSdk_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -21,9 +21,15 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		6565F6761E56F473004205F3 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E843E1E56F21E00F29110 /* AFNetworking.framework */; };
+		658923A71E5D7F5500AE4395 /* MPGoogleAdMobBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 658923A61E5D7F5500AE4395 /* MPGoogleAdMobBannerCustomEvent.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		77113AD29871EFBABA761919 /* Pods_MNAdSdk_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BBB419142384000336FABC /* Pods_MNAdSdk_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		88A62A86E0EFB10BF05FC6A9 /* Pods_MNAdSdk_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2671C78A42B4436CB9CD51AC /* Pods_MNAdSdk_Example.framework */; };
+		8A007A661E55B1D50006E667 /* MNShowAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A007A651E55B1D50006E667 /* MNShowAdViewController.m */; };
+		8A346A3C1E56F213004013FE /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A346A3B1E56F213004013FE /* AFNetworking.framework */; };
+		AE47A8F41E699C2D00B6E5E8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE47A8F31E699C2D00B6E5E8 /* CoreLocation.framework */; };
+		AED94DF01E72DF7300470329 /* MNDemoConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AED94DEF1E72DF7300470329 /* MNDemoConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03D3D742E676F47E22B18406 /* Pods-MNAdSdk_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNAdSdk_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		2671C78A42B4436CB9CD51AC /* Pods_MNAdSdk_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNAdSdk_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		432D9CA875FC20DB252E0EAC /* Pods-MNAdSdk_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNAdSdk_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MNAdSdk_Tests/Pods-MNAdSdk_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		467C82F683CA8F444B82466A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* MNAdSdk_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MNAdSdk_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CFFBA2A88C60BD841B35E20 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		49BBB419142384000336FABC /* Pods_MNAdSdk_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNAdSdk_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CF5A95E8555E332C43DF466 /* Pods-MNAdSdk_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNAdSdk_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MNAdSdk_Tests/Pods-MNAdSdk_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		6003F58A195388D20070C39A /* MNAdSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MNAdSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -60,13 +65,23 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		64FA9DD50D7B7D2351B3F0EE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		658923A51E5D7F5500AE4395 /* MPGoogleAdMobBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPGoogleAdMobBannerCustomEvent.h; path = custom/MPGoogleAdMobBannerCustomEvent.h; sourceTree = "<group>"; };
+		658923A61E5D7F5500AE4395 /* MPGoogleAdMobBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPGoogleAdMobBannerCustomEvent.m; path = custom/MPGoogleAdMobBannerCustomEvent.m; sourceTree = "<group>"; };
+		658E843E1E56F21E00F29110 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "../../../Library/Developer/Xcode/DerivedData/MNAdSdk-boowncofsgzqucdrcocfvcliifig/Build/Products/Debug-iphonesimulator/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		799DA14BE3658B5DCE9829CA /* Pods-MNAdSdk_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNAdSdk_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MNAdSdk_Tests/Pods-MNAdSdk_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		7D8B32359C4D112F7FCF965B /* Pods_MNAdSdk_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNAdSdk_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75A018B7A97D83671E0083E7 /* MNAdSdk.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MNAdSdk.podspec; path = ../MNAdSdk.podspec; sourceTree = "<group>"; };
+		7A3FF8073DE49C63EF37C1DA /* Pods-MNAdSdk_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNAdSdk_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		7B4169C07039C339829F5BC5 /* Pods_MNAdSdk_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNAdSdk_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		825309605DB4AFD0FE3E08C2 /* Pods-MNAdSdk_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNAdSdk_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8E232C628CF4EB7403907F64 /* MNAdSdk.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MNAdSdk.podspec; path = ../MNAdSdk.podspec; sourceTree = "<group>"; };
-		EE289841DED23AD285C56423 /* Pods-MNAdSdk_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNAdSdk_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example.release.xcconfig"; sourceTree = "<group>"; };
+		8A007A641E55B1D50006E667 /* MNShowAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNShowAdViewController.h; sourceTree = "<group>"; };
+		8A007A651E55B1D50006E667 /* MNShowAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNShowAdViewController.m; sourceTree = "<group>"; };
+		8A346A3B1E56F213004013FE /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
+		AE47A8F31E699C2D00B6E5E8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AED94DEE1E72DF7300470329 /* MNDemoConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNDemoConstants.h; sourceTree = "<group>"; };
+		AED94DEF1E72DF7300470329 /* MNDemoConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNDemoConstants.m; sourceTree = "<group>"; };
+		C0113688D2A91095D90F0AD8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		F790549A7CB496D08280AE0A /* Pods-MNAdSdk_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNAdSdk_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MNAdSdk_Tests/Pods-MNAdSdk_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +89,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE47A8F41E699C2D00B6E5E8 /* CoreLocation.framework in Frameworks */,
+				6565F6761E56F473004205F3 /* AFNetworking.framework in Frameworks */,
+				8A346A3C1E56F213004013FE /* AFNetworking.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				88A62A86E0EFB10BF05FC6A9 /* Pods_MNAdSdk_Example.framework in Frameworks */,
+				77113AD29871EFBABA761919 /* Pods_MNAdSdk_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +106,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				5262ABB47833FEAF28CCF5D3 /* Pods_MNAdSdk_Tests.framework in Frameworks */,
+				32409B70C909ED8C71F2CD91 /* Pods_MNAdSdk_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,14 +121,15 @@
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
-				7031DDCB267B44E83BE4F39B /* Pods */,
+				F9D1D932C09E8B7C1D219359 /* Pods */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
 		};
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* MNAdSdk_Example.app */,
+				6003F58A195388D20070C39A /* MNAdSDKDemo.app */,
 				6003F5AE195388D20070C39A /* MNAdSdk_Tests.xctest */,
 			);
 			name = Products;
@@ -119,12 +138,15 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE47A8F31E699C2D00B6E5E8 /* CoreLocation.framework */,
+				658E843E1E56F21E00F29110 /* AFNetworking.framework */,
+				8A346A3B1E56F213004013FE /* AFNetworking.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				2671C78A42B4436CB9CD51AC /* Pods_MNAdSdk_Example.framework */,
-				7D8B32359C4D112F7FCF965B /* Pods_MNAdSdk_Tests.framework */,
+				49BBB419142384000336FABC /* Pods_MNAdSdk_Example.framework */,
+				7B4169C07039C339829F5BC5 /* Pods_MNAdSdk_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,6 +154,7 @@
 		6003F593195388D20070C39A /* Example for MNAdSdk */ = {
 			isa = PBXGroup;
 			children = (
+				658923A81E5D7FC800AE4395 /* custom */,
 				6003F59C195388D20070C39A /* MNAppDelegate.h */,
 				6003F59D195388D20070C39A /* MNAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -140,6 +163,10 @@
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				8A007A641E55B1D50006E667 /* MNShowAdViewController.h */,
+				8A007A651E55B1D50006E667 /* MNShowAdViewController.m */,
+				AED94DEE1E72DF7300470329 /* MNDemoConstants.h */,
+				AED94DEF1E72DF7300470329 /* MNDemoConstants.m */,
 			);
 			name = "Example for MNAdSdk";
 			path = MNAdSdk;
@@ -178,20 +205,29 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				8E232C628CF4EB7403907F64 /* MNAdSdk.podspec */,
-				467C82F683CA8F444B82466A /* README.md */,
-				64FA9DD50D7B7D2351B3F0EE /* LICENSE */,
+				75A018B7A97D83671E0083E7 /* MNAdSdk.podspec */,
+				3CFFBA2A88C60BD841B35E20 /* README.md */,
+				C0113688D2A91095D90F0AD8 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		7031DDCB267B44E83BE4F39B /* Pods */ = {
+		658923A81E5D7FC800AE4395 /* custom */ = {
 			isa = PBXGroup;
 			children = (
-				03D3D742E676F47E22B18406 /* Pods-MNAdSdk_Example.debug.xcconfig */,
-				EE289841DED23AD285C56423 /* Pods-MNAdSdk_Example.release.xcconfig */,
-				432D9CA875FC20DB252E0EAC /* Pods-MNAdSdk_Tests.debug.xcconfig */,
-				799DA14BE3658B5DCE9829CA /* Pods-MNAdSdk_Tests.release.xcconfig */,
+				658923A51E5D7F5500AE4395 /* MPGoogleAdMobBannerCustomEvent.h */,
+				658923A61E5D7F5500AE4395 /* MPGoogleAdMobBannerCustomEvent.m */,
+			);
+			name = custom;
+			sourceTree = "<group>";
+		};
+		F9D1D932C09E8B7C1D219359 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A3FF8073DE49C63EF37C1DA /* Pods-MNAdSdk_Example.debug.xcconfig */,
+				825309605DB4AFD0FE3E08C2 /* Pods-MNAdSdk_Example.release.xcconfig */,
+				F790549A7CB496D08280AE0A /* Pods-MNAdSdk_Tests.debug.xcconfig */,
+				5CF5A95E8555E332C43DF466 /* Pods-MNAdSdk_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -203,12 +239,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "MNAdSdk_Example" */;
 			buildPhases = (
-				A1EF448007983A02D08E96C9 /* [CP] Check Pods Manifest.lock */,
+				58E3EF3563550E6095A58749 /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				3DA6587A12155254FB470620 /* [CP] Embed Pods Frameworks */,
-				331CFBF7DB967E47A129C721 /* [CP] Copy Pods Resources */,
+				F920EC4B4B25AFC7DCDB6312 /* [CP] Embed Pods Frameworks */,
+				245D6A5296F3FA40E89CE534 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,19 +252,19 @@
 			);
 			name = MNAdSdk_Example;
 			productName = MNAdSdk;
-			productReference = 6003F58A195388D20070C39A /* MNAdSdk_Example.app */;
+			productReference = 6003F58A195388D20070C39A /* MNAdSDKDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* MNAdSdk_Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "MNAdSdk_Tests" */;
 			buildPhases = (
-				2AF4DE950FCDFCC1584E7DAC /* [CP] Check Pods Manifest.lock */,
+				D52BEFED19137017DCA7C015 /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				95C9A2DFD13494E6AF775516 /* [CP] Embed Pods Frameworks */,
-				CDE91C9486122E5772ADA73E /* [CP] Copy Pods Resources */,
+				03F998CD8541CA887B8BE93F /* [CP] Embed Pods Frameworks */,
+				DD77678351CA080044C74E43 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,9 +283,12 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MN;
-				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = gnithin;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Nithin;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = S5RLSEZ259;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -297,52 +336,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2AF4DE950FCDFCC1584E7DAC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		331CFBF7DB967E47A129C721 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3DA6587A12155254FB470620 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		95C9A2DFD13494E6AF775516 /* [CP] Embed Pods Frameworks */ = {
+		03F998CD8541CA887B8BE93F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -357,7 +351,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MNAdSdk_Tests/Pods-MNAdSdk_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A1EF448007983A02D08E96C9 /* [CP] Check Pods Manifest.lock */ = {
+		245D6A5296F3FA40E89CE534 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58E3EF3563550E6095A58749 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -372,7 +381,22 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		CDE91C9486122E5772ADA73E /* [CP] Copy Pods Resources */ = {
+		D52BEFED19137017DCA7C015 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DD77678351CA080044C74E43 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -387,6 +411,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MNAdSdk_Tests/Pods-MNAdSdk_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F920EC4B4B25AFC7DCDB6312 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -395,8 +434,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* MNAppDelegate.m in Sources */,
+				AED94DF01E72DF7300470329 /* MNDemoConstants.m in Sources */,
 				6003F5A7195388D20070C39A /* MNViewController.m in Sources */,
+				658923A71E5D7F5500AE4395 /* MPGoogleAdMobBannerCustomEvent.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				8A007A661E55B1D50006E667 /* MNShowAdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,14 +501,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -499,13 +546,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -521,37 +573,49 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03D3D742E676F47E22B18406 /* Pods-MNAdSdk_Example.debug.xcconfig */;
+			baseConfigurationReference = 7A3FF8073DE49C63EF37C1DA /* Pods-MNAdSdk_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S5RLSEZ259;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MNAdSdk/MNAdSdk-Prefix.pch";
 				INFOPLIST_FILE = "MNAdSdk/MNAdSdk-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = net.media.ads.demo;
+				PRODUCT_NAME = MNAdSDKDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE289841DED23AD285C56423 /* Pods-MNAdSdk_Example.release.xcconfig */;
+			baseConfigurationReference = 825309605DB4AFD0FE3E08C2 /* Pods-MNAdSdk_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S5RLSEZ259;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MNAdSdk/MNAdSdk-Prefix.pch";
 				INFOPLIST_FILE = "MNAdSdk/MNAdSdk-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = net.media.ads.demo;
+				PRODUCT_NAME = MNAdSDKDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 432D9CA875FC20DB252E0EAC /* Pods-MNAdSdk_Tests.debug.xcconfig */;
+			baseConfigurationReference = F790549A7CB496D08280AE0A /* Pods-MNAdSdk_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -575,7 +639,7 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 799DA14BE3658B5DCE9829CA /* Pods-MNAdSdk_Tests.release.xcconfig */;
+			baseConfigurationReference = 5CF5A95E8555E332C43DF466 /* Pods-MNAdSdk_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

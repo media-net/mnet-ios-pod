@@ -2,16 +2,21 @@
 //  MNAppDelegate.m
 //  MNAdSdk
 //
-//  Created by gnithin on 03/15/2017.
-//  Copyright (c) 2017 gnithin. All rights reserved.
+//  Created by Nithin on 02/15/2017.
+//  Copyright (c) 2017 Nithin. All rights reserved.
 //
 
 #import "MNAppDelegate.h"
+@import GoogleMobileAds;
+#import <AFNetworkActivityLogger/AFNetworkActivityLogger.h>
 
 @implementation MNAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
+     [GADMobileAds configureWithApplicationID:@"ca-app-pub-6365858186554077~2677656745"];    
     // Override point for customization after application launch.
     return YES;
 }

@@ -1,0 +1,37 @@
+{
+  "authors": {
+    "Nithin": "nithin.linkin@gmail.com"
+  },
+  "description": "TODO: Add long description of the pod here.",
+  "frameworks": [
+    "CoreLocation",
+    "WebKit",
+    "AdSupport",
+    "MobileCoreServices",
+    "SystemConfiguration",
+    "CoreTelephony"
+  ],
+  "homepage": "https://github.com/media-net/ios-ad-sdk",
+  "ios": {
+    "resources": [
+      "MNAdSdk/ios/MNAdSdk.framework/**/*.xib",
+      "MNAdSdk/ios/MNAdSdk.framework/**/*.png"
+    ],
+    "vendored_frameworks": "MNAdSdk/ios/MNAdSdk.framework"
+  },
+  "libraries": "c++",
+  "license": {
+    "file": "LICENSE",
+    "type": "MIT"
+  },
+  "name": "MNAdSdk",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "branch": "master",
+    "git": "https://github.com/media-net/mnet-ios-pod.git"
+  },
+  "summary": "A short description of MNAdSdk.",
+  "version": "0.1.1"
+}

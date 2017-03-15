@@ -2,8 +2,8 @@
 //  MNAdSdkTests.m
 //  MNAdSdkTests
 //
-//  Created by gnithin on 03/15/2017.
-//  Copyright (c) 2017 gnithin. All rights reserved.
+//  Created by Nithin on 02/15/2017.
+//  Copyright (c) 2017 Nithin. All rights reserved.
 //
 
 @import XCTest;
