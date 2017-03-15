@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MNAdSdk_Example' do
+  pod 'MNAdSdk', :path => '../'
+
+  target 'MNAdSdk_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
