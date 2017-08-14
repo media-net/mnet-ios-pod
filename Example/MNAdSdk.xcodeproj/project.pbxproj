@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32409B70C909ED8C71F2CD91 /* Pods_MNAdSdk_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4169C07039C339829F5BC5 /* Pods_MNAdSdk_Tests.framework */; };
+		07623808726413915A2E6AF7 /* Pods_MNAdSdk_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B78D3F7E744283061DA145 /* Pods_MNAdSdk_Example.framework */; };
+		1088C576D389AC8BE3B950CF /* Pods_MNAdSdk_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1598FA95424A2997D8A3BB8D /* Pods_MNAdSdk_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -20,16 +21,54 @@
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		6565F6761E56F473004205F3 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658E843E1E56F21E00F29110 /* AFNetworking.framework */; };
-		658923A71E5D7F5500AE4395 /* MPGoogleAdMobBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 658923A61E5D7F5500AE4395 /* MPGoogleAdMobBannerCustomEvent.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		77113AD29871EFBABA761919 /* Pods_MNAdSdk_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BBB419142384000336FABC /* Pods_MNAdSdk_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		8A007A661E55B1D50006E667 /* MNShowAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A007A651E55B1D50006E667 /* MNShowAdViewController.m */; };
-		8A346A3C1E56F213004013FE /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A346A3B1E56F213004013FE /* AFNetworking.framework */; };
+		8A34F3951EAE32D600144B72 /* vast-linear.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8A34F3941EAE32D600144B72 /* vast-linear.xml */; };
+		8A34F39D1EAE37EB00144B72 /* vast-linear-inline.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8A34F39C1EAE37EB00144B72 /* vast-linear-inline.xml */; };
+		8A39B1A71EAF63CE00F2915F /* MNetTestVideoLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A39B1A61EAF63CE00F2915F /* MNetTestVideoLoad.m */; };
+		8A49676E1EAF873C0032C550 /* adResponseVideo320x250.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A39B1A81EAF6AD600F2915F /* adResponseVideo320x250.json */; };
+		8A70D3ED1EB092DA00F4B63E /* MNetTestRewardedVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A70D3EC1EB092DA00F4B63E /* MNetTestRewardedVideo.m */; };
+		8A70D3F01EB0984800F4B63E /* rewardedResponseVideo320x250.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A70D3EE1EB0970C00F4B63E /* rewardedResponseVideo320x250.json */; };
+		8A70D3F41EB09A0700F4B63E /* MNetTestInterstitialVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A70D3F31EB09A0700F4B63E /* MNetTestInterstitialVideo.m */; };
+		8AEF2CBE1EAE2E6F00BAE4DE /* MNetVASTParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF2CBD1EAE2E6F00BAE4DE /* MNetVASTParserTest.m */; };
+		AE1241051EAE94CC00EED2F4 /* MNetTestBannerIncomplete.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1241041EAE94CC00EED2F4 /* MNetTestBannerIncomplete.m */; };
+		AE2B50161F0AC3EA00E7D804 /* MNetAdAnalyticsLoggingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2B50151F0AC3EA00E7D804 /* MNetAdAnalyticsLoggingTests.m */; };
+		AE33C9011EAE9078003BF9ED /* XCTest+MNetTestUtils.h in Sources */ = {isa = PBXBuildFile; fileRef = AE33C8FE1EAE9064003BF9ED /* XCTest+MNetTestUtils.h */; };
+		AE33C9021EAE9078003BF9ED /* XCTest+MNetTestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AE33C8FF1EAE9064003BF9ED /* XCTest+MNetTestUtils.m */; };
+		AE3D8B031EF9526800CC80F0 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3D8B021EF9526800CC80F0 /* GameKit.framework */; };
+		AE3D8B051EF952B100CC80F0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3D8B041EF952B100CC80F0 /* StoreKit.framework */; };
 		AE47A8F41E699C2D00B6E5E8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE47A8F31E699C2D00B6E5E8 /* CoreLocation.framework */; };
+		AE4A8BC61F27174A00295139 /* MNetPulseStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4A8BC51F27174A00295139 /* MNetPulseStoreTests.m */; };
+		AE533AC21F31AD6100AC145D /* MNetAppContentManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE533AC11F31AD6100AC145D /* MNetAppContentManagerTest.m */; };
+		AE5548931F2B10D80087ADD1 /* MNetTestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5548921F2B10D80087ADD1 /* MNetTestManager.m */; };
+		AE5754CC1F2A16DA00D55E93 /* MNetHttpClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5754CB1F2A16DA00D55E93 /* MNetHttpClientTests.m */; };
+		AE59CD0A1F2B7A5800704798 /* MNetJSONToObjectParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE59CD091F2B7A5800704798 /* MNetJSONToObjectParserTests.m */; };
+		AE59CD0C1F2BC0A400704798 /* MNetSampleRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = AE59CD0B1F2BC0A400704798 /* MNetSampleRequest.json */; };
+		AE75A4951EAE9D8D00B782D5 /* MNetTestBannerLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = AE75A4941EAE9D8D00B782D5 /* MNetTestBannerLoad.m */; };
+		AE75A4991EAEA5C700B782D5 /* adResponseBanner320x50.json in Resources */ = {isa = PBXBuildFile; fileRef = AE75A4971EAEA27C00B782D5 /* adResponseBanner320x50.json */; };
+		AE7D62171EBC7E5D00154D42 /* MNetTestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7D62161EBC7E5D00154D42 /* MNetTestUtils.m */; };
+		AE8328D01F2B489200757B25 /* MNetVideoInterstitialWithBannerDelegates.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8328CF1F2B489200757B25 /* MNetVideoInterstitialWithBannerDelegates.m */; };
+		AE86824A1EAE7FCB00C00F28 /* MNetTestBannerSansParent.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8682491EAE7FCB00C00F28 /* MNetTestBannerSansParent.m */; };
+		AE88978A1F174F82009C60B2 /* MNetSdkConfigTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8897891F174F82009C60B2 /* MNetSdkConfigTests.m */; };
+		AE8F83421F136D58001D9E48 /* MNetSdkConfigResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = AE8F83411F136D58001D9E48 /* MNetSdkConfigResponse.json */; };
+		AE9EED331F3476D700C00C15 /* MNetUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9EED321F3476D700C00C15 /* MNetUserTests.m */; };
+		AEA2C8791F13531900DEB792 /* MNetPrefetchObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA2C8781F13531900DEB792 /* MNetPrefetchObjectTest.m */; };
+		AEA2C87B1F13539D00DEB792 /* MNetAdxResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = AEA2C87A1F13539D00DEB792 /* MNetAdxResponse.json */; };
+		AEA759D11EAF43350071701D /* MNetTestBannerNoAd.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA759D01EAF43350071701D /* MNetTestBannerNoAd.m */; };
+		AEA759D41EAF44330071701D /* noAdResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = AEA759D21EAF440B0071701D /* noAdResponse.json */; };
+		AEA759D71EAF4C640071701D /* MNetTestInterstitialLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA759D61EAF4C640071701D /* MNetTestInterstitialLoad.m */; };
+		AEA759DB1EAF4CA60071701D /* MNetTestInterstitialIncomplete.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA759DA1EAF4CA60071701D /* MNetTestInterstitialIncomplete.m */; };
+		AEA759DD1EAF4CC30071701D /* MNetTestInterstitialNoAd.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA759DC1EAF4CC30071701D /* MNetTestInterstitialNoAd.m */; };
+		AEA759DF1EAF55C80071701D /* adResponseBanner300x250.json in Resources */ = {isa = PBXBuildFile; fileRef = AEA759DE1EAF55C80071701D /* adResponseBanner300x250.json */; };
+		AEAE57B31EAFCF1A00430540 /* MNetTestAdRequestFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE57B21EAFCF1A00430540 /* MNetTestAdRequestFormat.m */; };
+		AEB5AE821F1511910055C58A /* MNetHBFilterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB5AE811F1511910055C58A /* MNetHBFilterTest.m */; };
 		AED94DF01E72DF7300470329 /* MNDemoConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AED94DEF1E72DF7300470329 /* MNDemoConstants.m */; };
+		AEDA10291F28779E00A28A6F /* MNetURLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDA10281F28779E00A28A6F /* MNetURLTests.m */; };
+		AEDC59531F324A5800228A69 /* MNetSampleModelClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDC59521F324A5800228A69 /* MNetSampleModelClass.m */; };
+		AEDC59551F324D2000228A69 /* MNetSampleJSONContent.json in Resources */ = {isa = PBXBuildFile; fileRef = AEDC59541F324D2000228A69 /* MNetSampleJSONContent.json */; };
+		AEDC59571F3260B200228A69 /* MNetBidResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = AEDC59561F3260B200228A69 /* MNetBidResponse.json */; };
+		AEFC29831F2B419E004A5F93 /* MNetVideoWithBannerDelegates.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFC29821F2B419E004A5F93 /* MNetVideoWithBannerDelegates.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +82,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1598FA95424A2997D8A3BB8D /* Pods_MNAdSdk_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNAdSdk_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CFFBA2A88C60BD841B35E20 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		49BBB419142384000336FABC /* Pods_MNAdSdk_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNAdSdk_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CF5A95E8555E332C43DF466 /* Pods-MNAdSdk_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNAdSdk_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MNAdSdk_Tests/Pods-MNAdSdk_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* MNAdSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MNAdSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,24 +102,67 @@
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		658923A51E5D7F5500AE4395 /* MPGoogleAdMobBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPGoogleAdMobBannerCustomEvent.h; path = custom/MPGoogleAdMobBannerCustomEvent.h; sourceTree = "<group>"; };
-		658923A61E5D7F5500AE4395 /* MPGoogleAdMobBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPGoogleAdMobBannerCustomEvent.m; path = custom/MPGoogleAdMobBannerCustomEvent.m; sourceTree = "<group>"; };
 		658E843E1E56F21E00F29110 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "../../../Library/Developer/Xcode/DerivedData/MNAdSdk-boowncofsgzqucdrcocfvcliifig/Build/Products/Debug-iphonesimulator/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75A018B7A97D83671E0083E7 /* MNAdSdk.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MNAdSdk.podspec; path = ../MNAdSdk.podspec; sourceTree = "<group>"; };
 		7A3FF8073DE49C63EF37C1DA /* Pods-MNAdSdk_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNAdSdk_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		7B4169C07039C339829F5BC5 /* Pods_MNAdSdk_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNAdSdk_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		825309605DB4AFD0FE3E08C2 /* Pods-MNAdSdk_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNAdSdk_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A007A641E55B1D50006E667 /* MNShowAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNShowAdViewController.h; sourceTree = "<group>"; };
 		8A007A651E55B1D50006E667 /* MNShowAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNShowAdViewController.m; sourceTree = "<group>"; };
 		8A346A3B1E56F213004013FE /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
+		8A34F3941EAE32D600144B72 /* vast-linear.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "vast-linear.xml"; sourceTree = "<group>"; };
+		8A34F39C1EAE37EB00144B72 /* vast-linear-inline.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "vast-linear-inline.xml"; sourceTree = "<group>"; };
+		8A39B1A61EAF63CE00F2915F /* MNetTestVideoLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestVideoLoad.m; sourceTree = "<group>"; };
+		8A39B1A81EAF6AD600F2915F /* adResponseVideo320x250.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = adResponseVideo320x250.json; sourceTree = "<group>"; };
+		8A70D3EC1EB092DA00F4B63E /* MNetTestRewardedVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestRewardedVideo.m; sourceTree = "<group>"; };
+		8A70D3EE1EB0970C00F4B63E /* rewardedResponseVideo320x250.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rewardedResponseVideo320x250.json; sourceTree = "<group>"; };
+		8A70D3F31EB09A0700F4B63E /* MNetTestInterstitialVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestInterstitialVideo.m; sourceTree = "<group>"; };
+		8AEF2CBD1EAE2E6F00BAE4DE /* MNetVASTParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetVASTParserTest.m; sourceTree = "<group>"; };
+		AE1241041EAE94CC00EED2F4 /* MNetTestBannerIncomplete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestBannerIncomplete.m; sourceTree = "<group>"; };
+		AE2B50151F0AC3EA00E7D804 /* MNetAdAnalyticsLoggingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetAdAnalyticsLoggingTests.m; sourceTree = "<group>"; };
+		AE2FF7E21ED2F894006261E6 /* MNAdSDKDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MNAdSDKDemo.entitlements; sourceTree = "<group>"; };
+		AE33C8FE1EAE9064003BF9ED /* XCTest+MNetTestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTest+MNetTestUtils.h"; sourceTree = "<group>"; };
+		AE33C8FF1EAE9064003BF9ED /* XCTest+MNetTestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCTest+MNetTestUtils.m"; sourceTree = "<group>"; };
+		AE3D8B021EF9526800CC80F0 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		AE3D8B041EF952B100CC80F0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AE47A8F31E699C2D00B6E5E8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AE4A8BC51F27174A00295139 /* MNetPulseStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetPulseStoreTests.m; sourceTree = "<group>"; };
+		AE533AC11F31AD6100AC145D /* MNetAppContentManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetAppContentManagerTest.m; sourceTree = "<group>"; };
+		AE5548911F2B10D80087ADD1 /* MNetTestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNetTestManager.h; sourceTree = "<group>"; };
+		AE5548921F2B10D80087ADD1 /* MNetTestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestManager.m; sourceTree = "<group>"; };
+		AE5754CB1F2A16DA00D55E93 /* MNetHttpClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetHttpClientTests.m; sourceTree = "<group>"; };
+		AE59CD091F2B7A5800704798 /* MNetJSONToObjectParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetJSONToObjectParserTests.m; sourceTree = "<group>"; };
+		AE59CD0B1F2BC0A400704798 /* MNetSampleRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MNetSampleRequest.json; sourceTree = "<group>"; };
+		AE75A4941EAE9D8D00B782D5 /* MNetTestBannerLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestBannerLoad.m; sourceTree = "<group>"; };
+		AE75A4971EAEA27C00B782D5 /* adResponseBanner320x50.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = adResponseBanner320x50.json; sourceTree = "<group>"; };
+		AE7D62161EBC7E5D00154D42 /* MNetTestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestUtils.m; sourceTree = "<group>"; };
+		AE8328CF1F2B489200757B25 /* MNetVideoInterstitialWithBannerDelegates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetVideoInterstitialWithBannerDelegates.m; sourceTree = "<group>"; };
+		AE8682491EAE7FCB00C00F28 /* MNetTestBannerSansParent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestBannerSansParent.m; sourceTree = "<group>"; };
+		AE8897891F174F82009C60B2 /* MNetSdkConfigTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetSdkConfigTests.m; sourceTree = "<group>"; };
+		AE8F83411F136D58001D9E48 /* MNetSdkConfigResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MNetSdkConfigResponse.json; sourceTree = "<group>"; };
+		AE9EED321F3476D700C00C15 /* MNetUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetUserTests.m; sourceTree = "<group>"; };
+		AEA2C8781F13531900DEB792 /* MNetPrefetchObjectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetPrefetchObjectTest.m; sourceTree = "<group>"; };
+		AEA2C87A1F13539D00DEB792 /* MNetAdxResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MNetAdxResponse.json; sourceTree = "<group>"; };
+		AEA759D01EAF43350071701D /* MNetTestBannerNoAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestBannerNoAd.m; sourceTree = "<group>"; };
+		AEA759D21EAF440B0071701D /* noAdResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = noAdResponse.json; sourceTree = "<group>"; };
+		AEA759D61EAF4C640071701D /* MNetTestInterstitialLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestInterstitialLoad.m; sourceTree = "<group>"; };
+		AEA759DA1EAF4CA60071701D /* MNetTestInterstitialIncomplete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestInterstitialIncomplete.m; sourceTree = "<group>"; };
+		AEA759DC1EAF4CC30071701D /* MNetTestInterstitialNoAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestInterstitialNoAd.m; sourceTree = "<group>"; };
+		AEA759DE1EAF55C80071701D /* adResponseBanner300x250.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = adResponseBanner300x250.json; sourceTree = "<group>"; };
+		AEAE57B21EAFCF1A00430540 /* MNetTestAdRequestFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestAdRequestFormat.m; sourceTree = "<group>"; };
+		AEB5AE811F1511910055C58A /* MNetHBFilterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetHBFilterTest.m; sourceTree = "<group>"; };
 		AED94DEE1E72DF7300470329 /* MNDemoConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNDemoConstants.h; sourceTree = "<group>"; };
 		AED94DEF1E72DF7300470329 /* MNDemoConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNDemoConstants.m; sourceTree = "<group>"; };
+		AEDA10281F28779E00A28A6F /* MNetURLTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetURLTests.m; sourceTree = "<group>"; };
+		AEDC59511F324A5800228A69 /* MNetSampleModelClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNetSampleModelClass.h; sourceTree = "<group>"; };
+		AEDC59521F324A5800228A69 /* MNetSampleModelClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetSampleModelClass.m; sourceTree = "<group>"; };
+		AEDC59541F324D2000228A69 /* MNetSampleJSONContent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MNetSampleJSONContent.json; sourceTree = "<group>"; };
+		AEDC59561F3260B200228A69 /* MNetBidResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MNetBidResponse.json; sourceTree = "<group>"; };
+		AEFC29821F2B419E004A5F93 /* MNetVideoWithBannerDelegates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetVideoWithBannerDelegates.m; sourceTree = "<group>"; };
 		C0113688D2A91095D90F0AD8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E1B78D3F7E744283061DA145 /* Pods_MNAdSdk_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MNAdSdk_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F790549A7CB496D08280AE0A /* Pods-MNAdSdk_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MNAdSdk_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MNAdSdk_Tests/Pods-MNAdSdk_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,12 +172,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE47A8F41E699C2D00B6E5E8 /* CoreLocation.framework in Frameworks */,
-				6565F6761E56F473004205F3 /* AFNetworking.framework in Frameworks */,
-				8A346A3C1E56F213004013FE /* AFNetworking.framework in Frameworks */,
+				AE3D8B051EF952B100CC80F0 /* StoreKit.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
+				AE3D8B031EF9526800CC80F0 /* GameKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				77113AD29871EFBABA761919 /* Pods_MNAdSdk_Example.framework in Frameworks */,
+				07623808726413915A2E6AF7 /* Pods_MNAdSdk_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +188,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				32409B70C909ED8C71F2CD91 /* Pods_MNAdSdk_Tests.framework in Frameworks */,
+				1088C576D389AC8BE3B950CF /* Pods_MNAdSdk_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +198,7 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				AE2FF7E21ED2F894006261E6 /* MNAdSDKDemo.entitlements */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for MNAdSdk */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -138,6 +221,8 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE3D8B041EF952B100CC80F0 /* StoreKit.framework */,
+				AE3D8B021EF9526800CC80F0 /* GameKit.framework */,
 				AE47A8F31E699C2D00B6E5E8 /* CoreLocation.framework */,
 				658E843E1E56F21E00F29110 /* AFNetworking.framework */,
 				8A346A3B1E56F213004013FE /* AFNetworking.framework */,
@@ -145,8 +230,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				49BBB419142384000336FABC /* Pods_MNAdSdk_Example.framework */,
-				7B4169C07039C339829F5BC5 /* Pods_MNAdSdk_Tests.framework */,
+				E1B78D3F7E744283061DA145 /* Pods_MNAdSdk_Example.framework */,
+				1598FA95424A2997D8A3BB8D /* Pods_MNAdSdk_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -154,7 +239,6 @@
 		6003F593195388D20070C39A /* Example for MNAdSdk */ = {
 			isa = PBXGroup;
 			children = (
-				658923A81E5D7FC800AE4395 /* custom */,
 				6003F59C195388D20070C39A /* MNAppDelegate.h */,
 				6003F59D195388D20070C39A /* MNAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -186,8 +270,27 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5BB195388D20070C39A /* Tests.m */,
+				AE9EED311F3476B800C00C15 /* MNetUserTests */,
+				AE533AC01F31AD4200AC145D /* MNetAppContents */,
+				AE59CD081F2B7A3400704798 /* MNetJSONTests */,
+				AE5754CA1F2A16B900D55E93 /* MNetHttpClientTests */,
+				AEDA10271F28778500A28A6F /* MNetURL */,
+				AE4A8BC41F2716F100295139 /* MNetPulseTests */,
+				AE8897881F174F58009C60B2 /* MNetSdkConfigTests */,
+				AEB5AE801F1511640055C58A /* MNetHBFilter */,
+				AE2B50141F0AC3C200E7D804 /* MNetAnalyticsTests */,
+				AE7D62151EBC7E3B00154D42 /* MNetUtils */,
+				8A39B1A51EAF63B500F2915F /* MNetVideoAdTests */,
+				AEAE57B11EAFCEF700430540 /* MNetAdRequests */,
+				AEA759D51EAF4C3D0071701D /* MNetInterstitialAdTests */,
+				AE75A4961EAEA24A00B782D5 /* TestAssets */,
+				AED315501EAE898E000A2825 /* MNetBannerAdTests */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
+				8AEF2CBD1EAE2E6F00BAE4DE /* MNetVASTParserTest.m */,
+				AE33C8FE1EAE9064003BF9ED /* XCTest+MNetTestUtils.h */,
+				AE33C8FF1EAE9064003BF9ED /* XCTest+MNetTestUtils.m */,
+				AE5548911F2B10D80087ADD1 /* MNetTestManager.h */,
+				AE5548921F2B10D80087ADD1 /* MNetTestManager.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -212,13 +315,155 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		658923A81E5D7FC800AE4395 /* custom */ = {
+		8A34F3961EAE32F300144B72 /* VastXML */ = {
 			isa = PBXGroup;
 			children = (
-				658923A51E5D7F5500AE4395 /* MPGoogleAdMobBannerCustomEvent.h */,
-				658923A61E5D7F5500AE4395 /* MPGoogleAdMobBannerCustomEvent.m */,
+				8A34F3941EAE32D600144B72 /* vast-linear.xml */,
+				8A34F39C1EAE37EB00144B72 /* vast-linear-inline.xml */,
 			);
-			name = custom;
+			name = VastXML;
+			sourceTree = "<group>";
+		};
+		8A39B1A51EAF63B500F2915F /* MNetVideoAdTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A39B1A61EAF63CE00F2915F /* MNetTestVideoLoad.m */,
+				8A70D3EC1EB092DA00F4B63E /* MNetTestRewardedVideo.m */,
+				8A70D3F31EB09A0700F4B63E /* MNetTestInterstitialVideo.m */,
+				AEFC29821F2B419E004A5F93 /* MNetVideoWithBannerDelegates.m */,
+				AE8328CF1F2B489200757B25 /* MNetVideoInterstitialWithBannerDelegates.m */,
+			);
+			name = MNetVideoAdTests;
+			sourceTree = "<group>";
+		};
+		AE2B50141F0AC3C200E7D804 /* MNetAnalyticsTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE2B50151F0AC3EA00E7D804 /* MNetAdAnalyticsLoggingTests.m */,
+			);
+			name = MNetAnalyticsTests;
+			sourceTree = "<group>";
+		};
+		AE4A8BC41F2716F100295139 /* MNetPulseTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE4A8BC51F27174A00295139 /* MNetPulseStoreTests.m */,
+			);
+			name = MNetPulseTests;
+			sourceTree = "<group>";
+		};
+		AE533AC01F31AD4200AC145D /* MNetAppContents */ = {
+			isa = PBXGroup;
+			children = (
+				AE533AC11F31AD6100AC145D /* MNetAppContentManagerTest.m */,
+			);
+			name = MNetAppContents;
+			sourceTree = "<group>";
+		};
+		AE5754CA1F2A16B900D55E93 /* MNetHttpClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE5754CB1F2A16DA00D55E93 /* MNetHttpClientTests.m */,
+			);
+			name = MNetHttpClientTests;
+			sourceTree = "<group>";
+		};
+		AE59CD081F2B7A3400704798 /* MNetJSONTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE59CD091F2B7A5800704798 /* MNetJSONToObjectParserTests.m */,
+				AEDC59511F324A5800228A69 /* MNetSampleModelClass.h */,
+				AEDC59521F324A5800228A69 /* MNetSampleModelClass.m */,
+			);
+			name = MNetJSONTests;
+			sourceTree = "<group>";
+		};
+		AE75A4961EAEA24A00B782D5 /* TestAssets */ = {
+			isa = PBXGroup;
+			children = (
+				8A34F3961EAE32F300144B72 /* VastXML */,
+				AEA759D21EAF440B0071701D /* noAdResponse.json */,
+				AE59CD0B1F2BC0A400704798 /* MNetSampleRequest.json */,
+				AE75A4971EAEA27C00B782D5 /* adResponseBanner320x50.json */,
+				AEA759DE1EAF55C80071701D /* adResponseBanner300x250.json */,
+				8A39B1A81EAF6AD600F2915F /* adResponseVideo320x250.json */,
+				8A70D3EE1EB0970C00F4B63E /* rewardedResponseVideo320x250.json */,
+				AEA2C87A1F13539D00DEB792 /* MNetAdxResponse.json */,
+				AE8F83411F136D58001D9E48 /* MNetSdkConfigResponse.json */,
+				AEDC59541F324D2000228A69 /* MNetSampleJSONContent.json */,
+				AEDC59561F3260B200228A69 /* MNetBidResponse.json */,
+			);
+			name = TestAssets;
+			sourceTree = "<group>";
+		};
+		AE7D62151EBC7E3B00154D42 /* MNetUtils */ = {
+			isa = PBXGroup;
+			children = (
+				AE7D62161EBC7E5D00154D42 /* MNetTestUtils.m */,
+			);
+			name = MNetUtils;
+			sourceTree = "<group>";
+		};
+		AE8897881F174F58009C60B2 /* MNetSdkConfigTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE8897891F174F82009C60B2 /* MNetSdkConfigTests.m */,
+			);
+			name = MNetSdkConfigTests;
+			sourceTree = "<group>";
+		};
+		AE9EED311F3476B800C00C15 /* MNetUserTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE9EED321F3476D700C00C15 /* MNetUserTests.m */,
+			);
+			name = MNetUserTests;
+			sourceTree = "<group>";
+		};
+		AEA759D51EAF4C3D0071701D /* MNetInterstitialAdTests */ = {
+			isa = PBXGroup;
+			children = (
+				AEA759D61EAF4C640071701D /* MNetTestInterstitialLoad.m */,
+				AEA759DA1EAF4CA60071701D /* MNetTestInterstitialIncomplete.m */,
+				AEA759DC1EAF4CC30071701D /* MNetTestInterstitialNoAd.m */,
+			);
+			name = MNetInterstitialAdTests;
+			sourceTree = "<group>";
+		};
+		AEAE57B11EAFCEF700430540 /* MNetAdRequests */ = {
+			isa = PBXGroup;
+			children = (
+				AEAE57B21EAFCF1A00430540 /* MNetTestAdRequestFormat.m */,
+			);
+			name = MNetAdRequests;
+			sourceTree = "<group>";
+		};
+		AEB5AE801F1511640055C58A /* MNetHBFilter */ = {
+			isa = PBXGroup;
+			children = (
+				AEB5AE811F1511910055C58A /* MNetHBFilterTest.m */,
+			);
+			name = MNetHBFilter;
+			sourceTree = "<group>";
+		};
+		AED315501EAE898E000A2825 /* MNetBannerAdTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE8682491EAE7FCB00C00F28 /* MNetTestBannerSansParent.m */,
+				AE1241041EAE94CC00EED2F4 /* MNetTestBannerIncomplete.m */,
+				AE75A4941EAE9D8D00B782D5 /* MNetTestBannerLoad.m */,
+				AEA759D01EAF43350071701D /* MNetTestBannerNoAd.m */,
+				AEA2C8781F13531900DEB792 /* MNetPrefetchObjectTest.m */,
+			);
+			name = MNetBannerAdTests;
+			sourceTree = "<group>";
+		};
+		AEDA10271F28778500A28A6F /* MNetURL */ = {
+			isa = PBXGroup;
+			children = (
+				AEDA10281F28779E00A28A6F /* MNetURLTests.m */,
+			);
+			name = MNetURL;
 			sourceTree = "<group>";
 		};
 		F9D1D932C09E8B7C1D219359 /* Pods */ = {
@@ -287,7 +532,28 @@
 				ORGANIZATIONNAME = Nithin;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = S5RLSEZ259;
+						DevelopmentTeam = B4X8EQS24E;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -329,7 +595,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A70D3F01EB0984800F4B63E /* rewardedResponseVideo320x250.json in Resources */,
+				8A49676E1EAF873C0032C550 /* adResponseVideo320x250.json in Resources */,
+				AEA759DF1EAF55C80071701D /* adResponseBanner300x250.json in Resources */,
+				AEA759D41EAF44330071701D /* noAdResponse.json in Resources */,
+				AEA2C87B1F13539D00DEB792 /* MNetAdxResponse.json in Resources */,
+				AEDC59571F3260B200228A69 /* MNetBidResponse.json in Resources */,
+				AE59CD0C1F2BC0A400704798 /* MNetSampleRequest.json in Resources */,
+				AE75A4991EAEA5C700B782D5 /* adResponseBanner320x50.json in Resources */,
+				8A34F3951EAE32D600144B72 /* vast-linear.xml in Resources */,
+				8A34F39D1EAE37EB00144B72 /* vast-linear-inline.xml in Resources */,
+				AEDC59551F324D2000228A69 /* MNetSampleJSONContent.json in Resources */,
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
+				AE8F83421F136D58001D9E48 /* MNetSdkConfigResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +714,6 @@
 				6003F59E195388D20070C39A /* MNAppDelegate.m in Sources */,
 				AED94DF01E72DF7300470329 /* MNDemoConstants.m in Sources */,
 				6003F5A7195388D20070C39A /* MNViewController.m in Sources */,
-				658923A71E5D7F5500AE4395 /* MPGoogleAdMobBannerCustomEvent.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				8A007A661E55B1D50006E667 /* MNShowAdViewController.m in Sources */,
 			);
@@ -446,7 +723,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				AE33C9011EAE9078003BF9ED /* XCTest+MNetTestUtils.h in Sources */,
+				AE533AC21F31AD6100AC145D /* MNetAppContentManagerTest.m in Sources */,
+				AE4A8BC61F27174A00295139 /* MNetPulseStoreTests.m in Sources */,
+				AEB5AE821F1511910055C58A /* MNetHBFilterTest.m in Sources */,
+				AE7D62171EBC7E5D00154D42 /* MNetTestUtils.m in Sources */,
+				AE8328D01F2B489200757B25 /* MNetVideoInterstitialWithBannerDelegates.m in Sources */,
+				AEDC59531F324A5800228A69 /* MNetSampleModelClass.m in Sources */,
+				8A39B1A71EAF63CE00F2915F /* MNetTestVideoLoad.m in Sources */,
+				AE2B50161F0AC3EA00E7D804 /* MNetAdAnalyticsLoggingTests.m in Sources */,
+				AEA759D11EAF43350071701D /* MNetTestBannerNoAd.m in Sources */,
+				AE33C9021EAE9078003BF9ED /* XCTest+MNetTestUtils.m in Sources */,
+				AE5754CC1F2A16DA00D55E93 /* MNetHttpClientTests.m in Sources */,
+				AEA2C8791F13531900DEB792 /* MNetPrefetchObjectTest.m in Sources */,
+				AEDA10291F28779E00A28A6F /* MNetURLTests.m in Sources */,
+				AE1241051EAE94CC00EED2F4 /* MNetTestBannerIncomplete.m in Sources */,
+				AEFC29831F2B419E004A5F93 /* MNetVideoWithBannerDelegates.m in Sources */,
+				AE88978A1F174F82009C60B2 /* MNetSdkConfigTests.m in Sources */,
+				AE5548931F2B10D80087ADD1 /* MNetTestManager.m in Sources */,
+				AE9EED331F3476D700C00C15 /* MNetUserTests.m in Sources */,
+				AEAE57B31EAFCF1A00430540 /* MNetTestAdRequestFormat.m in Sources */,
+				8A70D3ED1EB092DA00F4B63E /* MNetTestRewardedVideo.m in Sources */,
+				AEA759DD1EAF4CC30071701D /* MNetTestInterstitialNoAd.m in Sources */,
+				AEA759D71EAF4C640071701D /* MNetTestInterstitialLoad.m in Sources */,
+				8A70D3F41EB09A0700F4B63E /* MNetTestInterstitialVideo.m in Sources */,
+				AEA759DB1EAF4CA60071701D /* MNetTestInterstitialIncomplete.m in Sources */,
+				AE86824A1EAE7FCB00C00F28 /* MNetTestBannerSansParent.m in Sources */,
+				8AEF2CBE1EAE2E6F00BAE4DE /* MNetVASTParserTest.m in Sources */,
+				AE59CD0A1F2B7A5800704798 /* MNetJSONToObjectParserTests.m in Sources */,
+				AE75A4951EAE9D8D00B782D5 /* MNetTestBannerLoad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +814,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DISPLAY_NAME = "MNetSdk Staging";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -554,6 +860,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DISPLAY_NAME = "MNetSdk Demo";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -576,7 +883,10 @@
 			baseConfigurationReference = 7A3FF8073DE49C63EF37C1DA /* Pods-MNAdSdk_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S5RLSEZ259;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CODE_SIGN_ENTITLEMENTS = MNAdSDKDemo.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B4X8EQS24E;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
@@ -584,9 +894,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MNAdSdk/MNAdSdk-Prefix.pch";
 				INFOPLIST_FILE = "MNAdSdk/MNAdSdk-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = net.media.ads.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = net.media.MNAdSDKDemo;
 				PRODUCT_NAME = MNAdSDKDemo;
 				WRAPPER_EXTENSION = app;
 			};
@@ -597,7 +907,10 @@
 			baseConfigurationReference = 825309605DB4AFD0FE3E08C2 /* Pods-MNAdSdk_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S5RLSEZ259;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CODE_SIGN_ENTITLEMENTS = MNAdSDKDemo.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B4X8EQS24E;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
@@ -605,9 +918,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MNAdSdk/MNAdSdk-Prefix.pch";
 				INFOPLIST_FILE = "MNAdSdk/MNAdSdk-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = net.media.ads.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = net.media.MNAdSDKDemo;
 				PRODUCT_NAME = MNAdSDKDemo;
 				WRAPPER_EXTENSION = app;
 			};
@@ -632,7 +945,7 @@
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MNAdSdk_Example.app/MNAdSdk_Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MNAdSDKDemo.app/MNAdSDKDemo";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -652,7 +965,7 @@
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MNAdSdk_Example.app/MNAdSdk_Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MNAdSDKDemo.app/MNAdSDKDemo";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
