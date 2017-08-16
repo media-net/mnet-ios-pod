@@ -2,7 +2,7 @@ use_frameworks!
 
 target 'MNAdSdk_Example' do
   # This is equivalent to 'MNAdSdk/Base'
-  pod 'MNAdSdk', :path => '../MNAdSdk.podspec.json'
+  pod 'MNetAdSdk', :path => '../MNetAdSdk.podspec.json'
   pod 'mopub-ios-sdk', '~> 4.12.0'
   pod 'MBProgressHUD'
   pod 'Firebase/Core'
@@ -13,6 +13,7 @@ target 'MNAdSdk_Example' do
 
 target 'MNAdSdk_Tests' do
     inherit! :search_paths
+    pod 'Nocilla'
 end
 
 end

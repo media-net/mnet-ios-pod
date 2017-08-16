@@ -8,32 +8,18 @@
 
 
 @import UIKit;
+#import <CoreLocation/CoreLocation.h>
 
+@interface MNViewController : UIViewController <CLLocationManagerDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *adsTableView;
+@property (weak, nonatomic) IBOutlet UIView *topBar;
 
-@interface MNViewController : UIViewController
+@end
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@interface MNAdViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UIView *separator;
 
-@property (weak, nonatomic) IBOutlet UIView *contentView;
-
-@property (weak, nonatomic) IBOutlet UIView *bannerView;
-
-@property (weak, nonatomic) IBOutlet UIView *interstitialView;
-
-@property (weak, nonatomic) IBOutlet UIView *rewardedView;
-
-@property (weak, nonatomic) IBOutlet UIView *headerBidderView;
-
-#pragma mark - All buttons
-
-@property (weak, nonatomic) IBOutlet UIButton *btnBanner;
-@property (weak, nonatomic) IBOutlet UIButton *btnBannerVideo;
-@property (weak, nonatomic) IBOutlet UIButton *btnIntersitital;
-@property (weak, nonatomic) IBOutlet UIButton *btnInterstitialVideo;
-@property (weak, nonatomic) IBOutlet UIButton *btnInterstitialVideoPerformance;
-@property (weak, nonatomic) IBOutlet UIButton *btnRewardedVideo;
-@property (weak, nonatomic) IBOutlet UIButton *btnDFP;
-@property (weak, nonatomic) IBOutlet UIButton *btnMoPub;
-
-
+- (void)hideSeparator;
+- (void)showSeparator;
 @end

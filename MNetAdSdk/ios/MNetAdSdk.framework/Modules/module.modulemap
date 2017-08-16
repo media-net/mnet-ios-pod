@@ -1,0 +1,13 @@
+framework module MNetAdSdk{
+    header "MNet.h"
+    header "MNetUser.h"
+    header "MNetError.h"
+    header "MNetAdView.h"
+    header "MNetAdSize.h"
+    header "MNetReward.h"
+    header "MNetAdRequest.h"
+    header "MNetHeaderBidder.h"
+    header "MNetRewardedVideo.h"
+    header "MNetInterstitialAd.h"
+    header "MNetAdSizeConstants.h" 
+}

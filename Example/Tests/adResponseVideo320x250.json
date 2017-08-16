@@ -1,0 +1,32 @@
+{
+    "api_version": 1,
+    "data": {
+        "ads": [
+                {
+                "adcode": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<VAST version=\"2.0\">\n   <Temp />\n   <Ad id=\"011111\">\n      <InLine>\n         <AdSystem>Innovid Ads</AdSystem>\n         <AdTitle><![CDATA[Instream_Video_Batch A_Flimsy_15]]></AdTitle>\n         <Impression><![CDATA[http://qsearch.media.net/log?logid=kfk&amp;cid=8CU251Q40&amp;crid=00000000&amp;pid=8PO3Q6P4R&amp;visitorId=1241221255544209000V10&amp;purl=http%3A%2F%2Fc8demo.keywordblocks.com%2FVideoAdsDemo%2Fforbes%2FstandAloneJ8CU251Q40.html%3Fmnet_outstream_demo%3DappNx&amp;bidder_id=2&amp;ptype=ST&amp;time=2206&amp;evtid=videoevent&amp;id=00001481719323505019368554424575&amp;evt=8]]></Impression>\n         <Creatives>\n            <Creative AdID=\"00000000\">\n               <Linear>\n                  <Duration>00:00:19</Duration>\n                  <MediaFiles>\n                     <MediaFile id=\"103045544\" height=\"396\" width=\"704\" bitrate=\"1059\" type=\"video/mp4\" delivery=\"progressive\" maintainAspectRatio=\"true\" scalable=\"true\"><![CDATA[http://adservex-staging.media.net/static/videos/videotest.mp4]]></MediaFile>\n                  </MediaFiles>\n                  <TrackingEvents>\n                     <Tracking event=\"start\"><![CDATA[http://qsearch.media.net/log?logid=kfk&amp;cid=8CU251Q40&amp;crid=00000000&amp;pid=8PO3Q6P4R&amp;visitorId=1241221255544209000V10&amp;purl=http%3A%2F%2Fc8demo.keywordblocks.com%2FVideoAdsDemo%2Fforbes%2FstandAloneJ8CU251Q40.html%3Fmnet_outstream_demo%3DappNx&amp;bidder_id=2&amp;ptype=ST&amp;time=2206&amp;evtid=videoevent&amp;id=000014817\n]]>\n<![CDATA[ 19323505019368554424575&amp;evt=5]]></Tracking>\n                         <Tracking event=\"firstQuartile\"><![CDATA[http://qsearch.media.net/log?logid=kfk&amp;cid=8CU251Q40&amp;crid=00000000&amp;pid=8PO3Q6P4R&amp;visitorId=1241221255544209000V10&amp;purl=http%3A%2F%2Fc8demo.keywordblocks.com%2FVideoAdsDemo%2Fforbes%2FstandAloneJ8CU251Q40.html%3Fmnet_outstream_demo%3DappNx&amp;bidder_id=2&amp;ptype=ST&amp;time=2206&amp;evtid=videoevent&amp;id=00001481719323505019368554424575&amp;evt=17]]></Tracking>\n                     <Tracking event=\"midpoint\"><![CDATA[http://qsearch.media.net/log?logid=kfk&amp;cid=8CU251Q40&amp;crid=00000000&amp;pid=8PO3Q6P4R&amp;visitorId=1241221255544209000V10&amp;purl=http%3A%2F%2Fc8demo.keywordblocks.com%2FVideoAdsDemo%2Fforbes%2FstandAloneJ8CU251Q40.html%3Fmnet_outstream_demo%3DappNx&amp;bidder_id=2&amp;ptype=ST&amp;time=2206&amp;evtid=videoevent&amp;id=00001481719323505019368554424575&amp;evt=18]]></Tracking>\n                     <Tracking event=\"thirdQuartile\"><![CDATA[http://qsearch.media.net/log?logid=kfk&amp;cid=8CU251Q40&amp;crid=00000000&amp;pid=8PO3Q6P4R&amp;visitorId=1241221255544209000V10&amp;purl=http%3A%2F%2Fc8demo.keywordblocks.com%2FVideoAdsDemo%2Fforbes%2FstandAloneJ8CU251Q40.html%3Fmnet_outstream_demo%3DappNx&amp;bidder_id=2&amp;ptype=ST&amp;time=2206&amp;evtid=videoevent&amp;id=00001481719323505019368554424575&amp;evt=19]]></Tracking>\n                     <Tracking event=\"complete\"><![CDATA[http://qsearch.media.net/log?logid=kfk&amp;cid=8CU251Q40&amp;crid=00000000&amp;pid=8PO3Q6P4R&amp;visitorId=1241221255544209000V10&amp;purl=http%3A%2F%2Fc8demo.keywordblocks.com%2FVideoAdsDemo%2Fforbes%2FstandAloneJ8CU251Q40.html%3Fmnet_outstream_demo%3DappNx&amp;bidder_id=2&amp;ptype=ST&amp;time=2206&amp;evtid=videoevent&amp;id=00001481719323505019368554424575&amp;evt=24]]></Tracking>\n                  </TrackingEvents>\n                  <VideoClicks>\n                     <ClickTracking><![CDATA[http://qsearch.media.net/log?logid=kfk&amp;cid=8CU251Q40&amp;crid=00000000&amp;pid=8PO3Q6P4R&amp;visitorId=1241221255544209000V10&amp;purl=http%3A%2F%2Fc8demo.keywordblocks.com%2FVideoAdsDemo%2Fforbes%2FstandAloneJ8CU251Q40.html%3Fmnet_outstream_demo%3DappNx&amp;bidder_id=2&amp;ptype=ST&amp;time=2206&amp;evtid=videoevent&amp;id=00001481719323505019368554424575&amp;evt=11]]></ClickTracking>\n                  </VideoClicks>\n               </Linear>\n            </Creative>\n         </Creatives>\n      </InLine>\n   </Ad>\n</VAST>",
+                "adtype": "video",
+                "bidderInfoBean": {
+                "responseTime": 130
+                },
+                "bidder_id": 43,
+                "creative_id": 183840587,
+                "creative_type": "xml",
+                "dfpbid": 7,
+                "h": 250,
+                "w": 300,
+                "publisher_id": "new-default",
+                "server_extras": {
+                "bidder_id": 43,
+                "mnetSize": "300x250",
+                "mnetbidPrice": "7.00"
+                },
+                "size": "300x250",
+                "skippable": true,
+                "tp": "http://qsearch-a.akamaihd.net/log?logid=kfk&evtid=rtbstl&url=http%3A%2F%2Fhttp%253A%252F%252Fdigitach.net%252F&domain=http&size=300x250&ext_user_id=0&iid=0&auction_id=7b54575cd51c4286921bec5275301b54&ip=172.16.200.248&crid=183840587&b43b=10.0&bc=0.25&rtbW=43&app_dis=0&cc=RU&bname=&bid_type=-1&bmlevel=0<cm_win_macro>"
+                }
+                ]
+    },
+    "message": "",
+    "status": 200,
+    "success": true
+}

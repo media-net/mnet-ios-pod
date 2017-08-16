@@ -1,0 +1,23 @@
+{
+    "bidder_id": 1000,
+    "creative_id": "sample_creative_id",
+    "adtype": "banner",
+    "adcode": "sample_adcode",
+    "dfpbid": 1000,
+    "publisher_id": "samplepublisher_id",
+    "tp": "sample_tp",
+    "size": "320x50",
+    "h": 50,
+    "w": 320,
+    "server_extras": {
+        "bidder_id": 1000,
+        "mnetSize": "320x50",
+        "mnetbidPrice": "7.00"
+    },
+    "instl": 0,
+    "creative_type": "html",
+    "bidderInfoBean": {
+        "responseTime": 1000
+    },
+    "skippable": true
+}

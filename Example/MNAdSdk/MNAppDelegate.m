@@ -8,16 +8,33 @@
 
 #import "MNAppDelegate.h"
 @import GoogleMobileAds;
+#import <MNetAdSdk/MNet.h>
+#import <MNetAdSdk/MNetUser.h>
+#import "MNDemoConstants.h"
 #import <AFNetworkActivityLogger/AFNetworkActivityLogger.h>
 
 @implementation MNAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    [[AFNetworkActivityLogger sharedLogger] startLogging];
-     [GADMobileAds configureWithApplicationID:@"ca-app-pub-6365858186554077~2677656745"];    
     // Override point for customization after application launch.
+    BOOL isTesting = [[NSUserDefaults standardUserDefaults] boolForKey:@"TESTING"];
+    if(!isTesting){
+        MNet *mnetObj = [MNet initWithCustomerId: DEMO_MN_CUSTOMER_ID];
+        
+        // Adding user details
+        MNetUser *user = [MNetUser new];
+        [user addGender:MNetGenderFemale];
+        [user addKeywords:@"fruits, health, energy"];
+        [user addYearOfBirth:@"1985"];
+        [user addName:@"Demo User"];
+        [user addUserId:@"test-id"];
+        [mnetObj setUser:user];
+        
+        //[[MNet getInstance] setIsTest:YES];
+    }
+    
+    [GADMobileAds configureWithApplicationID:@"ca-app-pub-6365858186554077~2677656745"];
     return YES;
 }
 
