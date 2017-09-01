@@ -1,0 +1,274 @@
+{
+    "api_version": 1,
+    "data": {
+        "hb_config": {
+            "ad_units": [
+                         {
+                         "ad_unit_id": "min_first:0-0,max_first:0-1,min_last:0-3,max_last:0-9,view_pos:LEFT-CENTER",
+                         "autorefresh_enabled": false,
+                         "autorefresh_interval": 30,
+                         "crid": "filterTestListViewPos",
+                         "custom_targets": [
+                                            {
+                                            "key": "listview",
+                                            "value": "test"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "300x250"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "au:dummyAdUnitId,act:mnviewcontroller",
+                         "autorefresh_enabled": true,
+                         "autorefresh_interval": 50,
+                         "crid": "expCridForHbConfigFilter",
+                         "custom_targets": [
+                                            {
+                                            "key": "d",
+                                            "value": "t"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "320x50"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "d6f2811c2cb84b57bbbf3128c08a2165",
+                         "autorefresh_enabled": true,
+                         "autorefresh_interval": 30,
+                         "crid": "328569603",
+                         "custom_targets": [
+                                            {
+                                            "key": "dedicated",
+                                            "value": "false"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "320x50"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "view_pos:LEFT-CENTER,au:dummyAdUnitIdForGrid",
+                         "autorefresh_enabled": true,
+                         "autorefresh_interval": 30,
+                         "crid": "expCridForHbConfigFilterForGrid",
+                         "custom_targets": [
+                                            {
+                                            "key": "d",
+                                            "value": "t"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "300x250",
+                                   "320x480"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "27931f8c98bd452fb9a928f4d73b1630",
+                         "autorefresh_enabled": false,
+                         "autorefresh_interval": 30,
+                         "crid": "212114165",
+                         "custom_targets": [],
+                         "sizes": [
+                                   "320x480"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "/453619171/iosinapptest",
+                         "autorefresh_enabled": false,
+                         "autorefresh_interval": 30,
+                         "crid": "caseSensitiveAdunitId",
+                         "custom_targets": [
+                                            {
+                                            "key": "dedicated",
+                                            "value": "caseSensitiveValue"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "320x50"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "/45361917/iosinapptest",
+                         "autorefresh_enabled": false,
+                         "autorefresh_interval": 30,
+                         "crid": "303382071",
+                         "custom_targets": [
+                                            {
+                                            "key": "dedicated",
+                                            "value": "false"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "320x50"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "",
+                         "autorefresh_enabled": false,
+                         "autorefresh_interval": 30,
+                         "crid": "795514717",
+                         "custom_targets": [
+                                            {
+                                            "key": "d",
+                                            "value": "t"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "320x50"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "",
+                         "autorefresh_enabled": false,
+                         "autorefresh_interval": 30,
+                         "crid": "610416469",
+                         "custom_targets": [
+                                            {
+                                            "key": "d",
+                                            "value": "t"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "300x250"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "/45361917/iostest320*480",
+                         "autorefresh_enabled": false,
+                         "autorefresh_interval": 30,
+                         "crid": "563752245",
+                         "custom_targets": [
+                                            {
+                                            "key": "d",
+                                            "value": "t"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "320x480"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "",
+                         "autorefresh_enabled": false,
+                         "autorefresh_interval": 30,
+                         "crid": "698985027",
+                         "custom_targets": [
+                                            {
+                                            "key": "d",
+                                            "value": "t"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "300x250"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "",
+                         "autorefresh_enabled": false,
+                         "autorefresh_interval": 30,
+                         "crid": "719925423",
+                         "custom_targets": [
+                                            {
+                                            "key": "dedicated",
+                                            "value": "false"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "320x50"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "dummyAdUnitId",
+                         "autorefresh_enabled": true,
+                         "autorefresh_interval": 120,
+                         "crid": "123",
+                         "custom_targets": [
+                                            {
+                                            "key": "d",
+                                            "value": "t"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "300x250",
+                                   "500x500"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         }
+                         ],
+            "enabled": true
+        },
+        "mnet_am_mt": "sample_macro",
+        "mnet_config_update_interval": 900000,
+        "mnet_fire_video_events": true,
+        "mnet_show_save_image_dialog": true,
+        "mnet_slot_debug_rate": 0.01,
+        "pid": "8CUO15940",
+        "publisher_timeout_settings": {
+            "cbrt": 0,
+            "gfd": 0,
+            "gptrd": 1000,
+            "grd": 0,
+            "hbrt": 0,
+            "li": 0,
+            "ngfd": 0,
+            "prfd": 2,
+            "publisher_id": "8CUO15940",
+            "rbd": 0
+        },
+        "sdk_config": {
+            "mnet_adex_on_thirdparty_enabled": false,
+            "refresh_ad_duration_sec": "30",
+            "view_controller_links": {
+                "enabled": true,
+                "link_map": {
+                    "dummyVC1": "http://dummyVC1Link.com",
+                    "dummyVC2": "http://dummyVC2Link.com",
+                }
+            }
+            
+        }
+    },
+    "message": "Config is delivered successfully",
+    "status": 200,
+    "success": true
+}

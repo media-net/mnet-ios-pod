@@ -1,0 +1,80 @@
+{
+    "device": {
+        "ifa": "73A60FA7-6034-4D0A-8E16-8C17128AAD82",
+        "pxratio": 3,
+        "ip": "172.16.61.40",
+        "language": "en-IN",
+        "hwv": "iPhone9,4",
+        "device_ram": "3143630848",
+        "devicetype": 0,
+        "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Mobile/14F89",
+        "connectiontype": 1,
+        "osv": "10.3.2",
+        "h": 2001,
+        "os": "ios",
+        "make": "apple",
+        "w": 1125,
+        "geo": {
+            "region": "Maharashtra",
+            "city": "Haveli",
+            "country": "India",
+            "timezone": "Asia/Kolkata",
+            "utcoffset": 19800,
+            "zip": "411045",
+            "lng": 73,
+            "lat": 18,
+            "type": 1,
+            "accuracy": 175
+        },
+        "mac": "314FE475-99F8-458B-B020-C6D4C66723A3",
+        "carrier": "Jio",
+        "dnt": 0,
+        "geofetch": 0,
+        "model": "iPhone",
+        "js": 0,
+        "internal_free_space": "117531398144",
+        "ppi": 489
+    },
+    "capabilities": {
+        "native": false,
+        "banner": true,
+        "responsive_banner": true,
+        "mraid": true,
+        "video": true,
+        "rewarded_video": true,
+        "audio": false
+    },
+    "uid": "3b2270f1-99eb-4a1f-a2f4-166933555f4b",
+    "app": {
+        "bundle": "net.media.MNAdSDKDemo",
+        "content": {
+            "url": "",
+            "ext": {
+                "url": "http://mnadsdkdemo.media.net.imnapp/1-0b7-debug/mnshowadviewcontroller?uniquekey=b4653cb8fecf77e5e5d92737dff9fcf8"
+            }
+        },
+        "publisher": {
+            "id": "8CUO15940"
+        },
+        "ver": "7-debug"
+    },
+    "imp": [
+            {
+            "ext": {
+            "source_fd": 1
+            },
+            "tagid": "247384273",
+            "video": {
+            "w": 320,
+            "h": 50
+            },
+            "instl": 0,
+            "banner": {
+            "w": 320,
+            "h": 50
+            }
+            }
+            ],
+    "ad_cycle_id": "8845A1B0-1106-4ABF-A42E-AC5B833FA87B-4311-000001ED4D7A3C57",
+    "visit_id": "C6EF8A04-01A7-4ED4-A343-65670BE4A191-4311-000001EC3C3E8F0C"
+}
