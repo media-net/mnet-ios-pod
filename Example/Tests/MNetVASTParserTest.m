@@ -10,6 +10,7 @@
 #import <MNetAdSdk/MNetVast.h>
 #import <MNetAdSdk/MNetVastAdXMLManager.h>
 #import <MNetAdSdk/MNetVASTVideoConfig.h>
+#import "MNetTestManager.h"
 
 static const NSTimeInterval mDefaultTimeout = 1;
 
@@ -47,7 +48,7 @@ static const NSTimeInterval mDefaultTimeout = 1;
     }];
     
     MNetVASTVideoConfig *videoConfig = [[MNetVASTVideoConfig alloc] initWithVASTResponse:vastResponse];
-    XCTAssertTrue([videoConfig.mediaURL.absoluteString isEqualToString:@"http://adservex-staging.media.net/static/videos/videotest.mp4"]);
+    XCTAssertTrue([videoConfig.mediaURL.absoluteString isEqualToString:[MNetTestManager getVideoUrl]]);
 }
 
 - (void)testVastLinearInlineMediafile{

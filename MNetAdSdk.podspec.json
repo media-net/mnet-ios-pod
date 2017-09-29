@@ -14,7 +14,10 @@
         "CoreTelephony", 
         "AVFoundation", 
         "CoreMedia", 
-        "Security"
+        "Security", 
+        "AVKit", 
+        "EventKit", 
+        "Photos"
     ], 
     "homepage": "https://github.com/media-net/mnet-ios-pod", 
     "ios": {
@@ -35,9 +38,9 @@
         "ios": "8.0"
     }, 
     "source": {
-        "branch": "master", 
-        "git": "https://github.com/media-net/mnet-ios-pod.git"
+        "git": "https://github.com/media-net/mnet-ios-pod.git", 
+        "tag": "v1.0.1"
     }, 
     "summary": "iOS Ad SDK by Media.NET", 
-    "version": "1.0.0"
+    "version": "1.0.1"
 }

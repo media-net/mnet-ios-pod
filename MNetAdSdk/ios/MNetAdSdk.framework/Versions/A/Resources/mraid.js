@@ -20,6 +20,7 @@
 
 
 (function() {
+ console.log('initializing mraid');
  var mraid = window.mraid = {};
  
  //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,12 +57,6 @@
  bridge.executeNativeCall = function(args) {
  var command = args.shift();
  
- if (!this.nativeSDKFiredReady) {
-    console.log('rejecting ' + command + ' because mraid is not ready');
-    bridge.notifyErrorEvent('mraid is not ready', command);
-    return;
- }
- 
  var call = 'mraid://' + command;
  
  var key, value;
@@ -82,13 +77,8 @@ for (var i = 0; i < args.length; i += 2) {
     //call += key + '=' + value;
     call += encodeURIComponent(key) + '=' + encodeURIComponent(value);
  }
- 
-// if (this.nativeCallInFlight) {
-// this.nativeCallQueue.push(call);
-// } else {
-// this.nativeCallInFlight = true;
+ console.log('MRAID: before call');
  window.location = call;
-// }
 };
  
  
@@ -160,7 +150,7 @@ for (var i = 0; i < args.length; i += 2) {
  };
  
  bridge.notifyReadyEvent = function() {
-    this.nativeSDKFiredReady = true;
+    console.log('firing ready event');
     broadcastEvent(EVENTS.READY);
  };
  
@@ -483,6 +473,7 @@ for (var i = 0; i < args.length; i += 2) {
  };
  
  mraid.expand = function(URL) {
+    console.debug('MRAID: native expand call');
     var state = mraid.getState();
     if (!(state === STATES.DEFAULT || state === STATES.RESIZED)) {
         broadcastEvent(EVENTS.ERROR, 'Ad can only be expanded from the default or resized state.', 'expand');
@@ -593,6 +584,7 @@ for (var i = 0; i < args.length; i += 2) {
  };
  
  mraid.setExpandProperties = function(properties) {
+ console.log('set expand properties');
     if (validate(properties, expandPropertyValidators, 'setExpandProperties', true)) {
         if (properties.hasOwnProperty('useCustomClose')) {
             expandProperties.useCustomClose = properties.useCustomClose;
@@ -601,21 +593,15 @@ for (var i = 0; i < args.length; i += 2) {
  };
  
  mraid.useCustomClose = function(shouldUseCustomClose) {
+    console.log('MRAID: native use custom close call '+shouldUseCustomClose);
     expandProperties.useCustomClose = shouldUseCustomClose;
     hasSetCustomClose = true;
-    bridge.executeNativeCall(['usecustomclose', 'shouldUseCustomClose', shouldUseCustomClose]);
+    bridge.executeNativeCall(['useCustomClose', 'shouldUseCustomClose', shouldUseCustomClose]);
  };
  
  // MRAID 2.0 APIs ////////////////////////////////////////////////////////////////////////////////
  
  mraid.createCalendarEvent = function(parameters) {
-//    CalendarEventParser.initialize(parameters);
-//        if (CalendarEventParser.parse()) {
-//            bridge.executeNativeCall(CalendarEventParser.arguments);
-//        } else {
-//            broadcastEvent(EVENTS.ERROR, CalendarEventParser.errors[0], 'createCalendarEvent');
-//        }
-
     bridge.executeNativeCall(['createCalendarEvent','eventJSON',JSON.stringify(parameters)]);
  };
  

@@ -19,6 +19,8 @@
 /// The view for loading banner and video ads.
 @interface MNetAdView: UIView
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// The banner ads delegate for callbacks from banner ads
 @property (nonatomic,weak) id<MNetAdViewDelegate> delegate;
 
@@ -30,13 +32,13 @@
 /// be displayed
 @property (nonatomic) CGSize size;
 
-@property (nonatomic) MNetError *error;
+@property (nonatomic, nullable) MNetError *error;
 
 /// The adunit Id of the ad to be displayed
 @property (nonatomic) NSString *adUnitId;
 
 /// Optional keywords to be sent in the ad request
-@property (nonatomic) NSString *keywords;
+@property (nonatomic, nullable) NSString *keywords;
 
 /// The ad request object
 @property (nonatomic) MNetAdRequest *adRequest;
@@ -45,7 +47,7 @@
 /// The primary purpose of this is when the adView is clicked
 /// (called a click-through), a clickthrough-webview is displayed,
 /// which is presented on top of this viewController.
-@property (weak, nonatomic) UIViewController *rootViewController;
+@property (weak, nonatomic) UIViewController * _Nullable rootViewController;
 
 // All init methods
 
@@ -61,11 +63,11 @@
 - (void)loadAd;
 
 /// Load the ad for the ad request
-- (void)loadAdForRequest:(MNetAdRequest*)request;
+- (void)loadAdForRequest:(MNetAdRequest *)request;
 
 /// Add location for the ad, as additional context for the ad to be displayed.
 - (void)setCustomLocation:(CLLocation *)customLocationArg;
-- (CLLocation *)getCustomLocation;
+- (CLLocation * _Nullable)getCustomLocation;
 @end
 
 @protocol MNetBaseAdViewDelegate <NSObject>
@@ -104,4 +106,5 @@
 /// Callback when the video ad has been clicked
 - (void)mnetVideoDidClick:(MNetAdView *)adView;
 
+NS_ASSUME_NONNULL_END
 @end

@@ -1,5 +1,8 @@
 use_frameworks!
 
+source 'https://github.com/media-net/mnet-pod-specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
 target 'MNAdSdk_Example' do
   # This is equivalent to 'MNAdSdk/Base'
   pod 'MNetAdSdk', :path => '../MNetAdSdk.podspec.json'

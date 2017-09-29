@@ -51,6 +51,7 @@
 
 - (void)mnetAdDidFailToLoad:(MNetAdView *)adView withError:(MNetError *)error{\
     XCTFail(@"Ad view failed! - %@", error);
+    EXPECTATION_FULFILL(self.bannerAdViewExpectation);
 }
 
 @end

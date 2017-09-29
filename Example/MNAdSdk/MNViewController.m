@@ -166,7 +166,7 @@ static const CGFloat sectionFooterViewHeight = 30.0f;
                                       },
                                   ]
                           },
-                      /*
+                      
                       @{
                           @"sectionTitle": @"MRAID",
                           @"rowContents" : @[
@@ -174,13 +174,15 @@ static const CGFloat sectionFooterViewHeight = 30.0f;
                                       @"title" : @"MRAID Banner",
                                       @"name"  : ENUM_VAL(MRAID_BANNER)
                                       },
+                                  /*
                                   @{
                                       @"title" : @"MRAID Interstitial",
                                       @"name"  : ENUM_VAL(MRAID_INTERSTITIAL)
                                       }
+                                   */
                                   ]
                           },
-                       */
+                    
                       ];
     });
 }
