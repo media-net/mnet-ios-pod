@@ -13,6 +13,8 @@
 /// The class that initializes all MNetAdSdk, for a customer Id
 @interface MNet: NSObject
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// The customer Id of the MNetAdSdk
 @property (nonatomic) NSString *customerId;
 
@@ -20,7 +22,7 @@
 /// It can be used for testing purposes.
 @property (nonatomic) BOOL isTest;
 
-@property (nonatomic) MNetUser *user;
+@property (nonatomic, nullable) MNetUser *user;
 
 /// Initialises the MNetAdSdk for a given customer Id.
 /// This can be run only once in a session.
@@ -32,9 +34,10 @@
 /// This color is set to the top bar, on the webview ViewController
 /// that's displayed when clickThrough occurs.
 /// This is purely optional, and is for customization purposes only.
-+ (void)setAdClickThroughVCNavColor:(UIColor *)bgColor;
++ (void)setAdClickThroughVCNavColor:(UIColor * _Nullable)bgColor;
 
 -(instancetype) init __attribute__((unavailable("Please use +initWithCustomerId:")));
 
+NS_ASSUME_NONNULL_END
 @end
 

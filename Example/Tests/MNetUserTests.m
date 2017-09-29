@@ -20,7 +20,7 @@
 - (void)testUninitializedGender{
     NSDictionary *genderToStrMap = [MNetUser getGenderToStrMap];
     
-    MNetUserGender ununitialisedGender;
+    MNetUserGender ununitialisedGender = 0;
     NSString *uninitializedStr = [genderToStrMap objectForKey:[NSNumber numberWithInt:ununitialisedGender]];
     
     MNetUser *user = [[MNetUser alloc] init];

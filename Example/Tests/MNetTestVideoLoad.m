@@ -18,6 +18,7 @@
 @implementation MNetTestVideoLoad
 
 - (void)setUp {
+    [self cacheVideoUrl:[[self class] getVideoUrl]];
     [super setUp];
 }
 
@@ -44,24 +45,6 @@
         }
     }];
     
-}
-
--(void) testVideoAdLoadFail {
-    invalidVideoAdRequestStub([self class]);
-    self.videoAdViewExpectation = [self expectationWithDescription:@"video view loaded"];
-    
-    MNetAdView *adView = [[MNetAdView alloc] init];
-    [adView setSize:MNET_BANNER_AD_SIZE];
-    [adView setAdUnitId:DEMO_MN_AD_UNIT_320x50];
-    [adView setVideoDelegate:self];
-    [adView setDelegate:self];
-    [adView loadAd];
-    
-    [self waitForExpectationsWithTimeout:30 handler:^(NSError * _Nullable error) {
-        if(error){
-            NSLog(@"Test timed out! - %@", error);
-        }
-    }];
 }
 
 - (void)mnetVideoDidLoad:(MNetAdView *)adView{

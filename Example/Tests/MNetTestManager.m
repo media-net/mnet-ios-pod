@@ -31,4 +31,35 @@
     return viewController;
 }
 
+- (UIViewController *)getVCWithRandomContents{
+    // Creating a bunch of views and adding it to the view-controller
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"showad_controller"];
+    [vc viewDidLoad];
+    
+    [vc viewWillAppear:NO];
+    [vc viewDidAppear:NO];
+    
+    return vc;
+}
+
+- (void)cacheVideoUrl:(NSString *)videoUrlStr{
+    NSURL *videoUrl = [NSURL URLWithString:videoUrlStr];
+    
+    if(![[MNetDiskLRUCache sharedLRUCache] hasCacheForKey:videoUrlStr]){
+        NSURLResponse *response = nil;
+        NSError *error = nil;
+        NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:videoUrl] returningResponse:&response error:&error];
+        
+        [[MNetDiskLRUCache sharedLRUCache] saveData:data forKey:videoUrlStr];
+    }
+}
+
+static NSString *videoUrl = @"http://adservex-staging.media.net/static/videos/videotest.mp4";
+
++ (NSString *)getVideoUrl{
+    return videoUrl;
+}
+
 @end
