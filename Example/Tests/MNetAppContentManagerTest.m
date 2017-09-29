@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import <MNetAdSdk/MNetAdSdk-umbrella.h>
+#import <MNALAppLink/MNALAppLink.h>
 #import "MNetTestManager.h"
 
 @interface MNetAppContentManagerTest : MNetTestManager
@@ -37,8 +38,8 @@
     NSString *adCycleId = @"Sample Adcycle";
     UIViewController *viewController = [self getViewController];
     
-    MNetViewTree *viewTree = [[MNetViewTree alloc] initWithViewController:viewController withContentEnabled:NO];
-    NSString *crawlingLink = [viewTree getViewTreeLink];
+    MNALAppLink *appLink = [MNALAppLink getInstanceWithVC:viewController withContentEnabled:NO];
+    NSString *crawlingLink = [appLink getLink];
     
     MNetAppContentCache *cache = [MNetAppContentCache getSharedInstance];
     XCTAssert([cache hasKey:crawlingLink] == NO, @"The cache shouldn't contain the crawling link");

@@ -30,7 +30,7 @@
 - (void)testUrlReachability{
     NSString *url = @"http://google.com";
     
-    stubRequest(@"HEAD", url).andReturn(200);
+    stubRequest(@"GET", url).andReturn(200).withBody(@"Sample request");
     self.headRequestExpectation = [self expectationWithDescription:@"isUrlReachable expectation"];
     
     [MNetHttpClient isUrlReachable:url withStatus:^(BOOL isReachable){

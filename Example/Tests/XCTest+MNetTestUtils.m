@@ -31,6 +31,11 @@ void dummyStubQSearch(){
     stubRequest(@"POST", @"http://qsearch.media.net.*".regex).andReturn(200);
 }
 
+void dummyStubFingerPrint(){
+    NSString *fingerPrintContents = @"{\"uid\":\"dummy-finger-print\"}";
+    stubRequest(@"POST", @"http://.*?fingerprint".regex).andReturn(200).withBody(fingerPrintContents);
+}
+
 void dummyStubConfigRequest(Class classFile){
     NSString *configContents = readFile(classFile, FILENAME_CONFIG_FILE, @"json");
     
@@ -39,7 +44,7 @@ void dummyStubConfigRequest(Class classFile){
 }
 
 void prefetchObjStub(Class classFile){
-    NSString *prefetchUrl = @"http://cf.d.msas.media.net/api/v2/prefetch_bids.*";
+    NSString *prefetchUrl = @"http:\\/\\/cf\\.d\\.msas\\.media\\.net\\/api\\/v2\\/prefetch_bid.*";
     stubRequest(@"GET", prefetchUrl.regex).andReturn(200);
 }
 
@@ -57,7 +62,6 @@ void validVideoAdRequestStub(Class classFile){
     NSString *url = [[MNetURL getSharedInstance] getAdLoaderUrl];
     NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
     stubRequest(@"GET", regexStr.regex).andReturn(200).withBody(respStr);
-    stubRequest(@"GET", @"http://adservex-staging".regex).andReturn(200);
     stubRequest(@"GET", [[MNetURL getSharedInstance] getBaseResourceUrl].regex).andReturn(200);
 }
 
@@ -73,7 +77,6 @@ void invalidVideoAdRequestStub(Class classFile){
     NSString *url = [[MNetURL getSharedInstance] getAdLoaderUrl];
     NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
     stubRequest(@"GET", regexStr.regex).andReturn(200).withBody(respStr);
-    stubRequest(@"GET", @"http://adservex-staging".regex).andReturn(200);
 }
 
 void validInterstitialAdRequestStub(Class classFile){
@@ -84,6 +87,15 @@ void validInterstitialAdRequestStub(Class classFile){
     stubRequest(@"GET", regexStr.regex)
     .andReturn(200)
     .withBody(respStr);
+}
+
+void dummyStubLoader(){
+    /*
+     NOTE:
+     Not adding a response body (in this case, an image), since we are only stubbing the unit tests
+     */
+    stubRequest(@"GET", @"https://s3-us-west-2\\.amazonaws\\.com/mnet-((android)|(ios))-resources/.*\\.png".regex).
+    withHeaders(@{ @"Accept": @"image/*" }).andReturn(200);
 }
 
 void validAdxAdRequestStub(Class classFile){
@@ -137,10 +149,12 @@ void updateSdkInfo(Class className){
 
 void stubifyRequests(Class className){
     dummyStubGoogleAds();
+    dummyStubLoader();
     dummyBugsnagRequest();
     dummyStubPulseRequest();
     dummyStubQSearch();
     dummyStubConfigRequest(className);
+    dummyStubFingerPrint();
 }
 
 void customSetupWithClass(Class className){

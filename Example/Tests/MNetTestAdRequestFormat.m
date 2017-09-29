@@ -46,8 +46,7 @@
                           @"app",
                           @"capabilities",
                           @"device",
-                          @"imp",
-                          @"uid"
+                          @"imp"
                         ];
     for(NSString *expectedKey in expectedKeysList){
         if(![bidRequestKeys containsObject:expectedKey]){

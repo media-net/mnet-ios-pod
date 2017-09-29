@@ -22,6 +22,7 @@
 #import "MPBannerCustomEvent.h"
 #import "MNShowAdViewController.h"
 #import "MNDemoConstants.h"
+
 #define LOADER_TEXT @"Loading ad"
 #define TITLE_TEXT_COLOR [UIColor colorWithRed:255.0/255 green:255.0/255 blue:255.0/255 alpha:0.5]
 
@@ -180,7 +181,6 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
 
 - (IBAction)loadAdAction:(id)sender {
     [self clearAdView];
-    [self addLoaderToScreen];
     
     switch ([self adType]) {
         case BNR:{
@@ -196,7 +196,6 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             // Initializing with lat-long
             CLLocation *customLocation = [[CLLocation alloc]initWithLatitude:LATITUDE longitude:LONGITUDE];
             [mnetAdView setCustomLocation:customLocation];
-            
             [_adView addSubview:mnetAdView];
             [self applyAdViewContraints:mnetAdView height:mnetAdView.size.height width:mnetAdView.size.width];
             [mnetAdView loadAdForRequest:request];
@@ -222,6 +221,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         }
             
         case BNR_INTR:{
+            [self addLoaderToScreen];
             CLLocation *customLocation = [[CLLocation alloc]initWithLatitude:LATITUDE longitude:LONGITUDE];
             
             interstitialAd = [[MNetInterstitialAd alloc]initWithAdUnitId:DEMO_MN_AD_UNIT_300x250];
@@ -233,6 +233,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         }
             
         case VIDEO_INTR:{
+            [self addLoaderToScreen];
             CLLocation *customLocation = [[CLLocation alloc]initWithLatitude:LATITUDE longitude:LONGITUDE];
             
             interstitialAd = [[MNetInterstitialAd alloc]initWithAdUnitId:DEMO_MN_AD_UNIT_300x250_VIDEO];
@@ -244,6 +245,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         }
             
         case VIDEO_REWARDED : {
+            [self addLoaderToScreen];
             MNetRewardedVideo *rewardedVideo = [MNetRewardedVideo getInstanceForAdUnitId: DEMO_MN_AD_UNIT_REWARDED];
             [rewardedVideo setRewardedVideoDelegate:self];
             [rewardedVideo setRewardWithName : @"NEW_REWARD" forCurrency :@"INR" forAmount : 100];
@@ -292,6 +294,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         }
             
         case DFP_INTERSTITIAL_HB:{
+            [self addLoaderToScreen];
             dfpInterstitialAd = [[DFPInterstitial alloc] initWithAdUnitID:DEMO_DFP_HB_INTERSTITIAL_AD_UNIT_ID];
             DFPRequest *request = [DFPRequest request];
             [dfpInterstitialAd setDelegate:self];
@@ -299,6 +302,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             break;
         }
         case MOPUB_INTERSTITIAL_HB:{
+            [self addLoaderToScreen];
             mopubInterstititalAd = [MPInterstitialAdController
                                     interstitialAdControllerForAdUnitId:DEMO_MOPUB_INTERSTITIAL_HB_AD_UNIT_ID];
             [mopubInterstititalAd setKeywords:@"mnetbidPrice:7.00"];
@@ -351,6 +355,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             break;
         }
         case DFP_INTERSTITIAL_MEDIATION:{
+            [self addLoaderToScreen];
             dfpInterstitialAd = [[DFPInterstitial alloc] initWithAdUnitID:DEMO_DFP_MEDIATION_INTERSTITIAL_AD_UNIT_ID];
             DFPRequest *request = [DFPRequest request];
             //[request setTestDevices:@[kGADSimulatorID]];
@@ -360,6 +365,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             break;
         }
         case MOPUB_INTERSTITIAL_MEDIATION:{
+            [self addLoaderToScreen];
             mopubInterstititalAd = [MPInterstitialAdController
         interstitialAdControllerForAdUnitId:DEMO_MOPUB_MEDIATION_INTERSTITIAL_AD_UNIT_ID];
             [mopubInterstititalAd setDelegate:self];
@@ -367,6 +373,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             break;
         }
         case ADMOB_INTERSTITIAL_MEDIATION:{
+            [self addLoaderToScreen];
             gadInterstitialAd = [[GADInterstitial alloc] initWithAdUnitID:DEMO_AD_MOB_MEDIATION_INTERSTITIAL_AD_UNIT_ID];
             [gadInterstitialAd setDelegate:self];
             
@@ -403,6 +410,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             break;
         }
         case DFP_INSTERSTITIAL_MANUAL_HB:{
+            [self addLoaderToScreen];
             dfpInterstitialAd = [[DFPInterstitial alloc] initWithAdUnitID:DEMO_DFP_HB_INTERSTITIAL_AD_UNIT_ID];
             [dfpInterstitialAd setDelegate:self];
             
@@ -444,6 +452,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         }
             
         case MRAID_INTERSTITIAL:{
+            [self addLoaderToScreen];
             CLLocation *customLocation = [[CLLocation alloc]initWithLatitude:LATITUDE longitude:LONGITUDE];
             
             interstitialAd = [[MNetInterstitialAd alloc]initWithAdUnitId:DEMO_MRAID_AD_UNIT_320x50];

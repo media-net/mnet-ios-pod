@@ -16,6 +16,7 @@
 /// The class that load and displays interstitial banner and video ads
 @interface MNetInterstitialAd : NSObject
 
+NS_ASSUME_NONNULL_BEGIN
 /// The interstitial ads delegate for callbacks on banner ads
 @property (nonatomic,weak) id<MNetInterstitialAdDelegate> interstitialDelegate;
 
@@ -26,10 +27,10 @@
 @property (nonatomic) NSString *adUnitId;
 
 /// Optional keywords to be sent in the ad request
-@property (nonatomic) NSString *keywords;
+@property (nonatomic, nullable) NSString *keywords;
 
 /// The ad request object
-@property (nonatomic) MNetAdRequest *adRequest;
+@property (nonatomic, nullable) MNetAdRequest *adRequest;
 
 /// Initialise the interstitial ad with the adunit Id
 - (id)initWithAdUnitId:(NSString *)adUnitId;
@@ -95,4 +96,6 @@
 
 /// Callback when the interstitial ad is dismissed
 - (void)mnetInterstitialVideoDidDismiss:(MNetInterstitialAd *)interstitialAd;
+
+NS_ASSUME_NONNULL_END
 @end
