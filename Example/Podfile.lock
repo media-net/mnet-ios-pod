@@ -28,7 +28,7 @@ PODS:
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - MBProgressHUD (1.0.0)
-  - MNetAdSdk (1.0.1)
+  - MNetAdSdk (1.0.2)
   - mopub-ios-sdk (4.12.0):
     - mopub-ios-sdk/MoPubSDK (= 4.12.0)
   - mopub-ios-sdk/MoPubSDK (4.12.0)
@@ -73,7 +73,7 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: f405b7acb098fe89e6fcd05fdbf400c1a5bcb935
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MNetAdSdk: 71ddc1091d1c1f53e77b2b05eae24c7e4c372a6e
+  MNetAdSdk: a62883df65062af6d7e1b7a5b3037a609d93c40c
   mopub-ios-sdk: f1223e3f54a4ff68394f4fd9e42651801cf09704
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Nocilla: 7af7a386071150cc8aa5da4da97d060f049dd61c
