@@ -17,13 +17,20 @@
 
 @implementation MNetVideoWithBannerDelegates
 
+- (void)setUp{
+    [self cacheVideoUrl:[[self class] getVideoUrl]];
+    [super setUp];
+}
+
 -(void) testVideoAdLoad {
     validVideoAdRequestStub([self class]);
+    stubPrefetchReq([self class]);
+    
     self.videoWithBannerDelegatesExpectation = [self expectationWithDescription:@"video view loaded"];
     
     MNetAdView *adView = [[MNetAdView alloc] init];
     [adView setSize:MNET_BANNER_AD_SIZE];
-    [adView setAdUnitId:DEMO_MN_AD_UNIT_320x50];
+    [adView setAdUnitId:@"216427370"];
     [adView setRootViewController:[self getViewController]];
     [adView setDelegate:self];
     [adView loadAd];

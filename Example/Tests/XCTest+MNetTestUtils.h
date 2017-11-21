@@ -12,7 +12,7 @@
 #define FILENAME_BANNER_300x250 @"adResponseBanner300x250"
 #define FILENAME_VIDEO_320x250  @"adResponseVideo320x250"
 #define FILENAME_REWARDED_VIDEO @"rewardedResponseVideo320x250"
-#define INVALID_FILENAME_VIDEO  @"adResponseForVideo"
+#define INVALID_FILENAME_VIDEO  @"noAdResponse"
 #define FILENAME_ADX_BANNER     @"MNetAdxResponse"
 #define FILENAME_CONFIG_FILE    @"MNetSdkConfigResponse"
 #define FILENAME_SAMPLE_REQUEST @"MNetSampleRequest"
@@ -29,10 +29,11 @@ void invalidVideoAdRequestStub(Class classFile);
 void validRewardedVideoAdRequestStub(Class classFile);
 void validAdxAdRequestStub(Class classFile);
 void dummyStubConfigRequest(Class classFile);
-void prefetchObjStub(Class classFile);
+void stubPrefetchReq(Class className);
 NSString* readFile(Class classFile, NSString *resourceName, NSString *resourceType);
 
 void updateSdkInfo(Class className);
 void stubifyRequests(Class className);
 void customSetupWithClass(Class className);
+
 @end

@@ -18,6 +18,7 @@
 @implementation MNetTestRewardedVideo
 
 - (void)setUp {
+    [self cacheVideoUrl:[[self class] getVideoUrl]];
     [super setUp];
 }
 

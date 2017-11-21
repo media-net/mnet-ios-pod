@@ -18,6 +18,7 @@
 @implementation MNetTestInterstitialVideo
 
 - (void)setUp {
+    [self cacheVideoUrl:[[self class] getVideoUrl]];
     [super setUp];
 }
 
@@ -27,6 +28,8 @@
 
 -(void) testInterstitialVideoAdLoad {
     validVideoAdRequestStub([self class]);
+    stubPrefetchReq([self class]);
+    
     self.interstitialTestExpectation = [self expectationWithDescription:@"interstitial video load"];
     MNetInterstitialAd *interstitialAd = [[MNetInterstitialAd alloc]initWithAdUnitId:DEMO_MN_AD_UNIT_300x250];
     [interstitialAd setInterstitialVideoDelegate:self];

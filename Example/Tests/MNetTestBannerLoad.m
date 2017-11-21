@@ -25,9 +25,8 @@
 }
 
 - (void)testBannerAdLoad {
-    prefetchObjStub([self class]);
-    
     validBannerAdRequestStub([self class]);
+    stubPrefetchReq([self class]);
     
     self.bannerAdViewExpectation = [self expectationWithDescription:@"Ad view loaded"];
     

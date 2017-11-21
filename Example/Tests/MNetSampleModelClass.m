@@ -17,11 +17,17 @@
             };
 }
 
-- (NSDictionary<NSString *,MNetJSONCollectionInfo *> *)collectionDetailsMap{
+- (NSDictionary<NSString *,MNJMCollectionsInfo *> *)collectionDetailsMap{
     return @{
-             @"requestsList": [MNetJSONCollectionInfo instanceOfArrayWithClassType:[MNetBidRequest class]],
-             @"responsesMap": [MNetJSONCollectionInfo instanceOfDictionaryWithKeyType:[NSMutableString class] andValueType:[MNetBidResponse class]],
+             @"requestsList": [MNJMCollectionsInfo instanceOfArrayWithClassType:[MNetBidRequest class]],
+             @"responsesMap": [MNJMCollectionsInfo instanceOfDictionaryWithKeyType:[NSMutableString class] andValueType:[MNetBidResponse class]],
              };
+}
+
+- (NSArray *)directMapForKeys{
+    return @[
+             @"extras"
+             ];
 }
 
 @end

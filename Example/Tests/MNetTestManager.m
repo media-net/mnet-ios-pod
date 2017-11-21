@@ -12,8 +12,9 @@
 
 - (void)setUp{
     [super setUp];
-    
     [[LSNocilla sharedInstance] start];
+    
+    [MNetAdLoaderPredictBids disablePostAdLoadPrefetch];
     customSetupWithClass([self class]);
 }
 
@@ -44,6 +45,13 @@
     return vc;
 }
 
+- (MNetBidResponse *)getTestBidResponse{
+    NSString *jsonString = readFile([self class], @"MNetBidResponse", @"json");
+    MNetBidResponse *bidResponse = [[MNetBidResponse alloc] init];
+    [MNJMManager fromJSONStr:jsonString toObj:bidResponse];
+    return bidResponse;
+}
+
 - (void)cacheVideoUrl:(NSString *)videoUrlStr{
     NSURL *videoUrl = [NSURL URLWithString:videoUrlStr];
     
@@ -57,7 +65,6 @@
 }
 
 static NSString *videoUrl = @"http://adservex-staging.media.net/static/videos/videotest.mp4";
-
 + (NSString *)getVideoUrl{
     return videoUrl;
 }

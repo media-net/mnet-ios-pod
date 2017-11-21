@@ -1,5 +1,17 @@
 {
     "bidder_id": 1000,
+    "id": "sample_provider_id",
+    "m_bid": 0.5,
+    "bid_info": {
+        "cmp_id"    : "cmp_id",
+        "adv_id"    : "adv_id",
+        "adv_nm"    : "adv_nm",
+        "adv_url"   : "adv_url",
+        "b_id"      : "b_id",
+        "di"        : "di",
+        "dt"        : "dt",
+        "prv_acc_id": "prv_acc_id"
+    },
     "creative_id": "sample_creative_id",
     "adtype": "banner",
     "adcode": "sample_adcode",
@@ -11,13 +23,20 @@
     "w": 320,
     "server_extras": {
         "bidder_id": 1000,
-        "mnetSize": "320x50",
-        "mnetbidPrice": "7.00"
+        "mnet_size": "320x50",
+        "mnet_bid_price": "7.00"
     },
     "instl": 0,
     "creative_type": "html",
     "bidderInfoBean": {
         "responseTime": 1000
     },
-    "skippable": true
+    "skippable": true,
+    "logging_pixels": [
+        "http://example.com/nurl1?price=${AUCTION_PRICE}",
+        "http://example.com/nurl2?id=${ACID}",
+        "http://example.com/nurl3?crawler_url=${REQ_URL}",
+        "http://example.com/nurl4?creative_id=${CRID}",
+        "http://example.com/nurl4?creative_id=${CRID}&crawler_url=${REQ_URL}&id=${ACID}&price=${AUCTION_PRICE}"
+    ]
 }

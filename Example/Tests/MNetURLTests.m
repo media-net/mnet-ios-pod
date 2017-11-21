@@ -27,7 +27,7 @@
     XCTAssert([urlObj getBaseConfigUrl] != nil, @"Url should not be nil");
     XCTAssert([urlObj getBasePulseUrl] != nil, @"Url should not be nil");
     XCTAssert([urlObj getBaseResourceUrl] != nil, @"Url should not be nil");
-    XCTAssert([urlObj getAdLoaderUrl] != nil, @"Url should not be nil");
+    XCTAssert([urlObj getAdLoaderPredictBidsUrl] != nil, @"Url should not be nil");
     XCTAssert([urlObj getLatencyTestUrl] != nil, @"Url should not be nil");
     XCTAssert([urlObj getConfigUrl] != nil, @"Url should not be nil");
     XCTAssert([urlObj getPulseUrl] != nil, @"Url should not be nil");
@@ -41,7 +41,7 @@
     NSLog(@"%@",[urlObj getBasePulseUrl]);
     NSLog(@"%@",[urlObj getBaseResourceUrl]);
     NSLog(@"%@",[urlObj getLatencyTestUrl]);
-    NSLog(@"%@",[urlObj getAdLoaderUrl]);
+    NSLog(@"%@",[urlObj getAdLoaderPredictBidsUrl]);
     NSLog(@"%@",[urlObj getConfigUrl]);
     NSLog(@"%@",[urlObj getPulseUrl]);
     NSLog(@"%@",[urlObj getFingerPrintUrl]);
@@ -53,7 +53,7 @@
     NSLog(@"%@",[urlObj getBasePulseUrl]);
     NSLog(@"%@",[urlObj getBaseResourceUrl]);
     NSLog(@"%@",[urlObj getLatencyTestUrl]);
-    NSLog(@"%@",[urlObj getAdLoaderUrl]);
+    NSLog(@"%@",[urlObj getAdLoaderPredictBidsUrl]);
     NSLog(@"%@",[urlObj getConfigUrl]);
     NSLog(@"%@",[urlObj getPulseUrl]);
     NSLog(@"%@",[urlObj getFingerPrintUrl]);

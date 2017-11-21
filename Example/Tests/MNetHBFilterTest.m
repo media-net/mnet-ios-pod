@@ -151,10 +151,12 @@
 - (void)testGridViewOutput{
     NSString *expectedResult = [self getPosForXStr:GRID_LEFT andYStr:GRID_CENTER];
     
-    // This will succeed only in iphone 7s.
-    // TODO: Have to write general size independant test
-    // That's seemingly a lot of work :(
-    UIView *adView = [[UIView alloc] initWithFrame:CGRectMake(50, 200, 10, 10)];
+    CGRect boundsRect = [[UIScreen mainScreen] bounds];
+    NSUInteger boxSize = 10;
+    NSUInteger adjustedX = 0;
+    NSUInteger adjustedY = boundsRect.size.height/2;
+    
+    UIView *adView = [[UIView alloc] initWithFrame:CGRectMake(adjustedX, adjustedY, boxSize, boxSize)];
     NSString *fetchedStr = [MNetGridPositioning getGridPositionForView:adView];
     
     XCTAssert([expectedResult isEqualToString:fetchedStr], @"The fetched str is not expected - %@", fetchedStr);
@@ -163,8 +165,12 @@
 - (void)testGridViewOutput2{
     NSString *expectedResult = [self getPosForXStr:GRID_RIGHT andYStr:GRID_BOTTOM];
     
-    // This will succeed only in iphone 7s.
-    UIView *adView = [[UIView alloc] initWithFrame:CGRectMake(300, 600, 10, 10)];
+    NSUInteger boxSize = 10;
+    CGRect boundsRect = [[UIScreen mainScreen] bounds];
+    NSUInteger adjustedX = boundsRect.size.width - boxSize;
+    NSUInteger adjustedY = boundsRect.size.height - boxSize;
+    
+    UIView *adView = [[UIView alloc] initWithFrame:CGRectMake(adjustedX, adjustedY, boxSize, boxSize)];
     NSString *fetchedStr = [MNetGridPositioning getGridPositionForView:adView];
     
     XCTAssert([expectedResult isEqualToString:fetchedStr], @"The fetched str is not expected - %@", fetchedStr);

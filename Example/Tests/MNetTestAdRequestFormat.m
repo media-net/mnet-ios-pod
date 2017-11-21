@@ -35,7 +35,7 @@
     [request setWidth:size.width andHeight:size.height];
     
     MNetBidRequest *bidRequest = [MNetBidRequest create:request];
-    id reqDict = ParseWithPropertiesOfObject(bidRequest);
+    id reqDict = [MNJMManager getCollectionFromObj:bidRequest];
     
     // Assert for correctness here
     XCTAssert(reqDict != nil, @"Parsed object shouldn't be nil");
@@ -149,13 +149,13 @@
 
 -(void) testBoolTypeInCapabilty{
     MNetAdCapability *adCapability = [[MNetAdCapability alloc] init];
-    [adCapability setAudio:[MNetBoolean createWithBool:YES]];
-    [adCapability setVideo:[MNetBoolean createWithBool:YES]];
-    [adCapability setBanner:[MNetBoolean createWithBool:YES]];
-    [adCapability setNative:[MNetBoolean createWithBool:NO]];
-    [adCapability setRewardedVideo:[MNetBoolean createWithBool:NO]];
+    [adCapability setAudio:[MNJMBoolean createWithBool:YES]];
+    [adCapability setVideo:[MNJMBoolean createWithBool:YES]];
+    [adCapability setBanner:[MNJMBoolean createWithBool:YES]];
+    [adCapability setNative:[MNJMBoolean createWithBool:NO]];
+    [adCapability setRewardedVideo:[MNJMBoolean createWithBool:NO]];
     
-    NSString *jsonStrVal = ToJSONString(adCapability);
+    NSString *jsonStrVal = [MNJMManager toJSONStr:adCapability];
     
     // This will just be for debugging purposes,
     // since the order of the capability string will never be known,
@@ -174,6 +174,22 @@
     
     XCTAssert(!hasNumbers, @"The jsonStr:%@ is incorrect!", jsonStrVal);
     NSLog(@"");
+}
+
+- (void)testBidRequestCreationTime{
+    NSString *adUnitId = DEMO_MN_AD_UNIT_320x50;
+    CGSize size = MNET_BANNER_AD_SIZE;
+    BOOL isInterstitial = NO;
+    
+    MNetAdRequest *request = [[MNetAdRequest alloc] init];
+    [request setAdUnitId:adUnitId];
+    [request setIsInterstitial:isInterstitial];
+    [request setWidth:size.width andHeight:size.height];
+    [request setRootViewController:[self getViewController]];
+    
+    [self measureBlock:^{
+        [MNetBidRequest create:request];
+    }];
 }
 
 @end

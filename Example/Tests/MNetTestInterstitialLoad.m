@@ -18,21 +18,16 @@
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-    [[LSNocilla sharedInstance] start];
-    dummyStubConfigRequest([self class]);
-    [MNet getInstance].customerId = DEMO_MN_CUSTOMER_ID;
-    updateSdkInfo([self class]);
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
-    [[LSNocilla sharedInstance] stop];
 }
 
 - (void)testInterstitialAdLoad {
     validInterstitialAdRequestStub([self class]);
+    stubPrefetchReq([self class]);
     
     self.interstitialAdViewExpectation = [self expectationWithDescription:@"Ad view loaded"];
     
