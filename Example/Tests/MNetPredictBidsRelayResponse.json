@@ -1,0 +1,180 @@
+{
+    "api_version": 1,
+    "data": {
+        "ads": {
+            "test_ad_unit_1": {
+                "ads_details": [
+                                {
+                                "id": "e25e857c-3e6d-4d36-95d9-fb52c3d44bc2",
+                                "bidder_id": 10000,
+                                "bid_info": {
+                                "cmp_id": "",
+                                "adv_id": "",
+                                "adv_nm": "",
+                                "adv_url": "",
+                                "b_id": "",
+                                "di": "",
+                                "dt": "",
+                                "prv_acc_id": ""
+                                },
+                                "bidder_name": "ybnca",
+                                "expiry": 1502952754,
+                                "og_bid": 0.7,
+                                "clsprc": 0.45,
+                                "cbdp": 0.56,
+                                "bid": 0.5,
+                                "dfpbd": 0.5,
+                                "adtype": "banner",
+                                "adcode": "<!DOCTYPE html><HTML><HEAD></HEAD><BODY><script id=\"mNCC\" language=\"javascript\">medianet_versionId = '111299';medianet_width = '320';medianet_height = '50';medianet_hint = '{\"name\":\"Selfie Camera HD\",\"storeurl\":\"https://play.google.com/store/apps/details?id=pomcoongla.selfie.camera.hd\\u0026hl=en\"}';medianet_crid = '275232674';medianet_requrl= 'http%3A%2F%2Fhd.camera.selfie.pomcoongla.amnapp';medianet_chnm2= '8CUU823BH';medianet_chnm3= '671886176';medianet_bdrId= '9';medianet_sbdrId= '';medianet_auctionid= '9c490dc9160a4e09a3d5e8980385fc03';medianet_misc= {};medianet_misc.matchString= 'null';(function() {var isSSL = false;var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CU753A51' + (isSSL ? '&https=1' : '');document.write('<scr' + 'ipt type=\"text/javascript\" id=\"mNSC\" src=\"' + mnSrc + '\"></scr' + 'ipt>');})();</script></BODY></HTML>",
+                                "h": 50,
+                                "w": 320,
+                                "logging_pixels": [
+                                                   "http://opt-west.media.net/ybnca/exchangenotify?aid=null&domain=hd.camera.selfie.pomcoongla.amnapp&price=0.5&cgid=24106&cid=128961&rid=2569418&url=&cc=&td=&lid=&t=1502718529345"
+                                                   ],
+                                "actlogs": [
+                                            "http://qsearch.media.net/log?acid=e25e857c-3e6d-4d36-95d9-fb52c3d44bc2&acsn=0&act=headerBid&actltime=251&adj1=0&adj2=30&adt=B&advUrl=unknown&bc=0&bdp=0.50&brf=%25%21d%28bool%3Dfalse%29&browser_id=0&cbdp=0.35&cid=8CUU823BH&cliip=1922029722&clsPrc=0.50&cmpid=128961&crid=671886176&device_id=0&dfpBd=0.50&dt=O&epc=275232674&gtd=400&it=I&iwb=0&logid=actlogs&lper=0&ltime=0&mnet_cipv=0&mnet_oxbd=0.00&ogbdp=0.50&os_id=0&pageid=0&prspt=headerbid&prvAccId=275232674&prvReqId=e25e857c-3e6d-4d36-95d9-fb52c3d44bc2&pvid=9&pvnm=YBNCA&requrl=http%3A%2F%2Fhd.camera.selfie.pomcoongla.amnapp&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&size=320x50&toconsider=0&ugd=3&vid=8ce062c0-3466-4648-ae14-64482c17a709&vsid=05a8a138-a647-4410-aad5-0f504ff65188"
+                                            ],
+                                "server_extras": {
+                                "bidder_id": 10000,
+                                "mnetSize": "320x50",
+                                "mnetbidPrice": "0.50"
+                                },
+                                "creative_type": "html",
+                                "bidderInfoBean": {},
+                                "view_width": 320,
+                                "view_height": 50,
+                                "skippable": true,
+                                "bid_type": "fpd"
+                                },
+                                {
+                                "id": "e25e857c-3e6d-4d36-95d9-fb52c3d44bc2",
+                                "ext": {
+                                "adxAdUnitId": "/45361917/SelfieCamera320*50",
+                                "prflog": [
+                                           "http://testserver.com/vogon?acsn=0&act=headerBid&actltime=0&adj1=0&adj2=0&adt=B&bc=0&bdp=-92233720368547760.00&brf=false&browser_id=0&cbdp=0.45&cc=IN&cid=8CUO15940&cliip=1922029722&clsPrc=0.00&crid=563752245&device_id=0&dfpBd=0.00&dt=O&gtd=1000&it=I&iwb=0&logid=prlog&lper=0&ltime=0&mnet_cipv=0&mnet_oxbd=0.00&nbr=0&ogbdp=-92233720368547760.00&os_id=0&pageid=0&prvReqId=ajay-0E9D6749-46FF-474C-B1F2-FC19C2A58340-91261-000264812D790EAB&pvid=3&pvnm=ADX&requrl=http%3A%2F%2Fmnadsdkdemo.media.net.imnapp%2F1-0b16%2Fmnshowadviewcontroller%3Funiquekey%3Db4653cb8fecf77e5e5d92737dff9fcf8&rtime=0&s=1&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&snm=SUCCESS&toconsider=0&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3_1+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E8301&ugd=3&vid=BA08BF24-A7D2-4991-8385-DB4CB4F3F683-91261-0002646B0BF2886C&vsid=9358A8F4-C4D5-424D-BF03-EB0E3AD222A9"
+                                           ],
+                                "prlog": [
+                                          "http://testserver.com/vogon?acsn=0&act=headerBid&actltime=0&adj1=0&adj2=0&adt=B&bc=0&bdp=0.00&brf=false&browser_id=0&cbdp=0.00&cc=IN&cid=8CUO15940&cliip=1922029722&clsPrc=0.00&crid=563752245&device_id=0&dfpBd=0.00&gtd=1000&it=I&iwb=0&logid=prflog&lper=0&ltime=0&mnet_cipv=0&mnet_oxbd=0.00&ogbdp=0.00&os_id=0&pageid=0&prvReqId=ajay-0E9D6749-46FF-474C-B1F2-FC19C2A58340-91261-000264812D790EAB&pvid=3&pvnm=ADX&requrl=http%3A%2F%2Fmnadsdkdemo.media.net.imnapp%2F1-0b16%2Fmnshowadviewcontroller%3Funiquekey%3Db4653cb8fecf77e5e5d92737dff9fcf8&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&toconsider=0&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3_1+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E8301&ugd=3&vid=BA08BF24-A7D2-4991-8385-DB4CB4F3F683-91261-0002646B0BF2886C&vsid=9358A8F4-C4D5-424D-BF03-EB0E3AD222A9"
+                                          ]
+                                },
+                                "actlogs": [
+                                            "http://qsearch.media.net/log?acid=e25e857c-3e6d-4d36-95d9-fb52c3d44bc2&acsn=0&act=headerBid&actltime=255&adj1=0&adj2=30&adt=B&advUrl=unknown&bc=0&bdp=0.73&brf=%25%21d%28bool%3Dfalse%29&browser_id=0&cbdp=0.51&cid=8CUU823BH&cliip=1922029722&clsPrc=0.73&crid=671886176&device_id=0&dfpBd=0.73&dt=O&epc=%2F45361917%2FSelfieCamera320%2A50&gtd=400&it=I&iwb=0&logid=actlogs&lper=0&ltime=0&mnet_cipv=0&mnet_oxbd=0.00&ogbdp=0.73&os_id=0&pageid=0&prspt=headerbid&prvReqId=e25e857c-3e6d-4d36-95d9-fb52c3d44bc2&pvid=3&pvnm=ADX&requrl=http%3A%2F%2Fhd.camera.selfie.pomcoongla.amnapp&rtime=0&s=1&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&toconsider=0&ugd=3&vid=8ce062c0-3466-4648-ae14-64482c17a709&vsid=05a8a138-a647-4410-aad5-0f504ff65188"
+                                            ],
+                                "bidder_id": 3,
+                                "bid_info": {
+                                "cmp_id": "",
+                                "adv_id": "",
+                                "adv_nm": "",
+                                "adv_url": "",
+                                "b_id": "",
+                                "di": "",
+                                "dt": "",
+                                "prv_acc_id": ""
+                                },
+                                "bidder_name": "ADEX",
+                                "bid": 0.73,
+                                "h": 50,
+                                "w": 320,
+                                "server_extras": {
+                                "adxSize": "320x50",
+                                "adxbidPrice": "0.73",
+                                "bidder_id": 3
+                                },
+                                "creative_type": "",
+                                "bidderInfoBean": {},
+                                "skippable": true,
+                                "bid_type": "adxd"
+                                }
+                                ],
+                "ext": {
+                    "video_logs_template": [
+                                            "http://testserver.com/vogon?auction_id=ajay-0E9D6749-46FF-474C-B1F2-FC19C2A58340-91261-000264812D790EAB&auctionid=ajay-0E9D6749-46FF-474C-B1F2-FC19C2A58340-91261-000264812D790EAB&bidder_id=%24%7BBIDDER_ID%7D&bsr=SDK&cc=IN&cid=8CUO15940&cliip=1922029722&crid=247384273&dt=mobile&dur=%24%7BDURATION%7D&evt=%24%7BEVENT_ID%7D&evtid=videoevent&id=ajay-0E9D6749-46FF-474C-B1F2-FC19C2A58340-91261-000264812D790EAB&it=I&logid=kfk&os=ios&ptype=inread&size=%24%7BADSIZE%7D&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3_1+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E8301&visitorid=9358A8F4-C4D5-424D-BF03-EB0E3AD222A9&winprice=%24%7BWIN_PRICE%7D"
+                                            ],
+                    "is_final": true
+                }
+            },
+            "test_ad_unit_2": {
+                "ads_details": [
+                                {
+                                "id": "e25e857c-3e6d-4d36-95d9-fb52c3d44bc2",
+                                "bidder_id": 10000,
+                                "bidder_name": "ybnca",
+                                "expiry": 1502952754,
+                                "og_bid": 0.7,
+                                "clsprc": 0.45,
+                                "cbdp": 0.56,
+                                "bid": 0.5,
+                                "dfpbd": 0.5,
+                                "adtype": "video",
+                                "adcode": "<!DOCTYPE html><HTML><HEAD></HEAD><BODY><script id=\"mNCC\" language=\"javascript\">medianet_versionId = '111299';medianet_width = '320';medianet_height = '50';medianet_hint = '{\"name\":\"Selfie Camera HD\",\"storeurl\":\"https://play.google.com/store/apps/details?id=pomcoongla.selfie.camera.hd\\u0026hl=en\"}';medianet_crid = '275232674';medianet_requrl= 'http%3A%2F%2Fhd.camera.selfie.pomcoongla.amnapp';medianet_chnm2= '8CUU823BH';medianet_chnm3= '671886176';medianet_bdrId= '9';medianet_sbdrId= '';medianet_auctionid= '9c490dc9160a4e09a3d5e8980385fc03';medianet_misc= {};medianet_misc.matchString= 'null';(function() {var isSSL = false;var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CU753A51' + (isSSL ? '&https=1' : '');document.write('<scr' + 'ipt type=\"text/javascript\" id=\"mNSC\" src=\"' + mnSrc + '\"></scr' + 'ipt>');})();</script></BODY></HTML>",
+                                "h": 50,
+                                "w": 320,
+                                "logging_pixels": [
+                                                   "http://opt-west.media.net/ybnca/exchangenotify?aid=null&domain=hd.camera.selfie.pomcoongla.amnapp&price=0.5&cgid=24106&cid=128961&rid=2569418&url=&cc=&td=&lid=&t=1502718529345"
+                                                   ],
+                                "actlogs": [
+                                            "http://qsearch.media.net/log?acid=e25e857c-3e6d-4d36-95d9-fb52c3d44bc2&acsn=0&act=headerBid&actltime=251&adj1=0&adj2=30&adt=B&advUrl=unknown&bc=0&bdp=0.50&brf=%25%21d%28bool%3Dfalse%29&browser_id=0&cbdp=0.35&cid=8CUU823BH&cliip=1922029722&clsPrc=0.50&cmpid=128961&crid=671886176&device_id=0&dfpBd=0.50&dt=O&epc=275232674&gtd=400&it=I&iwb=0&logid=actlogs&lper=0&ltime=0&mnet_cipv=0&mnet_oxbd=0.00&ogbdp=0.50&os_id=0&pageid=0&prspt=headerbid&prvAccId=275232674&prvReqId=e25e857c-3e6d-4d36-95d9-fb52c3d44bc2&pvid=9&pvnm=YBNCA&requrl=http%3A%2F%2Fhd.camera.selfie.pomcoongla.amnapp&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&size=320x50&toconsider=0&ugd=3&vid=8ce062c0-3466-4648-ae14-64482c17a709&vsid=05a8a138-a647-4410-aad5-0f504ff65188"
+                                            ],
+                                "server_extras": {
+                                "bidder_id": 10000,
+                                "mnetSize": "320x50",
+                                "mnetbidPrice": "0.50"
+                                },
+                                "creative_type": "html",
+                                "bidderInfoBean": {},
+                                "view_width": 320,
+                                "view_height": 50,
+                                "skippable": true,
+                                "bid_type": "fpd"
+                                },
+                                {
+                                "id": "e25e857c-3e6d-4d36-95d9-fb52c3d44bc2",
+                                "ext": {
+                                "adxAdUnitId": "/45361917/SelfieCamera320*50",
+                                "prflog": [
+                                           "http://testserver.com/vogon?acsn=0&act=headerBid&actltime=0&adj1=0&adj2=0&adt=B&bc=0&bdp=-92233720368547760.00&brf=false&browser_id=0&cbdp=0.45&cc=IN&cid=8CUO15940&cliip=1922029722&clsPrc=0.00&crid=563752245&device_id=0&dfpBd=0.00&dt=O&gtd=1000&it=I&iwb=0&logid=prlog&lper=0&ltime=0&mnet_cipv=0&mnet_oxbd=0.00&nbr=0&ogbdp=-92233720368547760.00&os_id=0&pageid=0&prvReqId=ajay-0E9D6749-46FF-474C-B1F2-FC19C2A58340-91261-000264812D790EAB&pvid=3&pvnm=ADX&requrl=http%3A%2F%2Fmnadsdkdemo.media.net.imnapp%2F1-0b16%2Fmnshowadviewcontroller%3Funiquekey%3Db4653cb8fecf77e5e5d92737dff9fcf8&rtime=0&s=1&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&snm=SUCCESS&toconsider=0&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3_1+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E8301&ugd=3&vid=BA08BF24-A7D2-4991-8385-DB4CB4F3F683-91261-0002646B0BF2886C&vsid=9358A8F4-C4D5-424D-BF03-EB0E3AD222A9"
+                                           ],
+                                "prlog": [
+                                          "http://testserver.com/vogon?acsn=0&act=headerBid&actltime=0&adj1=0&adj2=0&adt=B&bc=0&bdp=0.00&brf=false&browser_id=0&cbdp=0.00&cc=IN&cid=8CUO15940&cliip=1922029722&clsPrc=0.00&crid=563752245&device_id=0&dfpBd=0.00&gtd=1000&it=I&iwb=0&logid=prflog&lper=0&ltime=0&mnet_cipv=0&mnet_oxbd=0.00&ogbdp=0.00&os_id=0&pageid=0&prvReqId=ajay-0E9D6749-46FF-474C-B1F2-FC19C2A58340-91261-000264812D790EAB&pvid=3&pvnm=ADX&requrl=http%3A%2F%2Fmnadsdkdemo.media.net.imnapp%2F1-0b16%2Fmnshowadviewcontroller%3Funiquekey%3Db4653cb8fecf77e5e5d92737dff9fcf8&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&toconsider=0&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3_1+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E8301&ugd=3&vid=BA08BF24-A7D2-4991-8385-DB4CB4F3F683-91261-0002646B0BF2886C&vsid=9358A8F4-C4D5-424D-BF03-EB0E3AD222A9"
+                                          ]
+                                },
+                                "actlogs": [
+                                            "http://qsearch.media.net/log?acid=e25e857c-3e6d-4d36-95d9-fb52c3d44bc2&acsn=0&act=headerBid&actltime=255&adj1=0&adj2=30&adt=B&advUrl=unknown&bc=0&bdp=0.73&brf=%25%21d%28bool%3Dfalse%29&browser_id=0&cbdp=0.51&cid=8CUU823BH&cliip=1922029722&clsPrc=0.73&crid=671886176&device_id=0&dfpBd=0.73&dt=O&epc=%2F45361917%2FSelfieCamera320%2A50&gtd=400&it=I&iwb=0&logid=actlogs&lper=0&ltime=0&mnet_cipv=0&mnet_oxbd=0.00&ogbdp=0.73&os_id=0&pageid=0&prspt=headerbid&prvReqId=e25e857c-3e6d-4d36-95d9-fb52c3d44bc2&pvid=3&pvnm=ADX&requrl=http%3A%2F%2Fhd.camera.selfie.pomcoongla.amnapp&rtime=0&s=1&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&toconsider=0&ugd=3&vid=8ce062c0-3466-4648-ae14-64482c17a709&vsid=05a8a138-a647-4410-aad5-0f504ff65188"
+                                            ],
+                                "bidder_id": 3,
+                                "bidder_name": "ADEX",
+                                "bid": 0.73,
+                                "h": 50,
+                                "w": 320,
+                                "server_extras": {
+                                "adxSize": "320x50",
+                                "adxbidPrice": "0.73",
+                                "bidder_id": 3
+                                },
+                                "creative_type": "",
+                                "bidderInfoBean": {},
+                                "skippable": true,
+                                "bid_type": "adxd"
+                                }
+                                ],
+                "ext": {
+                    "video_logs_template": [
+                                            "http://testserver.com/vogon?auction_id=ajay-0E9D6749-46FF-474C-B1F2-FC19C2A58340-91261-000264812D790EAB&auctionid=ajay-0E9D6749-46FF-474C-B1F2-FC19C2A58340-91261-000264812D790EAB&bidder_id=%24%7BBIDDER_ID%7D&bsr=SDK&cc=IN&cid=8CUO15940&cliip=1922029722&crid=247384273&dt=mobile&dur=%24%7BDURATION%7D&evt=%24%7BEVENT_ID%7D&evtid=videoevent&id=ajay-0E9D6749-46FF-474C-B1F2-FC19C2A58340-91261-000264812D790EAB&it=I&logid=kfk&os=ios&ptype=inread&size=%24%7BADSIZE%7D&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3_1+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E8301&visitorid=9358A8F4-C4D5-424D-BF03-EB0E3AD222A9&winprice=%24%7BWIN_PRICE%7D"
+                                            ],
+                    "is_final": true
+                }
+            }
+        },
+        "ext": {
+            "cc": false,
+            "cl": "http://hd.camera.selfie.pomcoongla.amnapp/1/9?intent=ffd017a1bc11a9c1a2d160b9db9ae42b&s%5B0%5D.r=pomcoongla.selfie.camera.hd%3Aid%2Frecycler_view&s%5B0%5D.id=2131427431&s%5B0%5D.of=0"
+        },
+        "td": {
+            "rtb_exchange": 210,
+            "dp_processing": 46
+        }
+    },
+    "message": "",
+    "status": 200,
+    "success": true
+}

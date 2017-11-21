@@ -21,8 +21,7 @@
 - (void)testSingleLevelResponse {
     NSString *requestStr = readFile([self class], FILENAME_SAMPLE_REQUEST, @"json");
     MNetBidRequest *bidRequest = [[MNetBidRequest alloc] init];
-    
-    FromJSON(requestStr, bidRequest);
+    [MNJMManager fromJSONStr:requestStr toObj:bidRequest];
     
     // Test the response
     XCTAssert(bidRequest != nil, @"Bid request should not be nil");
@@ -48,7 +47,7 @@
     NSString *jsonStr = readFile([self class], @"MNetSampleJSONContent", @"json");
     
     MNetSampleModelClass *sample = [[MNetSampleModelClass alloc] init];
-    FromJSON(jsonStr, sample);
+    [MNJMManager fromJSONStr:jsonStr toObj:sample];
     
     XCTAssert(sample != nil, @"Sample cannot be nil");
     XCTAssert([sample.simpleString isEqualToString:@"testing"]);
@@ -75,39 +74,35 @@
     XCTAssert(bidResponse.serverExtras != nil);
     XCTAssert([bidResponse.creativeType isEqualToString:@"html"]);
     XCTAssert(bidResponse.skippable == YES);
+    XCTAssert(bidResponse.serverExtras != nil);
     
-    // Check every field hereafter
-    /*
-     "bidder_id": 1000,
-     "creative_id": "sample_creative_id",
-     "adtype": "banner",
-     "adcode": "sample_adcode",
-     "dfpbid": 1000,
-     "publisher_id": "samplepublisher_id",
-     "tp": "sample_tp",
-     "size": "320x50",
-     "h": 50,
-     "w": 320,
-     "server_extras": {
-     "bidder_id": 1000,
-     "mnetSize": "320x50",
-     "mnetbidPrice": "7.00"
-     },
-     "instl": 0,
-     "creative_type": "html",
-     "bidderInfoBean": {
-     "responseTime": 1000
-     },
-     "skippable": true
-     */
+    NSArray *expectedKeys = @[
+                              @"bidder_id",
+                              @"mnet_size",
+                              @"mnet_bid_price"
+                            ];
+    
+    for(NSString *key in expectedKeys){
+        XCTAssert([bidResponse.serverExtras objectForKey:key] != nil);
+    }
 }
 
 - (void)testSimpleBidResponse{
     NSString *jsonString = readFile([self class], @"MNetBidResponse", @"json");
     MNetBidResponse *bidResponse = [[MNetBidResponse alloc] init];
-    FromJSON(jsonString, bidResponse);
+    [MNJMManager fromJSONStr:jsonString toObj:bidResponse];
     
     [self assertBidResponse:bidResponse];
+}
+
+- (void)testIgnoreParsingKeys{
+    NSString *jsonStr = readFile([self class], @"MNetSampleJSONContent", @"json");
+    
+    MNetSampleModelClass *sample = [[MNetSampleModelClass alloc] init];
+    [MNJMManager fromJSONStr:jsonStr toObj:sample];
+    
+    NSString *randomKey = [[sample extras] objectForKey:@"some_random_key"];
+    XCTAssert(randomKey != nil, @"The random-key should not be nil");
 }
 
 @end

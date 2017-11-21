@@ -2,6 +2,9 @@
     "api_version": 1,
     "data": {
         "hb_config": {
+            "adview_cache_max": 3,
+            "adview_cache_timeout": 30,
+            "adview_reuse_enabled": true,
             "ad_units": [
                          {
                          "ad_unit_id": "min_first:0-0,max_first:0-1,min_last:0-3,max_last:0-9,view_pos:LEFT-CENTER",
@@ -126,10 +129,11 @@
                                            ]
                          },
                          {
-                         "ad_unit_id": "",
+                         "ad_unit_id": "customHbAdUnit",
                          "autorefresh_enabled": false,
                          "autorefresh_interval": 30,
-                         "crid": "795514717",
+                         "crid": "test_ad_unit_1",
+                         "bidder_ids": [1,2,3,4,5,6],
                          "custom_targets": [
                                             {
                                             "key": "d",
@@ -198,10 +202,11 @@
                                            ]
                          },
                          {
-                         "ad_unit_id": "",
+                         "ad_unit_id": "test_ad_unit_1",
                          "autorefresh_enabled": false,
                          "autorefresh_interval": 30,
-                         "crid": "719925423",
+                         "crid": "test_ad_unit_1",
+                         "bidder_ids": [1,2,3,4,5,6],
                          "custom_targets": [
                                             {
                                             "key": "dedicated",
@@ -237,11 +242,6 @@
                          ],
             "enabled": true
         },
-        "mnet_am_mt": "sample_macro",
-        "mnet_config_update_interval": 900000,
-        "mnet_fire_video_events": true,
-        "mnet_show_save_image_dialog": true,
-        "mnet_slot_debug_rate": 0.01,
         "pid": "8CUO15940",
         "publisher_timeout_settings": {
             "cbrt": 0,
@@ -256,6 +256,11 @@
             "rbd": 0
         },
         "sdk_config": {
+            "mnet_am_mt": "sample_macro",
+            "mnet_config_update_interval": 900000,
+            "mnet_fire_video_events": true,
+            "mnet_show_save_image_dialog": true,
+            "mnet_slot_debug_rate": 0.01,
             "mnet_adex_on_thirdparty_enabled": false,
             "refresh_ad_duration_sec": "30",
             "view_controller_links": {

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    //HTTP error code
+    // HTTP error code
     MNetErrCodeGeneric                  = -1000,
     MNetErrCodeNoInternetConnection     = -1001,
     MNetErrCodeInvalidRequest           = -1002,
@@ -32,8 +32,10 @@ typedef enum {
     MNetErrCodeMRAID                    = -4000,
     // Video error code
     MNetErrCodeVideo                    = -5000,
-    //Ad view reuse code
+    // Ad view reuse code
     MNetErrCodeAdViewReuse              = -6000,
+    // Adx error code
+    MNetErrCodeAdxFailed                = -7000,
 }MNetErrorCode;
 
 

@@ -1,49 +1,53 @@
 {
     "api_version": 1,
     "data": {
-        "ads": [
-                {
-                "id": "cbededd5c337438fa353723f6856621d",
-                "bidder_id": 10000,
-                "creative_id": "247384273",
-                "adtype": "banner",
-                "adcode": "<!DOCTYPE html><HTML><HEAD></HEAD><BODY><script id=\"mNCC\" language=\"javascript\">medianet_versionId = '111299';medianet_width = '300';medianet_height = '250';medianet_crid = '114068215';medianet_requrl= 'http%3A%2F%2FMNAdSDKDemo.media.net.imnapp';medianet_chnm2= '8CUO15940';medianet_chnm3= '247384273';medianet_bdrId= '9';medianet_sbdrId= '';medianet_auctionid= '84e731d7b98241cd882a585c510303f9';medianet_misc= {};medianet_misc.matchString= 'null';(function() {var isSSL = false;var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CU5PML78' + (isSSL ? '&https=1' : '');document.write('<scr' + 'ipt type=\"text/javascript\" id=\"mNSC\" src=\"' + mnSrc + '\"></scr' + 'ipt>');})();</script></BODY></HTML>",
-                "dfpbid": 0.45,
-                "publisher_id": "8CUO15940",
-                "size": "300x250",
-                "h": 250,
-                "w": 300,
-                "logging_pixels": [
-                                   "http://opt-west.media.net/ybnca/exchangenotify?aid=null&domain=mnadsdkdemo.media.net.imnapp&price=1.0&cgid=22262&cid=121505&rid=2526055&url=&cc=&td=&lid=&t=1494270571585",
-                                   "http://qsearch.media.net/log?act=headerBid&actltime=251&adj1=10&adj2=0&bdp=0.45&brf=%25%21d%28bool%3Dfalse%29&cbdp=0.45&cid=8CUO15940&clsPrc=0.45&cmpid=121505&crid=247384273&dfpBd=0.45&epc=114068215&fact=headerBid&it=I&logid=awlog&lper=0&ltime=0&ogbdp=1.00&prspt=headerbid&pvid=9&pvnm=YBNCA&requrl=http%3A%2F%2FMNAdSDKDemo.media.net.imnapp&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&size=300x250&ugd=3&vReq=BC6E234F-50DD-42C7-AB2D-BFAF45303DC2"
-                                   ],
-                "server_extras": {
-                "bidder_id": 10000,
-                "mnetSize": "300x250",
-                "mnetbidPrice": "0.45"
-                },
-                "creative_type": "html",
-                "bidderInfoBean": {},
-                "skippable": true,
-                "bid_type": "fpd"
-                },
-                {
-                "bidder_id": 23,
-                "creative_id": "247384273",
-                "adcode": "<!DOCTYPE html><HTML><HEAD></HEAD><BODY><script id=\"mNCC\" language=\"javascript\">medianet_versionId = '111299';medianet_width = '300';medianet_height = '250';medianet_crid = '114068215';medianet_requrl= 'http%3A%2F%2FMNAdSDKDemo.media.net.imnapp';medianet_chnm2= '8CUO15940';medianet_chnm3= '247384273';medianet_bdrId= '9';medianet_sbdrId= '';medianet_auctionid= '84e731d7b98241cd882a585c510303f9';medianet_misc= {};medianet_misc.matchString= 'null';(function() {var isSSL = false;var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CU5PML78' + (isSSL ? '&https=1' : '');document.write('<scr' + 'ipt type=\"text/javascript\" id=\"mNSC\" src=\"' + mnSrc + '\"></scr' + 'ipt>');})();</script></BODY></HTML>",
-                "size": "300x250",
-                "server_extras": {
-                "bidder_id": 23,
-                "mnet_abd": "1.00",
-                "mnet_apc": "247384273_ApNx",
-                "mnet_asz": "300x250"
-                },
-                "creative_type": "",
-                "bidderInfoBean": {},
-                "skippable": false,
-                "bid_type": "tpd"
-                }
-                ]
+        "ads": {
+            "216427370": {
+                "ads_details": [
+                               {
+                               "id": "cbededd5c337438fa353723f6856621d",
+                               "bidder_id": 10000,
+                               "adtype": "banner",
+                               "adcode": "<!DOCTYPE html><HTML><HEAD></HEAD><BODY><script id=\"mNCC\" language=\"javascript\">medianet_versionId = '111299';medianet_width = '300';medianet_height = '250';medianet_crid = '114068215';medianet_requrl= 'http%3A%2F%2FMNAdSDKDemo.media.net.imnapp';medianet_chnm2= '8CUO15940';medianet_chnm3= '247384273';medianet_bdrId= '9';medianet_sbdrId= '';medianet_auctionid= '84e731d7b98241cd882a585c510303f9';medianet_misc= {};medianet_misc.matchString= 'null';(function() {var isSSL = false;var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CU5PML78' + (isSSL ? '&https=1' : '');document.write('<scr' + 'ipt type=\"text/javascript\" id=\"mNSC\" src=\"' + mnSrc + '\"></scr' + 'ipt>');})();</script></BODY></HTML>",
+                               "dfpbid": 0.45,
+                               "publisher_id": "8CUO15940",
+                               "size": "300x250",
+                               "h": 250,
+                               "w": 300,
+                               "logging_pixels": [
+                                                  "http://opt-west.media.net/ybnca/exchangenotify?aid=null&domain=mnadsdkdemo.media.net.imnapp&price=1.0&cgid=22262&cid=121505&rid=2526055&url=&cc=&td=&lid=&t=1494270571585",
+                                                  "http://qsearch.media.net/log?act=headerBid&actltime=251&adj1=10&adj2=0&bdp=0.45&brf=%25%21d%28bool%3Dfalse%29&cbdp=0.45&cid=8CUO15940&clsPrc=0.45&cmpid=121505&crid=247384273&dfpBd=0.45&epc=114068215&fact=headerBid&it=I&logid=awlog&lper=0&ltime=0&ogbdp=1.00&prspt=headerbid&pvid=9&pvnm=YBNCA&requrl=http%3A%2F%2FMNAdSDKDemo.media.net.imnapp&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&size=300x250&ugd=3&vReq=BC6E234F-50DD-42C7-AB2D-BFAF45303DC2"
+                                                  ],
+                               "server_extras": {
+                               "bidder_id": 10000,
+                               "mnetSize": "300x250",
+                               "mnetbidPrice": "0.45"
+                               },
+                               "creative_type": "html",
+                               "bidderInfoBean": {},
+                               "skippable": true,
+                               "bid_type": "fpd"
+                               },
+                               {
+                               "bidder_id": 23,
+                               "creative_id": "247384273",
+                               "adcode": "<!DOCTYPE html><HTML><HEAD></HEAD><BODY><script id=\"mNCC\" language=\"javascript\">medianet_versionId = '111299';medianet_width = '300';medianet_height = '250';medianet_crid = '114068215';medianet_requrl= 'http%3A%2F%2FMNAdSDKDemo.media.net.imnapp';medianet_chnm2= '8CUO15940';medianet_chnm3= '247384273';medianet_bdrId= '9';medianet_sbdrId= '';medianet_auctionid= '84e731d7b98241cd882a585c510303f9';medianet_misc= {};medianet_misc.matchString= 'null';(function() {var isSSL = false;var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CU5PML78' + (isSSL ? '&https=1' : '');document.write('<scr' + 'ipt type=\"text/javascript\" id=\"mNSC\" src=\"' + mnSrc + '\"></scr' + 'ipt>');})();</script></BODY></HTML>",
+                               "size": "300x250",
+                               "server_extras": {
+                               "bidder_id": 23,
+                               "mnet_abd": "1.00",
+                               "mnet_apc": "247384273_ApNx",
+                               "mnet_asz": "300x250"
+                               },
+                               "creative_type": "",
+                               "bidderInfoBean": {},
+                               "skippable": false,
+                               "bid_type": "tpd"
+                               }
+                               ],
+                "ext": {}
+            }
+        }
     },
     "message": "",
     "status": 200,
