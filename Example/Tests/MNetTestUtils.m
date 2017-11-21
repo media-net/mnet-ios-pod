@@ -129,15 +129,4 @@
     XCTAssert([output isEqualToString:expectedOutput], @"The actual output Str:%@ does not match the output: %@", output, expectedOutput);
 }
 
-- (void)testDebugGetObjCTypeForProperty{
-    MNetBidRequest *bidRequest = [[MNetBidRequest alloc] init];
-    
-    unsigned count;
-    objc_property_t *properties = class_copyPropertyList([bidRequest class], &count);
-    for (int i = 0; i < count; i++) {
-        NSString *key = [NSString stringWithUTF8String:property_getName(properties[i])];
-        NSLog(@"%@ : %@", key, [MNetUtil getObjCTypeForProperty:properties[i]]);
-    }
-}
-
 @end

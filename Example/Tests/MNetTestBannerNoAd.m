@@ -19,6 +19,8 @@
 
 - (void)setUp {
     [super setUp];
+    id<MNetBidStoreProtocol> bidStore = [MNetBidStore getStore];
+    [bidStore flushStore];
 }
 
 - (void)tearDown {
@@ -26,7 +28,6 @@
 }
 
 - (void)testBannerNoAd {
-    prefetchObjStub([self class]);
     noAdRequestStub([self class]);
     
     self.bannerNoAdExpectation = [self expectationWithDescription:@"Ad view not loaded"];

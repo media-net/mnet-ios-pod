@@ -1,77 +1,78 @@
 {
     "api_version": 1,
     "data": {
-        "ads": [
-                {
-                "id": "8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB",
-                "visit_id": "ED3F97D2-6FBF-450F-B5D8-0C26E9406A9B-29034-00003AB8D075D07E",
-                "bidder_id": 10000,
-                "creative_id": "563752245",
-                "adtype": "banner",
-                "adcode": "<!DOCTYPE html><HTML><HEAD></HEAD><BODY><script id=\"mNCC\" language=\"javascript\">medianet_versionId = '111299';medianet_width = '320';medianet_height = '480';medianet_hint = '{\"name\":\"\",\"storeurl\":\"\"}';medianet_crid = '873951869';medianet_requrl= 'http%3A%2F%2Fmnadsdkdemo.media.net.imnapp';medianet_chnm2= '8CUO15940';medianet_chnm3= '563752245';medianet_bdrId= '9';medianet_sbdrId= '';medianet_auctionid= 'ff522295eaeb4e3db55daacf8b0b019e';medianet_misc= {};medianet_misc.matchString= 'null';(function() {var isSSL = false;var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CU5PML78' + (isSSL ? '&https=1' : '');document.write('<scr' + 'ipt type=\"text/javascript\" id=\"mNSC\" src=\"' + mnSrc + '\"></scr' + 'ipt>');})();</script></BODY></HTML>",
-                "bid": 0.44,
-                "dfpbid": 0.44,
-                "publisher_id": "8CUO15940",
-                "size": "320x480",
-                "h": 480,
-                "w": 320,
-                "logging_pixels": [
-                                   "http://opt-west.media.net/ybnca/exchangenotify?aid=null&domain=mnadsdkdemo.media.net.imnapp&price=1.0&cgid=22262&cid=123842&rid=2551510&url=&cc=&td=&lid=&t=1499667411766",
-                                   "http://qsearch.media.net/log?acid=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&acsn=0&act=headerBid&actltime=375&adj1=12&adj2=0&adt=B&advUrl=unknown&bc=0&bdp=0.44&brf=%25%21d%28bool%3Dfalse%29&browser_id=0&cbdp=0.44&cid=8CUO15940&cliip=1922029722&clsPrc=0.44&cmpid=123842&crid=563752245&device_id=0&dfpBd=0.44&dfpDiv=%2F45361917%2Fiostest320%2A480&dt=O&epc=873951869&gtd=1000&it=I&iwb=0&logid=awlog&lper=0&ltime=0&mnet_cipv=0&ogbdp=1.00&os_id=0&pageid=0&prspt=headerbid&prvAccId=873951869&prvReqId=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&pvid=9&pvnm=YBNCA&requrl=http%3A%2F%2Fmnadsdkdemo.media.net.imnapp&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&size=320x480&toconsider=0&ugd=3&vReq=3C0311D6-DB81-439F-BB9B-7C88D860DA0C"
-                                   ],
-                "server_extras": {
-                "bidder_id": 10000,
-                "mnetSize": "320x480",
-                "mnetbidPrice": "0.44"
-                },
-                "instl": 1,
-                "creative_type": "html",
-                "bidderInfoBean": {},
-                "skippable": true,
-                "bid_type": "fpd"
-                },
-                {
-                "id": "8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB",
-                "visit_id": "ED3F97D2-6FBF-450F-B5D8-0C26E9406A9B-29034-00003AB8D075D07E",
-                "ext": {
-                "adxAdUnitId": "563752245",
-                "awlog": [
-                          "http://qsearch.media.net/log?acid=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&acsn=0&act=headerBid&actltime=378&adj1=0&adj2=100&adt=B&advUrl=unknown&bc=0&bdp=0.00&brf=%25%21d%28bool%3Dfalse%29&browser_id=0&cbdp=0.00&cid=8CUO15940&cliip=1922029722&clsPrc=0.00&crid=563752245&device_id=0&dfpBd=0.00&dfpDiv=%2F45361917%2Fiostest320%2A480&dt=O&epc=873951869&gtd=1000&it=I&iwb=0&logid=awlog&lper=0&ltime=0&mnet_cipv=0&ogbdp=0.00&os_id=0&pageid=0&prspt=headerbid&prvReqId=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&pvid=3&pvnm=ADX&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&toconsider=0&ugd=3&vReq=3C0311D6-DB81-439F-BB9B-7C88D860DA0C",
-                          "http://qsearch.media.net/log?acid=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&acsn=0&act=headerBid&actltime=0&adj1=0&adj2=0&adt=B&advUrl=unknown&bc=0&bdp=0.00&brf=%25%21d%28bool%3Dfalse%29&browser_id=0&cbdp=0.00&cid=8CUO15940&cliip=1922029722&clsPrc=0.00&crid=563752245&device_id=0&dfpBd=0.00&dt=O&gtd=1000&it=I&iwb=0&lper=0&ltime=0&mnet_cipv=0&nbr=0&ogbdp=0.00&os_id=0&pageid=0&prspt=headerbid&prvReqId=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&pvid=3&pvnm=ADX&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&toconsider=0&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E269&ugd=3&vReq=ED3F97D2-6FBF-450F-B5D8-0C26E9406A9B-29034-00003AB8D075D07E&vsid=3C0311D6-DB81-439F-BB9B-7C88D860DA0C"
-                          ],
-                "prflog": [
-                           "http://qsearch.media.net/log?acsn=0&act=headerBid&actltime=0&adj1=0&adj2=0&adt=B&bc=0&bdp=0.00&brf=%25%21d%28bool%3Dfalse%29&browser_id=0&cbdp=0.00&cid=8CUO15940&cliip=1922029722&clsPrc=0.00&crid=563752245&device_id=0&dfpBd=0.00&dt=O&gtd=1000&it=I&iwb=0&logid=prlog&lper=0&ltime=0&mnet_cipv=0&nbr=0&ogbdp=0.00&os_id=0&pageid=0&prvReqId=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&pvid=3&pvnm=ADX&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&toconsider=0&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E269&ugd=3&vReq=ED3F97D2-6FBF-450F-B5D8-0C26E9406A9B-29034-00003AB8D075D07E&vsid=3C0311D6-DB81-439F-BB9B-7C88D860DA0C"
-                           ],
-                "prlog": [
-                          "http://qsearch.media.net/log?acsn=0&act=headerBid&actltime=0&adj1=0&adj2=0&adt=B&bc=0&bdp=0.00&brf=%25%21d%28bool%3Dfalse%29&browser_id=0&cbdp=0.00&cid=8CUO15940&cliip=1922029722&clsPrc=0.00&crid=563752245&device_id=0&dfpBd=0.00&gtd=1000&it=I&iwb=0&logid=prflog&lper=0&ltime=0&mnet_cipv=0&ogbdp=0.00&os_id=0&pageid=0&prvReqId=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&pvid=3&pvnm=ADX&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&toconsider=0&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E269&ugd=3&vReq=ED3F97D2-6FBF-450F-B5D8-0C26E9406A9B-29034-00003AB8D075D07E&vsid=3C0311D6-DB81-439F-BB9B-7C88D860DA0C"
-                          ]
-                },
-                "bidder_id": 3,
-                "creative_id": "563752245",
-                "bid": 0.45,
-                "publisher_id": "8CUO15940",
-                "size": "320x480",
-                "h": 480,
-                "w": 320,
-                "server_extras": {
-                "adxSize": "320x480",
-                "adxbidPrice": "0.45",
-                "bidder_id": 3
-                },
-                "instl": 1,
-                "creative_type": "",
-                "bidderInfoBean": {},
-                "skippable": true,
-                "bid_type": "adxd"
-                }
-                ],
-        "cc": false,
-        "cl": "http://mnadsdkdemo.media.net.imnapp/1-0b3-0/mnshowadviewcontroller?uniquekey=bdd10d9f03383e27925eea5e48c1cede",
-        "ext": null,
-        "prf_obj": {
-            "ad_cycle_id": "",
-            "prfd":1000,
-            "prf_url" : "http://cf.d.msas.media.net/api/v2/prefetch_bids?crid=%1234&userid=abc123&ts=1234&ad_cycle_id=A1234"
+        "ads": {
+            "563752245": {
+                "ads_details": [
+                                {
+                                "id": "8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB",
+                                "visit_id": "ED3F97D2-6FBF-450F-B5D8-0C26E9406A9B-29034-00003AB8D075D07E",
+                                "bidder_id": 10000,
+                                "creative_id": "563752245",
+                                "adtype": "banner",
+                                "adcode": "<!DOCTYPE html><HTML><HEAD></HEAD><BODY><script id=\"mNCC\" language=\"javascript\">medianet_versionId = '111299';medianet_width = '320';medianet_height = '480';medianet_hint = '{\"name\":\"\",\"storeurl\":\"\"}';medianet_crid = '873951869';medianet_requrl= 'http%3A%2F%2Fmnadsdkdemo.media.net.imnapp';medianet_chnm2= '8CUO15940';medianet_chnm3= '563752245';medianet_bdrId= '9';medianet_sbdrId= '';medianet_auctionid= 'ff522295eaeb4e3db55daacf8b0b019e';medianet_misc= {};medianet_misc.matchString= 'null';(function() {var isSSL = false;var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CU5PML78' + (isSSL ? '&https=1' : '');document.write('<scr' + 'ipt type=\"text/javascript\" id=\"mNSC\" src=\"' + mnSrc + '\"></scr' + 'ipt>');})();</script></BODY></HTML>",
+                                "bid": 0.44,
+                                "dfpbid": 0.44,
+                                "publisher_id": "8CUO15940",
+                                "size": "320x480",
+                                "h": 480,
+                                "w": 320,
+                                "logging_pixels": [
+                                                   "http://opt-west.media.net/ybnca/exchangenotify?aid=null&domain=mnadsdkdemo.media.net.imnapp&price=1.0&cgid=22262&cid=123842&rid=2551510&url=&cc=&td=&lid=&t=1499667411766",
+                                                   "http://qsearch.media.net/log?acid=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&acsn=0&act=headerBid&actltime=375&adj1=12&adj2=0&adt=B&advUrl=unknown&bc=0&bdp=0.44&brf=%25%21d%28bool%3Dfalse%29&browser_id=0&cbdp=0.44&cid=8CUO15940&cliip=1922029722&clsPrc=0.44&cmpid=123842&crid=563752245&device_id=0&dfpBd=0.44&dfpDiv=%2F45361917%2Fiostest320%2A480&dt=O&epc=873951869&gtd=1000&it=I&iwb=0&logid=awlog&lper=0&ltime=0&mnet_cipv=0&ogbdp=1.00&os_id=0&pageid=0&prspt=headerbid&prvAccId=873951869&prvReqId=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&pvid=9&pvnm=YBNCA&requrl=http%3A%2F%2Fmnadsdkdemo.media.net.imnapp&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&size=320x480&toconsider=0&ugd=3&vReq=3C0311D6-DB81-439F-BB9B-7C88D860DA0C"
+                                                   ],
+                                "server_extras": {
+                                "bidder_id": 10000,
+                                "mnetSize": "320x480",
+                                "mnetbidPrice": "0.44"
+                                },
+                                "instl": 1,
+                                "creative_type": "html",
+                                "bidderInfoBean": {},
+                                "skippable": true,
+                                "bid_type": "fpd"
+                                },
+                                {
+                                "id": "8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB",
+                                "visit_id": "ED3F97D2-6FBF-450F-B5D8-0C26E9406A9B-29034-00003AB8D075D07E",
+                                "ext": {
+                                "adxAdUnitId": "563752245",
+                                "awlog": [
+                                          "http://qsearch.media.net/log?acid=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&acsn=0&act=headerBid&actltime=378&adj1=0&adj2=100&adt=B&advUrl=unknown&bc=0&bdp=0.00&brf=%25%21d%28bool%3Dfalse%29&browser_id=0&cbdp=0.00&cid=8CUO15940&cliip=1922029722&clsPrc=0.00&crid=563752245&device_id=0&dfpBd=0.00&dfpDiv=%2F45361917%2Fiostest320%2A480&dt=O&epc=873951869&gtd=1000&it=I&iwb=0&logid=awlog&lper=0&ltime=0&mnet_cipv=0&ogbdp=0.00&os_id=0&pageid=0&prspt=headerbid&prvReqId=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&pvid=3&pvnm=ADX&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&toconsider=0&ugd=3&vReq=3C0311D6-DB81-439F-BB9B-7C88D860DA0C",
+                                          "http://qsearch.media.net/log?acid=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&acsn=0&act=headerBid&actltime=0&adj1=0&adj2=0&adt=B&advUrl=unknown&bc=0&bdp=0.00&brf=%25%21d%28bool%3Dfalse%29&browser_id=0&cbdp=0.00&cid=8CUO15940&cliip=1922029722&clsPrc=0.00&crid=563752245&device_id=0&dfpBd=0.00&dt=O&gtd=1000&it=I&iwb=0&lper=0&ltime=0&mnet_cipv=0&nbr=0&ogbdp=0.00&os_id=0&pageid=0&prspt=headerbid&prvReqId=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&pvid=3&pvnm=ADX&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&toconsider=0&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E269&ugd=3&vReq=ED3F97D2-6FBF-450F-B5D8-0C26E9406A9B-29034-00003AB8D075D07E&vsid=3C0311D6-DB81-439F-BB9B-7C88D860DA0C"
+                                          ],
+                                "prflog": [
+                                           "http://qsearch.media.net/log?acsn=0&act=headerBid&actltime=0&adj1=0&adj2=0&adt=B&bc=0&bdp=0.00&brf=%25%21d%28bool%3Dfalse%29&browser_id=0&cbdp=0.00&cid=8CUO15940&cliip=1922029722&clsPrc=0.00&crid=563752245&device_id=0&dfpBd=0.00&dt=O&gtd=1000&it=I&iwb=0&logid=prlog&lper=0&ltime=0&mnet_cipv=0&nbr=0&ogbdp=0.00&os_id=0&pageid=0&prvReqId=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&pvid=3&pvnm=ADX&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&toconsider=0&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E269&ugd=3&vReq=ED3F97D2-6FBF-450F-B5D8-0C26E9406A9B-29034-00003AB8D075D07E&vsid=3C0311D6-DB81-439F-BB9B-7C88D860DA0C"
+                                           ],
+                                "prlog": [
+                                          "http://qsearch.media.net/log?acsn=0&act=headerBid&actltime=0&adj1=0&adj2=0&adt=B&bc=0&bdp=0.00&brf=%25%21d%28bool%3Dfalse%29&browser_id=0&cbdp=0.00&cid=8CUO15940&cliip=1922029722&clsPrc=0.00&crid=563752245&device_id=0&dfpBd=0.00&gtd=1000&it=I&iwb=0&logid=prflog&lper=0&ltime=0&mnet_cipv=0&ogbdp=0.00&os_id=0&pageid=0&prvReqId=8BF71701-197D-49D4-9BCB-702733877D06-29034-00003AE9115DE5EB&pvid=3&pvnm=ADX&rtime=0&s=0&sc_adj1=0&sc_adj2=0&sc_bdp=0.00&sc_cbdp=0.00&sc_ogbdp=0.00&toconsider=0&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E269&ugd=3&vReq=ED3F97D2-6FBF-450F-B5D8-0C26E9406A9B-29034-00003AB8D075D07E&vsid=3C0311D6-DB81-439F-BB9B-7C88D860DA0C"
+                                          ]
+                                },
+                                "bidder_id": 3,
+                                "creative_id": "563752245",
+                                "bid": 0.45,
+                                "publisher_id": "8CUO15940",
+                                "size": "320x480",
+                                "h": 480,
+                                "w": 320,
+                                "server_extras": {
+                                "adxSize": "320x480",
+                                "adxbidPrice": "0.45",
+                                "bidder_id": 3
+                                },
+                                "instl": 1,
+                                "creative_type": "",
+                                "bidderInfoBean": {},
+                                "skippable": true,
+                                "bid_type": "adxd"
+                                }
+                                ],
+                "ext": {}
+            }
+        },
+        "ext": {
+            "cc": false,
+            "cl": "http://mnadsdkdemo.media.net.imnapp/1-0b3-0/mnshowadviewcontroller?uniquekey=bdd10d9f03383e27925eea5e48c1cede"
         },
         "td": {
             "rtb_exchange": 322,

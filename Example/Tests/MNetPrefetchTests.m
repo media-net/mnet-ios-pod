@@ -22,7 +22,7 @@
 
 - (void)testPrefetchRequest{
     validBannerAdRequestStub([self class]);
-    prefetchObjStub([self class]);
+    stubPrefetchReq([self class]);
     
     self.prefetchExpectation = [self expectationWithDescription:@"Expectation for prefetching request"];
     
@@ -35,7 +35,9 @@
     
     [MNetAdPreLoader prefetchWith:request
                          adUnitId:adUnitId
+                    guestAdUnitId:adUnitId
                rootViewController:[self getViewController]
+                  timeoutInMillis:nil
                           success:^(NSString * _Nonnull cacheKey, NSDictionary * _Nonnull prefetchServerParams, NSString * _Nonnull prefetchAdCycleId) {
                               MNetAdView *adView = (MNetAdView *)[MNetAdPreLoader getCachedViewForCacheKey:cacheKey];
                               

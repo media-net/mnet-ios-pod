@@ -10,6 +10,7 @@
 #import <Nocilla/Nocilla.h>
 #import "XCTest+MNetTestUtils.h"
 #import <MNetAdSdk/MNetAdSdk-umbrella.h>
+@import MNetJSONModeller;
 
 #define EXPECTATION_FULFILL(EXPECTATION) \
 if(EXPECTATION){\
@@ -22,6 +23,7 @@ EXPECTATION = nil;\
 - (void)tearDown;
 - (UIViewController *)getViewController;
 - (UIViewController *)getVCWithRandomContents;
+- (MNetBidResponse *)getTestBidResponse;
 - (void)cacheVideoUrl:(NSString *)videoUrl;
 
 + (NSString *)getVideoUrl;

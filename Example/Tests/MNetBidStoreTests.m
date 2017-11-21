@@ -73,6 +73,61 @@ static NSString *adUnitPrefix = @"creative_";
     XCTAssert([expectedPubIds count] == 0);
 }
 
+- (void)testBulkExpiryPop{
+    // Commenting out the measure block since that takes up ~20 seconds,
+    // and when running all the tests together, it's a bit heavy.
+    // Uncomment if you want to run this individually.
+    /*
+    [self measureBlock:^{
+        [self performBulkPop];
+    }];
+     */
+    // Running this in a measureBlock gives somewhere around 5 millis for 999 pops
+    [self performBulkPop];
+}
+
+- (void)performBulkPop{
+    id<MNetBidStoreProtocol> bidStore = [MNetBidStore getStore];
+    NSUInteger numEntries = 1000;
+    NSUInteger numAdUnits = 1;
+    NSMutableArray<MNetBidResponse *> *bidResponsesList = [self getBidResponses:numEntries withNumAdunits:numAdUnits withNumBidIds:1];
+    
+    for(int i=0; i<numEntries; i++){
+        MNetBidResponse *bidResponse = [bidResponsesList objectAtIndex:i];
+        long expiry = ([[MNetUtil getTimestampInMillis] longValue] + 1000);
+        if(i == (numEntries - 1)){
+            expiry = ([[MNetUtil getTimestampInMillis] longValue] + 20000);
+        }
+        bidResponse.expiry = [NSNumber numberWithLong:expiry];
+        BOOL insertResp = [bidStore insert:bidResponse];
+        XCTAssert(insertResp == YES);
+    }
+    
+    __block XCTestExpectation *expectation = [self expectationWithDescription:@""];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSString *adUnitId = [NSString stringWithFormat:@"%@%d", adUnitPrefix, 1];
+        
+        NSNumber *startTime = [MNetUtil getTimestampInMillis];
+        NSArray<MNetBidResponse *> *bidResponseList = [bidStore fetchForAdUnitId:adUnitId];
+        NSNumber *endTime = [MNetUtil getTimestampInMillis];
+        
+        XCTAssert([bidResponseList count] == 1);
+        XCTAssert([bidStore fetchForAdUnitId:adUnitId] == nil);
+        
+        double timeDiff = [endTime doubleValue] - [startTime doubleValue];
+        NSLog(@"TIME_DIFF: %f", timeDiff);
+        EXPECTATION_FULFILL(expectation);
+    });
+    
+    [self waitForExpectationsWithTimeout:20 handler:^(NSError * _Nullable error) {
+        if(error){
+            NSLog(@"Error! - %@", error);
+        }else{
+            NSLog(@"DONE!");
+        }
+    }];
+}
 
 - (void)testBidStore{
     id<MNetBidStoreProtocol> bidStore = [MNetBidStore getStore];
@@ -115,7 +170,7 @@ static NSString *adUnitPrefix = @"creative_";
     
     for(NSUInteger i=0; i<numResponses; i++){
         MNetBidResponse *bidResponse = [[MNetBidResponse alloc] init];
-        FromJSON(jsonString, bidResponse);
+        [MNJMManager fromJSONStr:jsonString toObj:bidResponse];
         
         // Changing the bid-response adunit-id
         bidResponse.creativeId = [NSString stringWithFormat:@"%@%ld", adUnitPrefix, (i % numAdunits) + 1];

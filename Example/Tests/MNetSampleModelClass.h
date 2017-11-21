@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <MNetAdSdk/MNetAdSdk-umbrella.h>
 
-@interface MNetSampleModelClass : NSObject <MNetJSONMapper>
+@interface MNetSampleModelClass : NSObject <MNJMMapperProtocol>
 @property (nonatomic) NSString *simpleString;
 @property (nonatomic) NSArray<MNetBidRequest *> *requestsList;
 @property (nonatomic) NSDictionary<NSString *, MNetBidResponse *> *responsesMap;
+@property (nonatomic) NSDictionary *extras;
 @end

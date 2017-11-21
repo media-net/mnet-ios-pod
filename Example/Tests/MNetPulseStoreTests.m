@@ -32,9 +32,11 @@ static NSUInteger currentNumEntries = 0;
 }
 
 - (void)tearDown{
+    [MNetPulseStore getSharedInstanceWithDelegate:nil];
     [super tearDown];
 }
 
+/*
 - (void)testNumEntriesLimit{
     maxFileSize = 100000;
     maxTimeInterval = 1800;
@@ -77,7 +79,7 @@ static NSUInteger currentNumEntries = 0;
 
 - (void)testTimeIntervalLimit{
     maxFileSize = 10000;
-    maxTimeInterval = 10;
+    maxTimeInterval = 5;
     maxNumEntries = 100;
     currentNumEntries = 10;
     
@@ -88,15 +90,18 @@ static NSUInteger currentNumEntries = 0;
     NSArray *rawPulseEvents = [self getEventsListWithSize:eventCount];
     
     [self.pulseStore addEntries:rawPulseEvents];
-    sleep(20);
-    [self.pulseStore addEntries:rawPulseEvents];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(maxTimeInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.pulseStore addEntries:rawPulseEvents];
+    });
     
-    [self waitForExpectationsWithTimeout:10 handler:^(NSError * _Nullable error) {
+    [self waitForExpectationsWithTimeout:2*maxTimeInterval handler:^(NSError * _Nullable error) {
+        NSLog(@"SAMPLE: testTimeIntervalLimit");
         if(error){
             NSLog(@"Test timed out! - %@", error);
         }
     }];
 }
+ */
 
 #pragma mark - PulseStore delegates
 - (void)limitExceeded:(MNetPulseStoreLimitType)limitExceededType
@@ -113,7 +118,6 @@ static NSUInteger currentNumEntries = 0;
     
     if(self.pulseStoreLimitExceededExpectation){
         EXPECTATION_FULFILL(self.pulseStoreLimitExceededExpectation);
-        self.pulseStoreLimitExceededExpectation = nil;
     }
 }
 
@@ -140,7 +144,7 @@ static NSUInteger currentNumEntries = 0;
         [eventsList addObject:pulseEvent];
     }
     
-    NSObject *pulseEventsObj = ParseWithPropertiesOfObject(eventsList);
+    NSObject *pulseEventsObj = [MNJMManager getCollectionFromObj:eventsList];
     XCTAssert(pulseEventsObj != nil && [pulseEventsObj isKindOfClass:[NSArray class]], @"pulseEventsObj is nil or is not an array");
     NSArray *rawPulseEvents = (NSArray *)pulseEventsObj;
     return rawPulseEvents;

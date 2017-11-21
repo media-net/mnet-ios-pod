@@ -19,6 +19,8 @@
 
 - (void)setUp {
     [super setUp];
+    id<MNetBidStoreProtocol> bidStore = [MNetBidStore getStore];
+    [bidStore flushStore];
 }
 
 - (void)tearDown {

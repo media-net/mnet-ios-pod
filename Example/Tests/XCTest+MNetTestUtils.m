@@ -43,14 +43,9 @@ void dummyStubConfigRequest(Class classFile){
     stubRequest(@"GET", configUrl.regex).andReturn(200).withBody(configContents);
 }
 
-void prefetchObjStub(Class classFile){
-    NSString *prefetchUrl = @"http:\\/\\/cf\\.d\\.msas\\.media\\.net\\/api\\/v2\\/prefetch_bid.*";
-    stubRequest(@"GET", prefetchUrl.regex).andReturn(200);
-}
-
 void validBannerAdRequestStub(Class classFile){
     NSString *respStr = readFile(classFile, FILENAME_BANNER_320x50, @"json");
-    NSString *url = [[MNetURL getSharedInstance] getAdLoaderUrl];
+    NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
     NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
     stubRequest(@"GET", regexStr.regex)
     .andReturn(200)
@@ -59,30 +54,29 @@ void validBannerAdRequestStub(Class classFile){
 
 void validVideoAdRequestStub(Class classFile){
     NSString *respStr = readFile(classFile, FILENAME_VIDEO_320x250, @"json");
-    NSString *url = [[MNetURL getSharedInstance] getAdLoaderUrl];
+    NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
     NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
     stubRequest(@"GET", regexStr.regex).andReturn(200).withBody(respStr);
-    stubRequest(@"GET", [[MNetURL getSharedInstance] getBaseResourceUrl].regex).andReturn(200);
 }
 
 void validRewardedVideoAdRequestStub(Class classFile){
     NSString *respStr = readFile(classFile, FILENAME_REWARDED_VIDEO, @"json");
-    NSString *url = [[MNetURL getSharedInstance] getAdLoaderUrl];
+    NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
     NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
     stubRequest(@"GET", regexStr.regex).andReturn(200).withBody(respStr);
 }
 
 void invalidVideoAdRequestStub(Class classFile){
     NSString *respStr = readFile(classFile, INVALID_FILENAME_VIDEO, @"json");
-    NSString *url = [[MNetURL getSharedInstance] getAdLoaderUrl];
+    NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
     NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
-    stubRequest(@"GET", regexStr.regex).andReturn(200).withBody(respStr);
+    stubRequest(@"GET", regexStr.regex).andReturn(200).withBody(respStr);    
 }
 
 void validInterstitialAdRequestStub(Class classFile){
     NSString *respStr = readFile(classFile, FILENAME_BANNER_300x250, @"json");
     
-    NSString *url = [[MNetURL getSharedInstance] getAdLoaderUrl];
+    NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
     NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
     stubRequest(@"GET", regexStr.regex)
     .andReturn(200)
@@ -101,14 +95,14 @@ void dummyStubLoader(){
 void validAdxAdRequestStub(Class classFile){
     NSString *respStr = readFile(classFile, FILENAME_ADX_BANNER, @"json");
     
-    NSString *url = [[MNetURL getSharedInstance] getAdLoaderUrl];
+    NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
     NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
     stubRequest(@"GET", regexStr.regex).andReturn(200).withBody(respStr);
 }
 
 void noAdRequestStub(Class classFile){
-    NSString *respStr = readFile(classFile, @"invalidAdResponse", @"json");
-    NSString *url = [[MNetURL getSharedInstance] getAdLoaderUrl];
+    NSString *respStr = readFile(classFile, @"noAdResponse", @"json");
+    NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
     NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
     stubRequest(@"GET", regexStr.regex)
     .andReturn(200)
@@ -141,11 +135,23 @@ void updateSdkInfo(Class className){
     
     NSDictionary *responseData = [responseDataObj objectForKey:@"data"];
     
-    FromJsonDict(responseData, mnetConfig);
+    [MNJMManager fromDict:responseData toObject:mnetConfig];
     
     NSDictionary *extConfig = [mnetConfig getConfig];
     [[MNetSdkConfig getInstance] __updateConfigExternally:extConfig];
 }
+
+void stubPrefetchReq(Class className){
+    NSString *respStr = readFile(className, @"MNetPredictBidsRelayResponse", @"json");
+    
+    NSString *requestUrl = @"http://.*?prefetch_predicted_bids.*";
+    stubRequest(@"GET", requestUrl.regex).andReturn(200).withBody(respStr);
+}
+
+void stubAuctionLoggerRequest(){
+    stubRequest(@"GET", @"http://staging.d.msas.media.net/api/v2/rtb/logs.+".regex).andReturn(200).withBody(@"{\"success\":true, \"data\":{}}");
+}
+
 
 void stubifyRequests(Class className){
     dummyStubGoogleAds();
@@ -155,6 +161,8 @@ void stubifyRequests(Class className){
     dummyStubQSearch();
     dummyStubConfigRequest(className);
     dummyStubFingerPrint();
+    stubAuctionLoggerRequest();
+    stubPrefetchReq(className);
 }
 
 void customSetupWithClass(Class className){

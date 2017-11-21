@@ -175,8 +175,8 @@
             "w": 320,
             "server_extras": {
                 "bidder_id": 1000,
-                "mnetSize": "320x50",
-                "mnetbidPrice": "7.00"
+                "mnet_size": "320x50",
+                "mnet_bid_price": "7.00"
             },
             "instl": 0,
             "creative_type": "html",
@@ -214,8 +214,8 @@
             "w": 320,
             "server_extras": {
                 "bidder_id": 43,
-                "mnetSize": "320x50",
-                "mnetbidPrice": "7.00"
+                "mnet_size": "320x50",
+                "mnet_bid_price": "7.00"
             },
             "instl": 1,
             "creative_type": "html",
@@ -225,5 +225,9 @@
             "skippable": true
         }
     },
-    "simpleString": "testing"
+    "simpleString": "testing",
+    "extras": {
+        "some_random_key": "some_random_value",
+        "some_other_random_key": "some_other_random_value"
+    }
 }

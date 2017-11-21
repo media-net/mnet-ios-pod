@@ -27,6 +27,8 @@
 
 - (void)testInterstitialAdIncomplete {
     validInterstitialAdRequestStub([self class]);
+    stubPrefetchReq([self class]);
+    
     self.InterstitialIncompleteExpectation = [self expectationWithDescription:@"Ad view not loaded"];
     MNetInterstitialAd *interstitalAd = [[MNetInterstitialAd alloc]initWithAdUnitId:DEMO_MN_AD_UNIT_300x250];
     [interstitalAd setInterstitialDelegate:self];
@@ -41,6 +43,7 @@
 
 - (void)testInterstitialAdSansAdUnit {
     validInterstitialAdRequestStub([self class]);
+    stubPrefetchReq([self class]);
     
     self.InterstitialIncompleteExpectation = [self expectationWithDescription:@"Ad view not loaded"];
     

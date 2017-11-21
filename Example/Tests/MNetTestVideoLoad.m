@@ -29,6 +29,8 @@
 
 -(void) testVideoAdLoad {
     validVideoAdRequestStub([self class]);
+    stubPrefetchReq([self class]);
+    
     self.videoAdViewExpectation = [self expectationWithDescription:@"video view loaded"];
     
     MNetAdView *adView = [[MNetAdView alloc] init];
