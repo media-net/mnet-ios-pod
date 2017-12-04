@@ -33,7 +33,7 @@
     self.rewardedTestExpectation = [self expectationWithDescription:@"rewarded video loaded"];
     MNetRewardedVideo *rewardedVideo = [MNetRewardedVideo getInstanceForAdUnitId:DEMO_MN_AD_UNIT_REWARDED];
     [rewardedVideo setRewardedVideoDelegate:self];
-    [rewardedVideo setRewardWithName : @"NEW_REWARD" forCurrency :@"INR" forAmount : 100];
+    [rewardedVideo setRewardWithName : @"NEW_REWARD" forCurrency :@"INR" forAmount : [NSNumber numberWithInt:100]];
     [rewardedVideo loadRewardedAd];
     
     [self waitForExpectationsWithTimeout:30 handler:^(NSError * _Nullable error) {
@@ -49,7 +49,7 @@
     self.rewardedTestExpectation = [self expectationWithDescription:@"rewarded video loaded"];
     MNetRewardedVideo *rewardedVideo = [MNetRewardedVideo getInstanceForAdUnitId:DEMO_MN_AD_UNIT_REWARDED];
     [rewardedVideo setRewardedVideoDelegate:self];
-    [rewardedVideo setRewardWithName : @"NEW_REWARD" forCurrency :@"INR" forAmount : 100];
+    [rewardedVideo setRewardWithName : @"NEW_REWARD" forCurrency :@"INR" forAmount : [NSNumber numberWithInt:100]];
     [rewardedVideo loadRewardedAd];
     
     [self waitForExpectationsWithTimeout:30 handler:^(NSError * _Nullable error) {
