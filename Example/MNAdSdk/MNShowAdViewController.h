@@ -17,7 +17,7 @@
 
 @import GoogleMobileAds;
 
-@interface MNShowAdViewController : UIViewController<MPAdViewDelegate, MPInterstitialAdControllerDelegate, MNetAdViewDelegate,GADBannerViewDelegate, GADInterstitialDelegate, MNetVideoDelegate, MNetInterstitialAdDelegate, MNetInterstitialVideoAdDelegate, MNetRewardedVideoDelegate>
+@interface MNShowAdViewController : UIViewController<MPAdViewDelegate, MPInterstitialAdControllerDelegate, MNetAdViewDelegate,GADBannerViewDelegate, GADInterstitialDelegate, MNetVideoDelegate, MNetInterstitialAdDelegate, MNetInterstitialVideoAdDelegate, MNetRewardedVideoDelegate,GADRewardBasedVideoAdDelegate>
 
 typedef enum{
     BNR,
@@ -30,6 +30,7 @@ typedef enum{
     BNR_VIDEO,
     VIDEO_INTR,
     VIDEO_REWARDED,
+    DFP_REWARDED,
     DFP_MEDIATION,
     MOPUB_MEDIATION,
     ADMOB_MEDIATION,

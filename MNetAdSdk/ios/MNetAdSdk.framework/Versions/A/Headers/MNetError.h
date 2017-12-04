@@ -58,6 +58,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// Returns the error description
 - (NSString *)getErrorString;
 
+/// Returns the error reason
+- (NSString *)getErrorReasonString;
+
 /// Get the Error object from MNetError
 - (NSError *)getError;
 

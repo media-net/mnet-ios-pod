@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_END
 - (void)showAdFromViewController:(UIViewController * _Nonnull)rootViewController;
 
 /// Set the reward for the rewarded video instance
-- (void)setRewardWithName:(NSString * _Nullable)name forCurrency:(NSString * _Nullable)currency forAmount:(int)amount;
+- (void)setRewardWithName:(NSString * _Nullable)name forCurrency:(NSString * _Nullable)currency forAmount:(NSNumber * _Nonnull)amount;
 @end
 
 /// Protocol for Rewarded videos callback

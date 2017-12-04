@@ -48,6 +48,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Add location for the ad, as additional context for the ad to be displayed.
 - (void)setCustomLocation:(CLLocation *)customLocationArg;
+
+/// Returns true if interstitial ad is ready to display
+- (BOOL)isReady;
 @end
 
 @protocol MNetInterstitialBaseDelegate <NSObject>
