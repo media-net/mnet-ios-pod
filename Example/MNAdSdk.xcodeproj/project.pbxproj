@@ -781,7 +781,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example-resources.sh",
-				"${PODS_ROOT}/../../MNetAdSdk/ios/MNetAdSdk.framework/Versions/A/Resources/MNetCustomWebView.xib",
 				"${PODS_ROOT}/../../MNetAdSdk/ios/MNetAdSdk.framework/Versions/A/Resources/mraid.js",
 			);
 			name = "[CP] Copy Pods Resources";
