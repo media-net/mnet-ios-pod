@@ -142,6 +142,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
                            ENUM_VAL(BNR_VIDEO): @"VIDEO",
                            ENUM_VAL(VIDEO_INTR): @"VIDEO INTERSTITIAL",
                            ENUM_VAL(VIDEO_REWARDED): @"REWARDED VIDEO",
+                           ENUM_VAL(DFP_REWARDED):@"DFP MEDIATION REWARDED VIDEO",
                            ENUM_VAL(DFP_MEDIATION): @"DFP BANNER MEDIATION",
                            ENUM_VAL(MOPUB_MEDIATION): @"MOPUB BANNER MEDIATION",
                            ENUM_VAL(ADMOB_MEDIATION): @"ADMOB BANNER MEDIATION",
@@ -248,12 +249,24 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             [self addLoaderToScreen];
             MNetRewardedVideo *rewardedVideo = [MNetRewardedVideo getInstanceForAdUnitId: DEMO_MN_AD_UNIT_REWARDED];
             [rewardedVideo setRewardedVideoDelegate:self];
-            [rewardedVideo setRewardWithName : @"NEW_REWARD" forCurrency :@"INR" forAmount : 100];
+            [rewardedVideo setRewardWithName : @"NEW_REWARD" forCurrency :@"INR" forAmount : [NSNumber numberWithInt:100]];
             [rewardedVideo setKeywords:@"bugs, bunny, warner"];
             [rewardedVideo loadRewardedAd];
             break;
         }
+        
+        case DFP_REWARDED : {
+            [self addLoaderToScreen];
+            GADRewardBasedVideoAd *rewardBasedVideoAd = [GADRewardBasedVideoAd sharedInstance];
+            [rewardBasedVideoAd setDelegate:self];
+            GADRequest *gadRequest = [GADRequest request];
+            [rewardBasedVideoAd loadRequest:gadRequest withAdUnitID:DEMO_AD_MOB_REWARDED_VIDEO_MEDIATION_AD_UNIT_ID];
+            break;
+        }
+            
         case DFP_HB:{
+            [self addLoaderToScreen];
+            
             NSLog(@"creating banner ad view for dfp");
             dfpBannerView = [[DFPBannerView alloc]initWithAdSize:GADAdSizeFromCGSize(CGSizeMake(GAD_SIZE_320x50.width, GAD_SIZE_320x50.height))];
             [[self adView]addSubview:dfpBannerView];
@@ -268,6 +281,8 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         }
         
         case MOPUB_HB:{
+            [self addLoaderToScreen];
+            
             CGSize adSize = MOPUB_BANNER_SIZE;
             MPAdView *mpAdView = [[MPAdView alloc]initWithAdUnitId:DEMO_MOPUB_AD_UNIT_ID size:adSize];
             [_adView addSubview:mpAdView];
@@ -282,6 +297,8 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         }
             
         case AD_MOB_HB:{
+            [self addLoaderToScreen];
+            
             NSLog(@"creating banner ad view for admob");
             [[self adView]addSubview:gadBannerView];
             [self applyAdViewContraints:gadBannerView height:GAD_SIZE_320x50.height width:GAD_SIZE_320x50.width];
@@ -312,6 +329,8 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         }
             
         case DFP_MEDIATION:{
+            [self addLoaderToScreen];
+            
             NSLog(@"creating banner ad view for dfp");
             dfpBannerView = [[DFPBannerView alloc]initWithAdSize:GADAdSizeFromCGSize(CGSizeMake(GAD_SIZE_320x50.width, GAD_SIZE_320x50.height))];
             [[self adView]addSubview:dfpBannerView];
@@ -326,6 +345,8 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             break;
         }
         case MOPUB_MEDIATION:{
+            [self addLoaderToScreen];
+            
             CGSize adSize = MOPUB_BANNER_SIZE;
             MPAdView *mpAdView = [[MPAdView alloc]initWithAdUnitId:DEMO_MOPUB_MEDIATION_AD_UNIT_ID size:adSize];
             [_adView addSubview:mpAdView];
@@ -339,6 +360,8 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             break;
         }
         case ADMOB_MEDIATION:{
+            [self addLoaderToScreen];
+            
             NSLog(@"creating banner ad view for admob");
             gadBannerView = [[GADBannerView alloc]initWithAdSize:GADAdSizeFromCGSize(CGSizeMake(GAD_SIZE_320x50.width, GAD_SIZE_320x50.height))];
             [[self adView]addSubview:gadBannerView];
@@ -383,6 +406,8 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         }
             
         case DFP_BANNER_MANUAL_HB:{
+            [self addLoaderToScreen];
+            
             dfpBannerView = [[DFPBannerView alloc] initWithAdSize:kGADAdSizeBanner];
             
             [[self adView]addSubview:dfpBannerView];
@@ -525,6 +550,16 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             [rewardedVideo showAdFromViewController:self];
             break;
         }
+        
+        case DFP_REWARDED : {
+            [self addLoaderToScreen];
+            GADRewardBasedVideoAd *rewardBasedVideoAd = [GADRewardBasedVideoAd sharedInstance];
+            if([rewardBasedVideoAd isReady]){
+                [rewardBasedVideoAd presentFromRootViewController:self];
+            }
+            break;
+        }
+            
         case DFP_INTERSTITIAL_HB:{
             [dfpInterstitialAd presentFromRootViewController:self];
             break;
@@ -860,6 +895,43 @@ static const NSUInteger maxUnitsWhileLoading = 80;
     [self.view makeToast:gadInterstitialDismissAd];
 }
 
+#pragma mark GADRewardBasedVideo
+
+- (void)rewardBasedVideoAdDidReceiveAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd{
+    [self btnStateEnabled:YES forBtn:self.showAd];
+    [self hideLoaderFromScreen];
+    [self.view makeToast:gadInterstitialLoadAd];
+    NSLog(@"GAD: Rewarded video received");
+}
+
+- (void)rewardBasedVideoAdDidOpen:(GADRewardBasedVideoAd *)rewardBasedVideoAd{
+    NSLog(@"GAD: Rewarded video open");
+    [self btnStateEnabled:NO forBtn:self.showAd];
+    [self hideLoaderFromScreen];
+}
+
+- (void)rewardBasedVideoAdDidStartPlaying:(GADRewardBasedVideoAd *)rewardBasedVideoAd{
+    NSLog(@"GAD: Rewarded video start playing");
+}
+
+- (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd didFailToLoadWithError:(NSError *)error{
+    NSLog(@"GAD: Rewarded video load failed");
+    [self showErrorAlertViewWithTitle:@"Ad Failed to Load!" andMessage:@"Error while fetching DFP Mediation Rewarded Video ad!"];
+    [self hideLoaderFromScreen];
+    [self.view makeToast:gadFailAd];
+}
+
+- (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd didRewardUserWithReward:(GADAdReward *)reward{
+    NSLog(@"GAD: Reward received type:%@ amount:%@", reward.type,reward.amount);
+    [self btnStateEnabled:NO forBtn:self.showAd];
+    [self hideLoaderFromScreen];
+}
+
+- (void)rewardBasedVideoAdDidClose:(GADRewardBasedVideoAd *)rewardBasedVideoAd{
+    NSLog(@"GAD: RewardedVideo closed");
+    [self btnStateEnabled:NO forBtn:self.showAd];
+    [self hideLoaderFromScreen];
+}
 #pragma mark - Error
 - (void)dealloc{
     NSLog(@"DEALLOC: MNShowAdViewController");

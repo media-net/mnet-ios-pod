@@ -22,6 +22,7 @@
 #define DEMO_DFP_MEDIATION_AD_UNIT_ID           @"<custom_id>"
 #define DEMO_MOPUB_MEDIATION_AD_UNIT_ID         @"<custom_id>"
 #define DEMO_AD_MOB_MEDIATION_AD_UNIT_ID        @"<custom_id>"
+#define DEMO_AD_MOB_REWARDED_VIDEO_MEDIATION_AD_UNIT_ID @"<custom_id>"
 
 #define DEMO_AD_MOB_HB_AD_UNIT_ID               @"<custom_id>"
 #define DEMO_MOPUB_INTERSTITIAL_HB_AD_UNIT_ID   @"<custom_id>"

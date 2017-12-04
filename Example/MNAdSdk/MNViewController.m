@@ -88,6 +88,10 @@ static const CGFloat sectionFooterViewHeight = 30.0f;
                                   @{
                                       @"title": @"Rewarded Video Sample",
                                       @"name": ENUM_VAL(VIDEO_REWARDED)
+                                      },
+                                  @{
+                                      @"title": @"DFP Mediation Rewarded Video",
+                                      @"name": ENUM_VAL(DFP_REWARDED)
                                       }
                                   ]
                           },

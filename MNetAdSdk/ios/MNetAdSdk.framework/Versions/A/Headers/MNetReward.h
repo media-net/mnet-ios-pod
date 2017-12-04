@@ -18,8 +18,8 @@
 @property (nonatomic, nullable) NSString *currency;
 
 /// The amount of the reward
-@property (nonatomic) int amount;
+@property (nonatomic) NSNumber *amount;
 
 /// Initialise the reward
--(instancetype _Nonnull) initWith:(NSString * _Nullable)name withCurrency:(NSString * _Nullable)currency withAmount:(int)amount;
+-(instancetype _Nonnull) initWith:(NSString * _Nullable)name withCurrency:(NSString * _Nullable)currency withAmount:(NSNumber *)amount;
 @end
