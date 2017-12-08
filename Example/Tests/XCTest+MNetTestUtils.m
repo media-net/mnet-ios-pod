@@ -144,12 +144,15 @@ void updateSdkInfo(Class className){
 void stubPrefetchReq(Class className){
     NSString *respStr = readFile(className, @"MNetPredictBidsRelayResponse", @"json");
     
-    NSString *requestUrl = @"http://.*?prefetch_predicted_bids.*";
+    NSString *url = [[MNetURL getSharedInstance] getAdLoaderPrefetchPredictBidsUrl];
+    NSString *requestUrl = [NSString stringWithFormat:@"%@.*", url];
+    
     stubRequest(@"GET", requestUrl.regex).andReturn(200).withBody(respStr);
 }
 
 void stubAuctionLoggerRequest(){
-    stubRequest(@"GET", @"http://staging.d.msas.media.net/api/v2/rtb/logs.+".regex).andReturn(200).withBody(@"{\"success\":true, \"data\":{}}");
+    NSString *auctionUrl = [[MNetURL getSharedInstance] getAuctionLoggerUrl];
+    stubRequest(@"GET", [NSString stringWithFormat:@"%@.+", auctionUrl].regex).andReturn(200).withBody(@"{\"success\":true, \"data\":{}}");
 }
 
 

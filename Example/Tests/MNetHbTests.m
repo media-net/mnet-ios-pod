@@ -111,7 +111,8 @@
 - (void)stubPredictWithValidResp{
     NSString *respStr = readFile([self class], @"MNetPredictBidsRelayResponse", @"json");
     
-    NSString *requestUrl = @"http://.*?/rtb/bids.*";
+    NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
+    NSString *requestUrl = [NSString stringWithFormat:@"%@.*", url];
     stubRequest(@"GET", requestUrl.regex).andReturn(200).withBody(respStr);
     
     stubPrefetchReq([self class]);
