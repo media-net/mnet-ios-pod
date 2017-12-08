@@ -133,14 +133,16 @@
 
 
 - (void)stubPrefetchBidsWithErrorResp{
-    NSString *requestUrl = @"http://.*?prefetch_predicted_bids.*";
+    NSString *url = [[MNetURL getSharedInstance] getAdLoaderPrefetchPredictBidsUrl];
+    NSString *requestUrl = [NSString stringWithFormat:@"%@.*", url];
     stubRequest(@"GET", requestUrl.regex).andReturn(200).withBody(@"Invalid Str");
 }
 
 - (void)stubPrefetchWithValidResp{
     NSString *respStr = readFile([self class], @"MNetPredictBidsRelayResponse", @"json");
     
-    NSString *requestUrl = @"http://.*?prefetch_predicted_bids.*";
+    NSString *url = [[MNetURL getSharedInstance] getAdLoaderPrefetchPredictBidsUrl];
+    NSString *requestUrl = [NSString stringWithFormat:@"%@.*", url];
     stubRequest(@"GET", requestUrl.regex).andReturn(200).withBody(respStr);
 }
 
