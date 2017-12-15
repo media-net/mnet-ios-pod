@@ -9,6 +9,8 @@
 #import <XCTest/XCTest.h>
 #import "MNetTestManager.h"
 
+#define NUM_OBJ(val) [NSNumber numberWithDouble:val]
+
 @interface MNetMacroManagerTests : MNetTestManager
 
 @end
@@ -24,12 +26,12 @@
     [response setAdCycleId:@"sample-adcycle-id"];
     
     XCTAssert(response.loggingBeacons != nil);
+    NSUInteger initialCount = [response.loggingBeacons count];
     
-    MNetMacroManager *macroManager = [MNetMacroManager getSharedInstance];
-    NSArray *modifiedLogs = [macroManager processMacrosForLoggingPixels:response.loggingBeacons
-                                   withResponse:response];
+    // Calling loggingBeacons getter automatically should perform macro-replacement
+    NSArray *modifiedLogs = response.loggingBeacons;
     XCTAssert(modifiedLogs != nil);
-    XCTAssert([modifiedLogs count] == [response.loggingBeacons count]);
+    XCTAssert([modifiedLogs count] == initialCount);
     
     // Have the expected response here
     NSArray *expectedResponse = @[
@@ -55,9 +57,8 @@
     response.viewContextLink = nil;
     [response setAdCycleId:nil];
     
-    MNetMacroManager *macroManager = [MNetMacroManager getSharedInstance];
-    NSArray *modifiedLogs = [macroManager processMacrosForLoggingPixels:response.loggingBeacons
-                                                           withResponse:response];
+    // Calling loggingBeacons getter automatically should perform macro-replacement
+    NSArray *modifiedLogs = response.loggingBeacons;
     
     for(int i=0; i< [modifiedLogs count]; i++){
         NSString *expectedStr = response.loggingBeacons[i];
@@ -132,10 +133,8 @@
     response.elogs = @[
                        @"example.com/?prov_id=${PID}&prov_name=${PN}&ogbid=${OGBDP}&bdp=${BDP}&cbdp=${CBDP}&adcode=${RT}&clsprc=${CLSPRC}&url=${REQ_URL}",
                          ];
-    
-    MNetMacroManager *macroManager = [MNetMacroManager getSharedInstance];
-    NSArray *modifiedLogs = [macroManager processMacrosForExpiryLogs:response.elogs
-                                                        withResponse:response];
+    // Calling elogs getter automatically should perform macro-replacement
+    NSArray *modifiedLogs = response.elogs;
     
     NSArray *expectedResponse = @[
                                   @"example.com/?prov_id=100&prov_name=sample-bidder-name&ogbid=20&bdp=10&cbdp=2000&adcode=sample-adcode&clsprc=3000&url=view-context-url",
@@ -144,6 +143,41 @@
         NSString *expectedStr = expectedResponse[i];
         NSString *actualStr = modifiedLogs[i];
         XCTAssert([expectedStr isEqualToString:actualStr], @"Expected = %@ | Got = %@", expectedStr, actualStr);
+    }
+}
+
+- (void)testServerExtrasReplacement{
+    MNetBidResponse *response = [self getTestBidResponse];
+    response.bid = [NSNumber numberWithInteger:10];
+    response.ogBid = [NSNumber numberWithInteger:20];
+    response.creativeId = @"sample-adunit";
+    response.viewContextLink = @"view-context-url";
+    [response setAdCycleId:@"sample-adcycle-id"];
+    
+    NSDictionary<NSNumber *, NSString *> *floatValToExpectedMap = @{
+                                                                    NUM_OBJ(10.025) :   @"10.03",
+                                                                    NUM_OBJ(10.00001) : @"10.00",
+                                                                    NUM_OBJ(10.0) :     @"10.00",
+                                                                    NUM_OBJ(10.10) :    @"10.10",
+                                                                    NUM_OBJ(1) :        @"1.00",
+                                                                    NUM_OBJ(-20):       @"-20.00"
+                                                               };
+    
+    for(NSNumber *floatVal in floatValToExpectedMap){
+        NSString *counterStr = [floatVal stringValue];
+        NSString *macroStr = @"${DFPBD}";
+        response.dfpbid = floatVal;
+        response.serverExtras = @{
+                                  @"key1": counterStr,
+                                  @"macro_key": macroStr
+                                  };
+        
+        NSDictionary *serverExtras = response.serverExtras;
+        XCTAssert([[serverExtras objectForKey:@"key1"] isEqualToString:counterStr]);
+        NSString *actualMacroVal = [serverExtras objectForKey:@"macro_key"];
+        NSString *expectedMacroString = floatValToExpectedMap[floatVal];
+        XCTAssert([actualMacroVal isEqualToString:expectedMacroString], @"ACTUAL: %@ EXPECTED: %@", actualMacroVal, expectedMacroString);
+        NSLog(@"SAMPLE - %@", actualMacroVal);
     }
 }
 

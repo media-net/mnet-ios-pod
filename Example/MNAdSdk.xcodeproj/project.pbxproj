@@ -29,9 +29,11 @@
 		8A39B1A71EAF63CE00F2915F /* MNetTestVideoLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A39B1A61EAF63CE00F2915F /* MNetTestVideoLoad.m */; };
 		8A49676E1EAF873C0032C550 /* adResponseVideo320x250.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A39B1A81EAF6AD600F2915F /* adResponseVideo320x250.json */; };
 		8A4CBFCC1F668B47009CCB02 /* MNetAdViewReuseRepositoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4CBFCB1F668B47009CCB02 /* MNetAdViewReuseRepositoryTests.m */; };
+		8A6291421FDFB742008DD9F9 /* vast-multi-wrapper.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8A6291411FDFB742008DD9F9 /* vast-multi-wrapper.xml */; };
 		8A70D3ED1EB092DA00F4B63E /* MNetTestRewardedVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A70D3EC1EB092DA00F4B63E /* MNetTestRewardedVideo.m */; };
 		8A70D3F01EB0984800F4B63E /* rewardedResponseVideo320x250.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A70D3EE1EB0970C00F4B63E /* rewardedResponseVideo320x250.json */; };
 		8A70D3F41EB09A0700F4B63E /* MNetTestInterstitialVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A70D3F31EB09A0700F4B63E /* MNetTestInterstitialVideo.m */; };
+		8ACD24911FDE80A400ABDDC3 /* vast-wrapper-linear.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8ACD24901FDE80A400ABDDC3 /* vast-wrapper-linear.xml */; };
 		8AEF2CBE1EAE2E6F00BAE4DE /* MNetVASTParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF2CBD1EAE2E6F00BAE4DE /* MNetVASTParserTest.m */; };
 		AE0AE4B31F6680280008B282 /* MNetPrefetchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0AE4B21F6680280008B282 /* MNetPrefetchTests.m */; };
 		AE0FBDC71F614AB9003435F7 /* MNetBidStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FBDC61F614AB9003435F7 /* MNetBidStoreTests.m */; };
@@ -58,6 +60,7 @@
 		AE75A4951EAE9D8D00B782D5 /* MNetTestBannerLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = AE75A4941EAE9D8D00B782D5 /* MNetTestBannerLoad.m */; };
 		AE75A4991EAEA5C700B782D5 /* adResponseBanner320x50.json in Resources */ = {isa = PBXBuildFile; fileRef = AE75A4971EAEA27C00B782D5 /* adResponseBanner320x50.json */; };
 		AE7D62171EBC7E5D00154D42 /* MNetTestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7D62161EBC7E5D00154D42 /* MNetTestUtils.m */; };
+		AE7E9C9F1FE3BE30008AE492 /* adResponseBannerAdUrl320x50.json in Resources */ = {isa = PBXBuildFile; fileRef = AE7E9C9E1FE3BE30008AE492 /* adResponseBannerAdUrl320x50.json */; };
 		AE8328D01F2B489200757B25 /* MNetVideoInterstitialWithBannerDelegates.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8328CF1F2B489200757B25 /* MNetVideoInterstitialWithBannerDelegates.m */; };
 		AE86824A1EAE7FCB00C00F28 /* MNetTestBannerSansParent.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8682491EAE7FCB00C00F28 /* MNetTestBannerSansParent.m */; };
 		AE8864BF1F69B7F400D04C5A /* MNetAdLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8864BE1F69B7F400D04C5A /* MNetAdLoaderTests.m */; };
@@ -132,9 +135,11 @@
 		8A39B1A61EAF63CE00F2915F /* MNetTestVideoLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestVideoLoad.m; sourceTree = "<group>"; };
 		8A39B1A81EAF6AD600F2915F /* adResponseVideo320x250.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = adResponseVideo320x250.json; sourceTree = "<group>"; };
 		8A4CBFCB1F668B47009CCB02 /* MNetAdViewReuseRepositoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetAdViewReuseRepositoryTests.m; sourceTree = "<group>"; };
+		8A6291411FDFB742008DD9F9 /* vast-multi-wrapper.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "vast-multi-wrapper.xml"; sourceTree = "<group>"; };
 		8A70D3EC1EB092DA00F4B63E /* MNetTestRewardedVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestRewardedVideo.m; sourceTree = "<group>"; };
 		8A70D3EE1EB0970C00F4B63E /* rewardedResponseVideo320x250.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rewardedResponseVideo320x250.json; sourceTree = "<group>"; };
 		8A70D3F31EB09A0700F4B63E /* MNetTestInterstitialVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestInterstitialVideo.m; sourceTree = "<group>"; };
+		8ACD24901FDE80A400ABDDC3 /* vast-wrapper-linear.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "vast-wrapper-linear.xml"; sourceTree = "<group>"; };
 		8AEF2CBD1EAE2E6F00BAE4DE /* MNetVASTParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetVASTParserTest.m; sourceTree = "<group>"; };
 		AE0AE4B21F6680280008B282 /* MNetPrefetchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetPrefetchTests.m; sourceTree = "<group>"; };
 		AE0FBDC61F614AB9003435F7 /* MNetBidStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetBidStoreTests.m; sourceTree = "<group>"; };
@@ -163,6 +168,7 @@
 		AE75A4941EAE9D8D00B782D5 /* MNetTestBannerLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestBannerLoad.m; sourceTree = "<group>"; };
 		AE75A4971EAEA27C00B782D5 /* adResponseBanner320x50.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = adResponseBanner320x50.json; sourceTree = "<group>"; };
 		AE7D62161EBC7E5D00154D42 /* MNetTestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestUtils.m; sourceTree = "<group>"; };
+		AE7E9C9E1FE3BE30008AE492 /* adResponseBannerAdUrl320x50.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = adResponseBannerAdUrl320x50.json; sourceTree = "<group>"; };
 		AE8328CF1F2B489200757B25 /* MNetVideoInterstitialWithBannerDelegates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetVideoInterstitialWithBannerDelegates.m; sourceTree = "<group>"; };
 		AE8682491EAE7FCB00C00F28 /* MNetTestBannerSansParent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestBannerSansParent.m; sourceTree = "<group>"; };
 		AE8864BE1F69B7F400D04C5A /* MNetAdLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetAdLoaderTests.m; sourceTree = "<group>"; };
@@ -362,6 +368,8 @@
 			children = (
 				8A34F3941EAE32D600144B72 /* vast-linear.xml */,
 				8A34F39C1EAE37EB00144B72 /* vast-linear-inline.xml */,
+				8ACD24901FDE80A400ABDDC3 /* vast-wrapper-linear.xml */,
+				8A6291411FDFB742008DD9F9 /* vast-multi-wrapper.xml */,
 			);
 			name = VastXML;
 			sourceTree = "<group>";
@@ -501,6 +509,7 @@
 				AEDC59541F324D2000228A69 /* MNetSampleJSONContent.json */,
 				AEDC59561F3260B200228A69 /* MNetBidResponse.json */,
 				AEAC3D8B1F6B34B4002213A6 /* MNetPredictBidsRelayResponse.json */,
+				AE7E9C9E1FE3BE30008AE492 /* adResponseBannerAdUrl320x50.json */,
 			);
 			name = TestAssets;
 			sourceTree = "<group>";
@@ -739,17 +748,20 @@
 				8A70D3F01EB0984800F4B63E /* rewardedResponseVideo320x250.json in Resources */,
 				8A49676E1EAF873C0032C550 /* adResponseVideo320x250.json in Resources */,
 				AEA759DF1EAF55C80071701D /* adResponseBanner300x250.json in Resources */,
+				8ACD24911FDE80A400ABDDC3 /* vast-wrapper-linear.xml in Resources */,
 				AEA759D41EAF44330071701D /* noAdResponse.json in Resources */,
 				AEA2C87B1F13539D00DEB792 /* MNetAdxResponse.json in Resources */,
 				AEDC59571F3260B200228A69 /* MNetBidResponse.json in Resources */,
 				AE59CD0C1F2BC0A400704798 /* MNetSampleRequest.json in Resources */,
 				AE75A4991EAEA5C700B782D5 /* adResponseBanner320x50.json in Resources */,
+				8A6291421FDFB742008DD9F9 /* vast-multi-wrapper.xml in Resources */,
 				AEAC3D8C1F6B34B4002213A6 /* MNetPredictBidsRelayResponse.json in Resources */,
 				8A34F3951EAE32D600144B72 /* vast-linear.xml in Resources */,
 				8A34F39D1EAE37EB00144B72 /* vast-linear-inline.xml in Resources */,
 				AEDC59551F324D2000228A69 /* MNetSampleJSONContent.json in Resources */,
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
 				AE8F83421F136D58001D9E48 /* MNetSdkConfigResponse.json in Resources */,
+				AE7E9C9F1FE3BE30008AE492 /* adResponseBannerAdUrl320x50.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,12 +792,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example-resources.sh",
-				"${PODS_ROOT}/../../MNetAdSdk/ios/MNetAdSdk.framework/Versions/A/Resources/mraid.js",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -852,8 +861,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworkActivityLogger/AFNetworkActivityLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Bugsnag/Bugsnag.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/KSCrash/KSCrash.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MNALApplink/MNALApplink.framework",
+				"${BUILT_PRODUCTS_DIR}/MNetAdSdk/MNetAdSdk.framework",
+				"${BUILT_PRODUCTS_DIR}/MNetJSONModeller/MNetJSONModeller.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
 				"${BUILT_PRODUCTS_DIR}/mopub-ios-sdk/MoPub.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -862,8 +876,13 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworkActivityLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bugsnag.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSCrash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MNALApplink.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MNetAdSdk.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MNetJSONModeller.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoPub.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
