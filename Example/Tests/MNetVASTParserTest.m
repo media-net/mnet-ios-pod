@@ -14,7 +14,7 @@
 
 static const NSTimeInterval mDefaultTimeout = 1;
 
-@interface MNetVASTParserTest : XCTestCase
+@interface MNetVASTParserTest : MNetTestManager
 
 @end
 
@@ -65,6 +65,50 @@ static const NSTimeInterval mDefaultTimeout = 1;
     }];
     
     [self waitForExpectationsWithTimeout:mDefaultTimeout handler:^(NSError * _Nullable error){
+        XCTAssert(error == nil);
+    }];
+    
+    MNetVASTVideoConfig *videoConfig = [[MNetVASTVideoConfig alloc] initWithVASTResponse:vastResponse];
+    XCTAssertTrue([videoConfig.mediaURL.absoluteString isEqualToString:@"http://cdnp.tremormedia.com/video/acudeo/Carrot_400x300_500kb.flv"]);
+}
+
+- (void)testVASTWrapperLinear{
+    XCTestExpectation *expectaion = [self expectationWithDescription:@"fetching data from XML"];
+    
+    __block NSData *vastData = [self dataFromXMLFileNamed:@"vast-wrapper-linear" class:[self class]];
+    __block MNetVast *vastResponse;
+    
+    MNetVastAdXmlManager *xmlManager = [[MNetVastAdXmlManager alloc] init];
+    //[[NSString alloc] initWithData:vastData encoding:NSUTF8StringEncoding]
+    [xmlManager parseXMLFromStringWithCompletion:[[NSString alloc] initWithData:vastData encoding:NSUTF8StringEncoding] completion:^(MNetVast *response,NSError *error){
+        XCTAssert(error == nil);
+        vastResponse = response;
+        [expectaion fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:5.0 handler:^(NSError * _Nullable error){
+        XCTAssert(error == nil);
+    }];
+    
+    MNetVASTVideoConfig *videoConfig = [[MNetVASTVideoConfig alloc] initWithVASTResponse:vastResponse];
+    XCTAssertTrue([videoConfig.mediaURL.absoluteString isEqualToString:@"http://cdnp.tremormedia.com/video/acudeo/Carrot_400x300_500kb.flv"]);
+}
+
+- (void)testVASTMultipleWrappers{
+    stubVASTRequest([self class]);
+    XCTestExpectation *expectaion = [self expectationWithDescription:@"fetching data from XML"];
+    
+    __block NSData *vastData = [self dataFromXMLFileNamed:@"vast-multi-wrapper" class:[self class]];
+    __block MNetVast *vastResponse;
+    
+    MNetVastAdXmlManager *xmlManager = [[MNetVastAdXmlManager alloc] init];
+    [xmlManager parseXMLFromStringWithCompletion:[[NSString alloc] initWithData:vastData encoding:NSUTF8StringEncoding] completion:^(MNetVast *response,NSError *error){
+        XCTAssert(error == nil);
+        vastResponse = response;
+        [expectaion fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:5.0 handler:^(NSError * _Nullable error){
         XCTAssert(error == nil);
     }];
     
