@@ -48,47 +48,6 @@
     
 }
 
-- (void)testServerExtrasReplacement{
-    NSMutableArray<MNetBidResponse *> *fpdBidResponses = [self getBidResponsesForAuction];
-    
-    double counterInit = 0.000001;
-    double counter = counterInit;
-    NSString *counterStrFmt = @"COUNTER_%@ REPLACE_%@";
-    NSString *replacementKey = [MNetAuctionManager getDfpMacroKey];
-    for(MNetBidResponse *bidResponse in fpdBidResponses){
-        NSString *counterStr = [[NSNumber numberWithUnsignedInteger:counter] stringValue];
-        NSString *macroStr = [NSString stringWithFormat:counterStrFmt, counterStr, replacementKey];
-        bidResponse.dfpbid = [NSNumber numberWithDouble:counter];
-        bidResponse.serverExtras = @{
-                                     @"key1": counterStr,
-                                     @"macro_key": macroStr
-                                     };
-        counter += 1;
-    }
-    
-    MNetAuctionManager *auctionManager = [MNetAuctionManager getInstance];
-    [auctionManager replaceServerExtrasInAuctionedResponses:fpdBidResponses];
-    
-    NSNumberFormatter *expectedFormatter = [NSNumberFormatter new];
-    [expectedFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [expectedFormatter setMaximumFractionDigits:2];
-    [expectedFormatter setMinimumFractionDigits:2];
-    [expectedFormatter setRoundingMode: NSNumberFormatterRoundHalfUp];
-    
-    counter = counterInit;
-    for(MNetBidResponse *bidResponse in fpdBidResponses){
-        NSString *counterStr = [[NSNumber numberWithUnsignedInteger:counter] stringValue];
-        NSDictionary *serverExtras = bidResponse.serverExtras;
-        NSString *replacementVal = [expectedFormatter stringFromNumber:[bidResponse dfpbid]];
-        XCTAssert([[serverExtras objectForKey:@"key1"] isEqualToString:counterStr]);
-        NSString *expectedMacroString = [NSString stringWithFormat:counterStrFmt, counterStr, replacementVal];
-        NSString *actualMacroVal = [serverExtras objectForKey:@"macro_key"];
-        XCTAssert([actualMacroVal isEqualToString:expectedMacroString], @"ACTUAL: %@ EXPECTED: %@", actualMacroVal, expectedMacroString);
-        NSLog(@"SAMPLE - %@", actualMacroVal);
-        counter += 1;
-    }
-}
-
 - (void)testCompleteAuctionFlow{
     NSMutableArray<MNetBidResponse *> *fpdBidResponses = [self getBidResponsesForAuction];
     
@@ -105,7 +64,7 @@
         bidResponse.mainBid = [NSNumber numberWithDouble:10];
         bidResponse.dfpbid = [NSNumber numberWithDouble:20];
         
-        NSString *dfpMacroKey = [MNetAuctionManager getDfpMacroKey];
+        NSString *dfpMacroKey = @"${DFPBD}";
         NSString *macroStr = [NSString stringWithFormat:@"%@", dfpMacroKey];
         bidResponse.serverExtras = @{@"macro_entry": macroStr};
         

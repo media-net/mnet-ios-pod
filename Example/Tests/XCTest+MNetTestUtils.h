@@ -8,20 +8,22 @@
 
 #import <XCTest/XCTest.h>
 
-#define FILENAME_BANNER_320x50  @"adResponseBanner320x50"
-#define FILENAME_BANNER_300x250 @"adResponseBanner300x250"
-#define FILENAME_VIDEO_320x250  @"adResponseVideo320x250"
-#define FILENAME_REWARDED_VIDEO @"rewardedResponseVideo320x250"
-#define INVALID_FILENAME_VIDEO  @"noAdResponse"
-#define FILENAME_ADX_BANNER     @"MNetAdxResponse"
-#define FILENAME_CONFIG_FILE    @"MNetSdkConfigResponse"
-#define FILENAME_SAMPLE_REQUEST @"MNetSampleRequest"
+#define FILENAME_BANNER_320x50          @"adResponseBanner320x50"
+#define FILENAME_BANNER_AD_URL_320x50   @"adResponseBannerAdUrl320x50"
+#define FILENAME_BANNER_300x250         @"adResponseBanner300x250"
+#define FILENAME_VIDEO_320x250          @"adResponseVideo320x250"
+#define FILENAME_REWARDED_VIDEO         @"rewardedResponseVideo320x250"
+#define INVALID_FILENAME_VIDEO          @"noAdResponse"
+#define FILENAME_ADX_BANNER             @"MNetAdxResponse"
+#define FILENAME_CONFIG_FILE            @"MNetSdkConfigResponse"
+#define FILENAME_SAMPLE_REQUEST         @"MNetSampleRequest"
 
 @interface XCTest (MNetTestUtils)
 
 void dummyStubGoogleAds();
 void dummyStubPulseRequest();
 void validBannerAdRequestStub(Class classFile);
+void validBannerAdUrlRequestStub(Class classFile);
 void validInterstitialAdRequestStub(Class classFile);
 void noAdRequestStub(Class classFile);
 void validVideoAdRequestStub(Class classFile);
@@ -35,5 +37,5 @@ NSString* readFile(Class classFile, NSString *resourceName, NSString *resourceTy
 void updateSdkInfo(Class className);
 void stubifyRequests(Class className);
 void customSetupWithClass(Class className);
-
+void stubVASTRequest(Class className);
 @end

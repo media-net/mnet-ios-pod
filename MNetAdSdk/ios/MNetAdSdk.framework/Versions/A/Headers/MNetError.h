@@ -26,6 +26,8 @@ typedef enum {
     MNetErrCodeInvalidAdController      = -2007,
     MNetErrCodeRootViewControllerNil    = -2008,
     MNetErrCodeInvalidAdCode            = -2009,
+    MNetErrCodeInvalidAdUrl             = -2010,
+    MNetErrCodeAdUrlRequestFailed       = -2011,
     // HB error code
     MNetErrCodeHBLoadFailed             = -3000,
     // MRAID error code
