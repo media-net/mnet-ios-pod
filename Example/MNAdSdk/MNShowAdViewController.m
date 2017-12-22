@@ -193,7 +193,6 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             [mnetAdView setDelegate:self];
             [mnetAdView setSize:MNET_BANNER_AD_SIZE];
             [mnetAdView setRootViewController:self];
-            
             // Initializing with lat-long
             CLLocation *customLocation = [[CLLocation alloc]initWithLatitude:LATITUDE longitude:LONGITUDE];
             [mnetAdView setCustomLocation:customLocation];

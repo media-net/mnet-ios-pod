@@ -26,7 +26,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Initialises the MNetAdSdk for a given customer Id.
 /// This can be run only once in a session.
+/// NOTE: Use the other intializer `initWithCustomerId:appContainsChildDirectedContent`
+/// to specify if the app contains child directed content.
+/// It defaults to NO in this call.
 + (instancetype)initWithCustomerId:(NSString *)customerId;
+
+/// Initialises the MNetAdSdk for a given customer Id along with
+/// specifying if the app contains child directed content.
++ (instancetype)initWithCustomerId:(NSString *)customerId
+   appContainsChildDirectedContent:(BOOL)containsChildDirectedContent;
 
 /// The current instance of MNet
 + (MNet*)getInstance;
