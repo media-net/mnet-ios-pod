@@ -64,6 +64,29 @@
     }];
 }
 
+- (void)testContextLink{
+    validBannerAdUrlRequestStub([self class]);
+    stubPrefetchReq([self class]);
+    NSString *contextLink = @"https://media.net";
+    
+    self.bannerAdViewExpectation = [self expectationWithDescription:@"Ad view loaded"];
+    
+    MNetAdView *bannerAd = [[MNetAdView alloc] init];
+    [bannerAd setSize:MNET_BANNER_AD_SIZE];
+    [bannerAd setAdUnitId:DEMO_MN_AD_UNIT_320x50];
+    [bannerAd setRootViewController:[self getViewController]];
+    [bannerAd setContextLink:contextLink];
+    [bannerAd setDelegate:self];
+    [bannerAd loadAd];
+    
+    [self waitForExpectationsWithTimeout:30 handler:^(NSError * _Nullable error) {
+        if(error){
+            NSLog(@"Test timed out! - %@", error);
+        }
+    }];
+    XCTAssertTrue([[bannerAd.adBaseObj fetchVCLink] isEqualToString:contextLink]);
+}
+
 -(void)mnetAdDidLoad:(MNetAdView *)adView{
     EXPECTATION_FULFILL(self.bannerAdViewExpectation);
 }

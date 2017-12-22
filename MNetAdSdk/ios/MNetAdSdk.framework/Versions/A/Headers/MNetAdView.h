@@ -65,6 +65,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// Load the ad for the ad request
 - (void)loadAdForRequest:(MNetAdRequest *)request;
 
+/// Context link for contextual ads. Optional for developers to set.
+- (void)setContextLink:(NSString *)contextLink;
+
 /// Add location for the ad, as additional context for the ad to be displayed.
 - (void)setCustomLocation:(CLLocation *)customLocationArg;
 - (CLLocation * _Nullable)getCustomLocation;

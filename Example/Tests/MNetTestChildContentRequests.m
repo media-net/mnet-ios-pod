@@ -1,0 +1,83 @@
+//
+//  MNetTestChildContentRequests.m
+//  MNAdSdk_Tests
+//
+//  Created by nithin.g on 20/12/17.
+//  Copyright © 2017 Nithin. All rights reserved.
+//
+
+#import <XCTest/XCTest.h>
+#import "MNetTestManager.h"
+
+@interface MNetTestChildContentRequests : MNetTestManager
+
+@end
+
+static NSString *DUMMY_AD_UNIT_ID = @"dummy-ad-unit-id";
+static NSString *DUMMY_CONTEXT_LINK = @"context-link";
+
+@implementation MNetTestChildContentRequests
+
+- (void)testChildContentRequest{
+    [self runTestWithChildDirectedStatus:YES];
+}
+- (void)testNonChildContentRequest{
+    [self runTestWithChildDirectedStatus:NO];
+}
+
+- (void)runTestWithChildDirectedStatus:(BOOL)isChildDirected{
+    [[MNet getInstance] setAppContainsChildDirectedContent:isChildDirected];
+    
+    BOOL isInterstitial = NO;
+    CGSize dummySize = MNET_BANNER_AD_SIZE;
+    
+    // Create a bid-request
+    MNetAdRequest *request = [MNetAdRequest newRequest];
+    [request setAdUnitId:DUMMY_AD_UNIT_ID];
+    [request setIsInterstitial:isInterstitial];
+    [request setWidth:dummySize.width andHeight:dummySize.height];
+    [request setContextLink:DUMMY_CONTEXT_LINK];
+    [request setRootViewController:[self getViewController]];
+    
+    MNetBidRequest *bidRequest = [MNetBidRequest create:request];
+    id reqDict = [MNJMManager getCollectionFromObj:bidRequest];
+    // NSString *reqJson = [MNJMManager toJSONStr:bidRequest];
+    
+    // Assert for correctness here
+    XCTAssert(reqDict != nil, @"Parsed object shouldn't be nil");
+    NSLog(@"The parsed object is - ");
+    
+    MNetDeviceInfo *deviceInfo = [bidRequest deviceInfo];
+    // Nil value keys -
+    NSArray *nilValKeys = @[
+                            @"ipv4Address",
+                            @"deviceLang",
+                            @"mac",
+                            @"userAgent",
+                            @"carrier"
+                            ];
+    for(NSString *nilValKey in nilValKeys){
+        if(isChildDirected){
+            XCTAssert([deviceInfo valueForKey:nilValKey] == nil,
+                      @"Device info key - %@ is not nil in child-directed-content!", nilValKey);
+        }else{
+            XCTAssert([deviceInfo valueForKey:nilValKey] != nil,
+                      @"Device info key - %@ is nil in non-child-directed-content", nilValKey);
+        }
+    }
+    
+    if(isChildDirected){
+        XCTAssert([[[bidRequest requestRegulation] isChildDirected] intValue] == 1,
+                  @"Request regulation for coppa is incorrectly set to 0");
+        XCTAssert([deviceInfo.limitedAdTracking boolValue] == YES,
+                  @"Limited ad-tracking needs to be YES");
+    }else{
+        XCTAssert([[[bidRequest requestRegulation] isChildDirected] intValue] == 0,
+                  @"Request regulation for coppa is incorrectly set to 1");
+        XCTAssert([deviceInfo.limitedAdTracking boolValue] == NO,
+                  @"Limited ad-tracking needs to be NO"
+                  );
+    }
+}
+
+@end

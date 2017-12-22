@@ -14,6 +14,7 @@
     [super setUp];
     [[LSNocilla sharedInstance] start];
     
+    [[MNet getInstance] setAppContainsChildDirectedContent:NO];
     [MNetAdLoaderPredictBids disablePostAdLoadPrefetch];
     customSetupWithClass([self class]);
 }

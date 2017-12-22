@@ -41,6 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// Load the intersitital ad with the ad request
 - (void)loadAdForRequest:(MNetAdRequest*)request;
 
+/// Context link for contextual ads. Optional for developers to set.
+- (void)setContextLink:(NSString *)contextLink;
+
 /// Present the ad on top of the given rootViewController.
 /// This needs to be called only after the ad has finished loading,
 /// otherwise it'll raise an error
