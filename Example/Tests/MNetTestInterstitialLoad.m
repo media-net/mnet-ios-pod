@@ -42,6 +42,23 @@
     }];
 }
 
+- (void)testInterstitialContextLink{
+    validInterstitialAdRequestStub([self class]);
+    stubPrefetchReq([self class]);
+    NSString *contextLink = @"https://media.net";
+    self.interstitialAdViewExpectation = [self expectationWithDescription:@"Ad view loaded"];
+    MNetInterstitialAd *interstitalAd = [[MNetInterstitialAd alloc]initWithAdUnitId:DEMO_MN_AD_UNIT_300x250];
+    [interstitalAd setInterstitialDelegate:self];
+    [interstitalAd setContextLink:contextLink];
+    [interstitalAd loadAd];
+    
+    [self waitForExpectationsWithTimeout:30 handler:^(NSError * _Nullable error) {
+        if(error){
+            NSLog(@"Test timed out! - %@", error);
+        }
+    }];
+    XCTAssertTrue([[interstitalAd.adBaseObj fetchVCLink] isEqualToString:contextLink]);
+}
 - (void)mnetInterstitialAdDidLoad:(MNetInterstitialAd *)interstitialAd{
     EXPECTATION_FULFILL(self.interstitialAdViewExpectation);
 }
