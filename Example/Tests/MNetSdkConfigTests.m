@@ -61,6 +61,10 @@
     XCTAssert(refreshInterval == nil, @"Auto refresh Interval should've been nil");
 }
 
+- (void)testInAppBrowsingFlag{
+    XCTAssertTrue([[MNetSdkConfig getInstance] isInappBrowsingEnabled]);
+}
+
 - (void)testSdkConfigData{
     MNetSdkConfig *instance = [MNetSdkConfig getInstance];
     MNetSdkConfigData *configData = [instance getSdkConfigData];
