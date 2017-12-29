@@ -5,6 +5,7 @@
             "adview_cache_max": 3,
             "adview_cache_timeout": 30,
             "adview_reuse_enabled": true,
+            "mnet_inapp_browsing_enabled" : true,
             "ad_units": [
                          {
                          "ad_unit_id": "min_first:0-0,max_first:0-1,min_last:0-3,max_last:0-9,view_pos:LEFT-CENTER",
