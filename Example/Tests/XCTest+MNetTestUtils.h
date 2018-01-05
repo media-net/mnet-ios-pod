@@ -26,6 +26,7 @@ void validBannerAdRequestStub(Class classFile);
 void validBannerAdUrlRequestStub(Class classFile);
 void validInterstitialAdRequestStub(Class classFile);
 void noAdRequestStub(Class classFile);
+void noAdsStubPrefetchReq(Class className);
 void validVideoAdRequestStub(Class classFile);
 void invalidVideoAdRequestStub(Class classFile);
 void validRewardedVideoAdRequestStub(Class classFile);

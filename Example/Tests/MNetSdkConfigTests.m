@@ -10,6 +10,7 @@
 
 #import <Nocilla/Nocilla.h>
 #import <MNetAdSdk/MNetAdSdk-umbrella.h>
+@import MNALApplink;
 #import "MNetTestManager.h"
 
 @interface MNetSdkConfigTests : MNetTestManager
@@ -28,6 +29,14 @@
 - (void)testSdkConfigImport {
     id hbConfig = [[MNetSdkConfig getInstance] getHbConfigData];
     XCTAssertNotNil(hbConfig, @"HbConfig cannot be nil");
+}
+
+- (void)testHbConfigImport{
+    NSUInteger defaultBidsCount = 4;
+    MNetHbConfigData *hbConfig = [[MNetSdkConfig getInstance] getHbConfigData];
+    NSArray<MNetDefaultBid *> *defaultBids = hbConfig.defaultBids;
+    XCTAssert(defaultBids != nil);
+    XCTAssert([defaultBids count] == defaultBidsCount);
 }
 
 - (void)testSdkHbConfig{

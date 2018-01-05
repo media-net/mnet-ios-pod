@@ -150,11 +150,20 @@ void updateSdkInfo(Class className){
     [MNJMManager fromDict:responseData toObject:mnetConfig];
     
     NSDictionary *extConfig = [mnetConfig getConfig];
-    [[MNetSdkConfig getInstance] __updateConfigExternally:extConfig];
+    [[MNetSdkConfig getInstance] updateConfigExternally:extConfig];
 }
 
 void stubPrefetchReq(Class className){
     NSString *respStr = readFile(className, @"MNetPredictBidsRelayResponse", @"json");
+    
+    NSString *url = [[MNetURL getSharedInstance] getAdLoaderPrefetchPredictBidsUrl];
+    NSString *requestUrl = [NSString stringWithFormat:@"%@.*", url];
+    
+    stubRequest(@"GET", requestUrl.regex).andReturn(200).withBody(respStr);
+}
+
+void noAdsStubPrefetchReq(Class className){
+    NSString *respStr = readFile(className, @"noAdResponse", @"json");
     
     NSString *url = [[MNetURL getSharedInstance] getAdLoaderPrefetchPredictBidsUrl];
     NSString *requestUrl = [NSString stringWithFormat:@"%@.*", url];
