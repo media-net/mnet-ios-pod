@@ -48,6 +48,7 @@
 		AE3751711F865C1B00DB2BA7 /* MNetTpdReusePrefetchTimeout.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3751701F865C1B00DB2BA7 /* MNetTpdReusePrefetchTimeout.m */; };
 		AE3D8B031EF9526800CC80F0 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3D8B021EF9526800CC80F0 /* GameKit.framework */; };
 		AE3D8B051EF952B100CC80F0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3D8B041EF952B100CC80F0 /* StoreKit.framework */; };
+		AE3F5B021FF391BF00FEBE12 /* MNetDefaultBidsManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3F5B011FF391BF00FEBE12 /* MNetDefaultBidsManagerTests.m */; };
 		AE423F001F6FCF3200EDF1DE /* MNetPrefetchBidsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE423EFF1F6FCF3200EDF1DE /* MNetPrefetchBidsTests.m */; };
 		AE47A8F41E699C2D00B6E5E8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE47A8F31E699C2D00B6E5E8 /* CoreLocation.framework */; };
 		AE4A8BC61F27174A00295139 /* MNetPulseStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4A8BC51F27174A00295139 /* MNetPulseStoreTests.m */; };
@@ -158,6 +159,7 @@
 		AE3751701F865C1B00DB2BA7 /* MNetTpdReusePrefetchTimeout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTpdReusePrefetchTimeout.m; sourceTree = "<group>"; };
 		AE3D8B021EF9526800CC80F0 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		AE3D8B041EF952B100CC80F0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		AE3F5B011FF391BF00FEBE12 /* MNetDefaultBidsManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNetDefaultBidsManagerTests.m; sourceTree = "<group>"; };
 		AE423EFF1F6FCF3200EDF1DE /* MNetPrefetchBidsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetPrefetchBidsTests.m; sourceTree = "<group>"; };
 		AE47A8F31E699C2D00B6E5E8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AE4A8BC51F27174A00295139 /* MNetPulseStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetPulseStoreTests.m; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				AE3F5B001FF3919E00FEBE12 /* MNetDefaultBidsTests */,
 				AE8DD68F1FB0DB3A00EC453A /* MNetHbTests */,
 				AE8C291D1F9F220C005058FB /* MNetAuctionLoggerRequestTests */,
 				AE5CBE091F96885100E6DB37 /* MNetClientAuctions */,
@@ -441,6 +444,14 @@
 				AE3751701F865C1B00DB2BA7 /* MNetTpdReusePrefetchTimeout.m */,
 			);
 			name = MNetTpdBidsReuse;
+			sourceTree = "<group>";
+		};
+		AE3F5B001FF3919E00FEBE12 /* MNetDefaultBidsTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE3F5B011FF391BF00FEBE12 /* MNetDefaultBidsManagerTests.m */,
+			);
+			name = MNetDefaultBidsTests;
 			sourceTree = "<group>";
 		};
 		AE423EFE1F6FCF0B00EDF1DE /* MNetPrefetchBidsTests */ = {
@@ -936,6 +947,7 @@
 				AEDA10291F28779E00A28A6F /* MNetURLTests.m in Sources */,
 				AEC914491FEA37D300E58EA5 /* MNetTestChildContentRequests.m in Sources */,
 				AE1241051EAE94CC00EED2F4 /* MNetTestBannerIncomplete.m in Sources */,
+				AE3F5B021FF391BF00FEBE12 /* MNetDefaultBidsManagerTests.m in Sources */,
 				AE37516F1F86425400DB2BA7 /* MNetTpdReusePrefetch.m in Sources */,
 				8A4CBFCC1F668B47009CCB02 /* MNetAdViewReuseRepositoryTests.m in Sources */,
 				AEFC29831F2B419E004A5F93 /* MNetVideoWithBannerDelegates.m in Sources */,

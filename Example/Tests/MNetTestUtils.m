@@ -129,4 +129,11 @@
     XCTAssert([output isEqualToString:expectedOutput], @"The actual output Str:%@ does not match the output: %@", output, expectedOutput);
 }
 
+- (void)testRegexStrMatch{
+    NSString *ipStr = @"AAAAAAAAAAAAAAAAAAAAAAAAAAAAC";
+    NSString *regexStr = @"^(A+)*B";
+    BOOL matchStatus = [MNetUtil doesStrMatch:ipStr regexStr:regexStr];
+    XCTAssert(matchStatus == NO, @"Regex does not match!");
+}
+
 @end

@@ -45,12 +45,12 @@
                     guestAdUnitId:self.adUnitId
                rootViewController:[self getViewController]
                   timeoutInMillis:nil
-                          success:^(NSString * _Nonnull cacheKey, NSDictionary * _Nonnull params, NSString * _Nonnull adCycleId) {
+                          success:^(NSString * _Nonnull cacheKey, NSDictionary * _Nonnull params, NSString * _Nonnull adCycleId, BOOL areDefaultBids) {
                               self.adView = (MNetAdView *)[[MNetAdViewStore getsharedInstance] popViewForKey:cacheKey];
                               XCTAssert(self.adView != nil);
                               
                               [self.adView setDelegate:self];
-                              [self.adView __selectBidderIdStr:@"23"];
+                              [self.adView selectBidderIdStr:@"23"];
                               [self.adView loadAd];
                               
                           } failure:^(NSError * _Nonnull error, NSString * _Nonnull adCycleId) {
