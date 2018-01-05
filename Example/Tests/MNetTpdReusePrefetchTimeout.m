@@ -48,7 +48,8 @@
                   timeoutInMillis:nil
                           success:^(NSString * _Nonnull cacheKey,
                                     NSDictionary * _Nonnull params,
-                                    NSString * _Nonnull adCycleId) {
+                                    NSString * _Nonnull adCycleId,
+                                    BOOL areDefaultBids) {
                               dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                                   MNetAdView *adView = (MNetAdView *)[[MNetAdViewStore getsharedInstance] popViewForKey:cacheKey];
                                   XCTAssert(adView == nil);
