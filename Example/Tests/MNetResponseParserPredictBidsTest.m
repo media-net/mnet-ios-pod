@@ -37,11 +37,13 @@
     NSString *adCycleId = @"dummy-ad-cycle-id";
     NSString *visitId = @"dummy-visit-id";
     NSString *contextUrl = @"dummy-context-url";
+    NSString *vcTitle = @"dummy-vc-title";
     
     MNetResponseParserExtras *params = [MNetResponseParserExtras getInstanceWithAdCycleId:adCycleId
-                                               visitId:visitId
-                                            contextUrl:contextUrl
-                                        viewController:[self getViewController]];
+                                                                                  visitId:visitId
+                                                                               contextUrl:contextUrl
+                                                                      viewControllerTitle:vcTitle
+                                                                           viewController:[self getViewController]];
     
     id<MNetResponseParserProtocol> parser = [MNetResponseParser getParser];
     NSError *parserErr;
@@ -82,10 +84,12 @@
     NSString *adCycleId = @"dummy-ad-cycle-id";
     NSString *visitId = @"dummy-visit-id";
     NSString *contextUrl = @"dummy-context-url";
+    NSString *vcTitle = @"dummy-vc-title";
     
     MNetResponseParserExtras *params = [MNetResponseParserExtras getInstanceWithAdCycleId:adCycleId
                                                                                   visitId:visitId
                                                                                contextUrl:contextUrl
+                                                                      viewControllerTitle:vcTitle
                                                                            viewController:[self getViewController]];
     
     
@@ -114,10 +118,12 @@
     NSString *adCycleId = @"dummy-ad-cycle-id";
     NSString *visitId = @"dummy-visit-id";
     NSString *contextUrl = @"dummy-context-url";
+    NSString *vcTitle = @"dummy-vc-title";
     
     MNetResponseParserExtras *params = [MNetResponseParserExtras getInstanceWithAdCycleId:adCycleId
                                                                                   visitId:visitId
                                                                                contextUrl:contextUrl
+                                                                      viewControllerTitle:vcTitle
                                                                            viewController:[self getViewController]];
     
     
