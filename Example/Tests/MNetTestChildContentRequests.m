@@ -80,4 +80,26 @@ static NSString *DUMMY_CONTEXT_LINK = @"context-link";
     }
 }
 
+- (void)testBenchmarkForIfaWithChildDirectedDisabled{
+    [[MNet getInstance] setAppContainsChildDirectedContent:NO];
+    MNetAdIdManager *adIdManager = [MNetAdIdManager getSharedInstance];
+    [self measureBlock:^{
+        [adIdManager getAdvertId];
+    }];
+    
+    NSString *adId = [adIdManager getAdvertId];
+    XCTAssert(adId != nil, @"Ad id cannot be nil");
+}
+
+- (void)testBenchmarkForIfaWithChildDirectedEnabled{
+    [[MNet getInstance] setAppContainsChildDirectedContent:YES];
+    MNetAdIdManager *adIdManager = [MNetAdIdManager getSharedInstance];
+    [self measureBlock:^{
+        [adIdManager getAdvertId];
+    }];
+    
+    NSString *adId = [adIdManager getAdvertId];
+    XCTAssert(adId != nil, @"Ad id cannot be nil");
+}
+
 @end

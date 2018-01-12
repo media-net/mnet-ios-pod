@@ -18,15 +18,15 @@
 - (void)testPulseWithRegulation{
     [[MNet getInstance] setAppContainsChildDirectedContent:YES];
     
-    // TODO: Need to fetch the regulated events from the pulse-event types or something I guess
+    // TODO: Figure out a way to automatically fetch these constants
     NSArray <NSString *> *allEvents  = @[
-                                         MNetPulseEventBase,
                                          MNetPulseEventSessionTime,
                                          MNetPulseEventEnteredBackground,
                                          MNetPulseEventAnalytics,
                                          MNetPulseEventActivityContext,
                                          MNetPulseEventResponseDuration,
-                                         MNetPulseEventProcessedPrediction,
+                                         MNetPulseEventPredictedBidParticipated,
+                                         MNetPulseEventPredictedBidProcessed,
                                          MNetPulseEventAdVisible,
                                          MNetPulseEventTrackingSuccess,
                                          MNetPulseEventTrackingError,
@@ -48,22 +48,24 @@
                                          MNetPulseEventImpressionLoad,
                                          MNetPulseEventImpressionSeen,
                                          ];
-    NSArray <NSString *>*unregulatedEvents = [MNetPulseHttp getUnregulatedPulseEvents];
-    XCTAssert([unregulatedEvents count] > 0, @"There are no un-regulated pulse events");
-    NSString *dummySubType = @"dummy";
+    NSArray <NSString *> *regulatedEvents = [MNetPulseHttp getRegulatedPulseEvents];
+    XCTAssert([regulatedEvents count] > 0, @"There are no un-regulated pulse events");
+    
     for(NSString *eventType in allEvents){
-        MNetPulseEvent *pulseEvent = [[MNetPulseEvent alloc] initEventWithType:eventType
-                                                                    AndSubType:dummySubType
-                                                                 AndCustomData:nil];
+        MNetPulseEvent *pulseEvent = [[MNetPulseEvent alloc] initWithType:eventType
+                                                              withSubType:eventType
+                                                              withMessage:nil
+                                                            andCustomData:nil];
         BOOL isRegulated = [MNetPulseHttp isRegulatedForPulseEvent:pulseEvent];
-        BOOL expectedRegulation = YES;
         
-        for(NSString *unregulatedEventType in unregulatedEvents){
-            if([unregulatedEventType isEqualToString: eventType]){
-                expectedRegulation = NO;
+        BOOL expectedRegulation = NO;
+        for(NSString *regulatedEventType in regulatedEvents){
+            if([regulatedEventType isEqualToString:eventType]){
+                expectedRegulation = YES;
                 break;
             }
         }
+        
         XCTAssert(isRegulated == expectedRegulation,
                   @"Event - %@, isRegulated - %@, expectedRegulation - %@",
                   eventType,

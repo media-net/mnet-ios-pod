@@ -26,27 +26,6 @@
     [super tearDown];
 }
 
-- (void)testSdkConfigImport {
-    id hbConfig = [[MNetSdkConfig getInstance] getHbConfigData];
-    XCTAssertNotNil(hbConfig, @"HbConfig cannot be nil");
-}
-
-- (void)testHbConfigImport{
-    NSUInteger defaultBidsCount = 4;
-    MNetHbConfigData *hbConfig = [[MNetSdkConfig getInstance] getHbConfigData];
-    NSArray<MNetDefaultBid *> *defaultBids = hbConfig.defaultBids;
-    XCTAssert(defaultBids != nil);
-    XCTAssert([defaultBids count] == defaultBidsCount);
-}
-
-- (void)testSdkHbConfig{
-    NSDictionary *config = [[MNetSdkConfig getInstance] getConfig];
-    MNetHbConfigData *hbConfig = [MNetHbConfigData getInstanceFromConfigData:config];
-    XCTAssertNotNil(hbConfig, @"HbConfig cannot be nil");
-    XCTAssertNotNil(hbConfig.adUnitConfigDataList, @"AdUnitConfigDataLIst cannot be nil");
-    XCTAssert([hbConfig.adUnitConfigDataList count] > 0, @"AdUnitConfigDataLIst cannot be empty");
-}
-
 - (void)testSdkConfigAutoRefreshPositive{
     NSString *adUnitId = @"dummyAdUnitId";
     MNetSdkConfig *sdkConfig = [MNetSdkConfig getInstance];
@@ -79,7 +58,7 @@
     MNetSdkConfigData *configData = [instance getSdkConfigData];
     MNetSdkConfigVCLinks *sdkConfigLinks = [configData viewControllerLinks];
     XCTAssert(sdkConfigLinks != nil, @"sdkConfigLinks shouldn't be nil");
-    XCTAssert([sdkConfigLinks isEnabled] == YES, @"sdkConfigLinks should be enabled!");
+    XCTAssert([[sdkConfigLinks isEnabled] isYes], @"sdkConfigLinks should be enabled!");
     XCTAssert([sdkConfigLinks linkMap] != nil, @"linkMap should not be nil");
     XCTAssert([[sdkConfigLinks linkMap] count] == 2, @"linkMap should have 2 entries");
     
@@ -117,6 +96,33 @@
     NSLog(@"getRewardedInstanceMaxAge- %f", [instance getRewardedInstanceMaxAge]);
     NSLog(@"getCacheMaxAge- %f", [instance getCacheMaxAge]);
     NSLog(@"getCacheFileMaxSize- %f", [instance getCacheFileMaxSize]);
+}
+
+- (void)testHbConfig{
+    MNetConfig *mnetConfig = [[MNetConfig alloc] init];
+    NSString *resourceName = @"MNetSdkConfigResponse";
+    NSString *responseDataStr = readFile([self class], resourceName, @"json");
+    NSData *data = [responseDataStr dataUsingEncoding:NSUTF8StringEncoding];
+    id responseDataObj = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSDictionary *responseData = [responseDataObj objectForKey:@"data"];
+    [MNJMManager fromDict:responseData toObject:mnetConfig];
+    MNetHbConfigData *hbConfigData = [[MNetHbConfigData alloc] init];
+    hbConfigData = mnetConfig.hbConfig;
+    NSLog(@"AD UNIT ID : %@", [hbConfigData.adUnitConfigDataList[0] adUnitId]);
+    NSLog(@"CREATIVE ID : %@", [hbConfigData.adUnitConfigDataList[0] creativeId]);
+    NSLog(@"supported ads : %@", [hbConfigData.adUnitConfigDataList[0] supportedAds]);
+    NSLog(@"custom targets key : %@", [hbConfigData.adUnitConfigDataList[0] customTargets][0].key);
+    XCTAssertNotNil(hbConfigData, @"HbConfig cannot be nil");
+    XCTAssertNotNil(hbConfigData.adUnitConfigDataList, @"AdUnitConfigDataLIst cannot be nil");
+    NSLog(@"TEMP");
+}
+
+- (void)testHbDefaultBid{
+    NSUInteger defaultBidsCount = 4;
+    MNetHbConfigData *hbConfig = [[MNetSdkConfig getInstance] getHbConfigData];
+    NSArray<MNetDefaultBid *> *defaultBids = hbConfig.defaultBids;
+    XCTAssert(defaultBids != nil);
+    XCTAssert([defaultBids count] == defaultBidsCount);
 }
 
 - (void)testVCMapLinks{

@@ -46,15 +46,16 @@
                                 "bid_type": "tpd"
                                 }
                                 ],
-                "ext": {
-                    "cc": false,
-                    "cl": "http://mnadsdkdemo.media.net.imnapp/1-0b3-0/mnshowadviewcontroller?uniquekey=bdd10d9f03383e27925eea5e48c1cede"
-                },
                 "td": {
                     "rtb_exchange": 322,
                     "dp_processing": 57
                 }
             }
+        },
+        "ext": {
+            "cc": false,
+            "cl": "http://mnadsdkdemo.media.net.imnapp/1-0b3-0/mnshowadviewcontroller?uniquekey=bdd10d9f03383e27925eea5e48c1cede",
+            "prediction_id": "custom_prediction_id"
         }
     },
     "message": "",
