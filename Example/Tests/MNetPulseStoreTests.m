@@ -137,7 +137,7 @@ static NSUInteger currentNumEntries = 0;
 
 #pragma mark - Test helpers 
 - (NSArray *)getEventsListWithSize:(NSUInteger)eventCount{
-    MNetPulseEvent *pulseEvent = [[MNetPulseEvent alloc] initWithMessage:@"Sample message"];
+    MNetPulseEvent *pulseEvent = [[MNetPulseEvent alloc] init];
     NSMutableArray<MNetPulseEvent *> *eventsList = [[NSMutableArray alloc] initWithCapacity:eventCount];
     
     for(NSUInteger i=0; i<eventCount; i++){

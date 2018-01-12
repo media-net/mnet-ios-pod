@@ -148,9 +148,7 @@ void updateSdkInfo(Class className){
     NSDictionary *responseData = [responseDataObj objectForKey:@"data"];
     
     [MNJMManager fromDict:responseData toObject:mnetConfig];
-    
-    NSDictionary *extConfig = [mnetConfig getConfig];
-    [[MNetSdkConfig getInstance] updateConfigExternally:extConfig];
+    [[MNetSdkConfig getInstance] updateConfigExternally:mnetConfig];
 }
 
 void stubPrefetchReq(Class className){
