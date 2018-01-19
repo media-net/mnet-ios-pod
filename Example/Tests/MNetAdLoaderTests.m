@@ -80,13 +80,22 @@
 }
 
 - (void)testAdLoaderBidderInfo{
+    NSString *adCycleId = @"dummy-ad-cycle-id";
+    NSString *rawAdCode = @"sample-ad-code ${ACID}";
+    NSString *processedAdCode = @"sample-ad-code dummy-ad-cycle-id";
+    
     MNetBidResponse *bidResponse = [self getTestBidResponse];
+    [bidResponse setAdCycleId:adCycleId];
+    [bidResponse setAdCode:rawAdCode];
+    
+    XCTAssert([[bidResponse adCode] isEqualToString:processedAdCode], @"bid-response's ad-code and processed ad-code do not match!");
     XCTAssert(bidResponse.bidInfo != nil);
     
     MNetBidderInfo *bidderInfo = [MNetBidderInfo createInstanceFromBidResponse:bidResponse];
     XCTAssert(bidderInfo != nil);
     XCTAssert(bidderInfo.bidderId != nil);
     XCTAssert(bidderInfo.bidInfo == bidResponse.bidInfo);
+    XCTAssert([bidderInfo.bidInfoDetails.adcode isEqualToString:rawAdCode], @"The bidder-info is not the raw-ad-code -> Got - %@", bidderInfo.bidInfoDetails.adcode);
 }
 
 - (void)testAdloaderPredictBidsSimpleBidRequest{
