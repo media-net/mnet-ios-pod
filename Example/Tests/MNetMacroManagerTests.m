@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "MNetTestManager.h"
+#import "MNetAdIdManager.h"
+#import "NSString+MNetStringCrypto.h"
 
 #define NUM_OBJ(val) [NSNumber numberWithDouble:val]
 
@@ -76,9 +78,12 @@
     response.viewContextLink = @"view-context-url";
     [response setAdCycleId:@"sample-adcycle-id"];
     response.responseType = @"headerBid";
+    response.clsprc = [NSNumber numberWithInteger:3000];
+    
     NSArray<NSString *> *inputLogs = @[
                          @"example.com/?adcode=${ADCODE}",
                          @"example.com/",
+                         @"example.com/clsprc=${CLSPRC}",
                          ];
     
     MNetMacroManager *macroManager = [MNetMacroManager getSharedInstance];
@@ -87,7 +92,8 @@
     
     NSArray *expectedResponse = @[
                                   @"example.com/?adcode=something - example.com/?auction_id=sample-adcycle-id&url=view-context-url&price=20",
-                                  @"example.com/"
+                                  @"example.com/",
+                                  @"example.com/clsprc=3000",
                                   ];
     for(int i=0; i< [expectedResponse count]; i++){
         NSString *expectedStr = expectedResponse[i];
@@ -181,4 +187,96 @@
     }
 }
 
+- (void)testADIDMacroReplacement{
+    MNetBidResponse *response = [self getTestBidResponse];
+    NSArray<NSString *> *inputLogs = @[
+                                       @"example.com/?advertId=${ADID}",
+                                       @"example.com/?advertId_hash=${ADID_HASH}",
+                                       ];
+
+    MNetMacroManager *macroManager = [MNetMacroManager getSharedInstance];
+    NSString *advertId = [[MNetAdIdManager getSharedInstance] getAdvertId];
+    NSString *advertIdHash = [[[MNetAdIdManager getSharedInstance] getAdvertId] MD5];
+    
+    NSArray<NSString *> *expectedResponse = @[
+                                              [NSString stringWithFormat:@"example.com/?advertId=%@", advertId],
+                                              [NSString stringWithFormat:@"example.com/?advertId_hash=%@", advertIdHash]
+                                              ];
+    
+    NSArray *modifiedLogs = [macroManager processMacrosForApLogsForBidders:inputLogs
+                                                              withResponse:response];
+    
+    for(int i=0; i< [expectedResponse count]; i++){
+        NSString *expectedStr = expectedResponse[i];
+        NSString *actualStr = modifiedLogs[i];
+        XCTAssert([expectedStr isEqualToString:actualStr], @"Expected = %@ | Got = %@", expectedStr, actualStr);
+    }
+}
+
+- (void)testEmptyMacroReplacement{
+    MNetBidResponse *response = [[MNetBidResponse alloc] init];
+    NSArray<NSString *> *inputLogs = @[
+                                       @"example.com/?macro=${CRID}",
+                                       @"example.com/?macro=${ACID}",
+                                       @"example.com/?macro=${REQ_URL}",
+                                       @"example.com/?macro=${AUCTION_PRICE}",
+                                       @"example.com/?macro=${PID}",
+                                       @"example.com/?macro=${PN}",
+                                       @"example.com/?macro=${BDP}",
+                                       @"example.com/?macro=${CBDP}",
+                                       @"example.com/?macro=${CLSPRC}",
+                                       @"example.com/?macro=${OGBDP}",
+                                       @"example.com/?macro=${ADCODE}",
+                                       @"example.com/?macro=${DFPBD}",
+                                       ];
+    MNetMacroManager *macroManager = [MNetMacroManager getSharedInstance];
+    NSArray *modifiedLogs = [macroManager processMacrosForApLogsForBidders:inputLogs withResponse:response];
+    NSString *expectedStr = @"example.com/?macro=";
+    for(int i=0;i< [inputLogs count]; i++){
+        NSString *actualStr = modifiedLogs[i];
+        XCTAssert([expectedStr isEqualToString:actualStr], @"Expected = %@ | Got = %@", expectedStr, actualStr);
+    }
+}
+
+- (void)testNilBidResponseMacroReplacement{
+    MNetBidResponse *response = nil;
+    NSArray<NSString *> *inputLogs = @[
+                                       @"example.com/?macro=${CRID}",
+                                       @"example.com/?macro=${ACID}",
+                                       @"example.com/?macro=${REQ_URL}",
+                                       @"example.com/?macro=${AUCTION_PRICE}",
+                                       @"example.com/?macro=${PID}",
+                                       @"example.com/?macro=${PN}",
+                                       @"example.com/?macro=${BDP}",
+                                       @"example.com/?macro=${CBDP}",
+                                       @"example.com/?macro=${CLSPRC}",
+                                       @"example.com/?macro=${OGBDP}",
+                                       @"example.com/?macro=${DFPBD}",
+                                       @"example.com/?macro=${RT}",
+                                       @"example.com/?macro=${ADCODE}",
+                                       ];
+    MNetMacroManager *macroManager = [MNetMacroManager getSharedInstance];
+    NSString *expectedStr = @"example.com/?macro=";
+    
+    // Test ApLogs For Bidders
+    NSArray *modifiedApLogs = [macroManager processMacrosForApLogsForBidders:inputLogs withResponse:response];
+    for(int i=0;i< [inputLogs count]; i++){
+        NSString *actualStr = modifiedApLogs[i];
+        XCTAssert([expectedStr isEqualToString:actualStr], @"Expected = %@ | Got = %@", expectedStr, actualStr);
+    }
+    
+    // Test Loggin Pixels
+    NSArray *modifiedLogginPixelsLogs = [macroManager processMacrosForLoggingPixels:inputLogs withResponse:response];
+    for(int i=0;i< [inputLogs count]; i++){
+        NSString *actualStr = modifiedLogginPixelsLogs[i];
+        XCTAssert([expectedStr isEqualToString:actualStr], @"Expected = %@ | Got = %@", expectedStr, actualStr);
+    }
+    
+    //Test expiry logs
+    NSArray *modifiedExpiryLogs = [macroManager processMacrosForExpiryLogs:inputLogs withResponse:response];
+    for(int i=0;i< [inputLogs count]; i++){
+        NSString *actualStr = modifiedExpiryLogs[i];
+        XCTAssert([expectedStr isEqualToString:actualStr], @"Expected = %@ | Got = %@", expectedStr, actualStr);
+    }
+}
 @end
