@@ -32,7 +32,6 @@
                                          MNetPulseEventTrackingError,
                                          MNetPulseEventBannerAdClicked,
                                          MNetPulseEventInterstitialAdClicked,
-                                         MNetPulseEventLocalApps,
                                          MNetPulseEventHbAdSlot,
                                          MNetPulseEventError,
                                          MNetPulseEventNetwork,
