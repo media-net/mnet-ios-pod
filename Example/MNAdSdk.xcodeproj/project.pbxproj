@@ -27,6 +27,8 @@
 		8A34F3951EAE32D600144B72 /* vast-linear.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8A34F3941EAE32D600144B72 /* vast-linear.xml */; };
 		8A34F39D1EAE37EB00144B72 /* vast-linear-inline.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8A34F39C1EAE37EB00144B72 /* vast-linear-inline.xml */; };
 		8A39B1A71EAF63CE00F2915F /* MNetTestVideoLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A39B1A61EAF63CE00F2915F /* MNetTestVideoLoad.m */; };
+		8A3C5374202AF9B0004B5550 /* MNAdSdkURLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C5373202AF9B0004B5550 /* MNAdSdkURLManager.m */; };
+		8A44761B2029A73E00F43F18 /* MNURLConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A44761A2029A73E00F43F18 /* MNURLConfigViewController.m */; };
 		8A49676E1EAF873C0032C550 /* adResponseVideo320x250.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A39B1A81EAF6AD600F2915F /* adResponseVideo320x250.json */; };
 		8A4CBFCC1F668B47009CCB02 /* MNetAdViewReuseRepositoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4CBFCB1F668B47009CCB02 /* MNetAdViewReuseRepositoryTests.m */; };
 		8A6291421FDFB742008DD9F9 /* vast-multi-wrapper.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8A6291411FDFB742008DD9F9 /* vast-multi-wrapper.xml */; };
@@ -138,6 +140,10 @@
 		8A34F39C1EAE37EB00144B72 /* vast-linear-inline.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "vast-linear-inline.xml"; sourceTree = "<group>"; };
 		8A39B1A61EAF63CE00F2915F /* MNetTestVideoLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestVideoLoad.m; sourceTree = "<group>"; };
 		8A39B1A81EAF6AD600F2915F /* adResponseVideo320x250.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = adResponseVideo320x250.json; sourceTree = "<group>"; };
+		8A3C5372202AF9B0004B5550 /* MNAdSdkURLManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MNAdSdkURLManager.h; sourceTree = "<group>"; };
+		8A3C5373202AF9B0004B5550 /* MNAdSdkURLManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNAdSdkURLManager.m; sourceTree = "<group>"; };
+		8A4476192029A73E00F43F18 /* MNURLConfigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MNURLConfigViewController.h; sourceTree = "<group>"; };
+		8A44761A2029A73E00F43F18 /* MNURLConfigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNURLConfigViewController.m; sourceTree = "<group>"; };
 		8A4CBFCB1F668B47009CCB02 /* MNetAdViewReuseRepositoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetAdViewReuseRepositoryTests.m; sourceTree = "<group>"; };
 		8A6291411FDFB742008DD9F9 /* vast-multi-wrapper.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "vast-multi-wrapper.xml"; sourceTree = "<group>"; };
 		8A70D3EC1EB092DA00F4B63E /* MNetTestRewardedVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestRewardedVideo.m; sourceTree = "<group>"; };
@@ -295,6 +301,10 @@
 				8A007A651E55B1D50006E667 /* MNShowAdViewController.m */,
 				AED94DEE1E72DF7300470329 /* MNDemoConstants.h */,
 				AED94DEF1E72DF7300470329 /* MNDemoConstants.m */,
+				8A4476192029A73E00F43F18 /* MNURLConfigViewController.h */,
+				8A44761A2029A73E00F43F18 /* MNURLConfigViewController.m */,
+				8A3C5372202AF9B0004B5550 /* MNAdSdkURLManager.h */,
+				8A3C5373202AF9B0004B5550 /* MNAdSdkURLManager.m */,
 			);
 			name = "Example for MNAdSdk";
 			path = MNAdSdk;
@@ -812,12 +822,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example-resources.sh",
-				"${PODS_ROOT}/../../MNetAdSdk/ios/MNetAdSdk.framework/Versions/A/Resources/mraid.js",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -884,8 +891,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworkActivityLogger/AFNetworkActivityLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Bugsnag/Bugsnag.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/KSCrash/KSCrash.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MNALApplink/MNALApplink.framework",
+				"${BUILT_PRODUCTS_DIR}/MNetAdSdk/MNetAdSdk.framework",
+				"${BUILT_PRODUCTS_DIR}/MNetJSONModeller/MNetJSONModeller.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
 				"${BUILT_PRODUCTS_DIR}/mopub-ios-sdk/MoPub.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -894,8 +906,13 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworkActivityLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bugsnag.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSCrash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MNALApplink.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MNetAdSdk.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MNetJSONModeller.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoPub.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -915,8 +932,10 @@
 				6003F59E195388D20070C39A /* MNAppDelegate.m in Sources */,
 				AED94DF01E72DF7300470329 /* MNDemoConstants.m in Sources */,
 				6003F5A7195388D20070C39A /* MNViewController.m in Sources */,
+				8A3C5374202AF9B0004B5550 /* MNAdSdkURLManager.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				8A007A661E55B1D50006E667 /* MNShowAdViewController.m in Sources */,
+				8A44761B2029A73E00F43F18 /* MNURLConfigViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

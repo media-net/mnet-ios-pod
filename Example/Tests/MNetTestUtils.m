@@ -136,4 +136,70 @@
     XCTAssert(matchStatus == NO, @"Regex does not match!");
 }
 
+- (void)testURLParser{
+    NSArray *urlsWithoutParams = @[
+                                    @"mnet://ybnca/adfailed",
+                                    @"mraid://close",
+                                    ];
+    NSArray *urlsWithParams = @[
+                      @"mnet://ybnca/adloaded?width=5&height=9",
+                      @"mraid://expand?shouldUseCustomClose=true",
+                      @"mraid://open?url=http%3A%2F%2Foperamediaworks.com%2F",
+                      @"mraid://playVideo?url=http%3A%2F%2Fadmarvel.s3.amazonaws.com%2Fdemo%2Fmraid%2FOMW_SOUND_VIDEO_RENEW.iPhoneSmall.mp4",
+                      @"mraid://createCalendarEvent?eventJSON=%7B%22description%22%3A%22Mayan%20Apocalypse%2FEnd%20of%20World%22%2C%22location%22%3A%22everywhere%22%2C%22start%22%3A%222013-12-21T00%3A00-05%3A00%22%2C%22end%22%3A%222013-12-22T00%3A00-05%3A00%22%7D",
+                      ];
+    MNetURLParser *urlParser = [[MNetURLParser alloc] init];
+    for(NSString *url in urlsWithParams){
+        NSDictionary *params = [urlParser parseURL:url];
+        XCTAssertNotNil(params);
+    }
+    
+    for(NSString *url in urlsWithoutParams){
+        NSDictionary *params = [urlParser parseURL:url];
+        XCTAssertNil(params);
+    }
+}
+
+- (void)testURLParserUtil{
+    NSArray *urls = @[
+                      @"http://google.com?s=tom&q=and&t=jerry",
+                      @"mnet://ybnca/adloaded?width=5&height=9",
+                      @"mnet://ybnca/adfailed",
+                      @"mraid://expand?shouldUseCustomClose=true",
+                      @"mnet://ybnca?query"
+                      ];
+    NSArray *expectedDictArray = @[
+                                   @{
+                                       @"s" : @"tom",
+                                       @"q" : @"and",
+                                       @"t" : @"jerry",
+                                       },
+                                   @{
+                                       @"width" : @"5",
+                                       @"height" : @"9",
+                                       },
+                                   @{},
+                                   @{
+                                       @"shouldUseCustomClose" : @"true"
+                                       },
+                                   @{},
+                                   ];
+    NSInteger count = 0;
+    for(NSString *urlString in urls){
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSDictionary *paramsDict = [MNetUtil parseURL:url];
+        NSDictionary *expectedDict = expectedDictArray[count];
+        
+        if([[expectedDict allKeys] count] == 0){
+            XCTAssertTrue([[paramsDict allKeys] count] == 0);
+        }
+        
+        for(NSString *key in [paramsDict allKeys]){
+            NSString *expectedVal = [expectedDict valueForKey:key];
+            NSString *paramsVal = [paramsDict valueForKey:key];
+            XCTAssertTrue([expectedVal isEqualToString:paramsVal]);
+        }
+        count+=1;
+    }
+}
 @end

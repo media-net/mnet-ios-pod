@@ -37,6 +37,11 @@
 #define LONGITUDE 100.0
 #define LATITUDE 100.0
 
+// If has_include contains the import, the pod is not a framework
+#if ! __has_include(<MNetAdSdk/MNetURL.h>)
+#define IS_FRAMEWORK 1
+#endif
+
 @interface MNDemoConstants : NSObject
 
 @end

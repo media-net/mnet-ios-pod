@@ -13,6 +13,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <EventKit/EventKit.h>
 #import <Photos/Photos.h>
+#import "MNURLConfigViewController.h"
 
 #define ROW_CONTENTS_KEY  @"rowContents"
 #define SECTION_TITLE_KEY @"sectionTitle"
@@ -28,6 +29,7 @@ static const CGFloat sectionTitleHeight = 50.0f;
 static const CGFloat sectionFooterViewHeight = 30.0f;
 
 @interface MNViewController () <UITableViewDelegate, UITableViewDataSource>
+- (IBAction)configAction:(id)sender;
 
 @end
 
@@ -41,6 +43,12 @@ static const CGFloat sectionFooterViewHeight = 30.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.configBtn.hidden = YES;
+    
+#if ! defined(IS_FRAMEWORK) && defined (DEBUG)
+    self.configBtn.hidden = NO;
+#endif
+    
     [self initializeAdsListArr];
     [self askAllPermissions];
     [self setupTableView];
@@ -461,6 +469,11 @@ static const CGFloat sectionFooterViewHeight = 30.0f;
     return nil;
 }
 
+- (IBAction)configAction:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MNURLConfigViewController *configVC = [storyboard instantiateViewControllerWithIdentifier:@"urlConfigVC"];
+    [self presentViewController:configVC animated:YES completion:nil];
+}
 @end
 
 @implementation MNAdViewCell
