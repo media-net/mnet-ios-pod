@@ -87,28 +87,16 @@
     XCTAssertTrue([[bannerAd.adBaseObj fetchVCLink] isEqualToString:contextLink]);
 }
 
-- (void)testAdViewStatus{
-    validBannerAdRequestStub([self class]);
-    MNetAdView *bannerAd = [[MNetAdView alloc] init];
-    [bannerAd setSize:MNET_BANNER_AD_SIZE];
-    [bannerAd setAdUnitId:DEMO_MN_AD_UNIT_320x50];
-    UIViewController *vc = [self getViewController];
-    [bannerAd setRootViewController:vc];
-    [bannerAd setDelegate:self];
-    [bannerAd loadAd];
-}
-
 -(void)mnetAdDidLoad:(MNetAdView *)adView{
     EXPECTATION_FULFILL(self.bannerAdViewExpectation);
     XCTAssertTrue([adView.adBaseObj isAdLoaded]);
     XCTAssertFalse([adView.adBaseObj isAdShown]);
 }
 
-- (void)mnetAdDidFailToLoad:(MNetAdView *)adView withError:(MNetError *)error{\
+- (void)mnetAdDidFailToLoad:(MNetAdView *)adView withError:(MNetError *)error{
     XCTFail(@"Ad view failed! - %@", error);
     EXPECTATION_FULFILL(self.bannerAdViewExpectation);
     XCTAssertFalse([adView.adBaseObj isAdLoaded]);
     XCTAssertFalse([adView.adBaseObj isAdShown]);
 }
-
 @end

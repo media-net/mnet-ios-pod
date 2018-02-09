@@ -12,6 +12,7 @@
 #import <MNetAdSdk/MNetUser.h>
 #import "MNDemoConstants.h"
 #import <AFNetworkActivityLogger/AFNetworkActivityLogger.h>
+#import "MNAdSdkURLManager.h"
 
 @implementation MNAppDelegate
 
@@ -33,7 +34,9 @@
         
         //[[MNet getInstance] setIsTest:YES];
     }
-    
+#ifdef DEBUG
+    [[MNAdSdkURLManager getSharedInstance] initialSetup];
+#endif
     [GADMobileAds configureWithApplicationID:@"ca-app-pub-6365858186554077~2677656745"];
     return YES;
 }
