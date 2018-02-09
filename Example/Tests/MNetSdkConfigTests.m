@@ -108,12 +108,13 @@
     [MNJMManager fromDict:responseData toObject:mnetConfig];
     MNetHbConfigData *hbConfigData = [[MNetHbConfigData alloc] init];
     hbConfigData = mnetConfig.hbConfig;
+    XCTAssertNotNil(hbConfigData, @"HbConfig cannot be nil");
+    XCTAssertNotNil(hbConfigData.adUnitConfigDataList, @"AdUnitConfigDataLIst cannot be nil");
+    NSLog(@"isRtcEnabled : %@", [hbConfigData.isRtcEnabled isYes] ? @"YES" : @"NO");
     NSLog(@"AD UNIT ID : %@", [hbConfigData.adUnitConfigDataList[0] adUnitId]);
     NSLog(@"CREATIVE ID : %@", [hbConfigData.adUnitConfigDataList[0] creativeId]);
     NSLog(@"supported ads : %@", [hbConfigData.adUnitConfigDataList[0] supportedAds]);
     NSLog(@"custom targets key : %@", [hbConfigData.adUnitConfigDataList[0] customTargets][0].key);
-    XCTAssertNotNil(hbConfigData, @"HbConfig cannot be nil");
-    XCTAssertNotNil(hbConfigData.adUnitConfigDataList, @"AdUnitConfigDataLIst cannot be nil");
     NSLog(@"TEMP");
 }
 

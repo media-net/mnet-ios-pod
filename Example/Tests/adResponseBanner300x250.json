@@ -6,7 +6,7 @@
                 "ads_details": [
                                {
                                "id": "cbededd5c337438fa353723f6856621d",
-                               "bidder_id": 10000,
+                               "bidder_id": 10001,
                                "adtype": "banner",
                                "adcode": "<!DOCTYPE html><HTML><HEAD></HEAD><BODY><script id=\"mNCC\" language=\"javascript\">medianet_versionId = '111299';medianet_width = '300';medianet_height = '250';medianet_crid = '114068215';medianet_requrl= 'http%3A%2F%2FMNAdSDKDemo.media.net.imnapp';medianet_chnm2= '8CUO15940';medianet_chnm3= '247384273';medianet_bdrId= '9';medianet_sbdrId= '';medianet_auctionid= '84e731d7b98241cd882a585c510303f9';medianet_misc= {};medianet_misc.matchString= 'null';(function() {var isSSL = false;var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CU5PML78' + (isSSL ? '&https=1' : '');document.write('<scr' + 'ipt type=\"text/javascript\" id=\"mNSC\" src=\"' + mnSrc + '\"></scr' + 'ipt>');})();</script></BODY></HTML>",
                                "dfpbid": 0.45,

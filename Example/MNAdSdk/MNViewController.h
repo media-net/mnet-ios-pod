@@ -13,6 +13,7 @@
 @interface MNViewController : UIViewController <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *adsTableView;
 @property (weak, nonatomic) IBOutlet UIView *topBar;
+@property (weak, nonatomic) IBOutlet UIButton *configBtn;
 
 @end
 

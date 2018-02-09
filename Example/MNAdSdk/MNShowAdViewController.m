@@ -461,7 +461,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             MNetAdView *mnetAdView = [[MNetAdView alloc]init];
             [mnetAdView setAdUnitId:DEMO_MRAID_AD_UNIT_320x50];
             [mnetAdView setDelegate:self];
-            [mnetAdView setSize:MNET_BANNER_AD_SIZE];
+            [mnetAdView setSize:MNET_MEDIUM_AD_SIZE];
             [mnetAdView setRootViewController:self];
             
             // Initializing with lat-long
