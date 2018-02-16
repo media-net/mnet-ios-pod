@@ -34,8 +34,12 @@
 
 #define DEMO_AD_MOB_AD_UNIT_ID  @"<custom_id>"
 
-#define LONGITUDE 100.0
-#define LATITUDE 100.0
+#define LONGITUDE 72.8561644
+#define LATITUDE  19.0176147
+
+// Custom event labels
+#define AD_MOB_CUSTOM_EVENT_LABEL   @"<custom_id>"
+#define DFP_CUSTOM_EVENT_LABEL      @"<custom_id>"
 
 // If has_include contains the import, the pod is not a framework
 #if ! __has_include(<MNetAdSdk/MNetURL.h>)
