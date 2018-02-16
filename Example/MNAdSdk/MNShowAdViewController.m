@@ -336,8 +336,30 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             [dfpBannerView setAdUnitID:DEMO_DFP_MEDIATION_AD_UNIT_ID];
             [dfpBannerView setRootViewController:self];
             [dfpBannerView setDelegate:self];
+            
             DFPRequest *request = [DFPRequest request];
             [request setCustomTargeting:@{@"bid": @"15"}];
+            
+            // User-defined stuff
+            [request setGender:kGADGenderFemale];
+            [request setBirthday:[NSDate dateWithTimeIntervalSince1970:0]];
+            [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
+            
+            /*
+            [request setKeywords:@[@"sports", @"scores", @"content_link:https://my-custom-link.com/keywords"]];
+            GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
+            NSString *label = DFP_CUSTOM_EVENT_LABEL;
+            [customEventExtras setExtras:@{
+                                           @"author":       @"hawking",
+                                           @"shape":        @"saddle",
+                                           @"element":      @"universe",
+                                           @"content_link": @"https://my-custom-link.com/additional_params",
+                                       }
+                                forLabel:DFP_CUSTOM_EVENT_LABEL];
+            NSLog(@"%@", [customEventExtras extrasForLabel:DFP_CUSTOM_EVENT_LABEL]);
+            [request registerAdNetworkExtras:customEventExtras];
+             */
+            
             [dfpBannerView loadRequest:request];
             
             [dfpBannerView setFrame:CGRectMake((_adView.frame.size.width - GAD_SIZE_320x50.width)/2.0, 0, GAD_SIZE_320x50.width, GAD_SIZE_320x50.height)];
@@ -371,6 +393,26 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             GADRequest *request = [GADRequest request];
             //[request setTestDevices:@[kGADSimulatorID]];
             
+            // custom user settings
+            [request setGender:kGADGenderFemale];
+            [request setBirthday:[NSDate dateWithTimeIntervalSince1970:0]];
+            [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
+            
+            /*
+            [request setKeywords:@[@"sports", @"scores", @"content_link:https://my-custom-link.com/keywords"]];
+            GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
+            NSString *label = AD_MOB_CUSTOM_EVENT_LABEL;
+            [customEventExtras setExtras:@{
+                                           @"author":       @"hawking",
+                                           @"shape":        @"saddle",
+                                           @"element":      @"universe",
+                                           @"content_link": @"https://my-custom-link.com/additional_params",
+                                           }
+                                forLabel:label];
+            NSLog(@"%@", [customEventExtras extrasForLabel:label]);
+            [request registerAdNetworkExtras:customEventExtras];
+             */
+            
             [gadBannerView loadRequest:request];
             
             [gadBannerView setFrame:CGRectMake((_adView.frame.size.width - GAD_SIZE_320x50.width)/2.0, 0, GAD_SIZE_320x50.width, GAD_SIZE_320x50.height)];
@@ -381,6 +423,25 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             dfpInterstitialAd = [[DFPInterstitial alloc] initWithAdUnitID:DEMO_DFP_MEDIATION_INTERSTITIAL_AD_UNIT_ID];
             DFPRequest *request = [DFPRequest request];
             //[request setTestDevices:@[kGADSimulatorID]];
+            
+            // User-defined stuff
+            [request setGender:kGADGenderFemale];
+            [request setBirthday:[NSDate dateWithTimeIntervalSince1970:3]];
+            [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
+            /*
+            [request setKeywords:@[@"sports", @"scores", @"content_link:https://dfp-intersitial-my-custom-link.com/keywords"]];
+            NSString *label = DFP_CUSTOM_EVENT_LABEL;
+            GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
+            [customEventExtras setExtras:@{
+                                           @"author":       @"hawking",
+                                           @"shape":        @"saddle",
+                                           @"element":      @"universe",
+                                           @"content_link": @"https://dfp-intersitial-my-custom-link.com/additional_params",
+                                           }
+                                forLabel:label];
+            NSLog(@"%@", [customEventExtras extrasForLabel:label]);
+            [request registerAdNetworkExtras:customEventExtras];
+             */
             
             [dfpInterstitialAd setDelegate:self];
             [dfpInterstitialAd loadRequest:request];
@@ -400,6 +461,27 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             [gadInterstitialAd setDelegate:self];
             
             GADRequest *request = [GADRequest request];
+            
+            // User-defined stuff
+            [request setGender:kGADGenderFemale];
+            [request setBirthday:[NSDate dateWithTimeIntervalSince1970:4]];
+            [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
+            /*
+            [request setKeywords:@[@"sports", @"scores", @"content_link:https://admob-intersitial-my-custom-link.com/keywords"]];
+            
+            NSString *label = AD_MOB_CUSTOM_EVENT_LABEL;
+            GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
+            [customEventExtras setExtras:@{
+                                           @"author":       @"hawking",
+                                           @"shape":        @"saddle",
+                                           @"element":      @"universe",
+                                           @"content_link": @"https://admob-intersitial-my-custom-link.com/additional_params",
+                                           }
+                                forLabel:label];
+            NSLog(@"%@", [customEventExtras extrasForLabel:label]);
+            [request registerAdNetworkExtras:customEventExtras];
+             */
+            
             [gadInterstitialAd loadRequest:request];
             break;
         }
