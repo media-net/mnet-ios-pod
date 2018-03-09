@@ -15,6 +15,7 @@ typedef enum {
     MNetErrCodeInvalidRequest           = -1002,
     MNetErrCodeInvalidURL               = -1003,
     MNetErrCodeInvalidResponse          = -1004,
+    
     // Ad loading error code
     MNetErrCodeInvalidAdUnitId          = -2000,
     MNetErrCodeAdLoadFailed             = -2001,
@@ -28,6 +29,8 @@ typedef enum {
     MNetErrCodeInvalidAdCode            = -2009,
     MNetErrCodeInvalidAdUrl             = -2010,
     MNetErrCodeAdUrlRequestFailed       = -2011,
+    MNetErrCodeYBNCATimeout             = -2012,
+    
     // HB error code
     MNetErrCodeHBLoadFailed             = -3000,
     // MRAID error code
@@ -38,6 +41,11 @@ typedef enum {
     MNetErrCodeAdViewReuse              = -6000,
     // Adx error code
     MNetErrCodeAdxFailed                = -7000,
+    
+    // Permission not available code
+    MNetErrCodeCameraPermissionRestricted         = -8000,
+    MNetErrCodeCameraPermissionDenied             = -8001,
+    
 }MNetErrorCode;
 
 

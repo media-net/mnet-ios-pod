@@ -41,7 +41,7 @@ static NSString *kIsProdKey = @"is_prod";
 
 - (NSString *)getSdkBaseURL{
 #ifndef IS_FRAMEWORK
-    return [self removeHttpFromString:[[MNetURL getSharedInstance] getBaseUrl]];
+    return [self removeHttpFromString:[[MNetURL getSharedInstance] getBaseUrlDp]];
 #else
     return @"";
 #endif

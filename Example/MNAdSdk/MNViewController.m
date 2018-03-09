@@ -210,12 +210,9 @@ static const CGFloat sectionFooterViewHeight = 30.0f;
 #pragma mark - Permissions
 - (void)askAllPermissions{
     [self askForLocationPermission];
-    
     // These permissions need to be enabled for MRAID only
-    /*
     [self askForCalendarPermission];
     [self askForPhotosPermission];
-     */
 }
 
 - (void)askForLocationPermission{

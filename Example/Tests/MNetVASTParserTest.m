@@ -116,6 +116,50 @@ static const NSTimeInterval mDefaultTimeout = 1;
     XCTAssertTrue([videoConfig.mediaURL.absoluteString isEqualToString:@"http://cdnp.tremormedia.com/video/acudeo/Carrot_400x300_500kb.flv"]);
 }
 
+- (void)testVASTTrackingURLs{
+    XCTestExpectation *expectaion = [self expectationWithDescription:@"fetching data from XML"];
+    
+    __block NSData *vastData = [self dataFromXMLFileNamed:@"vast-linear-trackers" class:[self class]];
+    __block MNetVast *vastResponse;
+    
+    MNetVastAdXmlManager *xmlManager = [[MNetVastAdXmlManager alloc] init];
+    [xmlManager parseXMLFromDataWithCompletion:vastData completion:^(MNetVast *response,NSError *error){
+        XCTAssert(error == nil);
+        vastResponse = response;
+        [expectaion fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:mDefaultTimeout handler:^(NSError * _Nullable error){
+        XCTAssert(error == nil);
+    }];
+    
+    MNetVASTVideoConfig *videoConfig = [[MNetVASTVideoConfig alloc] initWithVASTResponse:vastResponse];
+    XCTAssertNotNil(videoConfig);
+    NSDictionary *trackersMap = @{
+                                  @"startTrackers" : @"https://media/start/trackers",
+                                  @"creativeViewTrackers" : @"https://creative/view/trackers",
+                                  @"firstQuartileTrackers" : @"https://first/quartile/trackers",
+                                  @"midpointTrackers" : @"https://midpoint/trackers",
+                                  @"thirdQuartileTrackers" : @"https://third/quartile/trackers",
+                                  @"completedTrackers" : @"https://complete/trackers",
+                                  @"muteTrackers" : @"https://mute/trackers",
+                                  @"unmuteTrackers" : @"https://unmute/trackers",
+                                  @"rewindTrackers" : @"https://rewind/trackers",
+                                  @"pauseTrackers" : @"https://pause/trackers",
+                                  @"resumeTrackers" : @"https://resume/trackers",
+                                  @"fullScreenTrackers" : @"https://fullscreen/trackers",
+                                  @"exitFullScreenTrackers" : @"https://exit/fullscreen/trackers",
+                                  @"closeTrackers" : @"https://close/linear/trackers",
+                                  };
+    
+    
+    for (NSString *key in [trackersMap allKeys]){
+        NSString *trackerStr = [trackersMap valueForKey:key];
+        NSArray *tracker = [videoConfig valueForKey:key];
+        XCTAssertTrue([trackerStr isEqualToString:tracker[0]]);
+    }
+}
+
 -(NSData *) dataFromXMLFileNamed : (NSString *) name class : (Class) aClass {
     NSString *file = [[NSBundle bundleForClass:[aClass class]] pathForResource:name ofType:@"xml"];
     return [NSData dataWithContentsOfFile:file];

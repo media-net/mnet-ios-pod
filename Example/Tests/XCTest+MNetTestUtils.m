@@ -36,7 +36,7 @@ void dummyStubQSearch(){
 
 void dummyStubFingerPrint(){
     NSString *fingerPrintContents = @"{\"uid\":\"dummy-finger-print\"}";
-    stubRequest(@"POST", @"http://.*?fingerprint".regex).andReturn(200).withBody(fingerPrintContents);
+    stubRequest(@"POST", [[MNetURL getSharedInstance] getFingerPrintUrl]).andReturn(200).withBody(fingerPrintContents);
 }
 
 void dummyStubConfigRequest(Class classFile){
@@ -100,7 +100,8 @@ void dummyStubLoader(){
      NOTE:
      Not adding a response body (in this case, an image), since we are only stubbing the unit tests
      */
-    stubRequest(@"GET", @"https://s3-us-west-2\\.amazonaws\\.com/mnet-((android)|(ios))-resources/.*\\.png".regex).
+    NSString *resourceUrlList = [NSString stringWithFormat:@"%@.*", [[MNetURL getSharedInstance] getBaseResourceUrl]];
+    stubRequest(@"GET", resourceUrlList.regex).
     withHeaders(@{ @"Accept": @"image/*" }).andReturn(200);
 }
 
