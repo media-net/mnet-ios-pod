@@ -273,8 +273,31 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             [dfpBannerView setAdUnitID:DEMO_DFP_AD_UNIT_ID];
             [dfpBannerView setRootViewController:self];
             [dfpBannerView setDelegate:self];
+            
             DFPRequest *request = [DFPRequest request];
             [request setCustomTargeting:@{@"bid": @"15"}];
+            /*
+            [request setContentURL:@"https://my-custom-link.com/contentURL"];
+            
+            // These are additional keywords that can be picked up HB
+            [request setKeywords:@[@"sports", @"scores", @"content_link:https://my-custom-link.com/keywords"]];
+            [request setGender:kGADGenderMale];
+            [request setBirthday:[NSDate dateWithTimeIntervalSince1970:0]];
+            [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
+            
+            GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
+            NSString *label = DFP_CUSTOM_EVENT_LABEL;
+            [customEventExtras setExtras:@{
+                                           @"author":       @"hawking",
+                                           @"shape":        @"saddle",
+                                           @"element":      @"universe",
+                                           @"content_link": @"https://my-custom-link.com/additional_params",
+                                           }
+                                forLabel:label];
+            NSLog(@"%@", [customEventExtras extrasForLabel:label]);
+            [request registerAdNetworkExtras:customEventExtras];
+             */
+            
             [dfpBannerView loadRequest:request];
             break;
         }
@@ -313,6 +336,28 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
             [self addLoaderToScreen];
             dfpInterstitialAd = [[DFPInterstitial alloc] initWithAdUnitID:DEMO_DFP_HB_INTERSTITIAL_AD_UNIT_ID];
             DFPRequest *request = [DFPRequest request];
+            /*
+             [request setContentURL:@"https://my-custom-link.com/contentURL"];
+             
+             // These are additional keywords that can be picked up HB
+             [request setKeywords:@[@"sports", @"scores", @"content_link:https://my-custom-link.com/keywords"]];
+             [request setGender:kGADGenderMale];
+             [request setBirthday:[NSDate dateWithTimeIntervalSince1970:0]];
+             [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
+             
+             GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
+             NSString *label = DFP_CUSTOM_EVENT_LABEL;
+             [customEventExtras setExtras:@{
+             @"author":       @"hawking",
+             @"shape":        @"saddle",
+             @"element":      @"universe",
+             @"content_link": @"https://my-custom-link.com/additional_params",
+             }
+             forLabel:label];
+             NSLog(@"%@", [customEventExtras extrasForLabel:label]);
+             [request registerAdNetworkExtras:customEventExtras];
+             */
+            
             [dfpInterstitialAd setDelegate:self];
             [dfpInterstitialAd loadRequest:request];
             break;
@@ -730,10 +775,10 @@ static const NSUInteger maxUnitsWhileLoading = 80;
     [self hideLoaderFromScreen];
     
     NSLog(@"DEMO: %@", error);
-    [self.view makeToast:mnetBannerFailAd];
-    [self.view makeToast:[error getErrorString]];
-    
-    [self showErrorAlertViewWithTitle:@"Ad Failed to Load!" andMessage:@"Error while fetching response"];
+    NSString *errToastString = [NSString stringWithFormat:@"%@. %@",mnetBannerFailAd, [error getErrorReasonString]];
+    [self.view makeToast:errToastString];
+    NSString *errAlertString = [NSString stringWithFormat:@"Error while fetching response. %@", [error getErrorReasonString]];
+    [self showErrorAlertViewWithTitle:@"Ad Failed to Load!" andMessage:errAlertString];
 }
 
 - (void)mnetAdDidClick:(MNetAdView *)adView{
