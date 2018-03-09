@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="3.0">
+    <Ad id="697200496">
+        <InLine>
+            <AdSystem>GDFP</AdSystem>
+            <AdTitle>External NCA1C1L1 LinearInlineSkippable</AdTitle>
+            <Description>External NCA1C1L1 LinearInlineSkippable ad</Description>
+            <Error>https://pubads.g.doubleclick.net/pagead/conversion/?ai=BbGv8Q5prWOHbPIaboAPMxZ7oC5DVj-sGAAAAEAEgqN27JjgAWLCUgsbXAWDl6uaDvA66AQo3Mjh4OTBfeG1syAEFwAIC4AIA6gIlLzEyNDMxOTA5Ni9leHRlcm5hbC9zaW5nbGVfYWRfc2FtcGxlc_gCg9IegAMBkAOaCJgD8AGoAwHgBAHSBQYQ8N65zAKQBgGgBiPYBwHgBws&amp;sigh=aQSsOAqGzfk&amp;label=videoplayfailed[ERRORCODE]</Error>
+            <Impression>https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjsvDAXUhCnJOl1i1GLrH9mZ5GupDTdT8Fc4v10RGugzTAot3wNIMPmSY6n2obesg_VwmwvKQ2iLCGPIUe--60IQbnPookzkbc6AGIBH1FcIMqgqXVYkc9pIjehkgg5CsH__mPOlcm703QFMiAfFQzrbCqTOw5JeTr-bQSCPnJzmzznBS4RAmrfLdzNIoJ25_766MhNm-07MBMbEzmb3Mai61QySZaT3sA1TVraeb4u6zKg&amp;sig=Cg0ArKJSzPJm-phkFovBEAE&amp;adurl=</Impression>
+            <Creatives>
+                <Creative id="57860459056" sequence="1">
+                    <Linear skipoffset="00:00:05">
+                        <Duration>00:00:10</Duration>
+                        <TrackingEvents>
+                            <Tracking event="start">https://media/start/trackers</Tracking>
+                            <Tracking event="firstQuartile">https://first/quartile/trackers</Tracking>
+                            <Tracking event="midpoint">https://midpoint/trackers</Tracking>
+                            <Tracking event="thirdQuartile">https://third/quartile/trackers</Tracking>
+                            <Tracking event="complete">https://complete/trackers</Tracking>
+                            <Tracking event="mute">https://mute/trackers</Tracking>
+                            <Tracking event="unmute">https://unmute/trackers</Tracking>
+                            <Tracking event="rewind">https://rewind/trackers</Tracking>
+                            <Tracking event="pause">https://pause/trackers</Tracking>
+                            <Tracking event="resume">https://resume/trackers</Tracking>
+                            <Tracking event="fullscreen">https://fullscreen/trackers</Tracking>
+                            <Tracking event="creativeView">https://creative/view/trackers</Tracking>
+                            <Tracking event="exitFullscreen">https://exit/fullscreen/trackers</Tracking>
+                            <Tracking event="closeLinear">https://close/linear/trackers</Tracking>
+                        </TrackingEvents>
+                        <AdParameters>custom_param=some_value</AdParameters>
+                        <VideoClicks>
+                            <ClickThrough id="GDFP">https://pubads.g.doubleclick.net/pcs/click?xai=AKAOjssdNjwXeKXIMip8ZfNSAMu6pCgOReZ-6e9-absH0lIDScDg1hTtsji_Z5hcTl2Ja7v92mbFa3riff9VycQOc4WsEzNFvKuxQOmcts9-rJqjDbsewyV6jqkMZAqgIvqunmdxYvS2TU7YnkObmzDbdHPt2QZdDeWAQzNTrzYHW4n5JHX-2mnXx9NkMC3DIQYWwSt9vDfLsCqdGo1ANihX3hDcB_fyOZzDqdaBiQQ&amp;sig=Cg0ArKJSzL3pJTkNAftg&amp;adurl=https://developers.google.com/interactive-media-ads/docs/vastinspector_dual</ClickThrough>
+                            <ClickTracking id="">https://video-ad-stats.googlesyndication.com/video/client_events?event=6&amp;web_property=ca-pub-3279133228669082&amp;cpn=[CPN]&amp;break_type=[BREAK_TYPE]&amp;slot_pos=[SLOT_POS]&amp;ad_id=[AD_ID]&amp;ad_sys=[AD_SYS]&amp;ad_len=[AD_LEN]&amp;p_w=[P_W]&amp;p_h=[P_H]&amp;mt=[MT]&amp;rwt=[RWT]&amp;wt=[WT]&amp;sdkv=[SDKV]&amp;vol=[VOL]&amp;content_v=[CONTENT_V]&amp;conn=[CONN]&amp;format=[FORMAT_NAMESPACE]_[FORMAT_TYPE]_[FORMAT_SUBTYPE]</ClickTracking>
+                        </VideoClicks>
+                        <MediaFiles>
+                            <MediaFile id="GDFP" delivery="progressive" width="1280" height="720" type="video/mp4" bitrate="533" scalable="true" maintainAspectRatio="true">http://adservex-staging.media.net/static/videos/videotest.mp4</MediaFile>
+                        </MediaFiles>
+                    </Linear>
+                </Creative>
+                <Creative id="57857370976" sequence="1">
+                    <CompanionAds>
+                        <Companion id="57857370976" width="300" height="250">
+                            <StaticResource creativeType="image/png">https://pagead2.googlesyndication.com/pagead/imgad?id=CICAgKDTwILFiwEQrAIY-gEyCAAnmA4d6uc2</StaticResource>
+                            <TrackingEvents>
+                                <Tracking event="creativeView">https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjsvP5S7UTeWuLMsOQRD9meoIajF9ojwqwpJRwnzrRAruR80sXnhwqbB_AIYM71Q2i3O9cMddupVNNY9qiyDOvgckxdeMLH94qXv7W4f6RwIdgYKbzvCObmGfCR4p4Sb_Z6r0dcBu07MjZWGiXtdb9ZNHABsx1zkrL1Y0apvEEKBWCFD2d4hmjFJ96p60bYKaAQb4KbZ4qoroIcYzhWQBPi7fy6-ADnvxwS46Mr66rokGZg&amp;sig=Cg0ArKJSzG3cIboBjU5VEAE&amp;adurl=</Tracking>
+                            </TrackingEvents>
+                            <CompanionClickThrough>https://pubads.g.doubleclick.net/pcs/click?xai=AKAOjsvdYjghi7SrajjSgb1l33myys9B6wtRIVK2aKRgur8i-epszI8DpQkOiMWSYzu8NHa9XAWO3fpV6d8n1ooeGVCYVQYxR_y7K2E47vs31YU-dorME4PnqO4HIusRf-KqjyOcUQojDUqo-YEoA76E1QKa506dTeV9UbZ47-7sHxxpIrYlSApdV0hNCoZSVxXrlyR61z8hcxm1iEAoq30mAlew3F07msfAB3Lh3y8&amp;sig=Cg0ArKJSzH8QPBQPKVXR&amp;adurl=https://developers.google.com/interactive-media-ads/docs/vastinspector_dual</CompanionClickThrough>
+                        </Companion>
+                    </CompanionAds>
+                </Creative>
+            </Creatives>
+            <Extensions>
+                <Extension type="waterfall" fallback_index="0" />
+                <Extension type="geo">
+                    <Country>IN</Country>
+                    <Bandwidth>4</Bandwidth>
+                    <BandwidthKbps>13800</BandwidthKbps>
+                </Extension>
+                <Extension type="activeview">
+                    <CustomTracking>
+                        <Tracking event="viewable_impression">https://pubads.g.doubleclick.net/pagead/conversion/?ai=BbGv8Q5prWOHbPIaboAPMxZ7oC5DVj-sGAAAAEAEgqN27JjgAWLCUgsbXAWDl6uaDvA66AQo3Mjh4OTBfeG1syAEFwAIC4AIA6gIlLzEyNDMxOTA5Ni9leHRlcm5hbC9zaW5nbGVfYWRfc2FtcGxlc_gCg9IegAMBkAOaCJgD8AGoAwHgBAHSBQYQ8N65zAKQBgGgBiPYBwHgBws&amp;sigh=aQSsOAqGzfk&amp;label=viewable_impression&amp;acvw=[VIEWABILITY]&amp;gv=[GOOGLE_VIEWABILITY]</Tracking>
+                        <Tracking event="abandon">https://pubads.g.doubleclick.net/pagead/conversion/?ai=BbGv8Q5prWOHbPIaboAPMxZ7oC5DVj-sGAAAAEAEgqN27JjgAWLCUgsbXAWDl6uaDvA66AQo3Mjh4OTBfeG1syAEFwAIC4AIA6gIlLzEyNDMxOTA5Ni9leHRlcm5hbC9zaW5nbGVfYWRfc2FtcGxlc_gCg9IegAMBkAOaCJgD8AGoAwHgBAHSBQYQ8N65zAKQBgGgBiPYBwHgBws&amp;sigh=aQSsOAqGzfk&amp;label=video_abandon&amp;acvw=[VIEWABILITY]&amp;gv=[GOOGLE_VIEWABILITY]</Tracking>
+                    </CustomTracking>
+                </Extension>
+                <Extension type="DFP">
+                    <SkippableAdType>Generic</SkippableAdType>
+                </Extension>
+            </Extensions>
+        </InLine>
+    </Ad>
+</VAST>

@@ -192,6 +192,7 @@
     NSArray<NSString *> *inputLogs = @[
                                        @"example.com/?advertId=${ADID}",
                                        @"example.com/?advertId_hash=${ADID_HASH}",
+                                       @"example.com/?advertId=%24%7BADID%7D",
                                        ];
 
     MNetMacroManager *macroManager = [MNetMacroManager getSharedInstance];
@@ -200,7 +201,8 @@
     
     NSArray<NSString *> *expectedResponse = @[
                                               [NSString stringWithFormat:@"example.com/?advertId=%@", advertId],
-                                              [NSString stringWithFormat:@"example.com/?advertId_hash=%@", advertIdHash]
+                                              [NSString stringWithFormat:@"example.com/?advertId_hash=%@", advertIdHash],
+                                              [NSString stringWithFormat:@"example.com/?advertId=%@", advertId],
                                               ];
     
     NSArray *modifiedLogs = [macroManager processMacrosForApLogsForBidders:inputLogs

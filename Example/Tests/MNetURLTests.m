@@ -23,11 +23,12 @@
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     MNetURL *urlObj = [MNetURL getSharedInstance];
     XCTAssert([urlObj getBaseResourceUrl] != nil, @"Url cannot be nil");
-    XCTAssert([urlObj getBaseUrl] != nil, @"Url should not be nil");
+    XCTAssert([urlObj getBaseUrlDp] != nil, @"Url should not be nil");
     XCTAssert([urlObj getBaseConfigUrl] != nil, @"Url should not be nil");
     XCTAssert([urlObj getBasePulseUrl] != nil, @"Url should not be nil");
     XCTAssert([urlObj getBaseResourceUrl] != nil, @"Url should not be nil");
     XCTAssert([urlObj getAdLoaderPredictBidsUrl] != nil, @"Url should not be nil");
+    XCTAssert([urlObj getAdLoaderPrefetchPredictBidsUrl] != nil, @"Url should not be nil");
     XCTAssert([urlObj getLatencyTestUrl] != nil, @"Url should not be nil");
     XCTAssert([urlObj getConfigUrl] != nil, @"Url should not be nil");
     XCTAssert([urlObj getPulseUrl] != nil, @"Url should not be nil");
@@ -36,24 +37,26 @@
     // Not writing tests for the contents. This might keep changing
     urlObj.isDebug = NO;
     NSLog(@"Printing all the prod urls, ");
-    NSLog(@"%@",[urlObj getBaseUrl]);
+    NSLog(@"%@",[urlObj getBaseUrlDp]);
     NSLog(@"%@",[urlObj getBaseConfigUrl]);
     NSLog(@"%@",[urlObj getBasePulseUrl]);
     NSLog(@"%@",[urlObj getBaseResourceUrl]);
     NSLog(@"%@",[urlObj getLatencyTestUrl]);
     NSLog(@"%@",[urlObj getAdLoaderPredictBidsUrl]);
+    NSLog(@"%@",[urlObj getAdLoaderPrefetchPredictBidsUrl]);
     NSLog(@"%@",[urlObj getConfigUrl]);
     NSLog(@"%@",[urlObj getPulseUrl]);
     NSLog(@"%@",[urlObj getFingerPrintUrl]);
     
     urlObj.isDebug = YES;
     NSLog(@"Printing all the debug urls, ");
-    NSLog(@"%@",[urlObj getBaseUrl]);
+    NSLog(@"%@",[urlObj getBaseUrlDp]);
     NSLog(@"%@",[urlObj getBaseConfigUrl]);
     NSLog(@"%@",[urlObj getBasePulseUrl]);
     NSLog(@"%@",[urlObj getBaseResourceUrl]);
     NSLog(@"%@",[urlObj getLatencyTestUrl]);
     NSLog(@"%@",[urlObj getAdLoaderPredictBidsUrl]);
+    NSLog(@"%@",[urlObj getAdLoaderPrefetchPredictBidsUrl]);
     NSLog(@"%@",[urlObj getConfigUrl]);
     NSLog(@"%@",[urlObj getPulseUrl]);
     NSLog(@"%@",[urlObj getFingerPrintUrl]);
