@@ -36,6 +36,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)initWithCustomerId:(NSString *)customerId
    appContainsChildDirectedContent:(BOOL)containsChildDirectedContent;
 
+/// Logs all MNet ad related logs.
+/// It is NO by default.
+/// *** Do NOT enable logs in production apps ***
++ (void)enableLogs:(BOOL)enabled;
+
 /// The current instance of MNet
 + (MNet*)getInstance;
 
