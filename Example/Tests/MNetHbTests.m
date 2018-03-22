@@ -124,7 +124,7 @@
     NSUInteger winCount = 0;
     NSUInteger totalCount = 1000;
     for (NSUInteger i=0; i<totalCount; i++){
-        BOOL result = [MNetHB getSamplingResultForRate:samplingRate];
+        BOOL result = [[MNetHB getSharedInstance] getSamplingResultForRate:samplingRate];
         if(result){
             winCount += 1;
         }
@@ -141,7 +141,7 @@
     NSUInteger winCount = 0;
     NSUInteger totalCount = 1000;
     for (NSUInteger i=0; i<totalCount; i++){
-        BOOL result = [MNetHB getSamplingResultForRate:samplingRate];
+        BOOL result = [[MNetHB getSharedInstance] getSamplingResultForRate:samplingRate];
         if(result){
             winCount += 1;
         }
@@ -152,30 +152,13 @@
     NSLog(@"total win count - %lu", winCount);
 }
 
-- (void)testSamplingRateForZeroVal{
-    NSNumber *samplingRate = [NSNumber numberWithInteger:0];
-    
-    NSUInteger winCount = 0;
-    NSUInteger totalCount = 1000;
-    for (NSUInteger i=0; i<totalCount; i++){
-        BOOL result = [MNetHB getSamplingResultForRate:samplingRate];
-        if(result){
-            winCount += 1;
-        }
-    }
-    
-    // Make sure that it does not win every thing
-    XCTAssert(winCount == 0, @"expected to win zero times with sampling rate - %@", samplingRate);
-    NSLog(@"total win count - %lu", winCount);
-}
-
 - (void)testSamplingRateForInvalidValues{
     NSNumber *samplingRate = [NSNumber numberWithFloat:200.0f];
     
     NSUInteger winCount = 0;
     NSUInteger totalCount = 1000;
     for (NSUInteger i=0; i<totalCount; i++){
-        BOOL result = [MNetHB getSamplingResultForRate:samplingRate];
+        BOOL result = [[MNetHB getSharedInstance] getSamplingResultForRate:samplingRate];
         if(result){
             winCount += 1;
         }

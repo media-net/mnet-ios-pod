@@ -764,17 +764,15 @@ static const NSUInteger maxUnitsWhileLoading = 80;
 
 #pragma mark - MNetAdView
 - (void)mnetAdDidLoad:(MNetAdView *)adView{
-    NSLog(@"DEMO: %@", mnetBannerLoadAd);
+    NSLog(@"DEMO: MNet %@", mnetBannerLoadAd);
     [self.view makeToast:mnetBannerLoadAd];
     
     [self hideLoaderFromScreen];
 }
 
 - (void)mnetAdDidFailToLoad:(MNetAdView *) adView withError : (MNetError *)error {
-    NSLog(@"DEMO: View did fail to load");
+    NSLog(@"DEMO: MNet %@ with error : %@", mnetBannerFailAd, [error description]);
     [self hideLoaderFromScreen];
-    
-    NSLog(@"DEMO: %@", error);
     NSString *errToastString = [NSString stringWithFormat:@"%@. %@",mnetBannerFailAd, [error getErrorReasonString]];
     [self.view makeToast:errToastString];
     NSString *errAlertString = [NSString stringWithFormat:@"Error while fetching response. %@", [error getErrorReasonString]];
@@ -782,32 +780,32 @@ static const NSUInteger maxUnitsWhileLoading = 80;
 }
 
 - (void)mnetAdDidClick:(MNetAdView *)adView{
-    NSLog(@"DEMO: %@", mnetBannerAdClick);
+    NSLog(@"DEMO: MNet %@", mnetBannerAdClick);
     [self.view makeToast:mnetBannerAdClick];
 }
 
 #pragma mark - MNetVideo
 -(void) mnetVideoDidStart : (MNetAdView *) adView {
-    NSLog(@"DEMO: %@", mnetVideoStartAd);
+    NSLog(@"DEMO: MNet %@", mnetVideoStartAd);
     [self.view makeToast:mnetVideoStartAd];
     [self hideLoaderFromScreen];
 }
 
 -(void) mnetVideoDidLoad:(MNetAdView *)adView {
-    NSLog(@"DEMO: %@", mnetVideoLoadAd);
+    NSLog(@"DEMO: MNet %@", mnetVideoLoadAd);
     [self.view makeToast:mnetVideoLoadAd];
     [self hideLoaderFromScreen];
 }
 
 -(void) mnetVideoDidComplete : (MNetAdView *) adView {
-    NSLog(@"DEMO: %@", mnetVideoComplteAd);
+    NSLog(@"DEMO: MNet %@", mnetVideoComplteAd);
     [self hideLoaderFromScreen];
 }
 
 -(void) mnetVideoDidFailToLoad:(MNetAdView *) adView withError : (MNetError *) error{
     [self hideLoaderFromScreen];
     
-    NSLog(@"DEMO: %@", error);
+    NSLog(@"DEMO: MNet %@ with error : %@", mnetVideoFailAd, [error description]);
     [self.view makeToast:mnetVideoFailAd];
     [self.view makeToast:[error getErrorString]];
     [self showErrorAlertViewWithTitle:@"Ad Failed to Load!" andMessage:@"Error while fetching Video Ad!"];
@@ -820,14 +818,14 @@ static const NSUInteger maxUnitsWhileLoading = 80;
 #pragma mark : MNetInterstitialAd
 
 -(void) mnetInterstitialAdDidLoad:(MNetInterstitialAd *)interstitialAd {
-    NSLog(@"DEMO: interstitial banner ad load");
+    NSLog(@"DEMO: MNet Interstitial Banner %@", mnetInterstitialLoadAd);
     [self btnStateEnabled:YES forBtn:self.showAd];
     [self.view makeToast:mnetInterstitialLoadAd];
     [self hideLoaderFromScreen];
 }
 
 -(void) mnetInterstitialAdDidFailToLoad:(MNetInterstitialAd *)interstitialAd withError:(MNetError *)error {
-    NSLog(@"DEMO : interstital banner ad load failed");
+    NSLog(@"DEMO: MNet Interstital Banner %@ with error : %@", mnetInterstitialFailAd, [error description]);
     [self hideLoaderFromScreen];
     [self.view makeToast:mnetInterstitialFailAd];
     [self.view makeToast:[error getErrorString]];
@@ -835,48 +833,50 @@ static const NSUInteger maxUnitsWhileLoading = 80;
 }
 
 -(void) mnetInterstitialAdDidShow:(MNetInterstitialAd *)interstitialAd {
-    NSLog(@"DEMO : interstitial banner ad shown");
+    NSLog(@"DEMO: MNet Interstitial Banner %@", mnetInterstitialShowAd);
     [self.view makeToast:mnetInterstitialShowAd];
     
     [self hideLoaderFromScreen];
 }
 
 -(void) mnetInterstitialAdDidDismiss:(MNetInterstitialAd *)interstitialAd {
-    NSLog(@"interstitial banner ad dismissed");
+    NSLog(@"DEMO: MNet Interstitial Banner %@", mnetInterstitialDismissAd);
     [self.view makeToast:mnetInterstitialDismissAd];
     [self btnStateEnabled:NO forBtn:self.showAd];
 }
 
 -(void) mnetInterstitialAdDidClick:(MNetInterstitialAd *)interstialAd {
+    NSLog(@"DEMO: MNet Interstitial Banner %@", mnetInterstitialClickAd);
     [self.view makeToast:mnetInterstitialClickAd];
 }
 
 #pragma mark : MNetInterstitialVideo
 
 -(void) mnetInterstitialVideoDidLoad:(MNetInterstitialAd *)interstitialAd {
-    NSLog(@"DEMO : interstitial video ad load");
+    NSLog(@"DEMO: MNet Interstitial %@", mnetInterstitialVideoLoadAd);
     [self btnStateEnabled:YES forBtn:self.showAd];
     [self.view makeToast:mnetInterstitialVideoLoadAd];
     [self hideLoaderFromScreen];
 }
 
 -(void) mnetInterstitialVideoDidShow:(MNetInterstitialAd *)interstitialAd{
+    NSLog(@"DEMO: MNet Interstitial %@", mnetInterstitialVideoShowAd);
     [self.view makeToast:mnetInterstitialVideoShowAd];
 }
 
 -(void) mnetInterstitialVideoDidStart:(MNetInterstitialAd *)interstitialAd {
-    NSLog(@"DEMO : interstitial video ad started");
+    NSLog(@"DEMO: MNet Interstitial %@", mnetInterstitialVideoStartAd);
     [self.view makeToast:mnetInterstitialVideoStartAd];
     [self hideLoaderFromScreen];
 }
 
 -(void) mnetInterstitialVideoDidComplete:(MNetInterstitialAd *)interstitialAd {
-    NSLog(@"DEMO : interstitial video ad completed");
+    NSLog(@"DEMO: MNet Interstitial %@", mnetInterstitialVideoCompleteAd);
     [self.view makeToast:mnetInterstitialVideoCompleteAd];
 }
 
 -(void) mnetInterstitialVideoDidFailToLoad:(MNetInterstitialAd *)interstitialAd withError:(MNetError *)error {
-    NSLog(@"DEMO : interstitial video ad load failed");
+    NSLog(@"DEMO: MNet Interstitial %@ with error : %@", mnetInterstitialVideoFailAd, [error description]);
     [self hideLoaderFromScreen];
     [self.view makeToast:mnetInterstitialVideoFailAd];
     [self.view makeToast:[error getErrorString]];
@@ -884,10 +884,12 @@ static const NSUInteger maxUnitsWhileLoading = 80;
 }
 
 -(void) mnetInterstitialVideoDidClick:(MNetInterstitialAd *)interstialAd {
+    NSLog(@"DEMO: MNet Interstitial %@", mnetInterstitialVideoClickAd);
     [self.view makeToast:mnetInterstitialVideoClickAd];
 }
 
 -(void) mnetInterstitialVideoDidDismiss:(MNetInterstitialAd *)interstitialAd {
+    NSLog(@"DEMO: MNet Interstitial %@", mnetInterstitialVideoDismissAd);
     [self.view makeToast:mnetInterstitialVideoDismissAd];
     [self btnStateEnabled:NO forBtn:self.showAd];
 }
@@ -895,23 +897,26 @@ static const NSUInteger maxUnitsWhileLoading = 80;
 #pragma mark : MNetRewardedVideo
 
 -(void) mnetRewardedVideoDidLoad:(MNetRewardedVideo *)rewardedVideo {
+    NSLog(@"DEMO: MNet Rewarded Video %@", mnetRewardedVideoLoadAd);
     [self btnStateEnabled:YES forBtn:self.showAd];
     [self.view makeToast:mnetRewardedVideoLoadAd];
     [self hideLoaderFromScreen];
 }
 
 -(void) mnetRewardedVideoDidStart:(MNetRewardedVideo *)rewardedVideo {
-    NSLog(@"DEMO : rewarded video ad started");
+    NSLog(@"DEMO: MNet Rewarded Video %@", mnetRewardedVideoStartAd);
     [self.view makeToast:mnetRewardedVideoStartAd];
     [self hideLoaderFromScreen];
 }
 
 -(void) mnetRewardedVideoDidComplete:(MNetRewardedVideo *)rewardedVideo withReward : (MNetReward *) reward {
+    NSLog(@"DEMO: MNet Rewarded Video %@", mnetRewardedVideoCompleteAd);
     [self.view makeToast:mnetRewardedVideoCompleteAd];
     [self btnStateEnabled:NO forBtn:self.showAd];
 }
 
 -(void) mnetRewardedVideoDidFailToLoad:(MNetRewardedVideo *)rewardedVideo withError:(MNetError *)error {
+    NSLog(@"DEMO: MNet Rewarded Video %@ with error : %@", mnetRewardedVideoFailAd, [error description]);
     [self hideLoaderFromScreen];
     [self.view makeToast:mnetRewardedVideoFailAd];
     [self.view makeToast:[error getErrorString]];
@@ -919,10 +924,12 @@ static const NSUInteger maxUnitsWhileLoading = 80;
 }
 
 -(void) mnetRewardedVideoDidShow:(MNetRewardedVideo *)rewardedVideo{
+    NSLog(@"DEMO: MNet Rewarded Video %@", mnetRewardedVideoShowAd);
     [self.view makeToast:mnetRewardedVideoShowAd];
 }
 
 -(void)mnetRewardedVideoDidClick:(MNetRewardedVideo *)rewardedVideo{
+    NSLog(@"DEMO: MNet Rewarded Video %@", mnetRewardedVideoClickAd);
     [self.view makeToast:mnetRewardedVideoClickAd];
 }
 
@@ -932,12 +939,13 @@ static const NSUInteger maxUnitsWhileLoading = 80;
 }
 
 - (void)adViewDidLoadAd:(MPAdView *)view{
-    NSLog(@"DEMO: %@", mopubLoadAd);
+    NSLog(@"DEMO: MoPub %@", mopubLoadAd);
     [self.view makeToast:mopubLoadAd];
     [self hideLoaderFromScreen];
 }
 
 - (void)adViewDidFailToLoadAd:(MPAdView *)view{
+    NSLog(@"DEMO: MoPub %@", mopubFailAd);
     [self.view makeToast:mopubFailAd];
     
     [self showErrorAlertViewWithTitle:@"Ad Failed to Load!" andMessage:@"Error while getting Ad for mopub!"];
@@ -945,35 +953,39 @@ static const NSUInteger maxUnitsWhileLoading = 80;
 }
 
 - (void)willLeaveApplicationFromAd:(MPAdView *)view{
-    NSLog(@"DEMO: %@", mopubClickAd);
+    NSLog(@"DEMO: MoPub %@", mopubClickAd);
     [self.view makeToast:mopubClickAd];
 }
 
 
 #pragma mark - MPInterstitialAdDelegate
 - (void)interstitialDidAppear:(MPInterstitialAdController *)interstitial{
+    NSLog(@"DEMO: MoPub Interstitial %@", mopubInterstitialShowAd);
     [self.view makeToast:mopubInterstitialShowAd];
 }
 
 - (void)interstitialDidLoadAd:(MPInterstitialAdController *)interstitial{
+    NSLog(@"DEMO: MoPub Interstitial %@", mopubInterstitialLoadAd);
     [self.view makeToast:mopubInterstitialLoadAd];
     [self btnStateEnabled:YES forBtn:self.showAd];
     [self hideLoaderFromScreen];
 }
 
 - (void)interstitialDidFailToLoadAd:(MPInterstitialAdController *)interstitial{
+    NSLog(@"DEMO: MoPub Interstitial %@", mopubInterstitialFailAd);
     [self.view makeToast:mopubInterstitialFailAd];
     [self hideLoaderFromScreen];
 }
 
 - (void)interstitialDidDisappear:(MPInterstitialAdController *)interstitial{
+    NSLog(@"DEMO: MoPub Interstitial %@", mopubInterstitialDismiss);
     [self.view makeToast:mopubInterstitialDismiss];
     [self btnStateEnabled:NO forBtn:self.showAd];
 }
 
 #pragma mark - GADBannerView
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView{
-    NSLog(@"DEMO: %@", gadLoadAd);
+    NSLog(@"DEMO: DFP %@", gadLoadAd);
     [self.view makeToast:gadLoadAd];
     
     [self hideLoaderFromScreen];
@@ -983,7 +995,7 @@ static const NSUInteger maxUnitsWhileLoading = 80;
     [self.view makeToast:gadFailAd];
     
     NSString *displayStr = [NSString stringWithFormat:@"GAD: banner view error %@",error];
-    NSLog(@"DEMO: %@", displayStr);
+    NSLog(@"DEMO: DFP %@", displayStr);
     [self.view makeToast:displayStr];
     
     [self showErrorAlertViewWithTitle:@"Ad Failed to Load!" andMessage:@"Error while fetching GADBannerView"];
@@ -992,31 +1004,32 @@ static const NSUInteger maxUnitsWhileLoading = 80;
 }
 
 - (void)adViewWillPresentScreen:(GADBannerView *)bannerView{
-    NSLog(@"DEMO: %@", gadClickAd);
+    NSLog(@"DEMO: DFP %@", gadClickAd);
     [self.view makeToast:gadClickAd];
 }
 
 #pragma mark - GADInterstitial
 
 - (void)interstitialDidReceiveAd:(GADInterstitial *)ad{
-    NSLog(@"Interstitial DFP ad received");
+    NSLog(@"DEMO: DFP Interstitial %@", gadInterstitialLoadAd);
     [self btnStateEnabled:YES forBtn:self.showAd];
     [self hideLoaderFromScreen];
     [self.view makeToast:gadInterstitialLoadAd];
 }
 
 - (void)interstitial:(GADInterstitial *)ad didFailToReceiveAdWithError:(GADRequestError *)error{
-    NSLog(@"Failed!");
+    NSLog(@"DEMO: DFP Interstitial %@", gadFailAd);
     [self showErrorAlertViewWithTitle:@"Ad Failed to Load!" andMessage:@"Error while fetching DFP Interstitial ad!"];
     [self hideLoaderFromScreen];
     [self.view makeToast:gadFailAd];
 }
 
 - (void)interstitialDidFailToPresentScreen:(GADInterstitial *)ad{
-    NSLog(@"Fail to present to screen");
+    NSLog(@"DEMO: Fail to present to screen");
 }
 
 - (void)interstitialDidDismissScreen:(GADInterstitial *)ad{
+    NSLog(@"DEMO: DFP Interstitial %@", gadInterstitialDismissAd);
     [self btnStateEnabled:NO forBtn:self.showAd];
     [self.view makeToast:gadInterstitialDismissAd];
 }
@@ -1027,34 +1040,34 @@ static const NSUInteger maxUnitsWhileLoading = 80;
     [self btnStateEnabled:YES forBtn:self.showAd];
     [self hideLoaderFromScreen];
     [self.view makeToast:gadInterstitialLoadAd];
-    NSLog(@"GAD: Rewarded video received");
+    NSLog(@"DEMO: DFP Rewarded video received");
 }
 
 - (void)rewardBasedVideoAdDidOpen:(GADRewardBasedVideoAd *)rewardBasedVideoAd{
-    NSLog(@"GAD: Rewarded video open");
+    NSLog(@"DEMO: DFP Rewarded video open");
     [self btnStateEnabled:NO forBtn:self.showAd];
     [self hideLoaderFromScreen];
 }
 
 - (void)rewardBasedVideoAdDidStartPlaying:(GADRewardBasedVideoAd *)rewardBasedVideoAd{
-    NSLog(@"GAD: Rewarded video start playing");
+    NSLog(@"DEMO: DFP Rewarded video start playing");
 }
 
 - (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd didFailToLoadWithError:(NSError *)error{
-    NSLog(@"GAD: Rewarded video load failed");
+    NSLog(@"DEMO: DFP Rewarded video load failed");
     [self showErrorAlertViewWithTitle:@"Ad Failed to Load!" andMessage:@"Error while fetching DFP Mediation Rewarded Video ad!"];
     [self hideLoaderFromScreen];
     [self.view makeToast:gadFailAd];
 }
 
 - (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd didRewardUserWithReward:(GADAdReward *)reward{
-    NSLog(@"GAD: Reward received type:%@ amount:%@", reward.type,reward.amount);
+    NSLog(@"DEMO: DFP Reward received type:%@ amount:%@", reward.type,reward.amount);
     [self btnStateEnabled:NO forBtn:self.showAd];
     [self hideLoaderFromScreen];
 }
 
 - (void)rewardBasedVideoAdDidClose:(GADRewardBasedVideoAd *)rewardBasedVideoAd{
-    NSLog(@"GAD: RewardedVideo closed");
+    NSLog(@"DEMO: DFP RewardedVideo closed");
     [self btnStateEnabled:NO forBtn:self.showAd];
     [self hideLoaderFromScreen];
 }

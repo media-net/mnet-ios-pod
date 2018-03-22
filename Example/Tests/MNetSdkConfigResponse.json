@@ -132,76 +132,21 @@
             "adview_cache_timeout": 30,
             "adview_reuse_enabled": true,
             "mnet_inapp_browsing_enabled": true,
-            "is_rtc_enabled" : true,
+            "is_rtc_enabled": true,
             "ad_units": [
                          {
-                         "ad_unit_id": "min_first:0-0,max_first:0-1,min_last:0-3,max_last:0-9,view_pos:LEFT-CENTER",
-                         "autorefresh_enabled": false,
-                         "autorefresh_interval": 30,
-                         "crid": "filterTestListViewPos",
-                         "custom_targets": [
-                                            {
-                                            "key": "listview",
-                                            "value": "test"
-                                            }
-                                            ],
-                         "sizes": [
-                                   "300x250"
-                                   ],
-                         "supported_ads": [
-                                           1
-                                           ]
-                         },
-                         {
-                         "ad_unit_id": "au:dummyAdUnitId,act:mnviewcontroller",
-                         "autorefresh_enabled": true,
-                         "autorefresh_interval": 50,
-                         "crid": "expCridForHbConfigFilter",
-                         "custom_targets": [
-                                            {
-                                            "key": "d",
-                                            "value": "t"
-                                            }
-                                            ],
-                         "sizes": [
-                                   "320x50"
-                                   ],
-                         "supported_ads": [
-                                           1
-                                           ]
-                         },
-                         {
-                         "ad_unit_id": "d6f2811c2cb84b57bbbf3128c08a2165",
+                         "ad_unit_id": "d6f2811c2cb84b57bbbf3128c08a2165123",
                          "autorefresh_enabled": true,
                          "autorefresh_interval": 30,
                          "crid": "328569603",
                          "custom_targets": [
                                             {
                                             "key": "dedicated",
-                                            "value": "false"
+                                            "value": "d6f2811c2cb84b57bbbf3128c08a2165123"
                                             }
                                             ],
                          "sizes": [
                                    "320x50"
-                                   ],
-                         "supported_ads": [
-                                           1
-                                           ]
-                         },
-                         {
-                         "ad_unit_id": "view_pos:LEFT-CENTER,au:dummyAdUnitIdForGrid",
-                         "autorefresh_enabled": true,
-                         "autorefresh_interval": 30,
-                         "crid": "expCridForHbConfigFilterForGrid",
-                         "custom_targets": [
-                                            {
-                                            "key": "d",
-                                            "value": "t"
-                                            }
-                                            ],
-                         "sizes": [
-                                   "300x250",
-                                   "320x480"
                                    ],
                          "supported_ads": [
                                            1
@@ -221,24 +166,6 @@
                                            ]
                          },
                          {
-                         "ad_unit_id": "/453619171/iosinapptest",
-                         "autorefresh_enabled": false,
-                         "autorefresh_interval": 30,
-                         "crid": "caseSensitiveAdunitId",
-                         "custom_targets": [
-                                            {
-                                            "key": "dedicated",
-                                            "value": "caseSensitiveValue"
-                                            }
-                                            ],
-                         "sizes": [
-                                   "320x50"
-                                   ],
-                         "supported_ads": [
-                                           1
-                                           ]
-                         },
-                         {
                          "ad_unit_id": "/45361917/iosinapptest",
                          "autorefresh_enabled": false,
                          "autorefresh_interval": 30,
@@ -246,7 +173,7 @@
                          "custom_targets": [
                                             {
                                             "key": "dedicated",
-                                            "value": "false"
+                                            "value": "/45361917/iosinapptest"
                                             }
                                             ],
                          "sizes": [
@@ -352,7 +279,7 @@
                          "custom_targets": [
                                             {
                                             "key": "dedicated",
-                                            "value": "false"
+                                            "value": "test_ad_unit_1"
                                             }
                                             ],
                          "sizes": [
@@ -376,6 +303,139 @@
                          "sizes": [
                                    "300x250",
                                    "500x500"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "*",
+                         "autorefresh_enabled": false,
+                         "autorefresh_interval": 30,
+                         "crid": "caseSensitiveAdunitId",
+                         "custom_targets": [
+                                            {
+                                            "key": "dedicated",
+                                            "value": "caseSensitiveValue"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "320x50"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "*",
+                         "autorefresh_enabled": false,
+                         "autorefresh_interval": 30,
+                         "crid": "dummy-ad-with-wild-card-1",
+                         "custom_targets": [
+                                            {
+                                            "key": "dedicated",
+                                            "value": "dummy-ad-with-wild-card-1"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "320x50"
+                                   ]
+                         },
+                         {
+                         "ad_unit_id": "*",
+                         "autorefresh_enabled": true,
+                         "autorefresh_interval": 50,
+                         "crid": "expCridForHbConfigFilter",
+                         "custom_targets": [
+                                            {
+                                            "key": "d",
+                                            "value": "t"
+                                            },
+                                            {
+                                            "key": "au",
+                                            "prefix": "in-app",
+                                            "value": "dummyAdUnitId"
+                                            },
+                                            {
+                                            "key": "act",
+                                            "prefix": "in-app",
+                                            "value": "mnviewcontroller"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "320x50"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "*",
+                         "autorefresh_enabled": true,
+                         "autorefresh_interval": 30,
+                         "crid": "expCridForHbConfigFilterForGrid",
+                         "custom_targets": [
+                                            {
+                                            "key": "d",
+                                            "value": "t"
+                                            },
+                                            {
+                                            "key": "view_pos",
+                                            "value": "LEFT-CENTER",
+                                            "prefix": "in-app"
+                                            },
+                                            {
+                                            "key": "au",
+                                            "value": "dummyAdUnitIdForGrid",
+                                            "prefix": "in-app"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "300x250",
+                                   "320x480"
+                                   ],
+                         "supported_ads": [
+                                           1
+                                           ]
+                         },
+                         {
+                         "ad_unit_id": "*",
+                         "autorefresh_enabled": false,
+                         "autorefresh_interval": 30,
+                         "crid": "filterTestListViewPos",
+                         "custom_targets": [
+                                            {
+                                            "key": "listview",
+                                            "value": "test"
+                                            },
+                                            {
+                                            "key": "min_first",
+                                            "value": "0-0",
+                                            "prefix": "in-app"
+                                            },
+                                            {
+                                            "key": "max_first",
+                                            "value": "0-1",
+                                            "prefix": "in-app"
+                                            },
+                                            {
+                                            "key": " min_last",
+                                            "value": "0-3",
+                                            "prefix": "in-app"
+                                            },
+                                            {
+                                            "key": "max_last",
+                                            "value": "0-9",
+                                            "prefix": "in-app"
+                                            },
+                                            {
+                                            "key": "view_pos",
+                                            "value": "LEFT-CENTER",
+                                            "prefix": "in-app"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "300x250"
                                    ],
                          "supported_ads": [
                                            1
