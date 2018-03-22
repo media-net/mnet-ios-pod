@@ -202,4 +202,17 @@
         count+=1;
     }
 }
+
+- (void)testResourceURLForResourceName{
+    NSString *resourceName = @"shimmer-banner.png";
+    NSString *baseResourceURL = [[MNetURL getSharedInstance] getBaseResourceUrl];
+    NSString *expectedResourceURLFromName = [baseResourceURL stringByAppendingString:[NSString stringWithFormat:@"/%@",resourceName]];
+    NSString *resourceNameURL = @"https://example.com/simmer-banner.png";
+    
+    NSString *resourceURL = [MNetUtil getResourceURLForResourceName:resourceName];
+    XCTAssert([expectedResourceURLFromName isEqualToString:resourceURL]);
+    
+    resourceURL = [MNetUtil getResourceURLForResourceName:resourceNameURL];
+    XCTAssert([resourceNameURL isEqualToString:resourceURL]);
+}
 @end
