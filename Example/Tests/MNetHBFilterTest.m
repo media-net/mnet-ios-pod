@@ -26,6 +26,8 @@
     [super tearDown];
 }
 
+#pragma mark - ad-unit-filter
+
 - (void)testAdUnitFilterFail {
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
     CGSize adSize = CGSizeZero;
@@ -41,7 +43,7 @@
 - (void)testAdUnitFilterSizeFail {
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
     CGSize adSize = CGSizeMake(500, 600);
-    NSString *adUnitId = @"d6f2811c2cb84b57bbbf3128c08a2165";
+    NSString *adUnitId = @"d6f2811c2cb84b57bbbf3128c08a2165123";
     NSDictionary *targetingParams = @{};
     UIView *adView = nil;
     
@@ -55,7 +57,7 @@
     
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
     CGSize adSize = CGSizeZero;
-    NSString *adUnitId = @"d6f2811c2cb84b57bbbf3128c08a2165";
+    NSString *adUnitId = @"d6f2811c2cb84b57bbbf3128c08a2165123";
     NSDictionary *targetingParams = @{};
     UIView *adView = nil;
     
@@ -65,14 +67,16 @@
     XCTAssert(expectedCondn , @"Fetched adunit is incorrect");
 }
 
+#pragma mark - Targeting params tests
+
 - (void)testFilterTargetingParams{
     NSString *expectedCrid = @"328569603";
     
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
     CGSize adSize = CGSizeZero;
-    NSString *adUnitId = @"";
+    NSString *adUnitId = @"d6f2811c2cb84b57bbbf3128c08a2165123";
     NSDictionary *targetingParams = @{
-                                      @"dedicated":@"false"
+                                      @"dedicated":@"d6f2811c2cb84b57bbbf3128c08a2165123"
                                       };
     UIView *adView = nil;
     
@@ -87,7 +91,7 @@
     
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
     CGSize adSize = CGSizeZero;
-    NSString *adUnitId = @"";
+    NSString *adUnitId = @"some-random-ad-unit-id";
     NSDictionary *targetingParams = @{
                                       @"dedicated":@"caseSensitiveValue"
                                       };
@@ -100,9 +104,10 @@
 }
 
 - (void)testFilterTargetingParamsFailure{
+    // This assumes that the sdk-config has multiple-wild-card entries
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
     CGSize adSize = CGSizeZero;
-    NSString *adUnitId = @"";
+    NSString *adUnitId = @"some-key";
     NSDictionary *targetingParams = @{
                                       @"unknown_key": @"unknown_value"
                                       };
@@ -110,26 +115,10 @@
     
     NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
     
-    XCTAssert(fetchedAdUnit == nil, @"This test case should fail. Instead it returned - %@", fetchedAdUnit);
+    XCTAssert(fetchedAdUnit == nil, @"This test case should fail. Instead it returned - %@",    fetchedAdUnit);
 }
 
-- (void)testFilterTargetingParamsCasePriorityOverAdUnitFilter{
-    // As compared to "123" which is the creative of "dummyAdUnitId"
-    NSString *expectedCrid = @"328569603";
-    
-    MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
-    CGSize adSize = CGSizeZero;
-    NSString *adUnitId = @"dummyAdUnitId";
-    NSDictionary *targetingParams = @{
-                                      @"dedicated":@"false"
-                                      };
-    UIView *adView = nil;
-    
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
-    
-    BOOL result = fetchedAdUnit != nil && [fetchedAdUnit isEqualToString:expectedCrid];
-    XCTAssert(result , @"Fetched adunit is incorrect - %@", fetchedAdUnit);
-}
+#pragma mark - Hb-config filter tests
 
 - (void)testFilterHbConfigFilterAdUnitId{
     NSString *expectedAdUnitId = @"expCridForHbConfigFilter";
@@ -221,7 +210,7 @@
     NSString *expectedAdUnitId = @"filterTestListViewPos";
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
     CGSize adSize = CGSizeZero;
-    NSString *adUnitId = @"dummyAdUnitIdForGrid";
+    NSString *adUnitId = @"some-random-ad-unit-id";
     NSDictionary *targetingParams = @{
                                       @"grid":@"test"
                                       };
