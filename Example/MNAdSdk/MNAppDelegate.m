@@ -11,7 +11,6 @@
 #import <MNetAdSdk/MNet.h>
 #import <MNetAdSdk/MNetUser.h>
 #import "MNDemoConstants.h"
-#import <AFNetworkActivityLogger/AFNetworkActivityLogger.h>
 #import "MNAdSdkURLManager.h"
 
 @implementation MNAppDelegate
