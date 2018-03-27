@@ -11,7 +11,6 @@ target 'MNAdSdk_Example' do
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
   pod 'Google-Mobile-Ads-SDK', '~> 7.25'
-  pod 'AFNetworkActivityLogger', git: 'https://github.com/AFNetworking/AFNetworkActivityLogger.git', branch: '3_0_0'
   pod 'Toast', '~> 3.1.0'
 
 target 'MNAdSdk_Tests' do

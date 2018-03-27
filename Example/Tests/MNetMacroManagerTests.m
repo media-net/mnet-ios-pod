@@ -187,6 +187,36 @@
     }
 }
 
+- (void)testKeywordsMacroReplacement{
+    MNetBidResponse *response = [self getTestBidResponse];
+    NSString *sampleKeywords = @"a,b,c,\"lion-link\"";
+
+    [response setKeywords:sampleKeywords];
+    NSArray<NSString *> *inputLogs = @[
+                                       @"example.com/?keywords=${KEYWORDS}",
+                                       @"example.com/?keywords=%24%7BKEYWORDS%7D",
+                                       ];
+    
+    MNetMacroManager *macroManager = [MNetMacroManager getSharedInstance];
+    NSString *escapedKeywords = [MNetUtil jsonEscape:sampleKeywords];
+    NSString *encodedKeywords = [MNetUtil urlEncode:escapedKeywords];
+    
+    NSArray<NSString *> *expectedResponse = @[
+                                              [NSString stringWithFormat:@"example.com/?keywords=%@", escapedKeywords],
+                                              [NSString stringWithFormat:@"example.com/?keywords=%@", encodedKeywords],
+                                              ];
+    
+    NSArray *modifiedLogs = [macroManager processMacrosForApLogsForBidders:inputLogs
+                                                              withResponse:response];
+    
+    for(int i=0; i< [expectedResponse count]; i++){
+        NSString *expectedStr = expectedResponse[i];
+        NSString *actualStr = modifiedLogs[i];
+        XCTAssert([expectedStr isEqualToString:actualStr], @"Expected = %@ | Got = %@", expectedStr, actualStr);
+    }
+    
+}
+
 - (void)testADIDMacroReplacement{
     MNetBidResponse *response = [self getTestBidResponse];
     NSArray<NSString *> *inputLogs = @[
@@ -281,4 +311,55 @@
         XCTAssert([expectedStr isEqualToString:actualStr], @"Expected = %@ | Got = %@", expectedStr, actualStr);
     }
 }
+
+- (void)testRequrlReplacementStr{
+    NSString *urlWithArgs = @"http://sample-url.com?abc=123";
+    NSString *urlWithoutArgs = @"http://sample-url.com";
+    NSString *keywords = @"timon, pumba, \"hakuna-matata\"";
+    
+    MNetMacroManager *macroManager = [MNetMacroManager getSharedInstance];
+    NSString *fetchStr;
+    
+    // 1 - Testing without appending the keywords
+    // 1.1 - Url with args
+    MNetBidResponse *bidResponse = [self getTestBidResponse];
+    bidResponse.viewContextLink = urlWithArgs;
+    bidResponse.keywords = keywords;
+    fetchStr = [macroManager getReplacementStrForReqUrl:bidResponse shouldAppendKeywords:NO];
+    XCTAssert(
+              fetchStr != nil && [fetchStr isEqualToString:urlWithArgs],
+              @"testRequrlReplacementStrErr- 1.1! Expected - %@, got - %@", urlWithArgs, fetchStr
+              );
+    
+    // 1.2 - Url without args
+    bidResponse.viewContextLink = urlWithoutArgs;
+    bidResponse.keywords = keywords;
+    fetchStr = [macroManager getReplacementStrForReqUrl:bidResponse shouldAppendKeywords:NO];
+    XCTAssert(
+              fetchStr != nil && [fetchStr isEqualToString:urlWithoutArgs],
+              @"testRequrlReplacementStrErr- 1.2! Expected - %@, got - %@", urlWithoutArgs, fetchStr
+              );
+    
+    // 2 - Testing with appending the keywords
+    // 2.1 - Url with args
+    bidResponse.viewContextLink = urlWithArgs;
+    bidResponse.keywords = keywords;
+    NSString *expectedResp = @"http://sample-url.com?abc=123&keywords=timon,%20pumba,%20%22hakuna-matata%22";
+    fetchStr = [macroManager getReplacementStrForReqUrl:bidResponse shouldAppendKeywords:YES];
+    XCTAssert(
+              fetchStr != nil && [fetchStr isEqualToString:expectedResp],
+              @"testRequrlReplacementStrErr- 2.1! Expected - %@, got - %@", expectedResp, fetchStr
+              );
+    
+    // 2.1 - Url without args
+    bidResponse.viewContextLink = urlWithoutArgs;
+    bidResponse.keywords = keywords;
+    expectedResp = @"http://sample-url.com?keywords=timon,%20pumba,%20%22hakuna-matata%22";
+    fetchStr = [macroManager getReplacementStrForReqUrl:bidResponse shouldAppendKeywords:YES];
+    XCTAssert(
+              fetchStr != nil && [fetchStr isEqualToString:expectedResp],
+              @"testRequrlReplacementStrErr- 2.2! Expected - %@, got - %@", expectedResp, fetchStr
+              );
+}
+
 @end
