@@ -38,12 +38,15 @@
     NSString *visitId = @"dummy-visit-id";
     NSString *contextUrl = @"dummy-context-url";
     NSString *vcTitle = @"dummy-vc-title";
+    NSString *keywords = @"dummy-keywords";
     
     MNetResponseParserExtras *params = [MNetResponseParserExtras getInstanceWithAdCycleId:adCycleId
                                                                                   visitId:visitId
                                                                                contextUrl:contextUrl
                                                                       viewControllerTitle:vcTitle
-                                                                           viewController:[self getViewController]];
+                                                                           viewController:[self getViewController]
+                                                                                 keywords:keywords
+                                        ];
     
     id<MNetResponseParserProtocol> parser = [MNetResponseParser getParser];
     NSError *parserErr;
@@ -85,12 +88,15 @@
     NSString *visitId = @"dummy-visit-id";
     NSString *contextUrl = @"dummy-context-url";
     NSString *vcTitle = @"dummy-vc-title";
+    NSString *keywords = @"keywords";
     
     MNetResponseParserExtras *params = [MNetResponseParserExtras getInstanceWithAdCycleId:adCycleId
                                                                                   visitId:visitId
                                                                                contextUrl:contextUrl
                                                                       viewControllerTitle:vcTitle
-                                                                           viewController:[self getViewController]];
+                                                                           viewController:[self getViewController]
+                                                                                 keywords:keywords
+                                        ];
     
     
     id<MNetResponseParserProtocol> parser = [MNetResponseParser getParser];
@@ -119,12 +125,15 @@
     NSString *visitId = @"dummy-visit-id";
     NSString *contextUrl = @"dummy-context-url";
     NSString *vcTitle = @"dummy-vc-title";
+    NSString *keywords = @"dummy-keywords";
     
     MNetResponseParserExtras *params = [MNetResponseParserExtras getInstanceWithAdCycleId:adCycleId
                                                                                   visitId:visitId
                                                                                contextUrl:contextUrl
                                                                       viewControllerTitle:vcTitle
-                                                                           viewController:[self getViewController]];
+                                                                           viewController:[self getViewController]
+                                                                                 keywords:keywords
+                                        ];
     
     
     id<MNetResponseParserProtocol> parser = [MNetResponseParser getParser];
