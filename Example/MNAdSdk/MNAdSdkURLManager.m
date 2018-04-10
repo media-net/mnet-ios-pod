@@ -13,25 +13,25 @@
 #endif
 
 static MNAdSdkURLManager *sInstance = nil;
-static NSString *kIsProdKey = @"is_prod";
+static NSString *kIsProdKey         = @"is_prod";
 
 @implementation MNAdSdkURLManager
 
-+ (MNAdSdkURLManager*)getSharedInstance{
++ (MNAdSdkURLManager *)getSharedInstance {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sInstance = [[[self class] alloc] init];
+      sInstance = [[[self class] alloc] init];
     });
     return sInstance;
 }
 
-- (void)initialSetup{
+- (void)initialSetup {
 #ifndef IS_FRAMEWORK
     [[MNetURL getSharedInstance] setIsDebug:self.isDebug];
 #endif
 }
 
-- (instancetype)init{
+- (instancetype)init {
     self = [super init];
     if (self) {
         _isDebug = [self getIsProdFromUserDefaults] ? NO : YES;
@@ -39,7 +39,7 @@ static NSString *kIsProdKey = @"is_prod";
     return self;
 }
 
-- (NSString *)getSdkBaseURL{
+- (NSString *)getSdkBaseURL {
 #ifndef IS_FRAMEWORK
     return [self removeHttpFromString:[[MNetURL getSharedInstance] getBaseUrlDp]];
 #else
@@ -47,7 +47,7 @@ static NSString *kIsProdKey = @"is_prod";
 #endif
 }
 
-- (NSString *)getSdkPulseBaseURL{
+- (NSString *)getSdkPulseBaseURL {
 #ifndef IS_FRAMEWORK
     return [self removeHttpFromString:[[MNetURL getSharedInstance] getBasePulseUrl]];
 #else
@@ -55,7 +55,7 @@ static NSString *kIsProdKey = @"is_prod";
 #endif
 }
 
-- (NSString *)getSdkConfigBaseURL{
+- (NSString *)getSdkConfigBaseURL {
 #ifndef IS_FRAMEWORK
     return [self removeHttpFromString:[[MNetURL getSharedInstance] getBaseConfigUrl]];
 #else
@@ -63,7 +63,7 @@ static NSString *kIsProdKey = @"is_prod";
 #endif
 }
 
-- (NSString *)getSdkResourceBaseURL{
+- (NSString *)getSdkResourceBaseURL {
 #ifndef IS_FRAMEWORK
     return [self removeHttpFromString:[[MNetURL getSharedInstance] getBaseResourceUrl]];
 #else
@@ -71,7 +71,7 @@ static NSString *kIsProdKey = @"is_prod";
 #endif
 }
 
-- (void)setIsProdUserDefaults:(BOOL)isProd{
+- (void)setIsProdUserDefaults:(BOOL)isProd {
 #ifndef IS_FRAMEWORK
     [[NSUserDefaults standardUserDefaults] setBool:isProd forKey:kIsProdKey];
     [[MNetURL getSharedInstance] setIsDebug:!isProd];
@@ -79,15 +79,15 @@ static NSString *kIsProdKey = @"is_prod";
 #endif
 }
 
-- (BOOL)getIsProdFromUserDefaults{
+- (BOOL)getIsProdFromUserDefaults {
     return [[NSUserDefaults standardUserDefaults] boolForKey:kIsProdKey];
 }
 
-- (NSString *)removeHttpFromString:(NSString *)urlString{
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSString *scheme = url.scheme;
+- (NSString *)removeHttpFromString:(NSString *)urlString {
+    NSURL *url              = [NSURL URLWithString:urlString];
+    NSString *scheme        = url.scheme;
     NSUInteger schemeLength = scheme.length;
-    return [urlString substringFromIndex:schemeLength+3];
+    return [urlString substringFromIndex:schemeLength + 3];
 }
 
 @end

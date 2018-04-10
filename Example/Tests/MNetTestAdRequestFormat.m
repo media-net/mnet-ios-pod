@@ -176,7 +176,7 @@
     NSLog(@"");
 }
 
-- (void)testBidRequestCreationTime{
+- (void)skip_testBidRequestCreationTime{
     NSString *adUnitId = DEMO_MN_AD_UNIT_320x50;
     CGSize size = MNET_BANNER_AD_SIZE;
     BOOL isInterstitial = NO;

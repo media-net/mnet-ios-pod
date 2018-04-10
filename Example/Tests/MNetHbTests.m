@@ -63,7 +63,7 @@
     }];
 }
 
-- (void)testHbTimeTaken{
+- (void)skip_testHbTimeTaken{
     [self stubPredictWithValidResp];
     
     [self measureBlock:^{

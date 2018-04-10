@@ -117,6 +117,7 @@ static const NSTimeInterval mDefaultTimeout = 1;
 }
 
 - (void)testVASTTrackingURLs{
+    stubVASTRequest([self class]);
     XCTestExpectation *expectaion = [self expectationWithDescription:@"fetching data from XML"];
     
     __block NSData *vastData = [self dataFromXMLFileNamed:@"vast-linear-trackers" class:[self class]];

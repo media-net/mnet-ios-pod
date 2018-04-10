@@ -220,15 +220,13 @@
     }
 }
 
-/*
 // In secs
 // [0.000174, 0.000064, 0.000022, 0.000020, 0.000018, 0.000012, 0.000010, 0.000009, 0.000009, 0.000009]
-- (void)testPerformanceForStacktrace{
+- (void)skip_testPerformanceForStacktrace{
     NSString *stEntry = @"15  MNAdSDKDemo                         0x00000001002a5324 __68-[MNetAdLoader loadAdFor:withOptions:onViewController:success:fail:]_block_invoke + 124";
     [self measureBlock:^{
         [MNetErrorStackTraceEvent createInstanceWithEvent:stEntry];
     }];
 }
-*/
 
 @end
