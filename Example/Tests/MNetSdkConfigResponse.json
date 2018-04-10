@@ -343,6 +343,59 @@
                          },
                          {
                          "ad_unit_id": "*",
+                         "autorefresh_enabled": false,
+                         "autorefresh_interval": 30,
+                         "crid": "cr-id-with-case-insensitive-prefix",
+                         "custom_targets": [
+                                            {
+                                            "key": "dedicated",
+                                            "value": "case-Sensitive-Val-with-case-insensitive-prefix"
+                                            },
+                                            {
+                                            "key": "random-key",
+                                            "prefix": "In-ApP",
+                                            "value": "random-value"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "320x50"
+                                   ]
+                         },
+                         {
+                         "ad_unit_id": "*",
+                         "autorefresh_enabled": false,
+                         "autorefresh_interval": 30,
+                         "crid": "cr-id-with-case-insensitive-prefix-multiple-targets",
+                         "custom_targets": [
+                                            {
+                                            "key": "random-key",
+                                            "prefix": "In-App",
+                                            "value": "random-value"
+                                            },
+                                            {
+                                            "key": "random-key-2",
+                                            "prefix": "In-App",
+                                            "value": "random-value-2"
+                                            },
+                                            {
+                                            "key": "dedicated_1.0",
+                                            "value": "case-Sensitive-Val-with-multiple-targets"
+                                            },
+                                            {
+                                            "key": "dedicated",
+                                            "value": "random-value"
+                                            },
+                                            {
+                                            "key": "random-key",
+                                            "value": "random-value"
+                                            }
+                                            ],
+                         "sizes": [
+                                   "320x50"
+                                   ]
+                         },
+                         {
+                         "ad_unit_id": "*",
                          "autorefresh_enabled": true,
                          "autorefresh_interval": 50,
                          "crid": "expCridForHbConfigFilter",

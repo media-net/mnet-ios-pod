@@ -9,14 +9,12 @@
 @import UIKit;
 #import "MNAppDelegate.h"
 
-
-int main(int argc, char * argv[])
-{
+int main(int argc, char *argv[]) {
     @autoreleasepool {
-        @try{
+        @try {
             return UIApplicationMain(argc, argv, nil, NSStringFromClass([MNAppDelegate class]));
-        }@catch(NSException *error){
-            NSLog(@"Error in the app %@",error);
+        } @catch (NSException *error) {
+            NSLog(@"Error in the app %@", error);
         }
     }
 }

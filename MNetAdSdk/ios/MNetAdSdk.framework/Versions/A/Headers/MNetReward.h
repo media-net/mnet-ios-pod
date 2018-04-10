@@ -21,5 +21,7 @@
 @property (nonatomic) NSNumber *amount;
 
 /// Initialise the reward
--(instancetype _Nonnull) initWith:(NSString * _Nullable)name withCurrency:(NSString * _Nullable)currency withAmount:(NSNumber *)amount;
+- (instancetype _Nonnull)initWith:(NSString *_Nullable)name
+                     withCurrency:(NSString *_Nullable)currency
+                       withAmount:(NSNumber *)amount;
 @end

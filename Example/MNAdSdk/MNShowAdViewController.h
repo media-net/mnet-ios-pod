@@ -6,20 +6,23 @@
 //  Copyright © 2017 Nithin. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MPAdView.h"
+#import "MPInterstitialAdController.h"
 #import <MNetAdSdk/MNetAdView.h>
 #import <MNetAdSdk/MNetInterstitialAd.h>
 #import <MNetAdSdk/MNetRewardedVideo.h>
-#import "MPAdView.h"
-#import "MPInterstitialAdController.h"
+#import <UIKit/UIKit.h>
 
 #define ENUM_VAL(enum) [NSNumber numberWithInt:enum]
 
 @import GoogleMobileAds;
 
-@interface MNShowAdViewController : UIViewController<MPAdViewDelegate, MPInterstitialAdControllerDelegate, MNetAdViewDelegate,GADBannerViewDelegate, GADInterstitialDelegate, MNetVideoDelegate, MNetInterstitialAdDelegate, MNetInterstitialVideoAdDelegate, MNetRewardedVideoDelegate,GADRewardBasedVideoAdDelegate>
+@interface MNShowAdViewController
+    : UIViewController <MPAdViewDelegate, MPInterstitialAdControllerDelegate, MNetAdViewDelegate, GADBannerViewDelegate,
+                        GADInterstitialDelegate, MNetVideoDelegate, MNetInterstitialAdDelegate,
+                        MNetInterstitialVideoAdDelegate, MNetRewardedVideoDelegate, GADRewardBasedVideoAdDelegate>
 
-typedef enum{
+typedef enum {
     BNR,
     BNR_INTR,
     MOPUB_HB,
@@ -41,8 +44,7 @@ typedef enum{
     DFP_INSTERSTITIAL_MANUAL_HB,
     MRAID_BANNER,
     MRAID_INTERSTITIAL,
-}AdType;
-
+} AdType;
 
 @property (nonatomic) IBOutlet UIView *adView;
 @property (weak, nonatomic) IBOutlet UIView *topBar;

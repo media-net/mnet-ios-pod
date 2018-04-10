@@ -80,7 +80,7 @@ static NSString *DUMMY_CONTEXT_LINK = @"context-link";
     }
 }
 
-- (void)testBenchmarkForIfaWithChildDirectedDisabled{
+- (void)skip_testBenchmarkForIfaWithChildDirectedDisabled{
     [[MNet getInstance] setAppContainsChildDirectedContent:NO];
     MNetAdIdManager *adIdManager = [MNetAdIdManager getSharedInstance];
     [self measureBlock:^{
@@ -91,7 +91,7 @@ static NSString *DUMMY_CONTEXT_LINK = @"context-link";
     XCTAssert(adId != nil, @"Ad id cannot be nil");
 }
 
-- (void)testBenchmarkForIfaWithChildDirectedEnabled{
+- (void)skip_testBenchmarkForIfaWithChildDirectedEnabled{
     [[MNet getInstance] setAppContainsChildDirectedContent:YES];
     MNetAdIdManager *adIdManager = [MNetAdIdManager getSharedInstance];
     [self measureBlock:^{
