@@ -118,6 +118,82 @@
     XCTAssert(fetchedAdUnit == nil, @"This test case should fail. Instead it returned - %@",    fetchedAdUnit);
 }
 
+- (void)testFilterTargetingParamsIgnorePrefixCase{
+    NSString *expectedCrid = @"cr-id-with-case-insensitive-prefix";
+    
+    MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
+    CGSize adSize = CGSizeMake(320, 50);
+    NSString *adUnitId = @"some-random-ad-unit-id";
+    NSDictionary *targetingParams = @{
+                                      @"dedicated":@"case-Sensitive-Val-with-case-insensitive-prefix"
+                                      };
+    UIView *adView = nil;
+    
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    
+    BOOL result = fetchedAdUnit != nil && [fetchedAdUnit isEqualToString:expectedCrid];
+    XCTAssert(result , @"Expected %@, Got %@", expectedCrid, fetchedAdUnit);
+}
+
+- (void)testFilterTargetingParamsMultipleTargets{
+    NSString *expectedCrid = @"cr-id-with-case-insensitive-prefix-multiple-targets";
+    
+    MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
+    CGSize adSize = CGSizeMake(320, 50);
+    NSString *adUnitId = @"some-random-ad-unit-id";
+    NSDictionary *targetingParams = @{
+                                      @"dedicated_1.0":@"case-Sensitive-Val-with-multiple-targets",
+                                      @"dedicated":@"random-value",
+                                      @"random-key": @"random-value"
+                                      };
+    UIView *adView = nil;
+    
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    
+    BOOL result = fetchedAdUnit != nil && [fetchedAdUnit isEqualToString:expectedCrid];
+    XCTAssert(result , @"Expected %@, Got %@", expectedCrid, fetchedAdUnit);
+}
+
+- (void)testFilterTargetingParamsMultipleTargetsWithExtraEntries{
+    NSString *expectedCrid = @"cr-id-with-case-insensitive-prefix-multiple-targets";
+    
+    MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
+    CGSize adSize = CGSizeMake(320, 50);
+    NSString *adUnitId = @"some-random-ad-unit-id";
+    NSDictionary *targetingParams = @{
+                                      @"dedicated_1.0":@"case-Sensitive-Val-with-multiple-targets",
+                                      @"dedicated":@"random-value",
+                                      @"random-key": @"random-value",
+                                      // This key-value pair is not present in the configs, but still should match
+                                      @"extra-key": @"extra-value"
+                                      };
+    UIView *adView = nil;
+    
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    
+    BOOL result = fetchedAdUnit != nil && [fetchedAdUnit isEqualToString:expectedCrid];
+    XCTAssert(result , @"Expected %@, Got %@", expectedCrid, fetchedAdUnit);
+}
+
+- (void)testFilterTargetingParamsMultipleTargetsWithOneEntryLess{
+    // This should return nothing since custom-targets is one-short of an ideal match
+    NSString *expectedCrid = nil;
+    
+    MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
+    CGSize adSize = CGSizeMake(320, 50);
+    NSString *adUnitId = @"some-random-ad-unit-id";
+    NSDictionary *targetingParams = @{
+                                      @"dedicated_1.0":@"case-Sensitive-Val-with-multiple-targets",
+                                      @"dedicated":@"random-value",
+                                    };
+    UIView *adView = nil;
+    
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    
+    BOOL result = fetchedAdUnit == nil;
+    XCTAssert(result , @"Expected %@, Got %@", expectedCrid, fetchedAdUnit);
+}
+
 #pragma mark - Hb-config filter tests
 
 - (void)testFilterHbConfigFilterAdUnitId{

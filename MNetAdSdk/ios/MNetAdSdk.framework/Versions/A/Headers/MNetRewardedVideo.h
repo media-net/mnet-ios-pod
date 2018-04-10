@@ -6,10 +6,10 @@
 //
 //
 
-#import <Foundation/Foundation.h>
-#import "MNetReward.h"
 #import "MNetAdRequest.h"
 #import "MNetError.h"
+#import "MNetReward.h"
+#import <Foundation/Foundation.h>
 
 @protocol MNetRewardedVideoDelegate;
 
@@ -19,7 +19,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// The ad delegate for callbacks from rewarded video ads
-@property (weak, nonatomic)id<MNetRewardedVideoDelegate> rewardedVideoDelegate;
+@property (weak, nonatomic) id<MNetRewardedVideoDelegate> rewardedVideoDelegate;
 
 NS_ASSUME_NONNULL_END
 
@@ -27,19 +27,21 @@ NS_ASSUME_NONNULL_END
 @property (nonatomic, nullable) NSString *keywords;
 
 /// Gives an instance of the rewarded video for an adunit Id
-+ (MNetRewardedVideo * _Nullable)getInstanceForAdUnitId:(NSString * _Nonnull)adUnitId;
++ (MNetRewardedVideo *_Nullable)getInstanceForAdUnitId:(NSString *_Nonnull)adUnitId;
 
 /// Load the Rewarded video ad
 - (void)loadRewardedAd;
 
 /// Load the Rewarded video ad for adRequest
-- (void)loadRewardedAdForRequest:(MNetAdRequest * _Nonnull)adRequest;
+- (void)loadRewardedAdForRequest:(MNetAdRequest *_Nonnull)adRequest;
 
 /// Show the rewarded video ad on top of the given view controller
-- (void)showAdFromViewController:(UIViewController * _Nonnull)rootViewController;
+- (void)showAdFromViewController:(UIViewController *_Nonnull)rootViewController;
 
 /// Set the reward for the rewarded video instance
-- (void)setRewardWithName:(NSString * _Nullable)name forCurrency:(NSString * _Nullable)currency forAmount:(NSNumber * _Nonnull)amount;
+- (void)setRewardWithName:(NSString *_Nullable)name
+              forCurrency:(NSString *_Nullable)currency
+                forAmount:(NSNumber *_Nonnull)amount;
 @end
 
 /// Protocol for Rewarded videos callback
@@ -47,22 +49,23 @@ NS_ASSUME_NONNULL_END
 @optional
 
 /// Callback when the rewarded video started
-- (void)mnetRewardedVideoDidStart:(MNetRewardedVideo * _Nonnull)rewardedVideo;
+- (void)mnetRewardedVideoDidStart:(MNetRewardedVideo *_Nonnull)rewardedVideo;
 
 /// Callback when the rewared video has completed.
 /// This returns the reward object that is set init
-- (void)mnetRewardedVideoDidComplete:(MNetRewardedVideo * _Nonnull)rewardedVideo withReward:(MNetReward * _Nullable)reward;
+- (void)mnetRewardedVideoDidComplete:(MNetRewardedVideo *_Nonnull)rewardedVideo
+                          withReward:(MNetReward *_Nullable)reward;
 
 /// Callback when the rewarded video has completed loading
-- (void)mnetRewardedVideoDidLoad:(MNetRewardedVideo * _Nonnull)rewardedVideo;
+- (void)mnetRewardedVideoDidLoad:(MNetRewardedVideo *_Nonnull)rewardedVideo;
 
 /// Callback when the rewarded video failed to load
-- (void)mnetRewardedVideoDidFailToLoad:(MNetRewardedVideo * _Nonnull)rewardedVideo withError:(MNetError * _Nonnull)error;
+- (void)mnetRewardedVideoDidFailToLoad:(MNetRewardedVideo *_Nonnull)rewardedVideo withError:(MNetError *_Nonnull)error;
 
 /// Callback when the rewarded video is clicked
-- (void)mnetRewardedVideoDidClick:(MNetRewardedVideo * _Nonnull)rewardedVideo;
+- (void)mnetRewardedVideoDidClick:(MNetRewardedVideo *_Nonnull)rewardedVideo;
 
 /// Callback when the rewarded video is shown
-- (void)mnetRewardedVideoDidShow:(MNetRewardedVideo * _Nonnull)rewardedVideo;
+- (void)mnetRewardedVideoDidShow:(MNetRewardedVideo *_Nonnull)rewardedVideo;
 
 @end

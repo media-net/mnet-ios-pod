@@ -8,27 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum{
-    MNetGenderOther,
-    MNetGenderMale,
-    MNetGenderFemale
-} MNetUserGender;
+typedef enum { MNetGenderOther, MNetGenderMale, MNetGenderFemale } MNetUserGender;
 
 @interface MNetUser : NSObject
 
 /// An ID for identifying the user
-- (void)addUserId:(NSString * _Nonnull)userId;
+- (void)addUserId:(NSString *_Nonnull)userId;
 
 /// Gender of the user.
 - (void)addGender:(MNetUserGender)gender;
 
 /// Name of the user
-- (void)addName:(NSString * _Nullable)name;
+- (void)addName:(NSString *_Nullable)name;
 
 /// Year of birth of the user. The string MUST be 4 digits indicating a valid year of birth
-- (BOOL)addYearOfBirth:(NSString * _Nullable)yob;
+- (BOOL)addYearOfBirth:(NSString *_Nullable)yob;
 
 /// Comma separated list of keywords, user-interests or intent
-- (void)addKeywords:(NSString * _Nullable)keywords;
+- (void)addKeywords:(NSString *_Nullable)keywords;
 
 @end

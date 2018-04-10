@@ -11,7 +11,7 @@
 #import "UIView+Toast.h"
 
 static NSString *kStaging = @"STAGING";
-static NSString *kProd = @"PRODUCTION";
+static NSString *kProd    = @"PRODUCTION";
 
 @interface MNURLConfigViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *baseURLLabel;
@@ -33,30 +33,32 @@ static NSString *kProd = @"PRODUCTION";
     [self setLabelTexts];
 }
 
-- (void)setUpVC{
+- (void)setUpVC {
     self.isDebug = [[MNAdSdkURLManager getSharedInstance] isDebug];
     [self.envLabel setText:self.isDebug ? kStaging : kProd];
-    [self.prodStageSwitch addTarget:self action:@selector(switchStateChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.prodStageSwitch addTarget:self
+                             action:@selector(switchStateChanged:)
+                   forControlEvents:UIControlEventValueChanged];
     [self.prodStageSwitch setOn:self.isDebug];
 }
 
-- (void)setLabelTexts{
-    self.baseURLLabel.text = [[MNAdSdkURLManager getSharedInstance] getSdkBaseURL];
-    self.configURLLabel.text = [[MNAdSdkURLManager getSharedInstance] getSdkConfigBaseURL];
-    self.pulseURLLabel.text = [[MNAdSdkURLManager getSharedInstance] getSdkPulseBaseURL];
+- (void)setLabelTexts {
+    self.baseURLLabel.text      = [[MNAdSdkURLManager getSharedInstance] getSdkBaseURL];
+    self.configURLLabel.text    = [[MNAdSdkURLManager getSharedInstance] getSdkConfigBaseURL];
+    self.pulseURLLabel.text     = [[MNAdSdkURLManager getSharedInstance] getSdkPulseBaseURL];
     self.resoourceURLLabel.text = [[MNAdSdkURLManager getSharedInstance] getSdkResourceBaseURL];
 }
 
 // Default value is STAGING
-- (void)switchStateChanged:(UISwitch *)switchState{
-    if([switchState isOn]){
+- (void)switchStateChanged:(UISwitch *)switchState {
+    if ([switchState isOn]) {
         [self.envLabel setText:kStaging];
         self.isDebug = YES;
-    }else{
+    } else {
         [self.envLabel setText:kProd];
         self.isDebug = NO;
     }
-    
+
     [[MNAdSdkURLManager getSharedInstance] setIsProdUserDefaults:!self.isDebug];
     [self setLabelTexts];
     [self.view makeToast:@"Please kill and restart app for the changes to take effect"];

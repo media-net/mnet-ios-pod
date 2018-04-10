@@ -6,7 +6,6 @@
 //  Copyright (c) 2017 Nithin. All rights reserved.
 //
 
-
 @import UIKit;
 #import <CoreLocation/CoreLocation.h>
 

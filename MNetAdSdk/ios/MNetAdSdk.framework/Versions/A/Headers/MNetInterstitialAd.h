@@ -18,10 +18,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 /// The interstitial ads delegate for callbacks on banner ads
-@property (nonatomic,weak) id<MNetInterstitialAdDelegate> interstitialDelegate;
+@property (nonatomic, weak) id<MNetInterstitialAdDelegate> interstitialDelegate;
 
 /// The interstitial video ads delegate for callbacks on video ads
-@property (nonatomic,weak) id<MNetInterstitialVideoAdDelegate> interstitialVideoDelegate;
+@property (nonatomic, weak) id<MNetInterstitialVideoAdDelegate> interstitialVideoDelegate;
 
 /// The adunit Id of the ad to be displayed
 @property (nonatomic) NSString *adUnitId;
@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAd;
 
 /// Load the intersitital ad with the ad request
-- (void)loadAdForRequest:(MNetAdRequest*)request;
+- (void)loadAdForRequest:(MNetAdRequest *)request;
 
 /// Context link for contextual ads. Optional for developers to set.
 - (void)setContextLink:(NSString *)contextLink;

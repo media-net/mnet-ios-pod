@@ -50,9 +50,12 @@ void validBannerAdRequestStub(Class classFile){
     NSString *respStr = readFile(classFile, FILENAME_BANNER_320x50, @"json");
     NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
     NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
+    
     stubRequest(@"GET", regexStr.regex)
     .andReturn(200)
     .withBody(respStr);
+    
+    stubRequest(@"GET", @".*".regex).andReturn(200);
 }
 
 void validBannerAdUrlRequestStub(Class classFile){
@@ -62,6 +65,7 @@ void validBannerAdUrlRequestStub(Class classFile){
     stubRequest(@"GET", regexStr.regex)
     .andReturn(200)
     .withBody(respStr);
+    stubRequest(@"GET", @".*".regex).andReturn(200);
 }
 
 void validVideoAdRequestStub(Class classFile){
@@ -69,6 +73,7 @@ void validVideoAdRequestStub(Class classFile){
     NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
     NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
     stubRequest(@"GET", regexStr.regex).andReturn(200).withBody(respStr);
+    stubRequest(@"GET", @".*".regex).andReturn(200);
 }
 
 void validRewardedVideoAdRequestStub(Class classFile){
@@ -76,13 +81,14 @@ void validRewardedVideoAdRequestStub(Class classFile){
     NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
     NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
     stubRequest(@"GET", regexStr.regex).andReturn(200).withBody(respStr);
+    stubRequest(@"GET", @".*".regex).andReturn(200);
 }
 
 void invalidVideoAdRequestStub(Class classFile){
     NSString *respStr = readFile(classFile, INVALID_FILENAME_VIDEO, @"json");
     NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
     NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
-    stubRequest(@"GET", regexStr.regex).andReturn(200).withBody(respStr);    
+    stubRequest(@"GET", regexStr.regex).andReturn(200).withBody(respStr);
 }
 
 void validInterstitialAdRequestStub(Class classFile){
@@ -93,6 +99,7 @@ void validInterstitialAdRequestStub(Class classFile){
     stubRequest(@"GET", regexStr.regex)
     .andReturn(200)
     .withBody(respStr);
+    stubRequest(@"GET", @".*".regex).andReturn(200);
 }
 
 void dummyStubLoader(){
@@ -111,6 +118,8 @@ void validAdxAdRequestStub(Class classFile){
     NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
     NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
     stubRequest(@"GET", regexStr.regex).andReturn(200).withBody(respStr);
+    
+    stubRequest(@"GET", @".*".regex).andReturn(200);
 }
 
 void noAdRequestStub(Class classFile){
