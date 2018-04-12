@@ -549,7 +549,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         [dfpBannerView setRootViewController:self];
         [dfpBannerView setDelegate:self];
         DFPRequest *request = [DFPRequest request];
-        [request setCustomTargeting:@{ @"bid" : @"15" }];
+        [request setCustomTargeting:@{ @"pos" : @"b" }];
 
         // Manual header bidding
         [MNetHeaderBidder addBidsToDfpBannerAdRequest:request
@@ -571,6 +571,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         [dfpInterstitialAd setDelegate:self];
 
         DFPRequest *request = [DFPRequest request];
+        [request setCustomTargeting:@{ @"pos" : @"i2" }];
 
         [MNetHeaderBidder addBidsToDfpInterstitialAdRequest:request
                                                  withAdView:dfpInterstitialAd
