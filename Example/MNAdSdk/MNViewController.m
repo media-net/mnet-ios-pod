@@ -99,21 +99,14 @@ static const CGFloat sectionFooterViewHeight = 30.0f;
                   @{@"title" : @"MoPub Sample Ad", @"name" : ENUM_VAL(MOPUB_INTERSTITIAL_HB)},
               ]
           },
-          /*
+
           @{
-              @"sectionTitle": @"Manual HB",
-              @"rowContents": @[
-                      @{
-                          @"title": @"DFP Banner HB",
-                          @"name": ENUM_VAL(DFP_BANNER_MANUAL_HB)
-                          },
-                      @{
-                          @"title": @"DFP Interstitial HB",
-                          @"name": ENUM_VAL(DFP_INSTERSTITIAL_MANUAL_HB)
-                          },
-                      ]
-              },
-           */
+              @"sectionTitle" : @"Manual HB",
+              @"rowContents" : @[
+                  @{@"title" : @"DFP Banner HB", @"name" : ENUM_VAL(DFP_BANNER_MANUAL_HB)},
+                  @{@"title" : @"DFP Interstitial HB", @"name" : ENUM_VAL(DFP_INSTERSTITIAL_MANUAL_HB)},
+              ]
+          },
           @{
               @"sectionTitle" : @"Mediation Banner",
               @"rowContents" : @[

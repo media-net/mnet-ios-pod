@@ -32,7 +32,10 @@
     XCTAssert([cache hasKey:key] == YES, @"The cache should have the key");
     XCTAssert([cache addKey:key] == YES, @"Multiple inserts should be possible");
 }
-
+/*
+ Disabling this temporarily
+ */
+/*
 - (void)testAppContentManager{
     NSString *adUnitId = @"Sample Adunit";
     NSString *adCycleId = @"Sample Adcycle";
@@ -51,5 +54,6 @@
     XCTAssert(didFetchData == YES, @"The data should be fetched. It shouldn't be false.");
     XCTAssert([cache hasKey:crawlingLink] == YES, @"The cache shouldn't contain the crawling link");
 }
+ */
 
 @end
