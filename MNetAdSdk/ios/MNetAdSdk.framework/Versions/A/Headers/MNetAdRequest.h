@@ -14,10 +14,10 @@
 @interface MNetAdRequest : NSObject
 
 /// Keywords for the ad
-@property (nonatomic, nullable) NSString *keywords;
+@property (atomic, nullable) NSString *keywords;
 
 /// The website link for the current screen. This is for better context.
-@property (nonatomic, nullable) NSString *contextLink;
+@property (atomic, nullable) NSString *contextLink;
 
 /// Get a new request object
 + (MNetAdRequest *_Nonnull)newRequest;

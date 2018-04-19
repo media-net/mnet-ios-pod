@@ -12,16 +12,16 @@
 @interface MNetReward : NSObject
 
 /// The name of the reward
-@property (nonatomic, nullable) NSString *name;
+@property (atomic, nonnull) NSString *name;
 
 /// The currency type of the reward in string
-@property (nonatomic, nullable) NSString *currency;
+@property (atomic, nonnull) NSString *currency;
 
 /// The amount of the reward
-@property (nonatomic) NSNumber *amount;
+@property (atomic, nonnull) NSNumber *amount;
 
 /// Initialise the reward
-- (instancetype _Nonnull)initWith:(NSString *_Nullable)name
-                     withCurrency:(NSString *_Nullable)currency
-                       withAmount:(NSNumber *)amount;
+- (instancetype _Nonnull)initWith:(NSString *_Nonnull)name
+                     withCurrency:(NSString *_Nonnull)currency
+                       withAmount:(NSNumber *_Nonnull)amount;
 @end

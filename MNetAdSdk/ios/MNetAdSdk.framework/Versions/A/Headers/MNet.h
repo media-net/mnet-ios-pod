@@ -16,13 +16,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// The customer Id of the MNetAdSdk
-@property (nonatomic) NSString *customerId;
+@property (atomic) NSString *customerId;
 
 /// Setting this parameter will send the test requests to the servers.
 /// It can be used for testing purposes.
-@property (nonatomic) BOOL isTest;
+@property (atomic) BOOL isTest;
 
-@property (nonatomic, nullable) MNetUser *user;
+@property (atomic, nullable) MNetUser *user;
 
 /// Initialises the MNetAdSdk for a given customer Id.
 /// This can be run only once in a session.
