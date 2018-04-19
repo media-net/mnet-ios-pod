@@ -61,6 +61,6 @@
 
 - (void)testContextLinkNil{
     MNetAdBaseCommon *adBaseCommon = [[MNetAdBaseCommon alloc] init];
-    XCTAssertNil(adBaseCommon.fetchVCLink);
+    XCTAssert(adBaseCommon.fetchVCLink != nil);
 }
 @end

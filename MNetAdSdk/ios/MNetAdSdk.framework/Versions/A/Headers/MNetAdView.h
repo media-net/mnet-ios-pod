@@ -22,32 +22,32 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// The banner ads delegate for callbacks from banner ads
-@property (nonatomic, weak) id<MNetAdViewDelegate> delegate;
+@property (atomic, weak) id<MNetAdViewDelegate> delegate;
 
 /// The video ads delegate for callbacks from video ads
-@property (nonatomic, weak) id<MNetVideoDelegate> videoDelegate;
+@property (atomic, weak) id<MNetVideoDelegate> videoDelegate;
 
 /// The size the of the ad. This does not reflect the size of the frame,
 /// within which the MNetAdView resides, but simply the size of the ad to
 /// be displayed
-@property (nonatomic) CGSize size;
+@property (atomic) CGSize size;
 
-@property (nonatomic, nullable) MNetError *error;
+@property (atomic, nullable) MNetError *error;
 
 /// The adunit Id of the ad to be displayed
-@property (nonatomic) NSString *adUnitId;
+@property (atomic) NSString *adUnitId;
 
 /// Optional keywords to be sent in the ad request
-@property (nonatomic, nullable) NSString *keywords;
+@property (atomic, nullable) NSString *keywords;
 
 /// The ad request object
-@property (nonatomic) MNetAdRequest *adRequest;
+@property (atomic) MNetAdRequest *adRequest;
 
 /// The view controller on which the MNetAdView is displayed.
 /// The primary purpose of this is when the adView is clicked
 /// (called a click-through), a clickthrough-webview is displayed,
 /// which is presented on top of this viewController.
-@property (weak, nonatomic) UIViewController *_Nullable rootViewController;
+@property (weak, atomic) UIViewController *_Nullable rootViewController;
 
 // All init methods
 

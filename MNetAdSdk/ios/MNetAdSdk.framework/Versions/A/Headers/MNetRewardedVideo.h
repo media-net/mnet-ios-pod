@@ -19,12 +19,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// The ad delegate for callbacks from rewarded video ads
-@property (weak, nonatomic) id<MNetRewardedVideoDelegate> rewardedVideoDelegate;
+@property (weak, atomic) id<MNetRewardedVideoDelegate> rewardedVideoDelegate;
 
 NS_ASSUME_NONNULL_END
 
 /// Optional keywords to be sent in the ad request
-@property (nonatomic, nullable) NSString *keywords;
+@property (atomic, nullable) NSString *keywords;
 
 /// Gives an instance of the rewarded video for an adunit Id
 + (MNetRewardedVideo *_Nullable)getInstanceForAdUnitId:(NSString *_Nonnull)adUnitId;
@@ -39,8 +39,8 @@ NS_ASSUME_NONNULL_END
 - (void)showAdFromViewController:(UIViewController *_Nonnull)rootViewController;
 
 /// Set the reward for the rewarded video instance
-- (void)setRewardWithName:(NSString *_Nullable)name
-              forCurrency:(NSString *_Nullable)currency
+- (void)setRewardWithName:(NSString *_Nonnull)name
+              forCurrency:(NSString *_Nonnull)currency
                 forAmount:(NSNumber *_Nonnull)amount;
 @end
 

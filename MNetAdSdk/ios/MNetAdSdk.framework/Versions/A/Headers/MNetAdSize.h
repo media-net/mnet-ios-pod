@@ -10,7 +10,7 @@
 
 @interface MNetAdSize : NSObject
 
-@property (nonatomic) int h;
-@property (nonatomic) int w;
+@property (atomic) int h;
+@property (atomic) int w;
 
 @end
