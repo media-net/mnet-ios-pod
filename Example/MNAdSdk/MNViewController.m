@@ -136,7 +136,10 @@ static const CGFloat sectionFooterViewHeight = 30.0f;
                    */
               ]
           },
-
+          @{
+              @"sectionTitle" : @"Automation Tests",
+              @"rowContents" : @[ @{@"title" : @"Auto-DFP-Ad", @"name" : ENUM_VAL(MNET_AUTOMATION_DFP_ADVIEW)} ]
+          },
       ];
     });
 }

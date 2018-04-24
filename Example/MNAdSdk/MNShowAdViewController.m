@@ -19,6 +19,7 @@
 
 #import "MNDemoConstants.h"
 #import "MNShowAdViewController.h"
+#import "MNTestDevicesManager.h"
 #import "MPBannerCustomEvent.h"
 #import "UIView+Toast.h"
 
@@ -101,6 +102,44 @@ static NSString *gadInterstitialFailAd    = @"Ad failed";
 static NSString *gadInterstitialShowAd    = @"Ad shown";
 static NSString *gadInterstitialDismissAd = @"Ad dismissed";
 
+static NSArray<NSString *> *testDevicesList;
+
+- (void)loadDevicesList {
+    NSMutableArray<NSString *> *devicesList = [@[
+        // Iphone 5s
+        @"f97eacc0e37157c3124d3ddaeaca1ead",
+        // Iphone 7 Plus
+        @"32eca1d7a94a81b5c9e8dbd1d8675a4b",
+        // Iphone
+        @"c0be19a2dc871bfcda1e73d1ff0eb77b",
+        // Simulator
+        kGADSimulatorID,
+    ] mutableCopy];
+    NSArray *testDeviceIds = [[MNTestDevicesManager getSharedInstance] getTestDeviceIds];
+    if (testDeviceIds != nil && [testDeviceIds count] > 0) {
+        for (NSString *deviceId in testDeviceIds) {
+            [devicesList addObject:deviceId];
+        }
+    }
+
+    if (devicesList == nil) {
+        testDevicesList = @[];
+    } else {
+        testDevicesList = [NSArray arrayWithArray:devicesList];
+    }
+}
+
+- (void)printTestDevices {
+    if (testDevicesList == nil || [testDevicesList count] == 0) {
+        NSLog(@"TEST_DEVICE_ID: There are no test device ids configured");
+        return;
+    }
+    NSLog(@"TEST_DEVICE_ID: Contains %lu test-ids", (unsigned long) [testDevicesList count]);
+    for (NSString *testId in testDevicesList) {
+        NSLog(@"TEST_DEVICE_ID: %@", testId);
+    }
+}
+
 #pragma mark -  MNShowAdVC methods
 
 - (void)viewDidLoad {
@@ -124,6 +163,12 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
     self.topBar.layer.shadowOffset  = CGSizeMake(0, blurRadius);
     self.topBar.layer.shadowRadius  = blurRadius;
     self.topBar.layer.shadowColor   = [[UIColor blackColor] CGColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self loadDevicesList];
+    [self printTestDevices];
 }
 
 - (void)initTitleMap {
@@ -151,6 +196,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
           ENUM_VAL(DFP_INSTERSTITIAL_MANUAL_HB) : @"MANUAL DFP INTERSTITIAL",
           ENUM_VAL(MRAID_BANNER) : @"MRAID BANNER",
           ENUM_VAL(MRAID_INTERSTITIAL) : @"MRAID INTERSTITIAL",
+          ENUM_VAL(MNET_AUTOMATION_DFP_ADVIEW) : @"AUTOMATION DFP AD",
       };
     });
 }
@@ -257,6 +303,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         GADRewardBasedVideoAd *rewardBasedVideoAd = [GADRewardBasedVideoAd sharedInstance];
         [rewardBasedVideoAd setDelegate:self];
         GADRequest *gadRequest = [GADRequest request];
+        [gadRequest setTestDevices:testDevicesList];
         [rewardBasedVideoAd loadRequest:gadRequest withAdUnitID:DEMO_AD_MOB_REWARDED_VIDEO_MEDIATION_AD_UNIT_ID];
         break;
     }
@@ -275,6 +322,13 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
 
         DFPRequest *request = [DFPRequest request];
         [request setCustomTargeting:@{ @"pos" : @"b" }];
+        [request setTestDevices:testDevicesList];
+        [request setKeywords:@[@"sports", @"scores", @"content_link:https://my-custom-link.com/keywords"]];
+        [request setGender:kGADGenderMale];
+        [request setBirthday:[NSDate dateWithTimeIntervalSince1970:0]];
+        [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
+        [request setContentURL:@"https://my-custom-link.com/contentURL"];
+        
         /*
         [request setContentURL:@"https://my-custom-link.com/contentURL"];
 
@@ -326,8 +380,9 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         [gadBannerView setAdUnitID:DEMO_AD_MOB_AD_UNIT_ID];
         [gadBannerView setRootViewController:self];
         GADRequest *request = [GADRequest request];
-        //[request setTestDevices:@[kGADSimulatorID]];
+        [request setTestDevices:testDevicesList];
         [gadBannerView loadRequest:request];
+
         break;
     }
 
@@ -336,6 +391,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         dfpInterstitialAd   = [[DFPInterstitial alloc] initWithAdUnitID:DEMO_DFP_HB_INTERSTITIAL_AD_UNIT_ID];
         DFPRequest *request = [DFPRequest request];
         [request setCustomTargeting:@{ @"pos" : @"i1" }];
+        [request setTestDevices:testDevicesList];
         /*
          [request setContentURL:@"https://my-custom-link.com/contentURL"];
 
@@ -385,6 +441,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
 
         DFPRequest *request = [DFPRequest request];
         [request setCustomTargeting:@{ @"bid" : @"15" }];
+        [request setTestDevices:testDevicesList];
 
         // User-defined stuff
         [request setGender:kGADGenderFemale];
@@ -439,7 +496,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         [gadBannerView setDelegate:self];
 
         GADRequest *request = [GADRequest request];
-        //[request setTestDevices:@[kGADSimulatorID]];
+        [request setTestDevices:testDevicesList];
 
         // custom user settings
         [request setGender:kGADGenderFemale];
@@ -471,7 +528,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         [self addLoaderToScreen];
         dfpInterstitialAd   = [[DFPInterstitial alloc] initWithAdUnitID:DEMO_DFP_MEDIATION_INTERSTITIAL_AD_UNIT_ID];
         DFPRequest *request = [DFPRequest request];
-        //[request setTestDevices:@[kGADSimulatorID]];
+        [request setTestDevices:testDevicesList];
 
         // User-defined stuff
         [request setGender:kGADGenderFemale];
@@ -510,6 +567,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         [gadInterstitialAd setDelegate:self];
 
         GADRequest *request = [GADRequest request];
+        [request setTestDevices:testDevicesList];
 
         // User-defined stuff
         [request setGender:kGADGenderFemale];
@@ -550,6 +608,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         [dfpBannerView setDelegate:self];
         DFPRequest *request = [DFPRequest request];
         [request setCustomTargeting:@{ @"pos" : @"b" }];
+        [request setTestDevices:testDevicesList];
 
         // Manual header bidding
         [MNetHeaderBidder addBidsToDfpBannerAdRequest:request
@@ -572,6 +631,7 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
 
         DFPRequest *request = [DFPRequest request];
         [request setCustomTargeting:@{ @"pos" : @"i2" }];
+        [request setTestDevices:testDevicesList];
 
         [MNetHeaderBidder addBidsToDfpInterstitialAdRequest:request
                                                  withAdView:dfpInterstitialAd
@@ -617,7 +677,61 @@ static NSString *gadInterstitialDismissAd = @"Ad dismissed";
         [interstitialAd loadAd];
         break;
     }
+    case MNET_AUTOMATION_DFP_ADVIEW: {
+        [self addLoaderToScreen];
+
+        NSLog(@"creating automation ad view for dfp");
+        dfpBannerView = [[DFPBannerView alloc]
+            initWithAdSize:GADAdSizeFromCGSize(CGSizeMake(GAD_SIZE_320x50.width, GAD_SIZE_320x50.height))];
+        [[self adView] addSubview:dfpBannerView];
+        [self applyAdViewContraints:dfpBannerView height:GAD_SIZE_320x50.height width:GAD_SIZE_320x50.width];
+        [dfpBannerView setAdUnitID:DEMO_AUTOMATION_DFP_AD_UNIT_ID];
+        [dfpBannerView setRootViewController:self];
+        [dfpBannerView setDelegate:nil];
+
+        DFPRequest *request = [DFPRequest request];
+        [request setCustomTargeting:@{ @"pos" : @"b" }];
+        [request setTestDevices:testDevicesList];
+        [dfpBannerView loadRequest:request];
+
+        [self hideLoaderFromScreen];
+        [self showTestDeviceAlertView];
     }
+    }
+}
+
+- (void)showTestDeviceAlertView {
+    // Show the alertview which gets the test-device ids
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"DFP Test device id"
+                                                                             message:@"Input device id"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+      textField.placeholder     = @"name";
+      textField.textColor       = [UIColor blackColor];
+      textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+      textField.borderStyle     = UITextBorderStyleRoundedRect;
+    }];
+    [alertController
+        addAction:[UIAlertAction actionWithTitle:@"OK"
+                                           style:UIAlertActionStyleDefault
+                                         handler:^(UIAlertAction *action) {
+                                           NSArray *textfields        = alertController.textFields;
+                                           UITextField *deviceIdfield = textfields[0];
+                                           NSString *deviceId         = deviceIdfield.text;
+                                           if (deviceId == nil) {
+                                               NSLog(@"Got device-id as nil from the alert-view");
+                                               return;
+                                           }
+                                           deviceId = [deviceId
+                                               stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+                                           if ([deviceId isEqualToString:@""]) {
+                                               NSLog(@"Got device-id as empty from the alert-view");
+                                               return;
+                                           }
+                                           NSLog(@"Got test-device from console - %@", deviceId);
+                                           [[MNTestDevicesManager getSharedInstance] addDeviceId:deviceId];
+                                         }]];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)applyAdViewContraints:(UIView *)mnetAdView height:(CGFloat)h width:(CGFloat)w {

@@ -211,6 +211,7 @@ void stubifyRequests(Class className){
 void customSetupWithClass(Class className){
     stubifyRequests(className);
     updateSdkInfo(className);
+    [[MNetPulseHttp getSharedInstance] __stopFromMakingRequestsForTests];
 }
 
 @end

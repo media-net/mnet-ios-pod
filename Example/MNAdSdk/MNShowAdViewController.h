@@ -44,6 +44,7 @@ typedef enum {
     DFP_INSTERSTITIAL_MANUAL_HB,
     MRAID_BANNER,
     MRAID_INTERSTITIAL,
+    MNET_AUTOMATION_DFP_ADVIEW,
 } AdType;
 
 @property (nonatomic) IBOutlet UIView *adView;
