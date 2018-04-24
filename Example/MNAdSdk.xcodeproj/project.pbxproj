@@ -53,6 +53,7 @@
 		AE3D8B031EF9526800CC80F0 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3D8B021EF9526800CC80F0 /* GameKit.framework */; };
 		AE3D8B051EF952B100CC80F0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3D8B041EF952B100CC80F0 /* StoreKit.framework */; };
 		AE3F5B021FF391BF00FEBE12 /* MNetDefaultBidsManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3F5B011FF391BF00FEBE12 /* MNetDefaultBidsManagerTests.m */; };
+		AE40D2C6208EFA7C00294978 /* MNetPulseConcurrencyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE40D2C5208EFA7C00294978 /* MNetPulseConcurrencyTests.m */; };
 		AE423F001F6FCF3200EDF1DE /* MNetPrefetchBidsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE423EFF1F6FCF3200EDF1DE /* MNetPrefetchBidsTests.m */; };
 		AE47A8F41E699C2D00B6E5E8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE47A8F31E699C2D00B6E5E8 /* CoreLocation.framework */; };
 		AE4A8BC61F27174A00295139 /* MNetPulseStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4A8BC51F27174A00295139 /* MNetPulseStoreTests.m */; };
@@ -70,6 +71,7 @@
 		AE7E9C9F1FE3BE30008AE492 /* adResponseBannerAdUrl320x50.json in Resources */ = {isa = PBXBuildFile; fileRef = AE7E9C9E1FE3BE30008AE492 /* adResponseBannerAdUrl320x50.json */; };
 		AE8328D01F2B489200757B25 /* MNetVideoInterstitialWithBannerDelegates.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8328CF1F2B489200757B25 /* MNetVideoInterstitialWithBannerDelegates.m */; };
 		AE86824A1EAE7FCB00C00F28 /* MNetTestBannerSansParent.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8682491EAE7FCB00C00F28 /* MNetTestBannerSansParent.m */; };
+		AE87107020861BB800956239 /* MNTestDevicesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE87106F20861BB800956239 /* MNTestDevicesManager.m */; };
 		AE8864BF1F69B7F400D04C5A /* MNetAdLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8864BE1F69B7F400D04C5A /* MNetAdLoaderTests.m */; };
 		AE88978A1F174F82009C60B2 /* MNetSdkConfigTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8897891F174F82009C60B2 /* MNetSdkConfigTests.m */; };
 		AE8C291F1F9F222F005058FB /* MNetAuctionLoggerModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8C291E1F9F222F005058FB /* MNetAuctionLoggerModelTests.m */; };
@@ -171,6 +173,7 @@
 		AE3D8B021EF9526800CC80F0 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		AE3D8B041EF952B100CC80F0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AE3F5B011FF391BF00FEBE12 /* MNetDefaultBidsManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNetDefaultBidsManagerTests.m; sourceTree = "<group>"; };
+		AE40D2C5208EFA7C00294978 /* MNetPulseConcurrencyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNetPulseConcurrencyTests.m; sourceTree = "<group>"; };
 		AE423EFF1F6FCF3200EDF1DE /* MNetPrefetchBidsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetPrefetchBidsTests.m; sourceTree = "<group>"; };
 		AE47A8F31E699C2D00B6E5E8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AE4A8BC51F27174A00295139 /* MNetPulseStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetPulseStoreTests.m; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 		AE7E9C9E1FE3BE30008AE492 /* adResponseBannerAdUrl320x50.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = adResponseBannerAdUrl320x50.json; sourceTree = "<group>"; };
 		AE8328CF1F2B489200757B25 /* MNetVideoInterstitialWithBannerDelegates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetVideoInterstitialWithBannerDelegates.m; sourceTree = "<group>"; };
 		AE8682491EAE7FCB00C00F28 /* MNetTestBannerSansParent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetTestBannerSansParent.m; sourceTree = "<group>"; };
+		AE87106E20861BB800956239 /* MNTestDevicesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MNTestDevicesManager.h; sourceTree = "<group>"; };
+		AE87106F20861BB800956239 /* MNTestDevicesManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNTestDevicesManager.m; sourceTree = "<group>"; };
 		AE8864BE1F69B7F400D04C5A /* MNetAdLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetAdLoaderTests.m; sourceTree = "<group>"; };
 		AE8897891F174F82009C60B2 /* MNetSdkConfigTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNetSdkConfigTests.m; sourceTree = "<group>"; };
 		AE8C291E1F9F222F005058FB /* MNetAuctionLoggerModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNetAuctionLoggerModelTests.m; sourceTree = "<group>"; };
@@ -311,6 +316,8 @@
 				8A44761A2029A73E00F43F18 /* MNURLConfigViewController.m */,
 				8A3C5372202AF9B0004B5550 /* MNAdSdkURLManager.h */,
 				8A3C5373202AF9B0004B5550 /* MNAdSdkURLManager.m */,
+				AE87106E20861BB800956239 /* MNTestDevicesManager.h */,
+				AE87106F20861BB800956239 /* MNTestDevicesManager.m */,
 			);
 			name = "Example for MNAdSdk";
 			path = MNAdSdk;
@@ -493,6 +500,7 @@
 			children = (
 				AE4A8BC51F27174A00295139 /* MNetPulseStoreTests.m */,
 				AEC9144A1FEA61D900E58EA5 /* MNetPulseRegulationTests.m */,
+				AE40D2C5208EFA7C00294978 /* MNetPulseConcurrencyTests.m */,
 			);
 			name = MNetPulseTests;
 			sourceTree = "<group>";
@@ -841,12 +849,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example-resources.sh",
-				"${PODS_ROOT}/../../MNetAdSdk/ios/MNetAdSdk.framework/Versions/A/Resources/mraid.js",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -924,16 +929,24 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MNAdSdk_Example/Pods-MNAdSdk_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MNALApplink/MNALApplink.framework",
+				"${BUILT_PRODUCTS_DIR}/MNetAdSdk/MNetAdSdk.framework",
+				"${BUILT_PRODUCTS_DIR}/MNetJSONModeller/MNetJSONModeller.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
 				"${BUILT_PRODUCTS_DIR}/mopub-ios-sdk/MoPub.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MNALApplink.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MNetAdSdk.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MNetJSONModeller.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoPub.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -952,6 +965,7 @@
 			files = (
 				6003F59E195388D20070C39A /* MNAppDelegate.m in Sources */,
 				AED94DF01E72DF7300470329 /* MNDemoConstants.m in Sources */,
+				AE87107020861BB800956239 /* MNTestDevicesManager.m in Sources */,
 				6003F5A7195388D20070C39A /* MNViewController.m in Sources */,
 				8A3C5374202AF9B0004B5550 /* MNAdSdkURLManager.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
@@ -997,6 +1011,7 @@
 				AE12772F1F5E9C8900450657 /* MNetAppLinkTests.m in Sources */,
 				AE5548931F2B10D80087ADD1 /* MNetTestManager.m in Sources */,
 				AE37516D1F862FF600DB2BA7 /* MNetTpdBidReuse.m in Sources */,
+				AE40D2C6208EFA7C00294978 /* MNetPulseConcurrencyTests.m in Sources */,
 				AE9EED331F3476D700C00C15 /* MNetUserTests.m in Sources */,
 				AEAE57B31EAFCF1A00430540 /* MNetTestAdRequestFormat.m in Sources */,
 				8A70D3ED1EB092DA00F4B63E /* MNetTestRewardedVideo.m in Sources */,

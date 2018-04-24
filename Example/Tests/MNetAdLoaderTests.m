@@ -19,6 +19,7 @@
 
 - (void)setUp{
     [super setUp];
+    stubPrefetchReq([self class]);
     
     self.adLoaderMgr = [MNetAdLoader getSharedInstance];
     self.adUnitId = @"test_ad_unit_1";
