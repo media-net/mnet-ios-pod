@@ -17,6 +17,7 @@
 #define DEMO_MN_AD_UNIT_REWARDED @"<custom_id>"
 #define DEMO_MOPUB_AD_UNIT_ID @"<custom_id>"
 #define DEMO_DFP_AD_UNIT_ID @"<custom_id>"
+#define DEMO_AUTOMATION_DFP_AD_UNIT_ID @"<custom_id>"
 #define DEMO_MRAID_AD_UNIT_320x50 @"<custom_id>"
 
 #define DEMO_DFP_MEDIATION_AD_UNIT_ID @"<custom_id>"
