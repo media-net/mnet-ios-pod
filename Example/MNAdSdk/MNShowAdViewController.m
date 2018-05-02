@@ -323,12 +323,12 @@ static NSArray<NSString *> *testDevicesList;
         DFPRequest *request = [DFPRequest request];
         [request setCustomTargeting:@{ @"pos" : @"b" }];
         [request setTestDevices:testDevicesList];
-        [request setKeywords:@[@"sports", @"scores", @"content_link:https://my-custom-link.com/keywords"]];
+        [request setKeywords:@[ @"sports", @"scores", @"content_link:https://my-custom-link.com/keywords" ]];
         [request setGender:kGADGenderMale];
         [request setBirthday:[NSDate dateWithTimeIntervalSince1970:0]];
         [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
         [request setContentURL:@"https://my-custom-link.com/contentURL"];
-        
+
         /*
         [request setContentURL:@"https://my-custom-link.com/contentURL"];
 
