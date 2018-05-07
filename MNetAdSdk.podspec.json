@@ -23,11 +23,6 @@
     ], 
     "homepage": "https://github.com/media-net/mnet-ios-pod", 
     "ios": {
-        "resources": [
-            "MNetAdSdk/ios/MNetAdSdk.framework/**/*.xib", 
-            "MNetAdSdk/ios/MNetAdSdk.framework/**/*.png", 
-            "MNetAdSdk/ios/MNetAdSdk.framework/**/*.js"
-        ], 
         "vendored_frameworks": "MNetAdSdk/ios/MNetAdSdk.framework"
     }, 
     "libraries": "c++", 
@@ -41,8 +36,8 @@
     }, 
     "source": {
         "git": "https://github.com/media-net/mnet-ios-pod.git", 
-        "tag": "v1.12.6"
+        "tag": "v1.12.7"
     }, 
     "summary": "iOS Ad SDK by Media.NET", 
-    "version": "1.12.6"
+    "version": "1.12.7"
 }
