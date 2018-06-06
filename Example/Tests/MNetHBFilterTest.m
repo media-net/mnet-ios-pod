@@ -30,38 +30,36 @@
 
 - (void)testAdUnitFilterFail {
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
-    CGSize adSize = CGSizeZero;
     NSString *adUnitId = @"";
     NSDictionary *targetingParams = @{};
     UIView *adView = nil;
     
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId withTargetingParams:targetingParams andAdView:adView];
     
     XCTAssert(fetchedAdUnit == nil, @"Adunit is supposed to be nil");
 }
 
 - (void)testAdUnitFilterSizeFail {
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
-    CGSize adSize = CGSizeMake(500, 600);
+    NSString *expectedAdUnit = @"328569603";
     NSString *adUnitId = @"d6f2811c2cb84b57bbbf3128c08a2165123";
     NSDictionary *targetingParams = @{};
     UIView *adView = nil;
     
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
-    
-    XCTAssert(fetchedAdUnit == nil, @"Adunit is supposed to be nil");
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId withTargetingParams:targetingParams andAdView:adView];
+
+    XCTAssert(fetchedAdUnit != nil && [expectedAdUnit isEqualToString:fetchedAdUnit], @"Expected %@ got %@", expectedAdUnit, fetchedAdUnit);
 }
 
 - (void)testAdUnitFilter {
     NSString *expectedCrid = @"328569603";
     
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
-    CGSize adSize = CGSizeZero;
     NSString *adUnitId = @"d6f2811c2cb84b57bbbf3128c08a2165123";
     NSDictionary *targetingParams = @{};
     UIView *adView = nil;
     
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId withTargetingParams:targetingParams andAdView:adView];
     
     BOOL expectedCondn = fetchedAdUnit != nil && [fetchedAdUnit isEqualToString:expectedCrid];
     XCTAssert(expectedCondn , @"Fetched adunit is incorrect");
@@ -73,14 +71,13 @@
     NSString *expectedCrid = @"328569603";
     
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
-    CGSize adSize = CGSizeZero;
     NSString *adUnitId = @"d6f2811c2cb84b57bbbf3128c08a2165123";
     NSDictionary *targetingParams = @{
                                       @"dedicated":@"d6f2811c2cb84b57bbbf3128c08a2165123"
                                       };
     UIView *adView = nil;
     
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId withTargetingParams:targetingParams andAdView:adView];
     
     BOOL result = fetchedAdUnit != nil && [fetchedAdUnit isEqualToString:expectedCrid];
     XCTAssert(result , @"Fetched adunit is incorrect");
@@ -90,14 +87,13 @@
     NSString *expectedCrid = @"caseSensitiveAdunitId";
     
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
-    CGSize adSize = CGSizeZero;
     NSString *adUnitId = @"some-random-ad-unit-id";
     NSDictionary *targetingParams = @{
                                       @"dedicated":@"caseSensitiveValue"
                                       };
     UIView *adView = nil;
     
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId withTargetingParams:targetingParams andAdView:adView];
     
     BOOL result = fetchedAdUnit != nil && [fetchedAdUnit isEqualToString:expectedCrid];
     XCTAssert(result , @"Fetched adunit is incorrect");
@@ -106,14 +102,13 @@
 - (void)testFilterTargetingParamsFailure{
     // This assumes that the sdk-config has multiple-wild-card entries
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
-    CGSize adSize = CGSizeZero;
     NSString *adUnitId = @"some-key";
     NSDictionary *targetingParams = @{
                                       @"unknown_key": @"unknown_value"
                                       };
     UIView *adView = nil;
     
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId withTargetingParams:targetingParams andAdView:adView];
     
     XCTAssert(fetchedAdUnit == nil, @"This test case should fail. Instead it returned - %@",    fetchedAdUnit);
 }
@@ -122,14 +117,13 @@
     NSString *expectedCrid = @"cr-id-with-case-insensitive-prefix";
     
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
-    CGSize adSize = CGSizeMake(320, 50);
     NSString *adUnitId = @"some-random-ad-unit-id";
     NSDictionary *targetingParams = @{
                                       @"dedicated":@"case-Sensitive-Val-with-case-insensitive-prefix"
                                       };
     UIView *adView = nil;
     
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId withTargetingParams:targetingParams andAdView:adView];
     
     BOOL result = fetchedAdUnit != nil && [fetchedAdUnit isEqualToString:expectedCrid];
     XCTAssert(result , @"Expected %@, Got %@", expectedCrid, fetchedAdUnit);
@@ -139,7 +133,6 @@
     NSString *expectedCrid = @"cr-id-with-case-insensitive-prefix-multiple-targets";
     
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
-    CGSize adSize = CGSizeMake(320, 50);
     NSString *adUnitId = @"some-random-ad-unit-id";
     NSDictionary *targetingParams = @{
                                       @"dedicated_1.0":@"case-Sensitive-Val-with-multiple-targets",
@@ -148,7 +141,7 @@
                                       };
     UIView *adView = nil;
     
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId withTargetingParams:targetingParams andAdView:adView];
     
     BOOL result = fetchedAdUnit != nil && [fetchedAdUnit isEqualToString:expectedCrid];
     XCTAssert(result , @"Expected %@, Got %@", expectedCrid, fetchedAdUnit);
@@ -158,7 +151,6 @@
     NSString *expectedCrid = @"cr-id-with-case-insensitive-prefix-multiple-targets";
     
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
-    CGSize adSize = CGSizeMake(320, 50);
     NSString *adUnitId = @"some-random-ad-unit-id";
     NSDictionary *targetingParams = @{
                                       @"dedicated_1.0":@"case-Sensitive-Val-with-multiple-targets",
@@ -169,7 +161,7 @@
                                       };
     UIView *adView = nil;
     
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId withTargetingParams:targetingParams andAdView:adView];
     
     BOOL result = fetchedAdUnit != nil && [fetchedAdUnit isEqualToString:expectedCrid];
     XCTAssert(result , @"Expected %@, Got %@", expectedCrid, fetchedAdUnit);
@@ -187,8 +179,7 @@
                                       @"dedicated":@"random-value",
                                     };
     UIView *adView = nil;
-    
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId withTargetingParams:targetingParams andAdView:adView];
     
     BOOL result = fetchedAdUnit == nil;
     XCTAssert(result , @"Expected %@, Got %@", expectedCrid, fetchedAdUnit);
@@ -201,13 +192,12 @@
     
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
     UIView *adView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
-    CGSize adSize = CGSizeZero;
     NSString *adUnitId = @"dummyAdUnitId";
     NSDictionary *targetingParams = @{
                                       @"dedicated":@"FALSE"
                                       };
     
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId withTargetingParams:targetingParams andAdView:adView];
     
     NSLog(@"%@", fetchedAdUnit);
     XCTAssert([expectedAdUnitId isEqualToString:fetchedAdUnit], "The expected ad unit id is wrong - %@", fetchedAdUnit);
@@ -251,13 +241,12 @@
     
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
     UIView *adView = [[UIView alloc] initWithFrame:CGRectMake(50, 200, 10, 10)];
-    CGSize adSize = CGSizeZero;
     NSString *adUnitId = @"dummyAdUnitIdForGrid";
     NSDictionary *targetingParams = @{
                                       @"grid":@"test"
                                       };
     
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:adView];
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId withTargetingParams:targetingParams andAdView:adView];
     
     NSLog(@"%@", fetchedAdUnit);
     XCTAssert([expectedAdUnitId isEqualToString:fetchedAdUnit], "The expected ad unit id is wrong - %@", fetchedAdUnit);
@@ -285,13 +274,12 @@
     // Assertions
     NSString *expectedAdUnitId = @"filterTestListViewPos";
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
-    CGSize adSize = CGSizeZero;
     NSString *adUnitId = @"some-random-ad-unit-id";
     NSDictionary *targetingParams = @{
                                       @"grid":@"test"
                                       };
     
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:self.dummyTableViewEntry];
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId withTargetingParams:targetingParams andAdView:self.dummyTableViewEntry];
     
     NSLog(@"%@", fetchedAdUnit);
     XCTAssert([expectedAdUnitId isEqualToString:fetchedAdUnit], "The expected ad unit id is wrong - %@", fetchedAdUnit);
@@ -318,13 +306,12 @@
     
     // Assertions
     MNetAdUnitFilterManager *filterManager = [MNetAdUnitFilterManager getSharedInstance];
-    CGSize adSize = CGSizeZero;
     NSString *adUnitId = @"";
     NSDictionary *targetingParams = @{
                                       @"grid":@"test"
                                       };
     
-    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId forAdSize:adSize withTargetingParams:targetingParams andAdView:self.dummyTableViewEntry];
+    NSString *fetchedAdUnit = [filterManager fetchAdUnitIdFromConfig:adUnitId withTargetingParams:targetingParams andAdView:self.dummyTableViewEntry];
     
     NSLog(@"%@", fetchedAdUnit);
     XCTAssert(!fetchedAdUnit, "The expected ad unit id is nil. Got this instead - %@", fetchedAdUnit);

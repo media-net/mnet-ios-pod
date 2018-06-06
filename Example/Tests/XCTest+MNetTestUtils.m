@@ -68,6 +68,15 @@ void validBannerAdUrlRequestStub(Class classFile){
     stubRequest(@"GET", @".*".regex).andReturn(200);
 }
 
+void invalidBannerAdSizeRequestStub(Class classFile){
+    NSString *respStr = readFile(classFile, FILENAME_BANNER_INVALID_SIZE, @"json");
+    NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
+    NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
+    stubRequest(@"GET", regexStr.regex)
+    .andReturn(200)
+    .withBody(respStr);
+}
+
 void validVideoAdRequestStub(Class classFile){
     NSString *respStr = readFile(classFile, FILENAME_VIDEO_320x250, @"json");
     NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
@@ -83,6 +92,15 @@ void validRewardedVideoAdRequestStub(Class classFile){
     stubRequest(@"GET", regexStr.regex).andReturn(200).withBody(respStr);
     stubRequest(@"GET", @".*".regex).andReturn(200);
 }
+
+void invalidRewardedVideoAdRequestStub(Class classFile){
+    NSString *respStr = readFile(classFile, FILENAME_INVALID_REWARDED_VIDEO, @"json");
+    NSString *url = [[MNetURL getSharedInstance] getAdLoaderPredictBidsUrl];
+    NSString *regexStr = [NSString stringWithFormat:@"%@.*",url];
+    stubRequest(@"GET", regexStr.regex).andReturn(200).withBody(respStr);
+    stubRequest(@"GET", @".*".regex).andReturn(200);
+}
+
 
 void invalidVideoAdRequestStub(Class classFile){
     NSString *respStr = readFile(classFile, INVALID_FILENAME_VIDEO, @"json");
@@ -194,6 +212,11 @@ void stubVASTRequest(Class className){
     stubRequest(@"GET", url).andReturn(200).withBody(respStr);
 }
 
+void stubMisc(Class className){
+    stubRequest(@"GET", @"https?://us-u.openx.net.*".regex).andReturn(200).withBody(@"");
+    stubRequest(@"GET", @"https?://map.media6degrees.com.*".regex).andReturn(200).withBody(@"");
+}
+
 void stubifyRequests(Class className){
     dummyStubGoogleAds();
     dummyStubLoader();
@@ -206,6 +229,7 @@ void stubifyRequests(Class className){
     stubPrefetchReq(className);
     stubAdUrlRequest();
     stubVASTRequest(className);
+    stubMisc(className);
 }
 
 void customSetupWithClass(Class className){

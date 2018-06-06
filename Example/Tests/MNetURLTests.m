@@ -44,6 +44,7 @@
     NSLog(@"%@",[urlObj getLatencyTestUrl]);
     NSLog(@"%@",[urlObj getAdLoaderPredictBidsUrl]);
     NSLog(@"%@",[urlObj getAdLoaderPrefetchPredictBidsUrl]);
+    NSLog(@"%@",[urlObj getAuctionLoggerUrl]);
     NSLog(@"%@",[urlObj getConfigUrl]);
     NSLog(@"%@",[urlObj getPulseUrl]);
     NSLog(@"%@",[urlObj getFingerPrintUrl]);
@@ -57,6 +58,7 @@
     NSLog(@"%@",[urlObj getLatencyTestUrl]);
     NSLog(@"%@",[urlObj getAdLoaderPredictBidsUrl]);
     NSLog(@"%@",[urlObj getAdLoaderPrefetchPredictBidsUrl]);
+    NSLog(@"%@",[urlObj getAuctionLoggerUrl]);
     NSLog(@"%@",[urlObj getConfigUrl]);
     NSLog(@"%@",[urlObj getPulseUrl]);
     NSLog(@"%@",[urlObj getFingerPrintUrl]);

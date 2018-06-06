@@ -5,7 +5,6 @@ framework module MNetAdSdk{
     header "MNetAdView.h"
     header "MNetAdSize.h"
     header "MNetReward.h"
-    header "MNetAdRequest.h"
     header "MNetHeaderBidder.h"
     header "MNetRewardedVideo.h"
     header "MNetInterstitialAd.h"

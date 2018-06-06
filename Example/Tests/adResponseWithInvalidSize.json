@@ -1,0 +1,65 @@
+
+{
+    "api_version": 1,
+    "data": {
+        "ads": {
+            "719925423": {
+                "ads_details": [
+                                {
+                                "bidderId": 10001,
+                                "bidType": "fpd",
+                                "adtype": "banner",
+                                "adcode": "<script type='text/javascript' src='http://ad-e1.media6degrees.com/adserv/csv2?tIdx3DD2473504862069428x7CDpricex3DDAAABWkZNHj7wapKf0tO-7IYRJ4UfG0bT0gIABgx7CDdIdsx3DDChEIFhINMWliNm0wcmtxZ3hxZw==x7CDblInfox3DDEi0I8IABEBcY2wYgrlYqCTUzNzEwMDE4ODIJNTM3MTAwMTg4OgBCA1dFQkoCYWQaJQoRYWVxMTA0Mi5lcS5wbC5wdnQSBDgwODAaCjE2LjExLjEzMjMylwEItMWd1bu0sgQVAADgPxgJIhFhZXExMDQyLmVxLnBsLnB2dCo2CNwJEgwI7v4GEgYzMjB4NTAYhEYg0KUBKKfZGDCCwcwBOMHeAUIJRHN0aWxsZXJ5SOQbUIRGMiQ2NDc0MjY3NC1hNDQ4LTQ3YzktYmZiYS02YWE0OTcyMDVkN2M4AkAFSgJVU1ICTUlY-QNiBTQ4MDkzx7CD' ></script>\n<iframe src='http://us-u.openx.net/w/1.0/pd?plm=5&ph=6a16560a-f6c6-4851-b7b5-0b2c0190166a' width='0' height='0' style='display:none;'></iframe>  <div id='beacon_52792' style='position:absolute;left:0px;top:0px;visibility:hidden;'>\n    <img src='http://rtb-xv.openx.net/win/medianet?p=${AUCTION_PRICE}&t=1fHJpZD01ZDQ2MGEyMy00ZWZiLTRmMzItYmMwZC03YzQwOGE1ZGJiZjl8cnQ9MTQ4NzIzODE0M3xhdWlkPTUzODY2MjMzOXxhdW09RE1JRC5XRUJ8YXVwZj1kaXNwbGF5fHNpZD01MzczMDA3OTV8cHViPTUzNzEwMDE4OHxwYz1VU0R8cmFpZD01NjZiMGY1My0xOWFkLTQxMTMtODZlMy01NzI5ZjM5NjIxNDR8cnM9M3xtd2Y9MHxhaWQ9NTM4MjM5ODA1fHQ9MTJ8YXM9MzIweDUwfGxpZD01Mzc2OTAzMDZ8b2lkPTUzNzA5NjE2MnxwPTg5MHxwcj03Mzl8YXRiPTE3NTB8YWR2PTUzNzA3MzI2NHxhYz1VU0R8cG09UFJJQ0lORy5DUE18bT0xfGFpPTE1MmQwN2IxLWRhNDEtNGM0MC1hZDE4LWZlNzRjMjY5NTM0YXxtYz1VU0R8bXI9MTUxfHBpPTczOXxtdWk9MjhjODFmZDgtNTgxZS00YjgxLWIyZmQtZmZjMzkzZTFlYTMyfG1hPTY0NzQyNjc0LWE0NDgtNDdjOS1iZmJhLTZhYTQ5NzIwNWQ3Y3xtcnQ9MTQ4NzIzODE0M3xtcmM9U1JUX1dPTnxtd2E9NTM3MDczMjY0fG13Ymk9MTkwM3xtd2I9MTc1MHxtYXA9ODkwfGVsZz0xfG1vYz1VU0R8bW9yPTE1MXxtcGM9VVNEfG1wcj03Mzl8bXBmPTE1MHxtbWY9MTUwfG1wbmY9Mjk5fG1tbmY9Mjk5fHBjdj0yMDE2MTIwMXxtbz1PWHxlYz0xMTQ1NDJ8bXB1PTczOXxtY3A9ODkwfGFxdD1ydGJ8bXdjPTUzNzA5NjE2Mnxtd3A9NTM3NjkwMzA2fG13Y3I9NTM4MjM5ODA1fHJubj0xfG13aXM9MXxtd3B0PW9wZW5ydGJfanNvbnx1cj1SVkdRNmdzRldEfGxkPWNvc21vcG9saXRhbmxhc3ZlZ2FzLmNvbQ&c=USD&s=0'/>\n  </div>\n",
+                                "dfpbid": 7,
+                                "publisherId": "new-default",
+                                "tp": "http://qsearch-a.akamaihd.net/log?logid=kfk&evtid=rtbstl&url=http%3A%2F%2Fhttp%253A%252F%252Fdigitach.net%252F&domain=http&size=300x250&ext_user_id=0&iid=0&auction_id=7b54575cd51c4286921bec5275301b54&ip=172.16.200.248&crid=183840587&b43b=10.0&bc=0.25&rtbW=43&app_dis=0&cc=RU&bname=&bid_type=-1&bmlevel=0<cm_win_macro>",
+                                "size": "1000x1200",
+                                "h": 1200,
+                                "w": 1000,
+                                "server_extras": {
+                                "bidder_id": 43,
+                                "mnetSize": "1000x1200",
+                                "mnetbidPrice": "7.00"
+                                },
+                                "instl": 1,
+                                "creative_type": "html",
+                                "bidderInfoBean": {
+                                "responseTime": 130
+                                },
+                                "skippable": true
+                                },
+                                {
+                                "bidder_id": 23,
+                                "adtype": "banner",
+                                "adcode": "<!DOCTYPE html><HTML><HEAD></HEAD><BODY><script id=\"mNCC\" language=\"javascript\">medianet_versionId = '111299';medianet_width = '300';medianet_height = '250';medianet_crid = '114068215';medianet_requrl= 'http%3A%2F%2FMNAdSDKDemo.media.net.imnapp';medianet_chnm2= '8CUO15940';medianet_chnm3= '247384273';medianet_bdrId= '9';medianet_sbdrId= '';medianet_auctionid= '84e731d7b98241cd882a585c510303f9';medianet_misc= {};medianet_misc.matchString= 'null';(function() {var isSSL = false;var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CU5PML78' + (isSSL ? '&https=1' : '');document.write('<scr' + 'ipt type=\"text/javascript\" id=\"mNSC\" src=\"' + mnSrc + '\"></scr' + 'ipt>');})();</script></BODY></HTML>",
+                                "size": "1000x1200",
+                                "h": 1200,
+                                "w": 1000,
+                                "server_extras": {
+                                "bidder_id": 23,
+                                "mnet_abd": "1.00",
+                                "mnet_apc": "247384273_ApNx",
+                                "mnet_asz": "300x250"
+                                },
+                                "creative_type": "",
+                                "bidderInfoBean": {},
+                                "skippable": false,
+                                "bid_type": "tpd"
+                                }
+                                ],
+                "td": {
+                    "rtb_exchange": 322,
+                    "dp_processing": 57
+                }
+            }
+        },
+        "ext": {
+            "cc": false,
+            "cl": "http://mnadsdkdemo.media.net.imnapp/1-0b3-0/mnshowadviewcontroller?uniquekey=bdd10d9f03383e27925eea5e48c1cede",
+            "prediction_id": "custom_prediction_id"
+        }
+    },
+    "message": "",
+    "status": 200,
+    "success": true
+}

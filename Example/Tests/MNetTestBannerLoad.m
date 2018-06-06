@@ -10,7 +10,7 @@
 #import "MNDemoConstants.h"
 #import "MNetTestManager.h"
 
-@interface MNetTestBannerLoad : MNetTestManager <MNetAdViewDelegate>
+@interface MNetTestBannerLoad : MNetTestManager <MNetAdViewDelegate, MNetAdViewSizeDelegate>
 @property (nonatomic) XCTestExpectation *bannerAdViewExpectation;
 @end
 
@@ -30,8 +30,8 @@
     
     self.bannerAdViewExpectation = [self expectationWithDescription:@"Ad view loaded"];
     
-    MNetAdView *bannerAd = [[MNetAdView alloc] init];
-    [bannerAd setSize:MNET_BANNER_AD_SIZE];
+    MNetAdView *bannerAd = [[MNetAdView alloc] initWithFrame:CGRectMake(0, 0, 320.0, 50.0)];
+    [bannerAd setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
     [bannerAd setAdUnitId:DEMO_MN_AD_UNIT_320x50];
     [bannerAd setRootViewController:[self getViewController]];
     [bannerAd setDelegate:self];
@@ -50,8 +50,29 @@
     
     self.bannerAdViewExpectation = [self expectationWithDescription:@"Ad view loaded"];
     
+    MNetAdView *bannerAd = [[MNetAdView alloc] initWithFrame:CGRectMake(0, 0, 320.0, 50.0)];
+    [bannerAd setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
+    [bannerAd setAdUnitId:DEMO_MN_AD_UNIT_320x50];
+    [bannerAd setRootViewController:[self getViewController]];
+    [bannerAd setDelegate:self];
+    [bannerAd loadAd];
+    
+    [self waitForExpectationsWithTimeout:30 handler:^(NSError * _Nullable error) {
+        if(error){
+            NSLog(@"Test timed out! - %@", error);
+        }
+    }];
+}
+
+- (void)testBannerAdLoadWithMultipleAdSizes{
+    validBannerAdRequestStub([self class]);
+    stubPrefetchReq([self class]);
+    
+    self.bannerAdViewExpectation = [self expectationWithDescription:@"Ad view loaded"];
+    
     MNetAdView *bannerAd = [[MNetAdView alloc] init];
-    [bannerAd setSize:MNET_BANNER_AD_SIZE];
+    [bannerAd setAdSizes:@[MNetAdSizeFromCGSize(kMNetBannerAdSize), MNetAdSizeFromCGSize(kMNetMediumAdSize)]];
+    [bannerAd setAdSizeDelegate:self];
     [bannerAd setAdUnitId:DEMO_MN_AD_UNIT_320x50];
     [bannerAd setRootViewController:[self getViewController]];
     [bannerAd setDelegate:self];
@@ -71,8 +92,8 @@
     
     self.bannerAdViewExpectation = [self expectationWithDescription:@"Ad view loaded"];
     
-    MNetAdView *bannerAd = [[MNetAdView alloc] init];
-    [bannerAd setSize:MNET_BANNER_AD_SIZE];
+    MNetAdView *bannerAd = [[MNetAdView alloc] initWithFrame:CGRectMake(0, 0, 320.0, 50.0)];
+    [bannerAd setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
     [bannerAd setAdUnitId:DEMO_MN_AD_UNIT_320x50];
     [bannerAd setRootViewController:[self getViewController]];
     [bannerAd setContextLink:contextLink];
@@ -98,5 +119,10 @@
     EXPECTATION_FULFILL(self.bannerAdViewExpectation);
     XCTAssertFalse([adView.adBaseObj isAdLoaded]);
     XCTAssertFalse([adView.adBaseObj isAdShown]);
+}
+
+- (void)mnetAdView:(MNetAdView *)adView didChangeSize:(MNetAdSize *)size{
+    CGSize adSize = MNetCGSizeFromAdSize(size);
+    [adView setFrame:CGRectMake(0.0, 0.0, adSize.width, adSize.height)];
 }
 @end

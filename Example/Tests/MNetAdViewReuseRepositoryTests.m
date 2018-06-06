@@ -19,7 +19,7 @@
 
 - (void)testRepositoryViewPush{
     MNetAdView *bannerAd = [[MNetAdView alloc] init];
-    [bannerAd setSize:MNET_BANNER_AD_SIZE];
+    [bannerAd setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
     [bannerAd setAdUnitId:DEMO_MN_AD_UNIT_320x50];
     [bannerAd setRootViewController:[self getViewController]];
     [[MNetAdViewReuseRepository getSharedInstance] cacheAdView:bannerAd withCreativeId:DEMO_MN_AD_UNIT_320x50];
@@ -30,7 +30,7 @@
 
 - (void)testRepositoryViewFetchFail{
     MNetAdView *bannerAd = [[MNetAdView alloc] init];
-    [bannerAd setSize:MNET_BANNER_AD_SIZE];
+    [bannerAd setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
     [bannerAd setAdUnitId:DEMO_MN_AD_UNIT_320x50];
     [bannerAd setRootViewController:[self getViewController]];
     [[MNetAdViewReuseRepository getSharedInstance] cacheAdView:bannerAd withCreativeId:DEMO_MN_AD_UNIT_320x50];
@@ -41,25 +41,25 @@
 
 - (void)testRepositoryMultipleViewsPush{
     MNetAdView *bannerAd = [[MNetAdView alloc] init];
-    [bannerAd setSize:MNET_BANNER_AD_SIZE];
+    [bannerAd setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
     [bannerAd setAdUnitId:DEMO_MN_AD_UNIT_320x50];
     [bannerAd setRootViewController:[self getViewController]];
     [[MNetAdViewReuseRepository getSharedInstance] cacheAdView:bannerAd withCreativeId:DEMO_MN_AD_UNIT_320x50];
     
     MNetAdView *dummyAd = [[MNetAdView alloc] init];
-    [bannerAd setSize:MNET_BANNER_AD_SIZE];
+    [bannerAd setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
     [bannerAd setAdUnitId:DEMO_MN_AD_UNIT_320x50];
     [bannerAd setRootViewController:[self getViewController]];
     [[MNetAdViewReuseRepository getSharedInstance] cacheAdView:dummyAd withCreativeId:DEMO_MN_AD_UNIT_320x50];
     
     MNetAdView *dummyBannerAd = [[MNetAdView alloc] init];
-    [bannerAd setSize:MNET_BANNER_AD_SIZE];
+    [bannerAd setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
     [bannerAd setAdUnitId:DEMO_MN_AD_UNIT_320x50];
     [bannerAd setRootViewController:[self getViewController]];
     [[MNetAdViewReuseRepository getSharedInstance] cacheAdView:dummyBannerAd withCreativeId:DEMO_MN_AD_UNIT_320x50];
     
     MNetAdView *dummyBannerView = [[MNetAdView alloc] init];
-    [bannerAd setSize:MNET_BANNER_AD_SIZE];
+    [bannerAd setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
     [bannerAd setAdUnitId:DEMO_MN_AD_UNIT_320x50];
     [bannerAd setRootViewController:[self getViewController]];
     [[MNetAdViewReuseRepository getSharedInstance] cacheAdView:dummyBannerView withCreativeId:DEMO_MN_AD_UNIT_320x50];

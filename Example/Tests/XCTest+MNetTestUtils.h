@@ -13,10 +13,12 @@
 #define FILENAME_BANNER_300x250         @"adResponseBanner300x250"
 #define FILENAME_VIDEO_320x250          @"adResponseVideo320x250"
 #define FILENAME_REWARDED_VIDEO         @"rewardedResponseVideo320x250"
+#define FILENAME_INVALID_REWARDED_VIDEO @"invalidRewardedResponseVideo320x250"
 #define INVALID_FILENAME_VIDEO          @"noAdResponse"
 #define FILENAME_ADX_BANNER             @"MNetAdxResponse"
 #define FILENAME_CONFIG_FILE            @"MNetSdkConfigResponse"
 #define FILENAME_SAMPLE_REQUEST         @"MNetSampleRequest"
+#define FILENAME_BANNER_INVALID_SIZE    @"adResponseWithInvalidSize"
 
 @interface XCTest (MNetTestUtils)
 
@@ -30,9 +32,11 @@ void noAdsStubPrefetchReq(Class className);
 void validVideoAdRequestStub(Class classFile);
 void invalidVideoAdRequestStub(Class classFile);
 void validRewardedVideoAdRequestStub(Class classFile);
+void invalidRewardedVideoAdRequestStub(Class classFile);
 void validAdxAdRequestStub(Class classFile);
 void dummyStubConfigRequest(Class classFile);
 void stubPrefetchReq(Class className);
+void invalidBannerAdSizeRequestStub(Class className);
 NSString* readFile(Class classFile, NSString *resourceName, NSString *resourceType);
 
 void updateSdkInfo(Class className);

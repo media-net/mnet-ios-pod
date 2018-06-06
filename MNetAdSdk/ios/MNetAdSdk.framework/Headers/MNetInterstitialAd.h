@@ -6,9 +6,11 @@
 //
 //
 
+#import <CoreLocation/CoreLocation.h>
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-#import "MNetAdView.h"
+#import "MNetError.h"
 
 @protocol MNetInterstitialVideoAdDelegate;
 @protocol MNetInterstitialAdDelegate;
@@ -29,17 +31,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// Optional keywords to be sent in the ad request
 @property (atomic, nullable) NSString *keywords;
 
-/// The ad request object
-@property (atomic, nullable) MNetAdRequest *adRequest;
-
 /// Initialise the interstitial ad with the adunit Id
 - (id)initWithAdUnitId:(NSString *)adUnitId;
 
 /// Load the interstitial ad
 - (void)loadAd;
-
-/// Load the intersitital ad with the ad request
-- (void)loadAdForRequest:(MNetAdRequest *)request;
 
 /// Context link for contextual ads. Optional for developers to set.
 - (void)setContextLink:(NSString *)contextLink;

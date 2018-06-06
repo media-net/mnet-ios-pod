@@ -15,6 +15,7 @@
     [[LSNocilla sharedInstance] start];
     
     [[MNet getInstance] setAppContainsChildDirectedContent:NO];
+    [[MNet getInstance] setCustomerId:@"test-customer-id"];
     [MNetAdLoaderPredictBids disablePostAdLoadPrefetch];
     customSetupWithClass([self class]);
 }

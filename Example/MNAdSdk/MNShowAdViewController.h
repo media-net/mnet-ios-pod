@@ -20,7 +20,8 @@
 @interface MNShowAdViewController
     : UIViewController <MPAdViewDelegate, MPInterstitialAdControllerDelegate, MNetAdViewDelegate, GADBannerViewDelegate,
                         GADInterstitialDelegate, MNetVideoDelegate, MNetInterstitialAdDelegate,
-                        MNetInterstitialVideoAdDelegate, MNetRewardedVideoDelegate, GADRewardBasedVideoAdDelegate>
+                        MNetInterstitialVideoAdDelegate, MNetRewardedVideoDelegate, GADRewardBasedVideoAdDelegate,
+                        MNetAdViewSizeDelegate, GADAdSizeDelegate>
 
 typedef enum {
     BNR,

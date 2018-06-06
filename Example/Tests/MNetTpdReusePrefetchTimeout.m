@@ -38,7 +38,7 @@
     
     MNetAdRequest *adRequest = [MNetAdRequest newRequest];
     adRequest.adUnitId = self.adUnitId;
-    [adRequest setWidth:320 andHeight:50];
+    [adRequest setAdSizes:@[MNetAdSizeFromCGSize(CGSizeMake(320, 50))]];
     [adRequest setIsInterstitial:NO];
     
     [MNetAdPreLoader prefetchWith:adRequest
@@ -54,7 +54,7 @@
                                   MNetAdView *adView = (MNetAdView *)[[MNetAdViewStore getsharedInstance] popViewForKey:cacheKey];
                                   XCTAssert(adView == nil);
                                   
-                                  NSArray<MNetBidResponse *> *bidResponsesList = [self.bidStore fetchForAdUnitId:self.adUnitId];
+                                  NSArray<MNetBidResponse *> *bidResponsesList = [self.bidStore fetchForAdUnitId:self.adUnitId withAdSizes:nil andReqUrl:nil];
                                   XCTAssert(bidResponsesList != nil, @"Bidresponses cannot be nil");
                                   XCTAssert([bidResponsesList count] == 2, @"Bidresponses list cannot be empty");
                                   EXPECTATION_FULFILL(self.expectation);

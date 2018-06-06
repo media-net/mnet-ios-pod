@@ -29,16 +29,19 @@
 }
 
 - (void)testGetLoader {
-    id loaderObj = [self.adLoaderMgr getLoaderForAdUnitId:self.adUnitId andOptions:nil];
+    id loaderObj = [self.adLoaderMgr getLoaderForAdUnitId:self.adUnitId
+                                               andOptions:nil];
     
     // Testing forced predictBids
     MNetAdLoaderOptions *optionsPredictBids = [MNetAdLoaderOptions getDefaultOptions];
     
-    loaderObj = [self.adLoaderMgr getLoaderForAdUnitId:self.adUnitId andOptions:optionsPredictBids];
+    loaderObj = [self.adLoaderMgr getLoaderForAdUnitId:self.adUnitId
+                                            andOptions:optionsPredictBids];
     XCTAssert([loaderObj isKindOfClass:[MNetAdLoaderPredictBids class]]);
     
     optionsPredictBids.forceAdLoader = MNetAdLoaderTypePrefetchPredictBids;
-    loaderObj = [self.adLoaderMgr getLoaderForAdUnitId:self.adUnitId andOptions:optionsPredictBids];
+    loaderObj = [self.adLoaderMgr getLoaderForAdUnitId:self.adUnitId
+                                            andOptions:optionsPredictBids];
     XCTAssert([loaderObj isKindOfClass:[MNetAdLoaderPrefetchPredictBids class]]);
     optionsPredictBids.forceAdLoader = MNetAdLoaderTypeNone;
     
@@ -50,13 +53,15 @@
     
     BOOL insertStatus = [self.bidStore insert:bidResponse];
     XCTAssert(insertStatus);
-    loaderObj = [self.adLoaderMgr getLoaderForAdUnitId:self.adUnitId andOptions:nil];
+    loaderObj = [self.adLoaderMgr getLoaderForAdUnitId:self.adUnitId
+                                            andOptions:nil];
     XCTAssert([loaderObj isKindOfClass:[MNetAdLoaderPredictBids class]]);
     
     // Testing the predict bids after pushing to bid-store with force option
     insertStatus = [self.bidStore insert:bidResponse];
     XCTAssert(insertStatus);
-    loaderObj = [self.adLoaderMgr getLoaderForAdUnitId:self.adUnitId andOptions:optionsPredictBids];
+    loaderObj = [self.adLoaderMgr getLoaderForAdUnitId:self.adUnitId
+                                            andOptions:optionsPredictBids];
     XCTAssert([loaderObj isKindOfClass:[MNetAdLoaderPredictBids class]]);
 }
 
@@ -107,7 +112,8 @@
     XCTAssert(insertStatus);
     
     // Fetching the predict-bids ad-loader
-    id<MNetAdLoaderProtocol> adLoader = [[MNetAdLoader getSharedInstance] getLoaderForAdUnitId:self.adUnitId andOptions:nil];
+    id<MNetAdLoaderProtocol> adLoader = [[MNetAdLoader getSharedInstance] getLoaderForAdUnitId:self.adUnitId
+                                                                                    andOptions:nil];
     XCTAssert([adLoader isKindOfClass:[MNetAdLoaderPredictBids class]]);
     MNetAdLoaderPredictBids *adLoaderPredictBids = (MNetAdLoaderPredictBids *)adLoader;
     

@@ -29,7 +29,7 @@
     NSString *adUnitId = DEMO_MN_AD_UNIT_320x50;
     
     MNetAdRequest *request = [[MNetAdRequest alloc] init];
-    [request setWidth:MNET_BANNER_AD_SIZE.width andHeight:MNET_BANNER_AD_SIZE.width];
+    [request setAdSizes:@[MNetAdSizeFromCGSize(kMNetBannerAdSize)]];
     [request setAdUnitId:adUnitId];
     [request setRootViewController:[self getViewController]];
     
@@ -72,7 +72,7 @@
     NSString *adUnitId = @"sample_ad_unit_id1";
     
     MNetAdRequest *request = [[MNetAdRequest alloc] init];
-    [request setWidth:MNET_BANNER_AD_SIZE.width andHeight:MNET_BANNER_AD_SIZE.width];
+    [request setAdSizes:@[MNetAdSizeFromCGSize(kMNetBannerAdSize)]];
     [request setAdUnitId:adUnitId];
     [request setRootViewController:[self getViewController]];
     

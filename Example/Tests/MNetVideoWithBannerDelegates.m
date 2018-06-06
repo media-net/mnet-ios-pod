@@ -29,7 +29,7 @@
     self.videoWithBannerDelegatesExpectation = [self expectationWithDescription:@"video view loaded"];
     
     MNetAdView *adView = [[MNetAdView alloc] init];
-    [adView setSize:MNET_BANNER_AD_SIZE];
+    [adView setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
     [adView setAdUnitId:@"216427370"];
     [adView setRootViewController:[self getViewController]];
     [adView setDelegate:self];

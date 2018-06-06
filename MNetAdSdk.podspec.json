@@ -36,8 +36,8 @@
     }, 
     "source": {
         "git": "https://github.com/media-net/mnet-ios-pod.git", 
-        "tag": "v1.12.7"
+        "tag": "v1.13.0"
     }, 
     "summary": "iOS Ad SDK by Media.NET", 
-    "version": "1.12.7"
+    "version": "1.13.0"
 }

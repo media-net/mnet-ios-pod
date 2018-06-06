@@ -29,13 +29,13 @@ static NSString *DUMMY_CONTEXT_LINK = @"context-link";
     [[MNet getInstance] setAppContainsChildDirectedContent:isChildDirected];
     
     BOOL isInterstitial = NO;
-    CGSize dummySize = MNET_BANNER_AD_SIZE;
+    CGSize dummySize = kMNetBannerAdSize;
     
     // Create a bid-request
     MNetAdRequest *request = [MNetAdRequest newRequest];
     [request setAdUnitId:DUMMY_AD_UNIT_ID];
     [request setIsInterstitial:isInterstitial];
-    [request setWidth:dummySize.width andHeight:dummySize.height];
+    [request setAdSizes:@[MNetAdSizeFromCGSize(dummySize)]];
     [request setContextLink:DUMMY_CONTEXT_LINK];
     [request setRootViewController:[self getViewController]];
     
@@ -48,12 +48,13 @@ static NSString *DUMMY_CONTEXT_LINK = @"context-link";
     NSLog(@"The parsed object is - ");
     
     MNetDeviceInfo *deviceInfo = [bidRequest deviceInfo];
+    // Force doNotTrackForEurope flag to be same as isChildDirected flag
+    [deviceInfo setDoNotTrackForEurope:isChildDirected];
+    
     // Nil value keys -
     NSArray *nilValKeys = @[
-                            @"ipv4Address",
                             @"deviceLang",
                             @"mac",
-                            @"userAgent",
                             @"carrier"
                             ];
     for(NSString *nilValKey in nilValKeys){
