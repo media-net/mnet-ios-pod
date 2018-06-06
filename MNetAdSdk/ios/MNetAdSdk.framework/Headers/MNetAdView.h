@@ -10,11 +10,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "MNetAdRequest.h"
+#import "MNetAdSizeConstants.h"
 #import "MNetError.h"
 
 @protocol MNetAdViewDelegate;
 @protocol MNetVideoDelegate;
+@protocol MNetAdViewSizeDelegate;
 
 /// The view for loading banner and video ads.
 @interface MNetAdView : UIView
@@ -27,10 +28,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// The video ads delegate for callbacks from video ads
 @property (atomic, weak) id<MNetVideoDelegate> videoDelegate;
 
+@property (nonatomic) id<MNetAdViewSizeDelegate> adSizeDelegate;
+
 /// The size the of the ad. This does not reflect the size of the frame,
 /// within which the MNetAdView resides, but simply the size of the ad to
 /// be displayed
-@property (atomic) CGSize size;
+@property (atomic) MNetAdSize *adSize;
 
 @property (atomic, nullable) MNetError *error;
 
@@ -40,19 +43,15 @@ NS_ASSUME_NONNULL_BEGIN
 /// Optional keywords to be sent in the ad request
 @property (atomic, nullable) NSString *keywords;
 
-/// The ad request object
-@property (atomic) MNetAdRequest *adRequest;
-
 /// The view controller on which the MNetAdView is displayed.
 /// The primary purpose of this is when the adView is clicked
 /// (called a click-through), a clickthrough-webview is displayed,
 /// which is presented on top of this viewController.
 @property (weak, atomic) UIViewController *_Nullable rootViewController;
 
-// All init methods
+@property (nonatomic) NSArray<MNetAdSize *> *adSizes;
 
-/// Initialise instance with the MNetAdRequest
-+ (id)initWithMNetAdRequest:(MNetAdRequest *)request;
+// All init methods
 
 /// Initialise instance with the adunit Id
 + (id)initWithAdUnitId:(NSString *)adUnitId;
@@ -62,15 +61,18 @@ NS_ASSUME_NONNULL_BEGIN
 /// Load the ad.
 - (void)loadAd;
 
-/// Load the ad for the ad request
-- (void)loadAdForRequest:(MNetAdRequest *)request;
-
 /// Context link for contextual ads. Optional for developers to set.
 - (void)setContextLink:(NSString *)contextLink;
 
 /// Add location for the ad, as additional context for the ad to be displayed.
 - (void)setCustomLocation:(CLLocation *)customLocationArg;
 - (CLLocation *_Nullable)getCustomLocation;
+
+@end
+
+// Protocol for ad size change
+@protocol MNetAdViewSizeDelegate <NSObject>
+- (void)mnetAdView:(MNetAdView *)adView didChangeSize:(MNetAdSize *)size;
 @end
 
 @protocol MNetBaseAdViewDelegate <NSObject>

@@ -88,13 +88,13 @@
                                                       withCb:^(NSError * _Nullable prefetchErr)
      {
          XCTAssert(prefetchErr == nil);
-         NSArray<MNetBidResponse *> *bidResponsesList = [bidStore fetchForAdUnitId:testAdUnitId1];
+         NSArray<MNetBidResponse *> *bidResponsesList = [bidStore fetchForAdUnitId:testAdUnitId1 withAdSizes:nil andReqUrl:nil];
          XCTAssert(bidResponsesList != nil);
          // NOTE: Only one will be fetched since the other will've expired
          XCTAssert([bidResponsesList count] == 1);
          
          bidResponsesList = nil;
-         bidResponsesList = [bidStore fetchForAdUnitId:testAdUnitId2];
+         bidResponsesList = [bidStore fetchForAdUnitId:testAdUnitId2 withAdSizes:nil andReqUrl:nil];
          XCTAssert(bidResponsesList != nil);
          // NOTE: Only one will be fetched since the other will've expired
          XCTAssert([bidResponsesList count] == 1);

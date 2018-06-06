@@ -7,7 +7,6 @@
 //
 
 #import <MNetAdSdk/MNet.h>
-#import <MNetAdSdk/MNetAdRequest.h>
 #import <MNetAdSdk/MNetAdSizeConstants.h>
 #import <MNetAdSdk/MNetError.h>
 #import <MNetAdSdk/MNetHeaderBidder.h>
@@ -229,38 +228,41 @@ static NSArray<NSString *> *testDevicesList;
 
     switch ([self adType]) {
     case BNR: {
-        MNetAdRequest *request = [MNetAdRequest newRequest];
-        [request setKeywords:@"lion, king, disney"];
-
         MNetAdView *mnetAdView = [[MNetAdView alloc] init];
         [mnetAdView setAdUnitId:DEMO_MN_AD_UNIT_320x50];
         [mnetAdView setDelegate:self];
-        [mnetAdView setSize:MNET_BANNER_AD_SIZE];
+        [mnetAdView setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
         [mnetAdView setRootViewController:self];
+        [mnetAdView setAdSizeDelegate:self];
+        [mnetAdView setKeywords:@"lion, king, disney"];
+        [mnetAdView setAdSizes:[NSArray arrayWithObjects:MNetAdSizeFromCGSize(kMNetBannerAdSize),
+                                                         MNetAdSizeFromCGSize(kMNetMediumAdSize), nil]];
+
         // Initializing with lat-long
         CLLocation *customLocation = [[CLLocation alloc] initWithLatitude:LATITUDE longitude:LONGITUDE];
         [mnetAdView setCustomLocation:customLocation];
         [_adView addSubview:mnetAdView];
-        [self applyAdViewContraints:mnetAdView height:mnetAdView.size.height width:mnetAdView.size.width];
-        [mnetAdView loadAdForRequest:request];
+
+        [mnetAdView loadAd];
         break;
     }
 
     case BNR_VIDEO: {
-        MNetAdRequest *request = [MNetAdRequest newRequest];
-        [request setKeywords:@"coconut, peanut, cashewnut"];
-
         MNetAdView *mnetAdView = [[MNetAdView alloc] init];
         [mnetAdView setAdUnitId:DEMO_MN_AD_UNIT_300x250_VIDEO];
-        [mnetAdView setSize:MNET_MEDIUM_AD_SIZE];
+        [mnetAdView setAdSize:MNetAdSizeFromCGSize(kMNetMediumAdSize)];
+        [mnetAdView setAdSizes:[NSArray arrayWithObjects:MNetAdSizeFromCGSize(kMNetBannerAdSize),
+                                                         MNetAdSizeFromCGSize(kMNetMediumAdSize), nil]];
+        [mnetAdView setKeywords:@"coconut, peanut, cashewnut"];
         [mnetAdView setRootViewController:self];
         [mnetAdView setVideoDelegate:self];
+        [mnetAdView setAdSizeDelegate:self];
 
         CLLocation *customLocation = [[CLLocation alloc] initWithLatitude:LATITUDE longitude:LONGITUDE];
         [mnetAdView setCustomLocation:customLocation];
         [_adView addSubview:mnetAdView];
-        [self applyAdViewContraints:mnetAdView height:mnetAdView.size.height width:mnetAdView.size.width];
-        [mnetAdView loadAdForRequest:request];
+
+        [mnetAdView loadAd];
         break;
     }
 
@@ -281,6 +283,7 @@ static NSArray<NSString *> *testDevicesList;
         CLLocation *customLocation = [[CLLocation alloc] initWithLatitude:LATITUDE longitude:LONGITUDE];
 
         interstitialAd = [[MNetInterstitialAd alloc] initWithAdUnitId:DEMO_MN_AD_UNIT_300x250_VIDEO];
+        [interstitialAd setInterstitialDelegate:self];
         [interstitialAd setInterstitialVideoDelegate:self];
         [interstitialAd setKeywords:@"oranges, potato, almonds"];
         [interstitialAd setCustomLocation:customLocation];
@@ -312,43 +315,47 @@ static NSArray<NSString *> *testDevicesList;
         [self addLoaderToScreen];
 
         NSLog(@"creating banner ad view for dfp");
-        dfpBannerView = [[DFPBannerView alloc]
-            initWithAdSize:GADAdSizeFromCGSize(CGSizeMake(GAD_SIZE_320x50.width, GAD_SIZE_320x50.height))];
+        CGSize adSize = GAD_SIZE_320x50;
+        dfpBannerView = [[DFPBannerView alloc] initWithAdSize:GADAdSizeFromCGSize(adSize)];
         [[self adView] addSubview:dfpBannerView];
-        [self applyAdViewContraints:dfpBannerView height:GAD_SIZE_320x50.height width:GAD_SIZE_320x50.width];
         [dfpBannerView setAdUnitID:DEMO_DFP_AD_UNIT_ID];
         [dfpBannerView setRootViewController:self];
+        [dfpBannerView setValidAdSizes:@[
+            NSValueFromGADAdSize(kGADAdSizeBanner),
+            NSValueFromGADAdSize(kGADAdSizeMediumRectangle),
+        ]];
+        [dfpBannerView setAdSizeDelegate:self];
         [dfpBannerView setDelegate:self];
+        [self applyAdViewContraints:dfpBannerView height:adSize.height width:adSize.width];
 
         DFPRequest *request = [DFPRequest request];
         [request setCustomTargeting:@{ @"pos" : @"b" }];
         [request setTestDevices:testDevicesList];
-        [request setKeywords:@[ @"sports", @"scores", @"content_link:https://my-custom-link.com/keywords" ]];
+        [request setKeywords:@[ @"sports", @"scores", @"content_link:https://my-custom-link.com.imnapp/keywords" ]];
         [request setGender:kGADGenderMale];
         [request setBirthday:[NSDate dateWithTimeIntervalSince1970:0]];
         [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
-        [request setContentURL:@"https://my-custom-link.com/contentURL"];
-
+        [request setContentURL:@"https://my-custom-link.com.imnapp/contentURL"];
         /*
-        [request setContentURL:@"https://my-custom-link.com/contentURL"];
+         [request setContentURL:@"https://my-custom-link.com/contentURL"];
 
-        // These are additional keywords that can be picked up HB
-        [request setKeywords:@[@"sports", @"scores", @"content_link:https://my-custom-link.com/keywords"]];
-        [request setGender:kGADGenderMale];
-        [request setBirthday:[NSDate dateWithTimeIntervalSince1970:0]];
-        [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
+         // These are additional keywords that can be picked up HB
+         [request setKeywords:@[@"sports", @"scores", @"content_link:https://my-custom-link.com/keywords"]];
+         [request setGender:kGADGenderMale];
+         [request setBirthday:[NSDate dateWithTimeIntervalSince1970:0]];
+         [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
 
-        GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
-        NSString *label = DFP_CUSTOM_EVENT_LABEL;
-        [customEventExtras setExtras:@{
-                                       @"author":       @"hawking",
-                                       @"shape":        @"saddle",
-                                       @"element":      @"universe",
-                                       @"content_link": @"https://my-custom-link.com/additional_params",
-                                       }
-                            forLabel:label];
-        NSLog(@"%@", [customEventExtras extrasForLabel:label]);
-        [request registerAdNetworkExtras:customEventExtras];
+         GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
+         NSString *label = DFP_CUSTOM_EVENT_LABEL;
+         [customEventExtras setExtras:@{
+         @"author":       @"hawking",
+         @"shape":        @"saddle",
+         @"element":      @"universe",
+         @"content_link": @"https://my-custom-link.com/additional_params",
+         }
+         forLabel:label];
+         NSLog(@"%@", [customEventExtras extrasForLabel:label]);
+         [request registerAdNetworkExtras:customEventExtras];
          */
 
         [dfpBannerView loadRequest:request];
@@ -449,18 +456,18 @@ static NSArray<NSString *> *testDevicesList;
         [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
 
         /*
-        [request setKeywords:@[@"sports", @"scores", @"content_link:https://my-custom-link.com/keywords"]];
-        GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
-        NSString *label = DFP_CUSTOM_EVENT_LABEL;
-        [customEventExtras setExtras:@{
-                                       @"author":       @"hawking",
-                                       @"shape":        @"saddle",
-                                       @"element":      @"universe",
-                                       @"content_link": @"https://my-custom-link.com/additional_params",
-                                   }
-                            forLabel:DFP_CUSTOM_EVENT_LABEL];
-        NSLog(@"%@", [customEventExtras extrasForLabel:DFP_CUSTOM_EVENT_LABEL]);
-        [request registerAdNetworkExtras:customEventExtras];
+         [request setKeywords:@[@"sports", @"scores", @"content_link:https://my-custom-link.com/keywords"]];
+         GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
+         NSString *label = DFP_CUSTOM_EVENT_LABEL;
+         [customEventExtras setExtras:@{
+         @"author":       @"hawking",
+         @"shape":        @"saddle",
+         @"element":      @"universe",
+         @"content_link": @"https://my-custom-link.com/additional_params",
+         }
+         forLabel:DFP_CUSTOM_EVENT_LABEL];
+         NSLog(@"%@", [customEventExtras extrasForLabel:DFP_CUSTOM_EVENT_LABEL]);
+         [request registerAdNetworkExtras:customEventExtras];
          */
 
         [dfpBannerView loadRequest:request];
@@ -504,18 +511,18 @@ static NSArray<NSString *> *testDevicesList;
         [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
 
         /*
-        [request setKeywords:@[@"sports", @"scores", @"content_link:https://my-custom-link.com/keywords"]];
-        GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
-        NSString *label = AD_MOB_CUSTOM_EVENT_LABEL;
-        [customEventExtras setExtras:@{
-                                       @"author":       @"hawking",
-                                       @"shape":        @"saddle",
-                                       @"element":      @"universe",
-                                       @"content_link": @"https://my-custom-link.com/additional_params",
-                                       }
-                            forLabel:label];
-        NSLog(@"%@", [customEventExtras extrasForLabel:label]);
-        [request registerAdNetworkExtras:customEventExtras];
+         [request setKeywords:@[@"sports", @"scores", @"content_link:https://my-custom-link.com/keywords"]];
+         GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
+         NSString *label = AD_MOB_CUSTOM_EVENT_LABEL;
+         [customEventExtras setExtras:@{
+         @"author":       @"hawking",
+         @"shape":        @"saddle",
+         @"element":      @"universe",
+         @"content_link": @"https://my-custom-link.com/additional_params",
+         }
+         forLabel:label];
+         NSLog(@"%@", [customEventExtras extrasForLabel:label]);
+         [request registerAdNetworkExtras:customEventExtras];
          */
 
         [gadBannerView loadRequest:request];
@@ -535,18 +542,18 @@ static NSArray<NSString *> *testDevicesList;
         [request setBirthday:[NSDate dateWithTimeIntervalSince1970:3]];
         [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
         /*
-        [request setKeywords:@[@"sports", @"scores",
-        @"content_link:https://dfp-intersitial-my-custom-link.com/keywords"]]; NSString *label = DFP_CUSTOM_EVENT_LABEL;
-        GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
-        [customEventExtras setExtras:@{
-                                       @"author":       @"hawking",
-                                       @"shape":        @"saddle",
-                                       @"element":      @"universe",
-                                       @"content_link": @"https://dfp-intersitial-my-custom-link.com/additional_params",
-                                       }
-                            forLabel:label];
-        NSLog(@"%@", [customEventExtras extrasForLabel:label]);
-        [request registerAdNetworkExtras:customEventExtras];
+         [request setKeywords:@[@"sports", @"scores",
+         @"content_link:https://dfp-intersitial-my-custom-link.com/keywords"]]; NSString *label =
+         DFP_CUSTOM_EVENT_LABEL; GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
+         [customEventExtras setExtras:@{
+         @"author":       @"hawking",
+         @"shape":        @"saddle",
+         @"element":      @"universe",
+         @"content_link": @"https://dfp-intersitial-my-custom-link.com/additional_params",
+         }
+         forLabel:label];
+         NSLog(@"%@", [customEventExtras extrasForLabel:label]);
+         [request registerAdNetworkExtras:customEventExtras];
          */
 
         [dfpInterstitialAd setDelegate:self];
@@ -574,21 +581,20 @@ static NSArray<NSString *> *testDevicesList;
         [request setBirthday:[NSDate dateWithTimeIntervalSince1970:4]];
         [request setLocationWithLatitude:LATITUDE longitude:LONGITUDE accuracy:5];
         /*
-        [request setKeywords:@[@"sports", @"scores",
-        @"content_link:https://admob-intersitial-my-custom-link.com/keywords"]];
+         [request setKeywords:@[@"sports", @"scores",
+         @"content_link:https://admob-intersitial-my-custom-link.com/keywords"]];
 
-        NSString *label = AD_MOB_CUSTOM_EVENT_LABEL;
-        GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
-        [customEventExtras setExtras:@{
-                                       @"author":       @"hawking",
-                                       @"shape":        @"saddle",
-                                       @"element":      @"universe",
-                                       @"content_link":
-        @"https://admob-intersitial-my-custom-link.com/additional_params",
-                                       }
-                            forLabel:label];
-        NSLog(@"%@", [customEventExtras extrasForLabel:label]);
-        [request registerAdNetworkExtras:customEventExtras];
+         NSString *label = AD_MOB_CUSTOM_EVENT_LABEL;
+         GADCustomEventExtras *customEventExtras = [[GADCustomEventExtras alloc] init];
+         [customEventExtras setExtras:@{
+         @"author":       @"hawking",
+         @"shape":        @"saddle",
+         @"element":      @"universe",
+         @"content_link": @"https://admob-intersitial-my-custom-link.com/additional_params",
+         }
+         forLabel:label];
+         NSLog(@"%@", [customEventExtras extrasForLabel:label]);
+         [request registerAdNetworkExtras:customEventExtras];
          */
 
         [gadInterstitialAd loadRequest:request];
@@ -647,25 +653,23 @@ static NSArray<NSString *> *testDevicesList;
     }
 
     case MRAID_BANNER: {
-        MNetAdRequest *request = [MNetAdRequest newRequest];
-        [request setKeywords:@"lion, king, disney"];
-
         MNetAdView *mnetAdView = [[MNetAdView alloc] init];
         [mnetAdView setAdUnitId:DEMO_MRAID_AD_UNIT_320x50];
         [mnetAdView setDelegate:self];
-        [mnetAdView setSize:MNET_MEDIUM_AD_SIZE];
+        [mnetAdView setAdSize:MNetAdSizeFromCGSize(kMNetMediumAdSize)];
+        [mnetAdView setKeywords:@"lion, king, disney"];
+        [mnetAdView setAdSizes:[NSArray arrayWithObjects:MNetAdSizeFromCGSize(kMNetBannerAdSize),
+                                                         MNetAdSizeFromCGSize(kMNetMediumAdSize), nil]];
         [mnetAdView setRootViewController:self];
-
+        [mnetAdView setAdSizeDelegate:self];
         // Initializing with lat-long
         CLLocation *customLocation = [[CLLocation alloc] initWithLatitude:LATITUDE longitude:LONGITUDE];
         [mnetAdView setCustomLocation:customLocation];
 
         [_adView addSubview:mnetAdView];
-        [self applyAdViewContraints:mnetAdView height:mnetAdView.size.height width:mnetAdView.size.width];
-        [mnetAdView loadAdForRequest:request];
+        [mnetAdView loadAd];
         break;
     }
-
     case MRAID_INTERSTITIAL: {
         [self addLoaderToScreen];
         CLLocation *customLocation = [[CLLocation alloc] initWithLatitude:LATITUDE longitude:LONGITUDE];
@@ -690,7 +694,6 @@ static NSArray<NSString *> *testDevicesList;
         [dfpBannerView setDelegate:nil];
 
         DFPRequest *request = [DFPRequest request];
-        [request setCustomTargeting:@{ @"pos" : @"b" }];
         [request setTestDevices:testDevicesList];
         [dfpBannerView loadRequest:request];
 
@@ -902,6 +905,13 @@ static const NSUInteger maxUnitsWhileLoading = 80;
     }
 
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
+
+#pragma mark - MNetAdViewSizeDelegate
+- (void)mnetAdView:(MNetAdView *)adView didChangeSize:(MNetAdSize *)size {
+    CGSize adViewSize = MNetCGSizeFromAdSize(size);
+    [adView setFrame:CGRectMake(0, 0, adViewSize.width, adViewSize.height)];
+    [self applyAdViewContraints:adView height:adViewSize.height width:adViewSize.width];
 }
 
 #pragma mark - MNetAdView
@@ -1214,6 +1224,12 @@ static const NSUInteger maxUnitsWhileLoading = 80;
     [self btnStateEnabled:NO forBtn:self.showAd];
     [self hideLoaderFromScreen];
 }
+
+- (void)adView:(GADBannerView *)bannerView willChangeAdSizeTo:(GADAdSize)size {
+    NSLog(@"AdSize changed!");
+    [self applyAdViewContraints:dfpBannerView height:size.size.height width:size.size.width];
+}
+
 #pragma mark - Error
 - (void)dealloc {
     NSLog(@"DEALLOC: MNShowAdViewController");

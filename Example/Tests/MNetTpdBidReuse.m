@@ -29,9 +29,9 @@
     validBannerAdRequestStub([self class]);
     
     self.expectation = [self expectationWithDescription:@"Dedicated slots for tpd reuse"];
-    
-    MNetAdView *adView = [MNetAdView initWithAdUnitId:self.adUnitId];
-    [adView setSize:kMNetBannerAdSize];
+    MNetAdView *adView = [[MNetAdView alloc] initWithFrame:CGRectMake(0, 0, 320.0, 50.0)];
+    [adView setAdUnitId:self.adUnitId];
+    [adView setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
     [adView setDelegate:self];
     [adView setRootViewController:[self getViewController]];
     [adView loadAd];
@@ -44,7 +44,7 @@
 }
 
 - (void)mnetAdDidLoad:(MNetAdView *)adView{
-    NSArray<MNetBidResponse *> *bidResponsesList = [self.bidStore fetchForAdUnitId:self.adUnitId];
+    NSArray<MNetBidResponse *> *bidResponsesList = [self.bidStore fetchForAdUnitId:self.adUnitId withAdSizes:nil andReqUrl:nil];
     XCTAssert(bidResponsesList != nil, @"Bidresponses cannot be nil");
     XCTAssert([bidResponsesList count] == 1, @"Bidresponses list cannot be empty");
     

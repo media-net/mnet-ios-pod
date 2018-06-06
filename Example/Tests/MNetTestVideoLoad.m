@@ -11,7 +11,7 @@
 #import "MNDemoConstants.h"
 #import "MNetTestManager.h"
 
-@interface MNetTestVideoLoad : MNetTestManager <MNetVideoDelegate, MNetAdViewDelegate>
+@interface MNetTestVideoLoad : MNetTestManager <MNetVideoDelegate, MNetAdViewDelegate, MNetAdViewSizeDelegate>
 @property (nonatomic) XCTestExpectation *videoAdViewExpectation;
 @end
 
@@ -34,7 +34,7 @@
     self.videoAdViewExpectation = [self expectationWithDescription:@"video view loaded"];
     
     MNetAdView *adView = [[MNetAdView alloc] init];
-    [adView setSize:MNET_BANNER_AD_SIZE];
+    [adView setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
     [adView setAdUnitId:DEMO_MN_AD_UNIT_320x50];
     [adView setRootViewController:[self getViewController]];
     [adView setVideoDelegate:self];
@@ -49,6 +49,28 @@
     
 }
 
+- (void)testVideoAdLoadWithMulitpleAdSizes{
+    validVideoAdRequestStub([self class]);
+    stubPrefetchReq([self class]);
+    
+    self.videoAdViewExpectation = [self expectationWithDescription:@"video view loaded"];
+    
+    MNetAdView *adView = [[MNetAdView alloc] init];
+    [adView setAdSizes:@[MNetAdSizeFromCGSize(kMNetBannerAdSize), MNetAdSizeFromCGSize(kMNetMediumAdSize)]];
+    [adView setAdSizeDelegate:self];
+    [adView setAdUnitId:DEMO_MN_AD_UNIT_320x50];
+    [adView setRootViewController:[self getViewController]];
+    [adView setVideoDelegate:self];
+    [adView setDelegate:self];
+    [adView loadAd];
+    
+    [self waitForExpectationsWithTimeout:30 handler:^(NSError * _Nullable error) {
+        if(error){
+            NSLog(@"Test timed out! - %@", error);
+        }
+    }];
+}
+
 - (void)mnetVideoDidLoad:(MNetAdView *)adView{
     EXPECTATION_FULFILL(self.videoAdViewExpectation);
 }
@@ -58,4 +80,8 @@
     EXPECTATION_FULFILL(self.videoAdViewExpectation);
 }
 
+- (void)mnetAdView:(MNetAdView *)adView didChangeSize:(MNetAdSize *)size{
+    CGSize adSize = MNetCGSizeFromAdSize(size);
+    [adView setFrame:CGRectMake(0.0, 0.0, adSize.width, adSize.height)];
+}
 @end

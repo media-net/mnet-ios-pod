@@ -45,11 +45,7 @@
     adRequest.rootViewController = [self getViewController];
     adRequest.contextLink = contextLink;
     adRequest.viewControllerTitle = VCTitle;
-    
-    MNetAdSize *adSize = [MNetAdSize new];
-    adSize.h = MNET_BANNER_AD_SIZE.height;
-    adSize.w = MNET_BANNER_AD_SIZE.width;
-    adRequest.size = adSize;
+    adRequest.adSizes = @[MNetAdSizeFromCGSize(kMNetBannerAdSize)];
     
     adRequest.adUnitId = adUnitId;
     adRequest.adCycleId = adCycleId;

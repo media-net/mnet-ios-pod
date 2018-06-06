@@ -37,7 +37,7 @@
     
     MNetAdRequest *adRequest = [MNetAdRequest newRequest];
     adRequest.adUnitId = self.adUnitId;
-    [adRequest setWidth:320 andHeight:50];
+    [adRequest setAdSizes:@[MNetAdSizeFromCGSize(CGSizeMake(320, 50))]];
     [adRequest setIsInterstitial:NO];
     
     [MNetAdPreLoader prefetchWith:adRequest
@@ -47,6 +47,7 @@
                   timeoutInMillis:nil
                           success:^(NSString * _Nonnull cacheKey, NSDictionary * _Nonnull params, NSString * _Nonnull adCycleId, BOOL areDefaultBids) {
                               self.adView = (MNetAdView *)[[MNetAdViewStore getsharedInstance] popViewForKey:cacheKey];
+                              [self.adView setFrame:CGRectMake(0, 0, 320.0, 50.0)];
                               XCTAssert(self.adView != nil);
                               
                               [self.adView setDelegate:self];
@@ -66,7 +67,7 @@
 }
 
 - (void)mnetAdDidLoad:(MNetAdView *)adView{
-    NSArray<MNetBidResponse *> *bidResponsesList = [self.bidStore fetchForAdUnitId:self.adUnitId];
+    NSArray<MNetBidResponse *> *bidResponsesList = [self.bidStore fetchForAdUnitId:self.adUnitId withAdSizes:nil andReqUrl:nil];
     XCTAssert(bidResponsesList != nil, @"Bidresponses cannot be nil");
     XCTAssert([bidResponsesList count] == 1, @"Bidresponses list cannot be empty");
     MNetBidResponse *bidResponse = [bidResponsesList objectAtIndex:0];

@@ -217,14 +217,48 @@
     
 }
 
-- (void)testADIDMacroReplacement{
+- (void)testADIDMacroReplacementWithGDPREnabled{
     MNetBidResponse *response = [self getTestBidResponse];
+    MNetDeviceInfo *deviceInfo = [MNetDeviceInfo getInstance];
+    [deviceInfo setDoNotTrackForEurope:YES];
+    
     NSArray<NSString *> *inputLogs = @[
                                        @"example.com/?advertId=${ADID}",
                                        @"example.com/?advertId_hash=${ADID_HASH}",
                                        @"example.com/?advertId=%24%7BADID%7D",
                                        ];
 
+    MNetMacroManager *macroManager = [MNetMacroManager getSharedInstance];
+    NSString *advertId = [[MNetAdIdManager getSharedInstance] getAdvertId];
+    NSString *advertIdHash = [[[MNetAdIdManager getSharedInstance] getAdvertId] MD5];
+    
+    NSArray<NSString *> *expectedResponse = @[
+                                              [NSString stringWithFormat:@"example.com/?advertId="],
+                                              [NSString stringWithFormat:@"example.com/?advertId_hash="],
+                                              [NSString stringWithFormat:@"example.com/?advertId="],
+                                              ];
+    
+    NSArray *modifiedLogs = [macroManager processMacrosForApLogsForBidders:inputLogs
+                                                              withResponse:response];
+    
+    for(int i=0; i< [expectedResponse count]; i++){
+        NSString *expectedStr = expectedResponse[i];
+        NSString *actualStr = modifiedLogs[i];
+        XCTAssert([expectedStr isEqualToString:actualStr], @"Expected = %@ | Got = %@", expectedStr, actualStr);
+    }
+}
+
+- (void)testADIDMacroReplacementWithoutGDPRDisabled{
+    MNetBidResponse *response = [self getTestBidResponse];
+    MNetDeviceInfo *deviceInfo = [MNetDeviceInfo getInstance];
+    [deviceInfo setDoNotTrackForEurope:NO];
+    
+    NSArray<NSString *> *inputLogs = @[
+                                       @"example.com/?advertId=${ADID}",
+                                       @"example.com/?advertId_hash=${ADID_HASH}",
+                                       @"example.com/?advertId=%24%7BADID%7D",
+                                       ];
+    
     MNetMacroManager *macroManager = [MNetMacroManager getSharedInstance];
     NSString *advertId = [[MNetAdIdManager getSharedInstance] getAdvertId];
     NSString *advertIdHash = [[[MNetAdIdManager getSharedInstance] getAdvertId] MD5];
