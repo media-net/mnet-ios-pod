@@ -8,9 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class MNetAdSize;
+
+/// Helper function to create MNetAdSize instance
+extern MNetAdSize *_Nullable MNetCreateAdSize(NSInteger width, NSInteger height);
+
 @interface MNetAdSize : NSObject
 
-@property (atomic) int h;
-@property (atomic) int w;
+/// Adsize height
+@property (atomic, nonnull) NSNumber *h;
+
+/// Adsize width
+@property (atomic, nonnull) NSNumber *w;
 
 @end

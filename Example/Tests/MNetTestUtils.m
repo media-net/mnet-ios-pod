@@ -73,7 +73,7 @@
 }
 
 - (void)testGetAdSizeString{
-    CGSize adSize = MNET_BANNER_AD_SIZE;
+    CGSize adSize = kMNetBannerAdSize;
     NSString *adSizeStr = [MNetUtil getAdSizeString:adSize];
     
     NSString *expectedStr = @"320x50";
@@ -215,4 +215,55 @@
     resourceURL = [MNetUtil getResourceURLForResourceName:resourceNameURL];
     XCTAssert([resourceNameURL isEqualToString:resourceURL]);
 }
+
+- (NSString *)dummyTest{
+    return @"dummy-test";
+}
+
+- (NSString *)dummyTestWithObj:(NSString *)test{
+    return [NSString stringWithFormat:@"dummy-%@", test];
+}
+
+- (void)testPerformSelector{
+    NSString *val = [MNetUtil customPerformSelector:@selector(dummyTest) forTarget:self];
+    NSString *expectedStr = @"dummy-test";
+    XCTAssert([val isEqualToString:expectedStr], @"Expected - %@, Got - %@", expectedStr, val);
+}
+
+- (void)testPerformSelectorArg{
+    NSString *val = [MNetUtil customPerformSelector:@selector(dummyTestWithObj:) forTarget:self withArg:@"test"];
+    NSString *expectedStr = @"dummy-test";
+    XCTAssert([val isEqualToString:expectedStr], @"Expected - %@, Got - %@", expectedStr, val);
+}
+
+- (void)testInvalidPerformSelector{
+    SEL invalidSel = NSSelectorFromString(@"dummyTestWithObj123:");
+    id val = [MNetUtil customPerformSelector:invalidSel forTarget:self withArg:@"test"];
+    XCTAssert(val == nil, @"Val is expected to be nil - %@", val);
+}
+
+- (void)testInvalidPerformSelectorArg{
+    SEL invalidSel = NSSelectorFromString(@"dummyTestWithObj123:");
+    id val = [MNetUtil customPerformSelector:invalidSel forTarget:self];
+    XCTAssert(val == nil, @"Val is expected to be nil - %@", val);
+}
+
+- (void)testHasVoidReturnValForTarget{
+    SEL selector = @selector(dummyTestWithObj:);
+    BOOL hasVoid = [MNetUtil hasVoidReturnValForTarget:self withSel:selector];
+    XCTAssert(hasVoid == NO, @"has-void should be false");
+}
+
+- (void)testInvalidVoidCase{
+    SEL selector = NSSelectorFromString(@"sample_test");
+    BOOL hasVoid = [MNetUtil hasVoidReturnValForTarget:self withSel:selector];
+    XCTAssert(hasVoid == NO, @"has-void should be true");
+}
+
+- (void)testInvalidVoidCaseTarget{
+    SEL selector = NSSelectorFromString(@"sample_test");
+    BOOL hasVoid = [MNetUtil hasVoidReturnValForTarget:nil withSel:selector];
+    XCTAssert(hasVoid == NO, @"has-void should be true");
+}
+
 @end

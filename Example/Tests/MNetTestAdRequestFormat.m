@@ -32,7 +32,7 @@
     MNetAdRequest *request = [[MNetAdRequest alloc] init];
     [request setAdUnitId:adUnitId];
     [request setIsInterstitial:isInterstitial];
-    [request setWidth:size.width andHeight:size.height];
+    [request setAdSizes:@[MNetAdSizeFromCGSize(size)]];
     
     MNetBidRequest *bidRequest = [MNetBidRequest create:request];
     id reqDict = [MNJMManager getCollectionFromObj:bidRequest];
@@ -95,31 +95,31 @@
 
 - (void)testBannerRequest{
     [self commonTesterWithAdUnit:DEMO_MN_AD_UNIT_320x50
-                        withSize:MNET_BANNER_AD_SIZE
+                        withSize:kMNetBannerAdSize
                  withIntersitial:NO];
 }
 
 - (void)testInterstitialRequest{
     [self commonTesterWithAdUnit:DEMO_MN_AD_UNIT_300x250
-                        withSize:MNET_MEDIUM_AD_SIZE
+                        withSize:kMNetMediumAdSize
                  withIntersitial:YES];
 }
 
 - (void)testBannerVideoRequest{
     [self commonTesterWithAdUnit:DEMO_MN_AD_UNIT_450x300
-                        withSize:MNET_MEDIUM_AD_SIZE
+                        withSize:kMNetMediumAdSize
                  withIntersitial:NO];
 }
 
 - (void)testInterstitialVideoRequest{
     [self commonTesterWithAdUnit:DEMO_MN_AD_UNIT_450x300
-                        withSize:MNET_MEDIUM_AD_SIZE
+                        withSize:kMNetMediumAdSize
                  withIntersitial:YES];
 }
 
 - (void)testRewardedVideoRequest{
     [self commonTesterWithAdUnit:DEMO_MN_AD_UNIT_450x300
-                        withSize:MNET_MEDIUM_AD_SIZE
+                        withSize:kMNetMediumAdSize
                  withIntersitial:NO];
 }
 
@@ -178,13 +178,13 @@
 
 - (void)skip_testBidRequestCreationTime{
     NSString *adUnitId = DEMO_MN_AD_UNIT_320x50;
-    CGSize size = MNET_BANNER_AD_SIZE;
+    CGSize size = kMNetBannerAdSize;
     BOOL isInterstitial = NO;
     
     MNetAdRequest *request = [[MNetAdRequest alloc] init];
     [request setAdUnitId:adUnitId];
     [request setIsInterstitial:isInterstitial];
-    [request setWidth:size.width andHeight:size.height];
+    [request setAdSizes:@[MNetAdSizeFromCGSize(size)]];
     [request setRootViewController:[self getViewController]];
     
     [self measureBlock:^{
@@ -192,4 +192,26 @@
     }];
 }
 
+- (void)testUniqueAdSizesMethod{
+    MNetAdBaseCommon *adBaseCommon = [[MNetAdBaseCommon alloc] init];
+    NSArray<MNetAdSize *> *adSizes = @[MNetAdSizeFromCGSize(kMNetBannerAdSize), MNetAdSizeFromCGSize(kMNetMediumAdSize), MNetAdSizeFromCGSize(kMNetBannerAdSize)];
+    NSArray<MNetAdSize *> *uniqueAdSizes = nil;
+    
+    NSUInteger expectedArrayCount = 2;
+    uniqueAdSizes = [adBaseCommon getUniqueAdSizes:adSizes];
+    XCTAssertNotNil(uniqueAdSizes);
+    XCTAssertEqual([uniqueAdSizes count], expectedArrayCount);
+
+    expectedArrayCount = 0;
+    
+    adSizes = [[NSArray alloc] init];
+    uniqueAdSizes = [adBaseCommon getUniqueAdSizes:adSizes];
+    XCTAssertNotNil(uniqueAdSizes);
+    XCTAssertEqual([uniqueAdSizes count], expectedArrayCount);
+
+    adSizes = nil;
+    uniqueAdSizes = [adBaseCommon getUniqueAdSizes:adSizes];
+    XCTAssertNotNil(uniqueAdSizes);
+    XCTAssertEqual([uniqueAdSizes count], expectedArrayCount);
+}
 @end

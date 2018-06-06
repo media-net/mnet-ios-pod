@@ -33,7 +33,7 @@ XCTestExpectation *bannerIncompleteExpectation;
     bannerIncompleteExpectation = [self expectationWithDescription:@"Ad view not loaded"];
     
     MNetAdView *bannerAd = [[MNetAdView alloc] init];
-    [bannerAd setSize:MNET_BANNER_AD_SIZE];
+    [bannerAd setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
     [bannerAd setDelegate:self];
     [bannerAd setRootViewController:[self getViewController]];
     [bannerAd loadAd];
@@ -67,7 +67,7 @@ XCTestExpectation *bannerIncompleteExpectation;
     bannerIncompleteExpectation = [self expectationWithDescription:@"Ad view not loaded"];
     
     MNetAdView *bannerAd = [[MNetAdView alloc] init];
-    [bannerAd setSize:MNET_BANNER_AD_SIZE];
+    [bannerAd setAdSize:MNetAdSizeFromCGSize(kMNetBannerAdSize)];
     [bannerAd setRootViewController:[self getViewController]];
     [bannerAd setDelegate:self];
     [bannerAd loadAd];

@@ -68,6 +68,11 @@
     NSString *value = @"http://dummyVC2Link.com";
     
     XCTAssert([[linkMap objectForKey:key] isEqualToString:value], @"The values  from the linkMap do not match! Got - %@", [linkMap objectForKey:key]);
+    
+    // Check existence of use_wkwebview_for_ios_version dictionary
+    NSArray *wkwebviewVersion = [configData useWkwebviewForIosVersion];
+    XCTAssert(wkwebviewVersion != nil, @"Wk-webview versions list cannot be nil!");
+    XCTAssert([wkwebviewVersion count] > 0, @"Wk-webview versions list cannot be empty!");
 }
 
 - (void)testDefaultValues{

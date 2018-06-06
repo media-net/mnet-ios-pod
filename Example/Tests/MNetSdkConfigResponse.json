@@ -524,7 +524,13 @@
                     "dummyVC1": "http://dummyVC1Link.com",
                     "dummyVC2": "http://dummyVC2Link.com"
                 }
-            }
+            },
+            "use_wkwebview_for_ios_version":[
+                "11.0.3",
+                "11.0.*",
+                "11.*.*",
+                "10.12.3"
+            ],
         }
     },
     "message": "Config is delivered successfully",

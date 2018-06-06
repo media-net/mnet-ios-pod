@@ -6,7 +6,6 @@
 //
 //
 
-#import "MNetAdRequest.h"
 #import "MNetError.h"
 #import "MNetReward.h"
 #import <Foundation/Foundation.h>
@@ -31,9 +30,6 @@ NS_ASSUME_NONNULL_END
 
 /// Load the Rewarded video ad
 - (void)loadRewardedAd;
-
-/// Load the Rewarded video ad for adRequest
-- (void)loadRewardedAdForRequest:(MNetAdRequest *_Nonnull)adRequest;
 
 /// Show the rewarded video ad on top of the given view controller
 - (void)showAdFromViewController:(UIViewController *_Nonnull)rootViewController;
